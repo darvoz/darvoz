@@ -5,20 +5,30 @@
         Atende à chamada,
         <span class="how-it-works__infoTitle--strong">doa e liga famílias</span>
       </h1>
-      <p class="section__description">Doa telemóveis ou tablets e dê o teu toque humano a
-        todos aqueles que neste momento de isolamento, mais precisam de estar ligados.
+      <p class="section__description">
+        Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que
+        neste momento de isolamento, mais precisam de estar ligados.
       </p>
       <div class="how-it-works__infoBts">
-        <button class="how-it-works__mainBtn">Como funciona</button>
-        <button class="how-it-works__secondaryBtn">Pontos de recolha</button>
+        <Button class="how-it-works__primaryBtn" kind="primary">
+          Como funciona
+        </Button>
+        <Button class="how-it-works__secondaryBtn" kind="secondary">
+          Pontos de recolha
+        </Button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from '~/components/Button/Button.vue'
+
 export default {
-  name: 'HowItWorks'
+  name: 'HowItWorks',
+  components: {
+    Button
+  }
 }
 </script>
 
@@ -41,9 +51,21 @@ export default {
     }
 
     &:after {
-      content: url('../assets/svg/howItWorksArrow.svg');
-      margin-left: 20%;
+      content: '';
+      background: url('../assets/svg/howItWorksArrow.svg') no-repeat;
+      margin: -26px 0 0 13%;
+      display: block;
+      height: 68px;
     }
+  }
+
+  &__infoBts {
+    display: flex;
+    margin-top: 32px;
+  }
+
+  &__primaryBtn {
+    margin-right: 16px;
   }
 }
 </style>

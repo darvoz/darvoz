@@ -1,5 +1,13 @@
 @import "./_variables";
 
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+button {
+  border: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

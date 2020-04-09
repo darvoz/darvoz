@@ -81,6 +81,7 @@ export default {
 
   &__tertiary {
     color: $primary-color;
+    padding: 0;
   }
 
   &__icon {

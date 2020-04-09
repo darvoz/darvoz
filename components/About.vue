@@ -9,8 +9,8 @@
         Covid-19, muitas famílias ficaram afastadas, sem possivilidade de se
         contactarem. Muitos destes casos, simplesmente não possuem qualquer tipo
         de equipamento para o fazer ( telemóvel ou tablet ).
-        <br />
-        <br />
+      </p>
+      <p class="section__description about__infoDescription">
         Todos nós temos alguns equipamentos, esquecidos que já não são usados e
         que podem ser um ponto de ligação entre famílias, ajudando muitos a
         passar momentos de solidão mais acompanhados e fazendo com que o nosso

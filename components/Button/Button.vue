@@ -58,8 +58,6 @@ export default {
   border-radius: 32px;
   line-height: 22px;
   font-size: 16px;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .button--primary {

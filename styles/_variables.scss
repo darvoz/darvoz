@@ -3,9 +3,3 @@ $gray: #747474;
 $white: #ffffff;
 $smoke-white: #f2f2f2;
 
-@mixin material-design-icon($size: 24px) {
-  > span {
-    font-size: $size;
-    bottom: 0.125em; //hack to remove applied styles by material-design-icon
-  }
-}

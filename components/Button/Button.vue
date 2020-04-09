@@ -6,13 +6,13 @@
   >
     <slot />
     <span class="button__icon">
-      <TrendingNeutral v-if="kind === 'tertiary'" decorative size="24" />
+      <TrendingNeutral v-if="kind === 'tertiary'" decorative :size="24" />
     </span>
   </button>
   <a v-else :href="link" :class="['button', `button__${kind.toString()}`]">
     <slot />
     <span class="button__icon">
-      <TrendingNeutral v-if="kind === 'tertiary'" decorative size="24" />
+      <TrendingNeutral v-if="kind === 'tertiary'" decorative :size="24" />
     </span>
   </a>
 </template>
@@ -77,6 +77,7 @@ export default {
 
   &__tertiary {
     color: $primary-color;
+    padding: 0;
   }
 
   &__icon {

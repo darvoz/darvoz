@@ -18,6 +18,11 @@
         </Button>
       </div>
     </div>
+    <img
+      class="how-it-works__background"
+      src="../assets/howItWorksBG.png"
+      alt="section_background"
+    />
   </div>
 </template>
 
@@ -36,9 +41,6 @@ export default {
 @import '../styles/_global.scss';
 
 .how-it-works {
-  background-image: url('../assets/howItWorksBG.png');
-  background-repeat: no-repeat;
-  background-position: right;
   height: 100vh;
 
   &__info {
@@ -66,6 +68,11 @@ export default {
 
   &__primaryBtn {
     margin-right: 16px;
+  }
+
+  &__background {
+    position: absolute;
+    right: -7%;
   }
 }
 </style>

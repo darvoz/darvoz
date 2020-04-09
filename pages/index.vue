@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="container">
+=======
+  <div>
+>>>>>>> feature/remove-nuxt-scaffolding
   </div>
 </template>
 

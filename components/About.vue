@@ -1,0 +1,71 @@
+<template>
+  <div class="container about">
+    <div class="about__info">
+      <h1 class="section__title about__infoTitle">
+        O que é o #dar<span class="about__infoTitle--strong">voz</span>
+      </h1>
+      <p class="section__description about__infoDescription">
+        Numa altura em que o isolamento social é uma arma para o combate à
+        Covid-19, muitas famílias ficaram afastadas, sem possivilidade de se
+        contactarem. Muitos destes casos, simplesmente não possuem qualquer tipo
+        de equipamento para o fazer ( telemóvel ou tablet ).
+        <br />
+        <br />
+        Todos nós temos alguns equipamentos, esquecidos que já não são usados e
+        que podem ser um ponto de ligação entre famílias, ajudando muitos a
+        passar momentos de solidão mais acompanhados e fazendo com que o nosso
+        toque humano não passe despecebido numa altura de crise.
+      </p>
+      <Button class="about__link" kind="tertiary">
+        Saiba como doar
+      </Button>
+    </div>
+    <img
+      class="about__background"
+      src="../assets/aboutBG.png"
+      alt="section_background"
+    />
+  </div>
+</template>
+
+<script>
+import Button from '~/components/Button/Button.vue'
+
+export default {
+  name: 'About',
+  components: {
+    Button
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../styles/_global.scss';
+
+.about {
+  height: 100vh;
+
+  &__info {
+    grid-column: 8 / 13;
+  }
+
+  &__infoTitle {
+    font-size: 52px;
+    margin-bottom: 47px;
+
+    &--strong {
+      color: $primary-color;
+    }
+  }
+
+  &__infoDescription {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__background {
+    position: absolute;
+    left: -1%;
+  }
+}
+</style>

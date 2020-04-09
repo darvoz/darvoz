@@ -1,16 +1,15 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="container">
-=======
   <div>
->>>>>>> feature/remove-nuxt-scaffolding
+    <how-it-works></how-it-works>
   </div>
-=======
-  <div></div>
->>>>>>> feature/remove-nuxt-scaffolding
 </template>
 
 <script>
-export default {}
+import HowItWorks from '~/components/HowItWorks.vue'
+
+export default {
+  components: {
+    HowItWorks
+  }
+}
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="how-it-works__info section">
+  <div class="container how-it-works">
+    <div class="how-it-works__info">
       <h1 class="section__title how-it-works__infoTitle">
         Atende à chamada,
         <span class="how-it-works__infoTitle--strong">doa e liga famílias</span>
@@ -26,6 +26,11 @@ export default {
 @import '../styles/_global.scss';
 
 .how-it-works {
+  background-image: url('../assets/howItWorksBG.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100vh;
+
   &__info {
     grid-column: 1 / 6;
   }
@@ -33,6 +38,11 @@ export default {
   &__infoTitle {
     &--strong {
       color: $primary-color;
+    }
+
+    &:after {
+      content: url('../assets/svg/howItWorksArrow.svg');
+      margin-left: 20%;
     }
   }
 }

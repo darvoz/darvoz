@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-0",
-    "node-sass": "^4.13.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
+    "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2"
   }
 }

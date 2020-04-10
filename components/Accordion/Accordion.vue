@@ -1,6 +1,6 @@
 <template>
   <div class="accordion">
-    <button class="accordion__button" @click="click">
+    <button class="accordion__button" @click="accordionClicked">
       {{ title }}
       <span v-if="!open" class="accordion__buttonIcon">
         <Plus :size="24" />
@@ -9,9 +9,7 @@
         <Minus :size="24" />
       </span>
     </button>
-    <div
-      :class="['accordion__content', open ? 'accordion__content--open' : '']"
-    >
+    <div class="accordion__content">
       <slot />
     </div>
   </div>
@@ -34,12 +32,38 @@ export default {
   },
   data() {
     return {
-      open: false
+      open: false,
+      accordionContentPadding: 24
+    }
+  },
+  computed: {
+    accordionContent() {
+      return this.$el.querySelector(`.accordion__content`)
+    },
+    accordionContentHeight() {
+      return this.accordionContent.scrollHeight
     }
   },
   methods: {
-    click() {
-      if (!this.disabled) this.open = !this.open
+    accordionClicked() {
+      this.open ? this.collapseSection() : this.expandSection()
+    },
+    collapseSection() {
+      const element = this.accordionContent
+
+      element.style.height = null
+      element.style.padding = null
+
+      this.open = false
+    },
+    expandSection() {
+      const element = this.accordionContent
+      const sectionHeight = this.accordionContentHeight
+
+      element.style.height = sectionHeight + 'px'
+      element.style.padding = this.accordionContentPadding + 'px'
+
+      this.open = true
     }
   }
 }
@@ -63,22 +87,22 @@ export default {
     font-weight: bold;
     line-height: 27px;
     font-size: inherit;
+    border: none;
   }
 
   &__content {
     position: relative;
     top: 0;
-    height: 0;
-    overflow: hidden;
-    transition: 0.4s;
-    padding: 0 24px;
     line-height: 30px;
     color: $gray;
+    background: $white;
+    padding: 0 24px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    height: 0;
 
     &--open {
       padding: 24px;
-      background: $white;
-      height: auto;
     }
   }
 

@@ -5,6 +5,7 @@
     <stats-section />
     <about-section id="o-que-e" />
     <how-to-donate-section />
+    <collecting-stations-section id="pontos-recolha" />
     <brands-section />
     <faq-section></faq-section>
   </div>
@@ -18,7 +19,7 @@ import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
-
+import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
 export default {
   components: {
     BrandsSection,
@@ -27,6 +28,7 @@ export default {
     IntroSection,
     AboutSection,
     NavigationBar,
+    CollectingStationsSection,
     HowToDonateSection
   }
 }

@@ -4,7 +4,7 @@
     <intro-section />
     <stats-section />
     <about-section id="o-que-e" />
-    <how-to-donate />
+    <how-to-donate-section />
     <brands-section />
     <faq-section></faq-section>
   </div>
@@ -17,7 +17,7 @@ import BrandsSection from '../components/BrandsSection'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
-import HowToDonate from '~/components/HowToDonate/HowToDonate'
+import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
     IntroSection,
     AboutSection,
     NavigationBar,
-    HowToDonate
+    HowToDonateSection
   }
 }
 </script>

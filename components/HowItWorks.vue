@@ -1,5 +1,5 @@
 <template>
-  <div class="container how-it-works">
+  <div class="container how-it-works" tabindex="0">
     <div class="how-it-works__info">
       <h1 class="section__title how-it-works__infoTitle">
         Atende à chamada,

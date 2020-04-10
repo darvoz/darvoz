@@ -100,10 +100,6 @@ export default {
     overflow: hidden;
     transition: all 0.3s ease-out;
     height: 0;
-
-    &--open {
-      padding: 24px;
-    }
   }
 
   &__buttonIcon {

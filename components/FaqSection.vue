@@ -1,5 +1,5 @@
 <template>
-  <section v-if="faqList" class="container faq-section">
+  <section v-if="faqList" class="container faq-section" tabindex="0">
     <div class="faq-section__title">
       <img
         src="../assets/svg/hashtag.svg"

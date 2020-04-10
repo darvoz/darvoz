@@ -1,5 +1,5 @@
 <template>
-  <div class="container about">
+  <div class="container about" tabindex="0">
     <div class="about__info">
       <h1 class="section__title about__infoTitle">
         O que é o #dar<span class="about__infoTitle--strong">voz</span>

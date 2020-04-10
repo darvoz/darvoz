@@ -18,7 +18,7 @@ export default {
     FaqSection,
     IntroSection,
     AboutSection,
-    NavigationBar,
+    NavigationBar
   }
 }
 </script>

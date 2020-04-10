@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation-bar">
     <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
-    <ul class="navigation-bar__items">
+    <ul class="navigation-bar__items" @click="animateScroll">
       <li class="navigation-bar__item">
         <a href="#o-que-e" class="navigation-bar__link">O que é</a>
       </li>
@@ -9,14 +9,14 @@
         <a href="#como-doar" class="navigation-bar__link">Como doar</a>
       </li>
       <li class="navigation-bar__item">
-        <a href="#pontos-recolha" class="navigation-bar__link"
-          >Pontos de recolha</a
-        >
+        <a href="#pontos-recolha" class="navigation-bar__link">
+          Pontos de recolha
+        </a>
       </li>
       <li class="navigation-bar__item">
-        <a href="#perguntas-frequentes" class="navigation-bar__link"
-          >Perguntas frequentes</a
-        >
+        <a href="#perguntas-frequentes" class="navigation-bar__link">
+          Perguntas frequentes
+        </a>
       </li>
     </ul>
     <Button kind="primary" link="#pontos-recolha">Quero doar</Button>
@@ -31,6 +31,25 @@ export default {
   components: {
     Button,
     Logo
+  },
+  methods: {
+    animateScroll(event) {
+      const clickedElement = event.target
+      const navElement = clickedElement.closest('.navigation-bar__link')
+
+      if (!navElement) {
+        return
+      }
+      const scrollTarget = document.querySelector(navElement.hash)
+
+      if (scrollTarget) {
+        event.preventDefault()
+
+        scrollTarget.scrollIntoView({
+          behavior: 'smooth'
+        })
+      }
+    }
   }
 }
 </script>

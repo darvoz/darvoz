@@ -59,12 +59,8 @@ export default {
   border-radius: 32px;
   line-height: 22px;
   font-size: 16px;
-<<<<<<< HEAD
   background-color: transparent;
   cursor: pointer;
-=======
-}
->>>>>>> develop
 
   &__primary {
     box-shadow: 0px 8px 16px rgba(81, 97, 210, 0.16);

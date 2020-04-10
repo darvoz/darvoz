@@ -2,6 +2,7 @@
   <div class="main">
     <navigation-bar />
     <intro-section />
+    <stats-section />
     <about-section id="o-que-e" />
     <faq-section />
   </div>
@@ -12,9 +13,11 @@ import FaqSection from '../components/FaqSection'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
+import StatsSection from '../components/StatsSection'
 
 export default {
   components: {
+    StatsSection,
     FaqSection,
     IntroSection,
     AboutSection,

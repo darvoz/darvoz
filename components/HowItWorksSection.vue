@@ -8,7 +8,7 @@
     </p>
     <div class="how-it-works__panel">
       <article class="how-it-works__panelItem">
-        <img src="" alt="Como funciona passo 1" role="presentation">
+        <img src="" alt="Como funciona passo 1" role="presentation" />
         <h3 class=""></h3>
         <p></p>
       </article>

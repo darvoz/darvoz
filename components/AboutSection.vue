@@ -1,5 +1,5 @@
 <template>
-  <div class="container about" tabindex="0">
+  <section class="container about" tabindex="0">
     <div class="about__info">
       <h1 class="section__title about__infoTitle">
         O que é o #dar<span class="about__infoTitle--strong">voz</span>
@@ -26,14 +26,14 @@
       alt="section_background"
       role="presentation"
     />
-  </div>
+  </section>
 </template>
 
 <script>
 import Button from '~/components/Button/Button.vue'
 
 export default {
-  name: 'About',
+  name: 'AboutSection',
   components: {
     Button
   }

@@ -18,6 +18,10 @@ button {
   width: 80%;
   align-items: center;
   position: relative;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .full-width-background {

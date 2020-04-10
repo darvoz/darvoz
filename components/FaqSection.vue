@@ -42,7 +42,7 @@ export default {
     }
   },
   created() {
-    fetch('/resources/faqList.json')
+    fetch('resources/faqList.json')
       .then((data) => data.json())
       .then((response) => (this.faqList = response.faqList))
   }

@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import FaqSection from '../components/FaqSection'
+import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowItWorks from '~/components/HowItWorks.vue'
 import About from '~/components/About.vue'
 
@@ -25,7 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/_global.scss';
+
 .main {
-  background-color: $smoke-white;
+  background: linear-gradient(180deg, $smoke-white 0%, $white 100%);
 }
 </style>

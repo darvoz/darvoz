@@ -24,6 +24,7 @@
       class="about__background"
       src="../assets/aboutBG.png"
       alt="section_background"
+      role="presentation"
     />
   </div>
 </template>

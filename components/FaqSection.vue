@@ -1,28 +1,34 @@
 <template>
-  <section v-if="faqList" class="container faq-section" tabindex="0">
-    <div class="faq-section__title">
-      <img
-        src="../assets/svg/hashtag.svg"
-        alt="title_hashtag"
-        role="presentation"
-        class="faq-section__titleImg"
-      />
-      <div class="faq-section__titleText">
-        <h1 class="section__title">Perguntas</h1>
-        <h1 class="section__title">frequentes</h1>
+  <section v-if="faqList" class="container" tabindex="0">
+    <div class="faq-section">
+      <div class="faq-section__title">
+        <img
+          src="../assets/svg/hashtag.svg"
+          alt="title_hashtag"
+          role="presentation"
+          class="faq-section__titleImg"
+        />
+        <div class="faq-section__titleText">
+          <h1 class="section__title">
+            Perguntas <br />
+            frequentes
+          </h1>
+        </div>
+      </div>
+      <accordion
+        v-for="item in faqList"
+        :key="item.title"
+        :title="item.title"
+        class="faq-section__item"
+      >
+        {{ item.answer }}
+      </accordion>
+      <div class="faq-section__link">
+        <Button kind="tertiary">
+          Ler mais perguntas
+        </Button>
       </div>
     </div>
-    <accordion
-      v-for="item in faqList"
-      :key="item.title"
-      :title="item.title"
-      class="faq-section__item"
-    >
-      {{ item.answer }}
-    </accordion>
-    <Button class="faq-section__link" kind="tertiary">
-      Ler mais perguntas
-    </Button>
   </section>
 </template>
 
@@ -41,10 +47,13 @@ export default {
       faqList: null
     }
   },
-  created() {
-    fetch('resources/faqList.json')
-      .then((data) => data.json())
-      .then((response) => (this.faqList = response.faqList))
+  async created() {
+    const faqListJSON = () =>
+      import('~/data/resources/faqList.json').then((m) => {
+        return m.default.faqList || m.faqList
+      })
+
+    this.faqList = await faqListJSON()
   }
 }
 </script>
@@ -56,10 +65,11 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 80vh;
+  grid-column: 1 / 13;
 
   &__title {
     display: flex;
-    align-items: center;
+    justify-content: center;
     margin-bottom: 64px;
   }
 
@@ -77,6 +87,8 @@ export default {
   }
 
   &__link {
+    display: flex;
+    justify-content: center;
     margin: 64px 0 64px 0;
   }
 

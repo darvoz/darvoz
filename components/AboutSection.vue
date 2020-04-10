@@ -1,9 +1,7 @@
 <template>
   <section class="container about" tabindex="0">
     <div class="about__info">
-      <h1 class="section__title about__infoTitle">
-        O que é o #dar<span class="about__infoTitle--strong">voz</span>
-      </h1>
+      <h1 class="section__title about__infoTitle">O que é o <Logo /></h1>
       <p class="section__description about__infoDescription">
         Numa altura em que o isolamento social é uma arma para o combate à
         Covid-19, muitas famílias ficaram afastadas, sem possivilidade de se
@@ -30,12 +28,13 @@
 </template>
 
 <script>
-import Button from '~/components/Button/Button.vue'
-
+import Button from '~/components/Button/Button'
+import Logo from '~/components/Logo/Logo'
 export default {
   name: 'AboutSection',
   components: {
-    Button
+    Button,
+    Logo
   }
 }
 </script>
@@ -53,10 +52,6 @@ export default {
   &__infoTitle {
     font-size: 52px;
     margin-bottom: 47px;
-
-    &--strong {
-      color: $primary-color;
-    }
   }
 
   &__infoDescription {

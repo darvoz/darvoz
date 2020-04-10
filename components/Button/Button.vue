@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/_variables';
+@import '../../styles/_global';
 
 .button {
   display: flex;
@@ -60,7 +60,6 @@ export default {
   line-height: 22px;
   font-size: 16px;
   background-color: transparent;
-  cursor: pointer;
 
   &__primary {
     box-shadow: 0px 8px 16px rgba(81, 97, 210, 0.16);

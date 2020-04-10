@@ -6,21 +6,10 @@
         <img
           class="brands__logo"
           src="../assets/Mercedes_Benz_io_logo.png"
-          alt="section_background"
-          role="presentation"
+          alt="Mercedes-Benz.io"
         />
-        <img
-          class="brands__logo"
-          src="../assets/BCG_logo.png"
-          alt="section_background"
-          role="presentation"
-        />
-        <img
-          class="brands__logo"
-          src="../assets/NOS_logo.png"
-          alt="section_background"
-          role="presentation"
-        />
+        <img class="brands__logo" src="../assets/BCG_logo.png" alt="BCG" />
+        <img class="brands__logo" src="../assets/NOS_logo.png" alt="NOS" />
       </div>
       <p class="section__description brands__description">
         Duis nibh aliquet ullamcorper consequat nec risus pretium. Ut parturient

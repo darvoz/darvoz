@@ -61,13 +61,21 @@ export default {
   font-size: 16px;
   background-color: transparent;
 
+  @media only screen and (max-width: $small-screen-min) {
+    display: none;
+  }
+
   &__primary {
+<<<<<<< HEAD
     border: 2px solid transparent;
+=======
+>>>>>>> develop
     box-shadow: 0 8px 16px rgba(81, 97, 210, 0.16);
     background-color: $primary-color;
     color: white;
     font-weight: 900;
     text-align: center;
+<<<<<<< HEAD
 
     &:focus,
     &:active {
@@ -79,6 +87,8 @@ export default {
     &:active {
       transform: translateY(2px);
     }
+=======
+>>>>>>> develop
   }
 
   &__secondary {
@@ -117,4 +127,5 @@ export default {
     width: 100%;
   }
 }
+
 </style>

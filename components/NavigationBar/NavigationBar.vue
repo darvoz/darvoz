@@ -3,6 +3,7 @@
     <div class="navigation-bar__content">
       <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
       <ul class="navigation-bar__items" @click="animateScroll">
+<<<<<<< HEAD
         <li class="navigation-bar__item" tabindex="0">
           <a href="#o-que-e" class="navigation-bar__link">O que é</a>
         </li>
@@ -18,6 +19,17 @@
           <a href="#perguntas-frequentes" class="navigation-bar__link">
             Perguntas frequentes
           </a>
+=======
+        <li
+          v-for="item in linkList"
+          :key="item.name"
+          class="navigation-bar__item"
+          tabindex="0"
+        >
+          <a :href="`#${item.link}`" class="navigation-bar__link">{{
+            item.name
+          }}</a>
+>>>>>>> develop
         </li>
       </ul>
       <div class="navigation-bar__cta" tabindex="0">
@@ -28,37 +40,27 @@
         >
           Quero doar
         </Button>
-        <img
-          src="../../assets/svg/HamburgerIcon.svg"
-          class="navigation-bar__mobileMenuIcon"
-          alt="Menu icon"
-          @click="toggleMobileMenu"
-        />
+        <button class="navigation-bar__mobileMenuIcon">
+          <img
+            src="../../assets/svg/HamburgerIcon.svg"
+            alt="Menu icon"
+            @click="toggleMobileMenu"
+          />
+        </button>
       </div>
     </div>
     <transition name="slide-in">
       <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
         <ul class="navigation-bar__items" @click="animateScroll">
-          <li class="navigation-bar__item">
-            <a href="#pontos-recolha" class="navigation-bar__link">
-              Quero doar
-            </a>
-          </li>
-          <li class="navigation-bar__item">
-            <a href="#o-que-e" class="navigation-bar__link">O que é</a>
-          </li>
-          <li class="navigation-bar__item">
-            <a href="#como-doar" class="navigation-bar__link">Como doar</a>
-          </li>
-          <li class="navigation-bar__item">
-            <a href="#pontos-recolha" class="navigation-bar__link">
-              Pontos de recolha
-            </a>
-          </li>
-          <li class="navigation-bar__item">
-            <a href="#perguntas-frequentes" class="navigation-bar__link">
-              Perguntas frequentes
-            </a>
+          <li
+            v-for="item in linkList"
+            :key="item.name"
+            class="navigation-bar__item"
+            tabindex="0"
+          >
+            <a :href="`#${item.link}`" class="navigation-bar__link">{{
+              item.name
+            }}</a>
           </li>
         </ul>
       </div>
@@ -78,12 +80,35 @@ export default {
   },
   data() {
     return {
-      openMobileMenu: false
+      openMobileMenu: false,
+      linkList: [
+        {
+          name: 'O que é',
+          link: 'o-que-e'
+        },
+        {
+          name: 'Como doar',
+          link: 'como-doar'
+        },
+        {
+          name: 'Pontos de recolha',
+          link: 'pontos-recolha'
+        },
+        {
+          name: 'Perguntas Frequentes',
+          link: 'perguntas-frequentes'
+        },
+        {
+          name: 'Quero-doar',
+          link: 'pontos-recolha'
+        }
+      ]
     }
   },
   methods: {
     animateScroll(event) {
-      this.openMobileMenu = false
+      this.closeMobileMenu()
+
       const clickedElement = event.target
       const navElement = clickedElement.closest('.navigation-bar__link')
 
@@ -120,7 +145,11 @@ export default {
 .navigation-bar {
   $nav-element: &;
 
+<<<<<<< HEAD
   position: fixed;
+=======
+  position: relative;
+>>>>>>> develop
   top: 0;
   left: 0;
   right: 0;
@@ -129,6 +158,19 @@ export default {
   font-family: Muli, sans-serif;
   z-index: 3;
   box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: $container-gap;
+    margin: 0 auto;
+    height: 100%;
+
+    @media only screen and (max-width: 1124px) {
+      width: 100%;
+    }
+  }
 
   &__content {
     display: flex;
@@ -157,6 +199,10 @@ export default {
     font-size: 16px;
     line-height: 168%;
     list-style: none;
+<<<<<<< HEAD
+=======
+    margin: 0 24px 0 24px;
+>>>>>>> develop
     padding-left: 0;
   }
 
@@ -169,6 +215,13 @@ export default {
       #{$nav-element}__link {
         border-bottom: 4px solid $primary-color;
       }
+<<<<<<< HEAD
+=======
+    }
+
+    &:first-child {
+      display: none;
+>>>>>>> develop
     }
   }
 
@@ -262,10 +315,13 @@ export default {
         display: block;
       }
     }
+<<<<<<< HEAD
 
     &__button {
       display: none;
     }
+=======
+>>>>>>> develop
   }
 }
 

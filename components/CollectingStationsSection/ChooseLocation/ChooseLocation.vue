@@ -16,7 +16,7 @@
           placeholder="1900-078"
         />
         <button @click="getLocation">
-          <img src="/assets/svg/location.svg" />
+          <img src="../../../assets/svg/location.svg" />
         </button>
       </div>
       <Button :kind="primary">Pesquisar</Button>

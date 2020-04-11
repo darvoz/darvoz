@@ -15,19 +15,19 @@
         ,mas se precisar ir as compras ou ao correio, leva contigo o teu
         telemóvel ou tablet antigo ao ponto de coleta.
       </p>
-      <div class="collecting-stations__map">
-        <Map
-          :location="
-            location
-              ? [location.coords.latitude, location.coords.longitude]
-              : undefined
-          "
-          :zoom="location ? 13 : undefined"
-          :markers-location="stations.map((station) => station.coords)"
-        >
-          <ChooseLocation slot="controller-top-left" :get-location="locateMe" />
-        </Map>
-      </div>
+    </div>
+    <div class="collecting-stations__map">
+      <Map
+        :location="
+          location
+            ? [location.coords.latitude, location.coords.longitude]
+            : undefined
+        "
+        :zoom="location ? 13 : undefined"
+        :markers-location="stations.map((station) => station.coords)"
+      >
+        <ChooseLocation slot="controller-top-left" :get-location="locateMe" />
+      </Map>
     </div>
   </section>
 </template>
@@ -93,6 +93,7 @@ export default {
 
 .collecting-stations {
   height: 100vh;
+
   &__info {
     grid-column: 1 / 13;
     justify-items: center;
@@ -109,7 +110,6 @@ export default {
     font-size: 32px;
     line-height: 40px;
     text-align: center;
-    margin-bottom: 32px;
     color: $black;
 
     &--bold {
@@ -118,9 +118,15 @@ export default {
   }
 
   &__map {
-    height: 60vh;
-    width: 100%;
-    margin-top: 64px;
+    grid-column: 1 / 13;
+    height: 50vh;
+    width: 100vw;
+    margin-left: -4%;
+
+    @media screen and (min-width: $max-mobile-size) {
+      margin-left: 0;
+      width: 100%;
+    }
   }
 }
 </style>

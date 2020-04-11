@@ -10,13 +10,13 @@ button {
 a { text-decoration: none;}
 
 .container {
-  @include container-gap;
+  @include container-gap();
   display: grid;
   grid-column-gap: 1rem;
   margin: 0 auto;
   align-items: center;
   position: relative;
-
+  overflow: hidden;
   &:focus {
     outline: none;
   }
@@ -35,8 +35,12 @@ a { text-decoration: none;}
   font-family: 'Muli', sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 58px;
-  line-height: 100.8%;
+  font-size: 38px;
+  line-height: 48px;
+  @media screen and (min-width: $max-mobile-size){
+    font-size: 52px;
+    line-height: 100.8%;
+  }
 }
 
 .section__description {

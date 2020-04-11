@@ -100,7 +100,6 @@ export default {
   }
 
   &__infoTitle {
-    font-size: 52px;
     margin-bottom: 47px;
   }
 

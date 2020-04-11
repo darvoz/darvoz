@@ -19,7 +19,7 @@
           <img src="../../../assets/svg/location.svg" />
         </button>
       </div>
-      <Button :kind="primary">Pesquisar</Button>
+      <Button kind="primary">Pesquisar</Button>
     </div>
   </div>
 </template>

@@ -3,7 +3,11 @@
     <l-map
       :zoom="zoom"
       :center="location"
-      :options="{ scrollWheelZoom: false, zoomControl: false }"
+      :options="{ scrollWheelZoom: false }"
+      ref="map"
+      @focus="enableZoomScroll"
+      @click="enableZoomScroll"
+      @mouseout="disableZoomScroll"
     >
       <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
@@ -44,6 +48,14 @@ export default {
         [PORTUGAL_CENTER_COORDS[0] - 0.1, PORTUGAL_CENTER_COORDS[1]],
         [PORTUGAL_CENTER_COORDS[0] + 0.1, PORTUGAL_CENTER_COORDS[1]]
       ]
+    }
+  },
+  methods: {
+    enableZoomScroll() {
+      this.$refs.map.mapObject.scrollWheelZoom.enable()
+    },
+    disableZoomScroll() {
+      this.$refs.map.mapObject.scrollWheelZoom.disable()
     }
   }
 }

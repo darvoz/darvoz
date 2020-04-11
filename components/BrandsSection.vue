@@ -47,7 +47,12 @@ export default {
   }
 
   &__logos {
+    display: grid;
+    grid-gap: 32px;
     margin: 40px 0 40px 0;
+    @media screen and (min-width: $max-mobile-size) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &__logo {

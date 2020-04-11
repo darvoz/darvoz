@@ -124,5 +124,17 @@ export default {
       }
     }
   }
+
+  @media only screen and (max-width: 1200px) {
+    &__infoBts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__primaryBtn {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
 }
 </style>

@@ -3,40 +3,22 @@
     <div class="navigation-bar__content">
       <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
       <ul class="navigation-bar__items" @click="animateScroll">
-<<<<<<< HEAD
-        <li class="navigation-bar__item" tabindex="0">
-          <a href="#o-que-e" class="navigation-bar__link">O que é</a>
-        </li>
-        <li class="navigation-bar__item" tabindex="0">
-          <a href="#como-doar" class="navigation-bar__link">Como doar</a>
-        </li>
-        <li class="navigation-bar__item" tabindex="0">
-          <a href="#pontos-recolha" class="navigation-bar__link">
-            Pontos de recolha
-          </a>
-        </li>
-        <li class="navigation-bar__item" tabindex="0">
-          <a href="#perguntas-frequentes" class="navigation-bar__link">
-            Perguntas frequentes
-          </a>
-=======
         <li
           v-for="item in linkList"
           :key="item.name"
           class="navigation-bar__item"
-          tabindex="0"
         >
           <a :href="`#${item.link}`" class="navigation-bar__link">{{
             item.name
           }}</a>
->>>>>>> develop
         </li>
       </ul>
-      <div class="navigation-bar__cta" tabindex="0">
+      <div class="navigation-bar__cta">
         <Button
           class="navigation-bar__button"
           kind="primary"
           link="#pontos-recolha"
+          tabindex="0"
         >
           Quero doar
         </Button>
@@ -56,7 +38,6 @@
             v-for="item in linkList"
             :key="item.name"
             class="navigation-bar__item"
-            tabindex="0"
           >
             <a :href="`#${item.link}`" class="navigation-bar__link">{{
               item.name
@@ -83,6 +64,10 @@ export default {
       openMobileMenu: false,
       linkList: [
         {
+          name: 'Quero doar',
+          link: 'pontos-recolha'
+        },
+        {
           name: 'O que é',
           link: 'o-que-e'
         },
@@ -97,10 +82,6 @@ export default {
         {
           name: 'Perguntas Frequentes',
           link: 'perguntas-frequentes'
-        },
-        {
-          name: 'Quero-doar',
-          link: 'pontos-recolha'
         }
       ]
     }
@@ -145,11 +126,7 @@ export default {
 .navigation-bar {
   $nav-element: &;
 
-<<<<<<< HEAD
   position: fixed;
-=======
-  position: relative;
->>>>>>> develop
   top: 0;
   left: 0;
   right: 0;
@@ -199,29 +176,20 @@ export default {
     font-size: 16px;
     line-height: 168%;
     list-style: none;
-<<<<<<< HEAD
-=======
-    margin: 0 24px 0 24px;
->>>>>>> develop
     padding-left: 0;
   }
 
   &__item {
     margin: 0 16px 0 16px;
 
-    &:hover,
-    &:focus {
-      outline: none;
+    &:hover {
       #{$nav-element}__link {
         border-bottom: 4px solid $primary-color;
       }
-<<<<<<< HEAD
-=======
     }
 
     &:first-child {
       display: none;
->>>>>>> develop
     }
   }
 
@@ -229,6 +197,11 @@ export default {
     font-style: normal;
     padding: 16px 0;
     color: $black;
+
+    &:focus {
+      outline-color: $primary-color;
+      outline-width: 2px;
+    }
   }
 
   &__mobileMenu {
@@ -315,13 +288,10 @@ export default {
         display: block;
       }
     }
-<<<<<<< HEAD
 
     &__button {
       display: none;
     }
-=======
->>>>>>> develop
   }
 }
 

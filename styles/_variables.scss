@@ -9,7 +9,7 @@ $stats-gradient: linear-gradient(to top, $primary-color 25.02%, $light-purple 82
 
 $container-gap: 80%;
 $small-screen-min: 320px;
-$max-mobile-size: 900px;
+$max-mobile-size: 850px;
 
 @font-face {
   font-family: 'Muli';
@@ -22,9 +22,19 @@ $max-mobile-size: 900px;
 }
 
 @mixin container-gap() {
+  grid-template-columns: repeat(12, 1fr);
   width: $container-gap;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $max-mobile-size) {
+    grid-template-columns: repeat(4, 1fr);
     width: 93%;
+  }
+}
+
+@mixin container-column() {
+  grid-column: 1 / 13;
+
+  @media only screen and (max-width: $max-mobile-size) {
+    grid-column: 1 / 5;
   }
 }

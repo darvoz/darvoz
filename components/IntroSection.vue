@@ -1,5 +1,10 @@
 <template>
   <section class="container intro-section" tabindex="0">
+    <img
+      class="intro-section__backgroundMobile"
+      src="../assets/introSectionBG__mobile.png"
+      alt="section_background"
+    />
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
         Atende à chamada,
@@ -43,6 +48,8 @@ export default {
 @import '../styles/_global.scss';
 
 .intro-section {
+  @include container-column;
+
   height: 100vh;
 
   &__info {
@@ -75,6 +82,33 @@ export default {
   &__background {
     position: absolute;
     right: -7%;
+  }
+
+  &__backgroundMobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: $max-mobile-size) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__info {
+      grid-column: 1 / 5;
+    }
+
+    &__background {
+      display: none;
+    }
+
+    &__backgroundMobile {
+      display: block;
+      grid-column: 1 / 5;
+      width: 100%;
+      max-height: 500px;
+      max-width: 500px;
+      object-fit: contain;
+      justify-self: center;
+    }
   }
 }
 </style>

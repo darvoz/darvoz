@@ -12,7 +12,6 @@ a { text-decoration: none;}
   @include container-gap;
 
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1rem;
   margin: 0 auto;
   align-items: center;

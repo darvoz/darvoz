@@ -5,15 +5,11 @@
         Pontos de recolha
       </h1>
       <p class="section__description collecting-stations__infoDescription">
-        <span class="collecting-stations__infoDescription--bold">
-          #fique
-        </span>
-        em
-        <span class="collecting-stations__infoDescription--bold">
-          casa
-        </span>
-        ,mas se precisar ir as compras ou ao correio, leva contigo o teu
-        telemóvel ou tablet antigo ao ponto de coleta.
+        <span class="collecting-stations__infoDescription--bold">#fique</span
+        ><span class="collecting-stations__infoDescription--bold">em</span
+        ><span class="collecting-stations__infoDescription--bold">casa</span
+        ><span>,</span> mas se precisar ir as compras ou ao correio, leva
+        contigo o teu telemóvel ou tablet antigo ao ponto de coleta.
       </p>
     </div>
     <div class="collecting-stations__map">
@@ -105,27 +101,45 @@ export default {
   }
 
   &__infoDescription {
-    font-family: Muli, sans-serif;
-    font-weight: 900;
-    font-size: 32px;
-    line-height: 40px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    line-height: 160%;
     text-align: center;
     color: $black;
 
     &--bold {
+      font-size: 24px;
+      line-height: 30px;
+      font-family: Muli, sans-serif;
+      font-weight: 900;
       color: $primary-color;
+
+      &:nth-of-type(2) {
+        color: $black;
+      }
     }
   }
 
   &__map {
     grid-column: 1 / 13;
-    height: 50vh;
+    height: 63vh;
     width: 100vw;
     margin-left: -4%;
+  }
 
-    @media screen and (min-width: $max-mobile-size) {
+  @media screen and (min-width: $max-mobile-size) {
+    &__map {
       margin-left: 0;
       width: 100%;
+    }
+
+    &__infoDescription {
+      font-size: 24px;
+
+      &--bold {
+        font-size: 32px;
+        line-height: 40px;
+      }
     }
   }
 }

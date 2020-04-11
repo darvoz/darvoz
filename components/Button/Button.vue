@@ -112,5 +112,9 @@ export default {
     height: 24px;
     margin-left: 8px;
   }
+
+  @media only screen and (max-width: $max-mobile-size) {
+    width: 100%;
+  }
 }
 </style>

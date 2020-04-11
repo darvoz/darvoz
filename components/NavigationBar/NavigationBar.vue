@@ -133,7 +133,7 @@ export default {
   background-color: $white;
   height: 80px;
   font-family: Muli, sans-serif;
-  z-index: 3;
+  z-index: $nav-bar-index;
   box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
 
   &__content {
@@ -221,7 +221,7 @@ export default {
       width: 80vw;
       max-width: 300px;
       height: 100vh;
-      z-index: 2;
+      z-index: $nav-bar-index;
       background-color: $white;
       box-shadow: -8px 4px 9px -4px rgba($black, 0.4);
       touch-action: auto;

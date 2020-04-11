@@ -50,16 +50,12 @@ export default {
     display: grid;
     grid-gap: 32px;
     margin: 40px 0 40px 0;
-    @media screen and (min-width: $max-mobile-size) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
   }
 
   &__logo {
     height: 94px;
-    width: 140px;
+    width: 200px;
     object-fit: contain;
-    margin-right: 24px;
     border: 1px solid $smoke-white;
     padding: 15px;
 
@@ -75,6 +71,17 @@ export default {
     font-size: 12px;
     line-height: 170%;
     text-align: center;
+  }
+
+  @media screen and (min-width: $max-mobile-size) {
+    &__logos {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__logo {
+      margin-right: 24px;
+      width: 140px;
+    }
   }
 }
 </style>

@@ -49,9 +49,6 @@ export default {
 
   &__info {
     grid-column: 1 / 13;
-    @media screen and (min-width: $max-mobile-size) {
-      grid-column: 8 / 13;
-    }
   }
 
   &__infoTitle {
@@ -70,10 +67,22 @@ export default {
 
   &__background {
     display: none;
-    @media screen and (min-width: $max-mobile-size) {
+  }
+
+  @media screen and (min-width: $max-mobile-size) {
+    &__info {
+      grid-column: 8 / 13;
+    }
+
+    &__background {
       display: block;
       position: absolute;
       left: -1%;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: flex-start;
     }
   }
 }

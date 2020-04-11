@@ -105,6 +105,7 @@ export default {
 
   &__buttonIcon {
     height: 24px;
+    margin-left: 5px;
   }
 }
 </style>

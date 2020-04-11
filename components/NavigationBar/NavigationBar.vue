@@ -1,39 +1,85 @@
 <template>
   <nav class="navigation-bar">
-    <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
-    <ul class="navigation-bar__items" @click="animateScroll">
-      <li class="navigation-bar__item">
-        <a href="#o-que-e" class="navigation-bar__link">O que é</a>
-      </li>
-      <li class="navigation-bar__item">
-        <a href="#como-doar" class="navigation-bar__link">Como doar</a>
-      </li>
-      <li class="navigation-bar__item">
-        <a href="#pontos-recolha" class="navigation-bar__link">
-          Pontos de recolha
-        </a>
-      </li>
-      <li class="navigation-bar__item">
-        <a href="#perguntas-frequentes" class="navigation-bar__link">
-          Perguntas frequentes
-        </a>
-      </li>
-    </ul>
-    <Button kind="primary" link="#pontos-recolha">Quero doar</Button>
+    <div class="navigation-bar__content">
+      <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
+      <ul class="navigation-bar__items" @click="animateScroll">
+        <li class="navigation-bar__item">
+          <a href="#o-que-e" class="navigation-bar__link">O que é</a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#como-doar" class="navigation-bar__link">Como doar</a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#pontos-recolha" class="navigation-bar__link">
+            Pontos de recolha
+          </a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#perguntas-frequentes" class="navigation-bar__link">
+            Perguntas frequentes
+          </a>
+        </li>
+      </ul>
+      <div class="navigation-bar__cta">
+        <Button
+          class="navigation-bar__button"
+          kind="primary"
+          link="#pontos-recolha"
+        >
+          Quero doar
+        </Button>
+        <img
+          src="../../assets/svg/HamburgerIcon.svg"
+          class="navigation-bar__mobileMenuIcon"
+          alt="Menu icon"
+          @click="toggleMobileMenu"
+        />
+      </div>
+    </div>
+    <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
+      <ul class="navigation-bar__items" @click="animateScroll">
+        <li class="navigation-bar__item">
+          <a href="#pontos-recolha" class="navigation-bar__link">Quero doar</a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#o-que-e" class="navigation-bar__link">O que é</a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#como-doar" class="navigation-bar__link">Como doar</a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#pontos-recolha" class="navigation-bar__link">
+            Pontos de recolha
+          </a>
+        </li>
+        <li class="navigation-bar__item">
+          <a href="#perguntas-frequentes" class="navigation-bar__link">
+            Perguntas frequentes
+          </a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
 <script>
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'
+
 export default {
   name: 'NavigationBar',
   components: {
     Button,
     Logo
   },
+  data() {
+    return {
+      openMobileMenu: false
+    }
+  },
   methods: {
     animateScroll(event) {
+      this.openMobileMenu = false
       const clickedElement = event.target
       const navElement = clickedElement.closest('.navigation-bar__link')
 
@@ -49,6 +95,16 @@ export default {
           behavior: 'smooth'
         })
       }
+    },
+    toggleMobileMenu() {
+      this.openMobileMenu = !this.openMobileMenu
+      
+      document.querySelector('.main').classList.toggle('mobile-menu-open')
+      document.addEventListener('scroll', this.closeMobileMenu)
+    },
+    closeMobileMenu() {
+      this.openMobileMenu = false
+      document.removeEventListener('scroll', this.closeMobileMenu)
     }
   }
 }
@@ -56,10 +112,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/_global';
+
 .navigation-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  $nav-element: &;
+
   position: relative;
   top: 0;
   left: 0;
@@ -68,6 +124,19 @@ export default {
   height: 80px;
   font-family: Muli, sans-serif;
 
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: $container-gap;
+    margin: 0 auto;
+    height: 100%;
+
+    @media only screen and (max-width: 1124px) {
+      width: 100%;
+    }
+  }
+
   &__logo {
     font-weight: 900;
     font-size: 32px;
@@ -75,27 +144,117 @@ export default {
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 52px;
+    display: flex;
     align-content: center;
     font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 16px;
     line-height: 168%;
     list-style: none;
-    height: 100%;
-  }
+    margin: 0 24px 0 24px;
+    padding-left: 0;
 
-  &__item:hover {
-    .navigation-bar__link {
-      border-bottom: 4px solid $primary-color;
+    &:hover {
+      #{$nav-element}__link {
+        border-bottom: 4px solid $primary-color;
+      }
     }
   }
+
+  &__item {
+    margin: 0 16px 0 16px;
+  }
+
   &__link {
     font-style: normal;
     padding: 16px 0;
     color: $black;
+  }
+
+  &__mobileMenu {
+    display: none;
+  }
+
+  &__mobileMenuIcon {
+    display: none;
+  }
+
+  @media only screen and (max-width: $max-mobile-size) {
+    &__mobileMenu {
+      display: block;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 80vw;
+      max-width: 300px;
+      height: 100vh;
+      z-index: 2;
+      background-color: $white;
+      box-shadow: -8px 4px 9px -4px rgba($black, 0.4);
+      touch-action: auto;
+
+      #{$nav-element}__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+        &:hover {
+          #{$nav-element}__link {
+            border-bottom: none;
+          }
+        }
+      }
+
+      #{$nav-element}__item {
+        text-align: center;
+        width: 100%;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        font-size: 14px;
+        margin: 0;
+
+        &:nth-child(even) {
+          background-color: $smoke-white;
+        }
+
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+
+    &__mobileMenuIcon {
+      display: block;
+      margin-left: 24px;
+    }
+
+    &__cta {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__content {
+      @include container-gap;
+
+      justify-content: space-between;
+    }
+
+    &__button {
+      justify-self: flex-end;
+    }
+
+    &__items {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: $small-screen-min) {
+    &__mobileMenu {
+      #{$nav-element}__item:first-child {
+        display: block;
+      }
+    }
   }
 }
 </style>

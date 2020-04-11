@@ -5,14 +5,14 @@
     @click="click"
   >
     <slot />
-    <span class="button__icon">
-      <TrendingNeutral v-if="kind === 'tertiary'" decorative :size="24" />
+    <span v-if="kind === 'tertiary'" class="button__icon">
+      <TrendingNeutral decorative :size="24" />
     </span>
   </button>
   <a v-else :href="link" :class="['button', `button__${kind.toString()}`]">
     <slot />
-    <span class="button__icon">
-      <TrendingNeutral v-if="kind === 'tertiary'" decorative :size="24" />
+    <span v-if="kind === 'tertiary'" class="button__icon">
+      <TrendingNeutral decorative :size="24" />
     </span>
   </a>
 </template>
@@ -61,11 +61,16 @@ export default {
   font-size: 16px;
   background-color: transparent;
 
+  @media only screen and (max-width: $small-screen-min) {
+    display: none;
+  }
+
   &__primary {
-    box-shadow: 0px 8px 16px rgba(81, 97, 210, 0.16);
+    box-shadow: 0 8px 16px rgba(81, 97, 210, 0.16);
     background-color: $primary-color;
     color: white;
     font-weight: 900;
+    text-align: center;
   }
 
   &__secondary {
@@ -84,4 +89,5 @@ export default {
     margin-left: 8px;
   }
 }
+
 </style>

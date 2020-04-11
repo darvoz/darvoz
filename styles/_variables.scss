@@ -7,6 +7,10 @@ $light-purple: #7A88E9;
 
 $stats-gradient: linear-gradient(to top, $primary-color 25.02%, $light-purple 82.23%);
 
+$container-gap: 80%;
+$small-screen-min: 320px;
+$max-mobile-size: 900px;
+
 @font-face {
   font-family: 'Muli';
   src: url('https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap');
@@ -17,3 +21,10 @@ $stats-gradient: linear-gradient(to top, $primary-color 25.02%, $light-purple 82
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 }
 
+@mixin container-gap() {
+  width: $container-gap;
+
+  @media only screen and (max-width: 900px) {
+    width: 93%;
+  }
+}

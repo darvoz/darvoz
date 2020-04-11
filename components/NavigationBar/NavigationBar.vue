@@ -36,29 +36,31 @@
         />
       </div>
     </div>
-    <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
-      <ul class="navigation-bar__items" @click="animateScroll">
-        <li class="navigation-bar__item">
-          <a href="#pontos-recolha" class="navigation-bar__link">Quero doar</a>
-        </li>
-        <li class="navigation-bar__item">
-          <a href="#o-que-e" class="navigation-bar__link">O que é</a>
-        </li>
-        <li class="navigation-bar__item">
-          <a href="#como-doar" class="navigation-bar__link">Como doar</a>
-        </li>
-        <li class="navigation-bar__item">
-          <a href="#pontos-recolha" class="navigation-bar__link">
-            Pontos de recolha
-          </a>
-        </li>
-        <li class="navigation-bar__item">
-          <a href="#perguntas-frequentes" class="navigation-bar__link">
-            Perguntas frequentes
-          </a>
-        </li>
-      </ul>
-    </div>
+    <transition name="slide-in">
+      <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
+        <ul class="navigation-bar__items" @click="animateScroll">
+          <li class="navigation-bar__item">
+            <a href="#pontos-recolha" class="navigation-bar__link">Quero doar</a>
+          </li>
+          <li class="navigation-bar__item">
+            <a href="#o-que-e" class="navigation-bar__link">O que é</a>
+          </li>
+          <li class="navigation-bar__item">
+            <a href="#como-doar" class="navigation-bar__link">Como doar</a>
+          </li>
+          <li class="navigation-bar__item">
+            <a href="#pontos-recolha" class="navigation-bar__link">
+              Pontos de recolha
+            </a>
+          </li>
+          <li class="navigation-bar__item">
+            <a href="#perguntas-frequentes" class="navigation-bar__link">
+              Perguntas frequentes
+            </a>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </nav>
 </template>
 
@@ -98,7 +100,7 @@ export default {
     },
     toggleMobileMenu() {
       this.openMobileMenu = !this.openMobileMenu
-      
+
       document.querySelector('.main').classList.toggle('mobile-menu-open')
       document.addEventListener('scroll', this.closeMobileMenu)
     },
@@ -256,5 +258,19 @@ export default {
       }
     }
   }
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: transform 1s ease-in-out;
+}
+
+.slide-in-enter,
+.slide-in-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-in-enter-to {
+  transform: translate3d(0, 0, 0);
 }
 </style>

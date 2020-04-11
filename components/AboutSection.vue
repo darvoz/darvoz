@@ -1,7 +1,9 @@
 <template>
   <section class="container about" tabindex="0">
     <div class="about__info">
-      <h1 class="section__title about__infoTitle">O que é o <Logo /></h1>
+      <h1 class="section__title about__infoTitle">
+        O que é o <span class="about__infoTitle__logo"><Logo /></span>
+      </h1>
       <p class="section__description about__infoDescription">
         Numa altura em que o isolamento social é uma arma para o combate à
         Covid-19, muitas famílias ficaram afastadas, sem possivilidade de se
@@ -46,12 +48,19 @@ export default {
   height: 100vh;
 
   &__info {
-    grid-column: 8 / 13;
+    grid-column: 1 / 13;
+    @media screen and (min-width: $max-mobile-size) {
+      grid-column: 8 / 13;
+    }
   }
 
   &__infoTitle {
-    font-size: 52px;
     margin-bottom: 47px;
+
+    &__logo {
+      display: block;
+      font-size: 44px;
+    }
   }
 
   &__infoDescription {
@@ -60,8 +69,12 @@ export default {
   }
 
   &__background {
-    position: absolute;
-    left: -1%;
+    display: none;
+    @media screen and (min-width: $max-mobile-size) {
+      display: block;
+      position: absolute;
+      left: -1%;
+    }
   }
 }
 </style>

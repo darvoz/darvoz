@@ -153,7 +153,6 @@ export default {
     font-size: 16px;
     line-height: 168%;
     list-style: none;
-    margin: 0 24px 0 24px;
     padding-left: 0;
 
     &:hover {

@@ -24,7 +24,7 @@
         {{ item.answer }}
       </accordion>
       <div class="faq-section__link">
-        <Button kind="tertiary">
+        <Button class="faq-section__linkBtn" kind="tertiary">
           Ler mais perguntas
         </Button>
       </div>
@@ -72,19 +72,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 40px;
-
-    @media only screen and (min-width: $max-mobile-size) {
-      flex-direction: row;
-      margin-bottom: 64px;
-    }
   }
 
   &__titleImg {
     margin-bottom: 40px;
-    @media only screen and (min-width: $max-mobile-size) {
-      margin-bottom: 0;
-      margin-right: 15px;
-    }
   }
 
   &__titleText {
@@ -104,15 +95,33 @@ export default {
     display: flex;
     justify-content: center;
     margin: 32px 0 32px 0;
-    @media only screen and (min-width: $max-mobile-size) {
-      margin: 64px 0 64px 0;
-    }
+  }
+
+  &__linkBtn {
+    display: flex;
+    justify-content: center;
   }
 
   .section__title {
     font-weight: 900;
     font-size: 52px;
     line-height: 65px;
+  }
+
+  @media only screen and (min-width: $max-mobile-size) {
+    &__title {
+      flex-direction: row;
+      margin-bottom: 64px;
+    }
+
+    &__titleImg {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+
+    &__link {
+      margin: 64px 0 64px 0;
+    }
   }
 }
 </style>

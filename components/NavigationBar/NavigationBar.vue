@@ -3,24 +3,24 @@
     <div class="navigation-bar__content">
       <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
       <ul class="navigation-bar__items" @click="animateScroll">
-        <li class="navigation-bar__item">
+        <li class="navigation-bar__item" tabindex="0">
           <a href="#o-que-e" class="navigation-bar__link">O que é</a>
         </li>
-        <li class="navigation-bar__item">
+        <li class="navigation-bar__item" tabindex="0">
           <a href="#como-doar" class="navigation-bar__link">Como doar</a>
         </li>
-        <li class="navigation-bar__item">
+        <li class="navigation-bar__item" tabindex="0">
           <a href="#pontos-recolha" class="navigation-bar__link">
             Pontos de recolha
           </a>
         </li>
-        <li class="navigation-bar__item">
+        <li class="navigation-bar__item" tabindex="0">
           <a href="#perguntas-frequentes" class="navigation-bar__link">
             Perguntas frequentes
           </a>
         </li>
       </ul>
-      <div class="navigation-bar__cta">
+      <div class="navigation-bar__cta" tabindex="0">
         <Button
           class="navigation-bar__button"
           kind="primary"
@@ -40,7 +40,9 @@
       <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
         <ul class="navigation-bar__items" @click="animateScroll">
           <li class="navigation-bar__item">
-            <a href="#pontos-recolha" class="navigation-bar__link">Quero doar</a>
+            <a href="#pontos-recolha" class="navigation-bar__link">
+              Quero doar
+            </a>
           </li>
           <li class="navigation-bar__item">
             <a href="#o-que-e" class="navigation-bar__link">O que é</a>
@@ -155,16 +157,18 @@ export default {
     list-style: none;
     margin: 0 24px 0 24px;
     padding-left: 0;
-
-    &:hover {
-      #{$nav-element}__link {
-        border-bottom: 4px solid $primary-color;
-      }
-    }
   }
 
   &__item {
     margin: 0 16px 0 16px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      #{$nav-element}__link {
+        border-bottom: 4px solid $primary-color;
+      }
+    }
   }
 
   &__link {

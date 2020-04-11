@@ -1,5 +1,5 @@
 <template>
-  <section class="container intro-section" tabindex="0">
+  <section class="container intro-section">
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
         Atende à chamada,

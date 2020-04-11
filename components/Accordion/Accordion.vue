@@ -88,6 +88,7 @@ export default {
     line-height: 27px;
     font-size: inherit;
     border: none;
+    text-align: left;
   }
 
   &__content {

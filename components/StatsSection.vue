@@ -16,7 +16,7 @@ export default {
     return {
       finalStatValue: 4500,
       currentStatValue: 0,
-      animationDuration: 4000,
+      animationDuration: 2500,
       throttleDuration: 200
     }
   },

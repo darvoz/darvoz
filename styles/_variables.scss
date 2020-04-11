@@ -22,19 +22,19 @@ $max-mobile-size: 850px;
 }
 
 @mixin container-gap() {
-  grid-template-columns: repeat(12, 1fr);
-  width: $container-gap;
+  grid-template-columns: repeat(4, 1fr);
+  width: 93%;
 
-  @media only screen and (max-width: $max-mobile-size) {
-    grid-template-columns: repeat(4, 1fr);
-    width: 93%;
+  @media only screen and (min-width: $max-mobile-size) {
+    grid-template-columns: repeat(12, 1fr);
+    width: $container-gap;
   }
 }
 
 @mixin container-column() {
-  grid-column: 1 / 13;
+  grid-column: 1 / 5;
 
-  @media only screen and (max-width: $max-mobile-size) {
-    grid-column: 1 / 5;
+  @media only screen and (min-width: $max-mobile-size) {
+    grid-column: 1 / 13;
   }
 }

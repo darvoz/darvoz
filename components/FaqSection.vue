@@ -69,12 +69,26 @@ export default {
 
   &__title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 64px;
+    margin-bottom: 40px;
+
+    @media only screen and (min-width: $max-mobile-size) {
+      flex-direction: row;
+      margin-bottom: 64px;
+    }
   }
 
   &__titleImg {
-    margin-right: 15px;
+    margin-bottom: 40px;
+    @media only screen and (min-width: $max-mobile-size) {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+  }
+
+  &__titleText {
+    text-align: center;
   }
 
   &__item {
@@ -89,7 +103,10 @@ export default {
   &__link {
     display: flex;
     justify-content: center;
-    margin: 64px 0 64px 0;
+    margin: 32px 0 32px 0;
+    @media only screen and (min-width: $max-mobile-size) {
+      margin: 64px 0 64px 0;
+    }
   }
 
   .section__title {

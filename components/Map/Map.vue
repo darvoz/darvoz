@@ -1,7 +1,12 @@
 <template>
   <client-only>
-    <l-map :zoom="zoom" :center="location">
+    <l-map
+      :zoom="zoom"
+      :center="location"
+      :options="{ scrollWheelZoom: false, zoomControl: false }"
+    >
       <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+      <l-control-zoom position="bottomright" />
       <l-control position="topleft">
         <slot name="controller-top-left" />
       </l-control>

@@ -118,13 +118,15 @@ export default {
 .navigation-bar {
   $nav-element: &;
 
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: $white;
   height: 80px;
   font-family: Muli, sans-serif;
+  z-index: 3;
+  box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
 
   &__content {
     display: flex;

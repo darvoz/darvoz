@@ -1,10 +1,16 @@
 <template>
-  <section class="container intro-section" tabindex="0">
-    <img
-      class="intro-section__backgroundMobile"
-      src="../assets/introSectionBG__mobile.png"
-      alt="section_background"
-    />
+  <section class="container intro-section" :style="'margin-top:' + margin">
+    <picture class="intro-section__background">
+      <source
+        srcset="../assets/introSectionBG__mobile.png"
+        :media="`(max-width: ${850}px)`"
+      />
+      <img
+        src="../assets/introSectionBG.png"
+        alt="section_background"
+        class="intro-section__backgroundImg"
+      />
+    </picture>
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
         Atende à chamada,
@@ -25,11 +31,6 @@
         </Button>
       </div>
     </div>
-    <img
-      class="intro-section__background"
-      src="../assets/introSectionBG.png"
-      alt="section_background"
-    />
   </section>
 </template>
 
@@ -40,6 +41,12 @@ export default {
   name: 'IntroSection',
   components: {
     Button
+  },
+  props: {
+    margin: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>
@@ -50,7 +57,7 @@ export default {
 .intro-section {
   @include container-column;
 
-  height: 100vh;
+  min-height: 100vh;
 
   &__info {
     grid-column: 1 / 6;
@@ -81,33 +88,40 @@ export default {
 
   &__background {
     position: absolute;
-    right: -7%;
+    grid-column: 5 / 13;
+    width: 100%;
   }
 
-  &__backgroundMobile {
-    display: none;
+  &__backgroundImg {
+    width: 100%;
   }
 
   @media only screen and (max-width: $max-mobile-size) {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     &__info {
       grid-column: 1 / 5;
+      text-align: center;
     }
 
     &__background {
-      display: none;
-    }
-
-    &__backgroundMobile {
-      display: block;
+      position: relative;
+      min-height: 20vh;
       grid-column: 1 / 5;
       width: 100%;
       max-height: 500px;
       max-width: 500px;
       object-fit: contain;
       justify-self: center;
+    }
+
+    &__infoTitle {
+      &:after {
+        content: '';
+        margin: -20px auto 5px auto;
+        width: 218px; //Arrow size
+      }
     }
   }
 }

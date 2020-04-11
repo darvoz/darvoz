@@ -61,27 +61,51 @@ export default {
   font-size: 16px;
   background-color: transparent;
 
-  @media only screen and (max-width: $small-screen-min) {
-    display: none;
-  }
-
   &__primary {
+    border: 2px solid transparent;
     box-shadow: 0 8px 16px rgba(81, 97, 210, 0.16);
     background-color: $primary-color;
     color: white;
     font-weight: 900;
     text-align: center;
+
+    &:focus,
+    &:active {
+      border: 2px solid $black;
+      background-color: darken($primary-color, 20%);
+      outline: 0;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 
   &__secondary {
     border: 2px solid $primary-color;
     color: $primary-color;
     font-weight: 900;
+
+    &:focus,
+    &:active {
+      background-color: $light-purple;
+      color: $white;
+      outline: 0;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 
   &__tertiary {
     color: $primary-color;
     padding: 0;
+
+    &:focus,
+    &:active {
+      color: darken($primary-color, 10%);
+    }
   }
 
   &__icon {
@@ -89,5 +113,4 @@ export default {
     margin-left: 8px;
   }
 }
-
 </style>

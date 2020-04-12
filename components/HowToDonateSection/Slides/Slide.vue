@@ -1,5 +1,5 @@
 <template>
-  <section class="container slide" tabindex="0">
+  <section class="slide" tabindex="0">
     <div class="slide__background">
       <slot name="background" />
     </div>
@@ -46,7 +46,10 @@ export default {
 @import '../../../styles/_global.scss';
 
 .slide {
+  @include container-gap();
+  display: grid;
   height: 80vh;
+  text-align: left;
 
   &__background {
     max-width: 100%;

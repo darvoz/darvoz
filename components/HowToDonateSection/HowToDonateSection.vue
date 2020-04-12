@@ -46,15 +46,21 @@
             </p>
           </Slide>
         </swiper-slide>
-        <div slot="pagination" class="swiper__pagination"></div>
-        <div slot="button-prev" class="swiper__buttonPrev"></div>
-        <div slot="button-next" class="swiper__buttonNext"></div>
+        <div slot="pagination" class="swiper-pagination"></div>
+        <div slot="button-prev" class="swiper-button-prev">
+          <ChevronLeftCircleOutline :size="iconSize" />
+        </div>
+        <div slot="button-next" class="swiper-button-next">
+          <ChevronRightCircleOutline :size="iconSize" />
+        </div>
       </swiper>
     </div>
   </section>
 </template>
 
 <script>
+import ChevronLeftCircleOutline from 'vue-material-design-icons/ChevronLeftCircleOutline.vue'
+import ChevronRightCircleOutline from 'vue-material-design-icons/ChevronRightCircleOutline.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import Slide from './Slides/Slide'
 import 'swiper/css/swiper.css'
@@ -64,21 +70,24 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    Slide
+    Slide,
+    ChevronLeftCircleOutline,
+    ChevronRightCircleOutline
   },
   data() {
     return {
+      iconSize: 55,
       swiperOption: {
         keyboard: {
           enabled: true
         },
         pagination: {
-          el: '.swiper__pagination',
+          el: '.swiper-pagination',
           clickable: true
         },
         navigation: {
-          nextEl: '.swiper__buttonNext',
-          prevEl: '.swiper__buttonPrev'
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         }
       }
     }
@@ -102,12 +111,28 @@ export default {
 }
 
 .swiper {
-  position: relative;
   width: 100%;
 
-  &__pagination {
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 10px;
+    font-weight: bold;
+    font-size: 34px;
+  }
+
+  &-button-prev,
+  &-button-next {
+    border-radius: 50%;
+    --swiper-theme-color: #5161d2;
+    text-align: center;
+    &::after {
+      content: '';
+    }
+    @media screen and (max-width: $max-mobile-size) {
+      top: 15%;
+    }
   }
 }
 </style>

@@ -92,8 +92,6 @@ export default {
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
     margin: 32px 0 32px 0;
   }
 

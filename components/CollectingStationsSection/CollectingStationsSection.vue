@@ -5,7 +5,6 @@
         {{ localI18n['collecting-stations.headline'] }}
       </h1>
       <p class="section__description collecting-stations__infoDescription">
-        <!-- eslint-disable vue/no-v-html -->
         <span class="collecting-stations__infoDescription--bold">{{
           localI18n['collecting-stations.description.bold1']
         }}</span
@@ -35,7 +34,7 @@
 </template>
 
 <script>
-import * as localI18n from '../../i18n.json'
+import * as localI18n from '../../data/resources/i18n.json'
 import ChooseLocation from './ChooseLocation/ChooseLocation'
 import Map from '~/components/Map/Map'
 export default {

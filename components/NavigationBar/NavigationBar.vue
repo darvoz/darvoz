@@ -23,11 +23,24 @@
           Quero doar
         </Button>
         <button class="navigation-bar__mobileMenuIcon">
-          <img
-            src="../../assets/svg/HamburgerIcon.svg"
-            alt="Menu icon"
-            @click="toggleMobileMenu"
-          />
+          <transition name="flip">
+            <img
+              v-if="!openMobileMenu"
+              :key="'menu'"
+              src="../../assets/svg/HamburgerIcon.svg"
+              alt="Menu"
+              class="navigation-bar__mobileMenuIconImg"
+              @click="toggleMobileMenu"
+            />
+            <img
+              v-else
+              :key="'close'"
+              src="../../assets/svg/cross-icon.svg"
+              alt="Fechar"
+              class="navigation-bar__mobileMenuIconImg"
+              @click="toggleMobileMenu"
+            />
+          </transition>
         </button>
       </div>
     </div>
@@ -50,6 +63,7 @@
 </template>
 
 <script>
+// TODO add alt from images to i18n
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'
 
@@ -128,13 +142,15 @@ export default {
 
 .navigation-bar {
   $nav-element: &;
+  $nav-height: 80px;
+  $nav-max-width: 1124px;
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: $white;
-  height: 80px;
+  height: $nav-height;
   font-family: Muli, sans-serif;
   z-index: $nav-bar-index;
   box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
@@ -147,20 +163,7 @@ export default {
     margin: 0 auto;
     height: 100%;
 
-    @media only screen and (max-width: 1124px) {
-      width: 100%;
-    }
-  }
-
-  &__content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: $container-gap;
-    margin: 0 auto;
-    height: 100%;
-
-    @media only screen and (max-width: 1124px) {
+    @media only screen and (max-width: $nav-max-width) {
       width: 100%;
     }
   }
@@ -219,11 +222,11 @@ export default {
     &__mobileMenu {
       display: block;
       position: absolute;
-      top: 80px;
+      top: $nav-height;
       right: 0;
       width: 80vw;
       max-width: 300px;
-      height: 100vh;
+      height: 120vh;
       z-index: $nav-bar-index;
       background-color: $white;
       box-shadow: -8px 4px 9px -4px rgba($black, 0.4);
@@ -261,8 +264,24 @@ export default {
     }
 
     &__mobileMenuIcon {
+      position: relative;
       display: block;
       margin-left: 24px;
+      height: 54px;
+      width: 28px;
+
+      // It's only disabled on mobile
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &__mobileMenuIconImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     &__cta {
@@ -310,5 +329,30 @@ export default {
 
 .slide-in-enter-to {
   transform: translate3d(0, 0, 0);
+}
+
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.flip-enter {
+  perspective: 100px;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.flip-enter-to {
+  transform: rotateY(0);
+  opacity: 1;
+}
+
+.flip-leave {
+  transform: rotateY(0);
+  opacity: 1;
+}
+
+.flip-leave-to {
+  transform: rotateY(-180deg);
+  opacity: 0;
 }
 </style>

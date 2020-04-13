@@ -40,3 +40,7 @@ $nav-bar-index: 500; //Needs to be higher than 400 because of the MAP component
     grid-column: 1 / 13;
   }
 }
+
+@mixin main-font() {
+  font-family: Muli, sans-serif;
+}

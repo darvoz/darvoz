@@ -105,6 +105,8 @@ export default {
   &__tertiary {
     color: $primary-color;
     padding: 0;
+    display: flex;
+    justify-content: center;
 
     &:focus,
     &:active {

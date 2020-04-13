@@ -1,7 +1,11 @@
 <template>
   <section class="container brands" tabindex="0">
     <div class="brands">
-      <h1 class="section__title brands__title">Empresas<br />participantes</h1>
+      <h1 class="section__title brands__title">
+        {{ localI18n['brands.headline.top'] }}<br />{{
+          localI18n['brands.headline.bottom']
+        }}
+      </h1>
       <div class="brands__logos">
         <img
           class="brands__logo"
@@ -12,18 +16,19 @@
         <img class="brands__logo" src="../assets/NOS_logo.png" alt="NOS" />
       </div>
       <p class="section__description brands__description">
-        Duis nibh aliquet ullamcorper consequat nec risus pretium. Ut parturient
-        faucibus nibh non libero arcu ac hac vel. Aliquet pretium ut ullamcorper
-        sed feugiat dignissim nulla urna. Mauris pellentesque mauris rhoncus
-        egestas felis. Ut parturient faucibus nibh non libero arcu ac hac vel
+        {{ localI18n['brands.description'] }}
       </p>
     </div>
   </section>
 </template>
 
 <script>
+import * as localI18n from '../i18n.json'
 export default {
-  name: 'BrandsSection'
+  name: 'BrandsSection',
+  data() {
+    return { localI18n: localI18n.default }
+  }
 }
 </script>
 

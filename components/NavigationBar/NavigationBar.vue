@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import * as localI18n from '../../i18n.json'
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'
 
@@ -64,23 +65,23 @@ export default {
       openMobileMenu: false,
       linkList: [
         {
-          name: 'Quero doar',
+          name: localI18n['nav.donate'],
           link: 'pontos-recolha'
         },
         {
-          name: 'O que é',
+          name: localI18n['nav.about'],
           link: 'o-que-e'
         },
         {
-          name: 'Como doar',
+          name: localI18n['nav.how-to-donate'],
           link: 'como-doar'
         },
         {
-          name: 'Pontos de recolha',
+          name: localI18n['nav.collecting-stations'],
           link: 'pontos-recolha'
         },
         {
-          name: 'Perguntas Frequentes',
+          name: localI18n['nav.faq'],
           link: 'perguntas-frequentes'
         }
       ]

@@ -1,10 +1,10 @@
 <template>
   <div class="choose-location">
     <h1 class="choose-location__title">
-      Encontra o ponto de recolha mais próximo de ti
+      {{ localI18n['collecting-stations.map.menu.headline'] }}
     </h1>
     <label class="choose-location__label" for="zip-code">
-      Digite o seu código postal
+      {{ localI18n['collecting-stations.map.menu.input.label'] }}
     </label>
     <div class="choose-location__form">
       <div class="choose-location__form__input__container">
@@ -13,18 +13,23 @@
           class="choose-location__form__input"
           type="text"
           size="8"
-          placeholder="1900-078"
+          :placeholder="
+            localI18n['collecting-stations.map.menu.input.placeholder']
+          "
         />
         <button @click="getLocation">
           <img src="../../../assets/svg/location.svg" />
         </button>
       </div>
-      <Button kind="primary">Pesquisar</Button>
+      <Button kind="primary">{{
+        localI18n['collecting-stations.map.menu.button']
+      }}</Button>
     </div>
   </div>
 </template>
 
 <script>
+import * as localI18n from '../../../i18n.json'
 import Button from '~/components/Button/Button'
 export default {
   name: 'ChooseLocation',
@@ -36,6 +41,9 @@ export default {
       type: Function,
       required: true
     }
+  },
+  data() {
+    return { localI18n: localI18n.default }
   }
 }
 </script>

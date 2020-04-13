@@ -4,16 +4,18 @@
       <p class="stats-section__contentNumber">
         {{ currentStatValue }}
       </p>
-      <p>Equipamentos Doados</p>
+      <p>{{ localI18n['stats.headline'] }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import * as localI18n from '../i18n.json'
 export default {
   name: 'StatsSection',
   data() {
     return {
+      localI18n: localI18n.default,
       finalStatValue: 4500,
       currentStatValue: 0,
       animationDuration: 2500,

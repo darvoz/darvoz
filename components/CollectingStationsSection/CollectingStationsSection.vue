@@ -2,14 +2,20 @@
   <section class="container collecting-stations" tabindex="0">
     <div class="collecting-stations__info">
       <h1 class="section__title collecting-stations__infoTitle">
-        Pontos de recolha
+        {{ localI18n['collecting-stations.headline'] }}
       </h1>
       <p class="section__description collecting-stations__infoDescription">
-        <span class="collecting-stations__infoDescription--bold">#fique</span
-        ><span class="collecting-stations__infoDescription--bold">em</span
-        ><span class="collecting-stations__infoDescription--bold">casa</span
-        ><span>,</span> mas se precisar ir as compras ou ao correio, leva
-        contigo o teu telemóvel ou tablet antigo ao ponto de coleta.
+        <!-- eslint-disable vue/no-v-html -->
+        <span class="collecting-stations__infoDescription--bold">{{
+          localI18n['collecting-stations.description.bold1']
+        }}</span
+        ><span class="collecting-stations__infoDescription--bold">{{
+          localI18n['collecting-stations.description.normal1']
+        }}</span
+        ><span class="collecting-stations__infoDescription--bold">{{
+          localI18n['collecting-stations.description.bold2']
+        }}</span
+        ><span></span>{{ localI18n['collecting-stations.description.normal2'] }}
       </p>
     </div>
     <div class="collecting-stations__map">
@@ -29,6 +35,7 @@
 </template>
 
 <script>
+import * as localI18n from '../../i18n.json'
 import ChooseLocation from './ChooseLocation/ChooseLocation'
 import Map from '~/components/Map/Map'
 export default {
@@ -39,6 +46,7 @@ export default {
   },
   data() {
     return {
+      localI18n: localI18n.default,
       stations: [],
       location: null,
       gettingLocation: false,

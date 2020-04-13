@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import * as localI18n from '../../../i18n.json'
+import * as localI18n from '../../../data/resources/i18n.json'
 import Button from '~/components/Button/Button'
 export default {
   name: 'ChooseLocation',

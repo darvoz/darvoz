@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import * as localI18n from '../i18n.json'
+import * as localI18n from '../data/resources/i18n.json'
 import Accordion from '~/components/Accordion/Accordion.vue'
 import Button from '~/components/Button/Button.vue'
 

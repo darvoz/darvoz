@@ -1,5 +1,5 @@
 <template>
-  <section class="container intro-section" :style="'margin-top:' + margin">
+  <section class="container intro-section">
     <picture class="intro-section__background">
       <source
         srcset="../assets/introSectionBG__mobile.png"
@@ -43,8 +43,8 @@ export default {
     Button
   },
   props: {
-    margin: {
-      type: String,
+    isFirstSection: {
+      type: Boolean,
       required: true
     }
   }
@@ -97,9 +97,6 @@ export default {
   }
 
   @media only screen and (max-width: $max-mobile-size) {
-    display: flex;
-    flex-direction: column;
-
     &__info {
       grid-column: 1 / 5;
       text-align: center;

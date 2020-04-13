@@ -27,6 +27,13 @@
         <swiper-slide>
           <Slide link="#" link-text="Encontre os pontos de recolha">
             <h1 slot="title">Entregue num ponto recolha à sua escolha</h1>
+            <img
+              slot="background"
+              class="slide__background"
+              src="../../assets/slide-2-BG.png"
+              alt="section_background"
+              role="presentation"
+            />
             <p slot="description">
               Existem mais de 17 pontos de recolha, de norte a sul.
             </p>
@@ -35,6 +42,13 @@
         <swiper-slide>
           <Slide>
             <h1 slot="title">Ajude quem mais precisa neste momento.</h1>
+            <img
+              slot="background"
+              class="slide__background"
+              src="../../assets/slide-3-BG.png"
+              alt="section_background"
+              role="presentation"
+            />
             <p slot="description">
               As instituições vão certificar-se que a sua doação irá chegar a
               quem mais precisa.
@@ -99,11 +113,13 @@ export default {
 @import '../../styles/_global.scss';
 
 .how-to-donate {
-  height: 100vh;
+  min-height: 100vh;
+
   &__title {
     text-align: center;
     margin-bottom: 47px;
   }
+
   &__content {
     grid-column: 1 / 13;
     width: 100%;

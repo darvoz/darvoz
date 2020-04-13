@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <navigation-bar></navigation-bar>
-    <intro-section :margin="'80px'" />
+    <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" />
     <how-to-donate-section />

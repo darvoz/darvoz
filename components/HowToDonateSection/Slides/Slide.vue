@@ -47,21 +47,31 @@ export default {
 
 .slide {
   @include container-gap();
+
   display: grid;
-  height: 80vh;
   text-align: left;
+  padding-bottom: 20px;
 
   &__background {
     max-width: 100%;
     grid-column: 1 / 13;
+    height: 30vh;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+
+
     @media screen and (min-width: $max-mobile-size) {
       grid-column: 1 / 7;
+      height: auto;
     }
   }
 
   &__info {
     font-family: Roboto, sans-serif;
     grid-column: 1 / 13;
+    margin-top: 10px;
+
     @media screen and (min-width: $max-mobile-size) {
       grid-column: 8 / 13;
     }

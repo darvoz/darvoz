@@ -10,8 +10,8 @@
         />
         <div class="faq-section__titleText">
           <h1 class="section__title">
-            Perguntas <br />
-            frequentes
+            {{ localI18n['faq.headline.top'] }} <br />
+            {{ localI18n['faq.headline.bottom'] }}
           </h1>
         </div>
       </div>
@@ -25,7 +25,7 @@
       </accordion>
       <div class="faq-section__link">
         <Button class="faq-section__linkBtn" kind="tertiary">
-          Ler mais perguntas
+          {{ localI18n['faq.link'] }}
         </Button>
       </div>
     </div>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import * as localI18n from '../i18n.json'
 import Accordion from '~/components/Accordion/Accordion.vue'
 import Button from '~/components/Button/Button.vue'
 
@@ -44,6 +45,7 @@ export default {
   },
   data() {
     return {
+      localI18n: localI18n.default,
       faqList: null
     }
   },

@@ -1,7 +1,9 @@
 <template>
   <section class="container how-to-donate" tabindex="0">
     <div class="how-to-donate__content">
-      <h1 class="section__title how-to-donate__title">Como doar</h1>
+      <h1 class="section__title how-to-donate__title">
+        {{ localI18n['how-to-donate.headline'] }}
+      </h1>
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide>
           <Slide>
@@ -62,6 +64,7 @@
 import ChevronLeftCircleOutline from 'vue-material-design-icons/ChevronLeftCircleOutline.vue'
 import ChevronRightCircleOutline from 'vue-material-design-icons/ChevronRightCircleOutline.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import * as localI18n from '../../i18n.json'
 import Slide from './Slides/Slide'
 import 'swiper/css/swiper.css'
 
@@ -77,6 +80,7 @@ export default {
   data() {
     return {
       iconSize: 55,
+      localI18n: localI18n.default,
       swiperOption: {
         keyboard: {
           enabled: true

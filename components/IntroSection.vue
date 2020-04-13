@@ -13,21 +13,20 @@
     </picture>
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
-        Atende à chamada,
+        {{ localI18n['intro.headline.normal'] }}
         <span class="intro-section__infoTitle--strong">
-          doa e liga famílias
+          {{ localI18n['intro.headline.bold'] }}
         </span>
       </h1>
       <p class="section__description">
-        Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que
-        neste momento de isolamento, mais precisam de estar ligados.
+        {{ localI18n['intro.description'] }}
       </p>
       <div class="intro-section__infoBts">
         <Button class="intro-section__primaryBtn" kind="primary">
-          Como funciona
+          {{ localI18n['intro.cta.primary'] }}
         </Button>
         <Button class="intro-section__secondaryBtn" kind="secondary">
-          Pontos de recolha
+          {{ localI18n['intro.cta.secondary'] }}
         </Button>
       </div>
     </div>
@@ -35,6 +34,7 @@
 </template>
 
 <script>
+import * as localI18n from '../i18n.json'
 import Button from '~/components/Button/Button.vue'
 
 export default {
@@ -47,6 +47,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return { localI18n: localI18n.default }
   }
 }
 </script>

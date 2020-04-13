@@ -18,7 +18,7 @@
           class="navigation-bar__button"
           kind="primary"
           link="#pontos-recolha"
-          tabindex="0"
+          @click.native="animateScroll"
         >
           Quero doar
         </Button>
@@ -91,7 +91,10 @@ export default {
       this.closeMobileMenu()
 
       const clickedElement = event.target
-      const navElement = clickedElement.closest('.navigation-bar__link')
+      const navElement =
+        event.target.tagName === 'A'
+          ? event.target
+          : clickedElement.closest('.navigation-bar__link')
 
       if (!navElement) {
         return

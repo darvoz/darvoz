@@ -14,9 +14,9 @@
       <Button
         v-if="link"
         class="slide__infoLink"
-        :link="link"
+        :link="link.href"
         kind="tertiary"
-        >{{ linkText }}</Button
+        >{{ link.text }}</Button
       >
     </div>
   </section>
@@ -31,12 +31,8 @@ export default {
   },
   props: {
     link: {
-      type: String,
+      type: Object,
       default: undefined
-    },
-    linkText: {
-      type: String,
-      default: ''
     }
   }
 }
@@ -50,7 +46,7 @@ export default {
 
   display: grid;
   text-align: left;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 
   &__background {
     max-width: 100%;

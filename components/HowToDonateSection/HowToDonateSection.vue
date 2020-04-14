@@ -1,62 +1,26 @@
 <template>
   <section class="container how-to-donate" tabindex="0">
     <div class="how-to-donate__content">
-      <h1 class="section__title how-to-donate__title">Como doar</h1>
+      <h1 class="section__title how-to-donate__title">
+        {{ localI18n['how-to-donate.headline'] }}
+      </h1>
       <swiper class="swiper" :options="swiperOption">
-        <swiper-slide>
-          <Slide>
-            <h1 slot="title">Verifique</h1>
+        <swiper-slide v-for="slide in slides" :key="slide.id">
+          <Slide :link="slide.link">
+            <h1 slot="title">{{ slide.headline }}</h1>
             <img
+              v-if="slide.img"
               slot="background"
               class="slide__background"
-              src="../../assets/slide-1-background.png"
+              :src="slide.img"
               alt="section_background"
               role="presentation"
             />
-            <p slot="description">
-              Tem um telemóvel ou tablet com câmara, carregador e em boas
-              condições ?
+            <p v-if="slide.description" slot="description">
+              {{ slide.description }}
             </p>
-            <p slot="notes">
-              Independentemente da marca, o telemóvel terá que estar funcional,
-              ter câmaras para video conferência e ter um carregador funcional.
-              Certifique-se que limpa todos os dados pessoais do mesmo.
-            </p>
-          </Slide>
-        </swiper-slide>
-        <swiper-slide>
-          <Slide link="#" link-text="Encontre os pontos de recolha">
-            <h1 slot="title">Entregue num ponto recolha à sua escolha</h1>
-            <img
-              slot="background"
-              class="slide__background"
-              src="../../assets/slide-2-BG.png"
-              alt="section_background"
-              role="presentation"
-            />
-            <p slot="description">
-              Existem mais de 17 pontos de recolha, de norte a sul.
-            </p>
-          </Slide>
-        </swiper-slide>
-        <swiper-slide>
-          <Slide>
-            <h1 slot="title">Ajude quem mais precisa neste momento.</h1>
-            <img
-              slot="background"
-              class="slide__background"
-              src="../../assets/slide-3-BG.png"
-              alt="section_background"
-              role="presentation"
-            />
-            <p slot="description">
-              As instituições vão certificar-se que a sua doação irá chegar a
-              quem mais precisa.
-            </p>
-            <p slot="notes">
-              Existem inúmeras pessoas isoladas neste momento, em lares,
-              hospitais e outras instituições, sem meios de comunicarem com as
-              famílias.
+            <p v-if="slide.notes" slot="notes">
+              {{ slide.notes }}
             </p>
           </Slide>
         </swiper-slide>
@@ -76,6 +40,8 @@
 import ChevronLeftCircleOutline from 'vue-material-design-icons/ChevronLeftCircleOutline.vue'
 import ChevronRightCircleOutline from 'vue-material-design-icons/ChevronRightCircleOutline.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import * as localI18n from '../../data/resources/i18n.json'
+import * as slides from '../../data/resources/howToDonate.json'
 import Slide from './Slides/Slide'
 import 'swiper/css/swiper.css'
 
@@ -91,6 +57,8 @@ export default {
   data() {
     return {
       iconSize: 55,
+      slides: slides.default,
+      localI18n: localI18n.default,
       swiperOption: {
         keyboard: {
           enabled: true

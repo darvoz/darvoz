@@ -138,7 +138,7 @@ export default {
       color: $primary-color;
 
       &:nth-of-type(2) {
-        color: $black;
+        color: $light-blue;
       }
     }
   }

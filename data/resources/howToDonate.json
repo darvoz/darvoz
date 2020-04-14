@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "img": "/slide-1-BG.png",
+    "headline": "Verifique",
+    "description": "Tem um telemóvel ou tablet com câmara, carregador e em boas condições?",
+    "notes": "Independentemente da marca, o telemóvel terá que estar funcional, ter câmaras para video conferência e ter um carregador funcional. Certifique-se que limpa todos os dados pessoais do mesmo."
+  },
+  {
+    "id": 2,
+    "img": "/slide-2-BG.png",
+    "headline": "Entregue num ponto recolha à sua escolha",
+    "description": "Existem mais de 17 pontos de recolha, de norte a sul.",
+    "link": {
+      "href": "#",
+      "text": "Encontre os pontos de recolha"
+    }
+  },
+  {
+    "id": 3,
+    "img": "/slide-3-BG.png",
+    "headline": "Ajude quem mais precisa neste momento.",
+    "description": "As instituições vão certificar-se que a sua doação irá chegar a quem mais precisa.",
+    "notes": "Existem inúmeras pessoas isoladas neste momento, em lares, hospitais e outras instituições, sem meios de comunicarem com as famílias."
+  }
+]

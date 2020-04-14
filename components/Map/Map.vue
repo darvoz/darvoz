@@ -1,10 +1,10 @@
 <template>
   <client-only>
     <l-map
+      ref="map"
       :zoom="zoom"
       :center="location"
       :options="{ scrollWheelZoom: false }"
-      ref="map"
       @focus="enableZoomScroll"
       @click="enableZoomScroll"
       @mouseout="disableZoomScroll"

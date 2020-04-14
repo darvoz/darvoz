@@ -1,25 +1,10 @@
 <template>
-  <span
-    >{{ localI18n['logo.black']
-    }}<span class="logo--strong">{{ localI18n['logo.color'] }}</span></span
-  >
+  <img src="../../assets/svg/Logo.svg" alt="#darvoz logo" class="logo" />
 </template>
 
-<script>
-import * as localI18n from '../../data/resources/i18n.json'
-export default {
-  name: 'Logo',
-  data() {
-    return { localI18n: localI18n.default }
-  }
-}
-</script>
-
 <style lang="scss" scoped>
-@import '../../styles/_global';
 
-.logo--strong {
-  font-family: 'Muli', sans-serif;
-  color: $primary-color;
+.logo {
+  margin-top: -10px; //Offset to center svg text with button
 }
 </style>

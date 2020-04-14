@@ -1,7 +1,7 @@
 <template>
   <nav class="navigation-bar">
     <div class="navigation-bar__content">
-      <a class="navigation-bar__logo navigation-bar__link" href="#"><Logo /></a>
+      <a class="navigation-bar__logo" href="#"><Logo /></a>
       <ul class="navigation-bar__items" @click="animateScroll">
         <li
           v-for="item in linkList"
@@ -128,19 +128,12 @@ export default {
     }
   }
 
-  &__logo {
-    font-weight: 900;
-    font-size: 32px;
-    line-height: 84.4%;
-  }
-
   &__items {
     display: flex;
     align-content: center;
     font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 16px;
-    line-height: 168%;
     list-style: none;
     padding-left: 0;
   }
@@ -160,6 +153,13 @@ export default {
     padding: 16px 0;
     color: $black;
 
+    &:focus {
+      outline-color: $primary-color;
+      outline-width: 2px;
+    }
+  }
+
+  &__logo {
     &:focus {
       outline-color: $primary-color;
       outline-width: 2px;

@@ -61,10 +61,6 @@ export default {
   font-size: 16px;
   background-color: transparent;
 
-  @media only screen and (max-width: $small-screen-min) {
-    display: none;
-  }
-
   &__primary {
     border: 2px solid transparent;
     box-shadow: 0 8px 16px rgba(81, 97, 210, 0.16);
@@ -73,15 +69,14 @@ export default {
     font-weight: 900;
     text-align: center;
 
-    &:focus,
-    &:active {
+    &:focus {
       border: 2px solid $black;
       background-color: darken($primary-color, 20%);
       outline: 0;
     }
 
-    &:active {
-      transform: translateY(2px);
+    &:hover {
+      background-color: $button-focus;
     }
   }
 
@@ -90,15 +85,15 @@ export default {
     color: $primary-color;
     font-weight: 900;
 
-    &:focus,
-    &:active {
+    &:focus {
       background-color: $light-purple;
       color: $white;
       outline: 0;
     }
 
-    &:active {
-      transform: translateY(2px);
+    &:hover {
+      border: 2px solid $button-focus;
+      color: $button-focus;
     }
   }
 
@@ -109,8 +104,8 @@ export default {
     justify-content: center;
 
     &:focus,
-    &:active {
-      color: darken($primary-color, 10%);
+    &:hover {
+      color: $button-focus;
     }
   }
 
@@ -121,6 +116,10 @@ export default {
 
   @media only screen and (max-width: $max-mobile-size) {
     width: 100%;
+  }
+
+  @media only screen and (max-width: $small-screen-min) {
+    display: none;
   }
 }
 </style>

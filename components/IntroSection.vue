@@ -67,16 +67,10 @@ export default {
   }
 
   &__infoTitle {
+    margin-bottom: 20px;
+
     &--strong {
       color: $primary-color;
-    }
-
-    &:after {
-      content: '';
-      background: url('../assets/svg/introSectionArrow.svg') no-repeat;
-      margin: -26px 0 0 13%;
-      display: block;
-      height: 68px;
     }
   }
 
@@ -114,14 +108,6 @@ export default {
       max-width: 500px;
       object-fit: contain;
       justify-self: center;
-    }
-
-    &__infoTitle {
-      &:after {
-        content: '';
-        margin: -20px auto 5px auto;
-        width: 218px; //Arrow size
-      }
     }
   }
 

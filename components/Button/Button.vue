@@ -63,7 +63,7 @@ export default {
 
   &__primary {
     border: 2px solid transparent;
-    box-shadow: 0 8px 16px rgba(81, 97, 210, 0.16);
+    box-shadow: 0 8px 16px rgba(81, 97, 210, 0.24);
     background-color: $primary-color;
     color: white;
     font-weight: 900;

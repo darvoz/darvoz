@@ -1,5 +1,5 @@
 <template>
-  <section class="container intro-section">
+  <section class="container intro-section" tabindex="0">
     <picture class="intro-section__background">
       <source
         srcset="../assets/introSectionBG__mobile.png"
@@ -13,9 +13,13 @@
     </picture>
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
-        {{ localI18n['intro.headline.normal'] }}
+        {{ localI18n['intro.headline.normal1'] }}
         <span class="intro-section__infoTitle--strong">
-          {{ localI18n['intro.headline.bold'] }}
+          {{ localI18n['intro.headline.bold1'] }}
+        </span>
+        {{ localI18n['intro.headline.normal2'] }}
+        <span class="intro-section__infoTitle--strong">
+          {{ localI18n['intro.headline.bold2'] }}
         </span>
       </h1>
       <p class="section__description">
@@ -60,14 +64,19 @@ export default {
 .intro-section {
   @include container-column;
 
-  min-height: $section-min-height;
+  padding-bottom: 40px;
 
   &__info {
-    grid-column: 1 / 6;
+    grid-column: 1 / 5;
+    text-align: center;
   }
 
   &__infoTitle {
-    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 110%;
+    text-align: center;
+    margin-bottom: 32px;
 
     &--strong {
       color: $primary-color;
@@ -84,34 +93,43 @@ export default {
   }
 
   &__background {
-    position: absolute;
-    grid-column: 5 / 13;
+    position: relative;
+    grid-column: 1 / 5;
     width: 100%;
+    max-height: 500px;
+    max-width: 500px;
+    object-fit: contain;
+    justify-self: center;
   }
 
   &__backgroundImg {
     width: 100%;
   }
 
-  @media only screen and (max-width: $max-mobile-size) {
+  @media only screen and (min-width: $max-mobile-size) {
+    min-height: $section-min-height;
+
     &__info {
       grid-column: 1 / 5;
-      text-align: center;
+      width: calc(100% + 1rem);
+    }
+
+    &__infoTitle {
+      font-size: 58px;
+      text-align: left;
     }
 
     &__background {
-      position: relative;
-      min-height: 20vh;
-      grid-column: 1 / 5;
+      position: absolute;
+      grid-column: 5 / 13;
+      padding-left: $grid-gap;
       width: 100%;
-      max-height: 500px;
-      max-width: 500px;
-      object-fit: contain;
-      justify-self: center;
+      max-width: unset;
+      max-height: unset;
     }
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1420px) {
     &__infoBts {
       display: flex;
       flex-direction: column;

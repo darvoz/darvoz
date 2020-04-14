@@ -3,8 +3,10 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../../styles/_global';
 
 .logo {
   margin-top: -10px; //Offset to center svg text with button
+  width: 158px;
 }
 </style>

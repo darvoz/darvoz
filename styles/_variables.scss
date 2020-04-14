@@ -10,10 +10,12 @@ $stats-gradient: linear-gradient(to top, $primary-color 25.02%, $light-purple 82
 
 $container-gap: 80%;
 $small-screen-min: 280px;
-$max-mobile-size: 850px;
-$section-min-height: 80vh;
+$max-mobile-size: 870px;
+$section-min-height: 795px;
 
 $nav-height: 80px;
+$grid-gap: 1rem;
+$outline: $primary-color 2px solid;
 
 @font-face {
   font-family: 'Muli';

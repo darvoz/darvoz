@@ -11,7 +11,7 @@
     >
       <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
-      <l-control position="topleft">
+      <l-control v-if="!closedControl" position="topleft">
         <slot name="controller-top-left" />
       </l-control>
       <l-marker
@@ -37,6 +37,15 @@ export default {
     location: {
       type: Array,
       default: () => PORTUGAL_CENTER_COORDS
+    },
+    postalCode: {
+      type: String,
+      default: '',
+      required: false
+    },
+    closedControl: {
+      type: Boolean,
+      default: false
     },
     zoom: {
       type: Number,

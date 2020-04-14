@@ -3,6 +3,13 @@
     <h1 class="choose-location__title">
       Encontra o ponto de recolha mais próximo de ti
     </h1>
+    <img
+      :key="'close'"
+      src="../../../assets/svg/cross-icon.svg"
+      alt="Fechar"
+      class="choose-location__close"
+      @click="$emit('closedControl')"
+    />
     <label class="choose-location__label" for="zip-code">
       Digite o seu código postal
     </label>
@@ -10,16 +17,23 @@
       <div class="choose-location__form__input__container">
         <input
           id="zip-code"
+          v-model="postalCode"
           class="choose-location__form__input"
           type="text"
           size="8"
           placeholder="1900-078"
         />
         <button @click="getLocation">
-          <img src="../../../assets/svg/location.svg" />
+          <img
+            src="../../../assets/svg/location.svg"
+            role="presentation"
+            alt=""
+          />
         </button>
       </div>
-      <Button kind="primary">Pesquisar</Button>
+      <Button kind="primary" @click.native="$emit('setPostalCode', postalCode)">
+        Pesquisar
+      </Button>
     </div>
   </div>
 </template>
@@ -36,6 +50,11 @@ export default {
       type: Function,
       required: true
     }
+  },
+  data() {
+    return {
+      postalCode: ''
+    }
   }
 }
 </script>
@@ -43,6 +62,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../../styles/_global';
 .choose-location {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 32px 16px;
@@ -56,6 +76,12 @@ export default {
   &__title {
     font-size: 24px;
     line-height: 38px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 
   &__label {

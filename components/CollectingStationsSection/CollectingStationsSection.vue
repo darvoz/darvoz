@@ -21,8 +21,15 @@
         "
         :zoom="location ? 13 : undefined"
         :markers-location="stations.map((station) => station.coords)"
+        :closed-control="closedControl"
+        :postal-code="postalCode"
       >
-        <ChooseLocation slot="controller-top-left" :get-location="locateMe" />
+        <ChooseLocation
+          slot="controller-top-left"
+          :get-location="locateMe"
+          @setPostalCode="setPostalCode"
+          @closedControl="closedControl = true"
+        />
       </Map>
     </div>
   </section>
@@ -42,7 +49,9 @@ export default {
       stations: [],
       location: null,
       gettingLocation: false,
-      errorStr: null
+      errorStr: null,
+      postalCode: '',
+      closedControl: false
     }
   },
   async created() {
@@ -54,6 +63,13 @@ export default {
     this.stations = await collectingPointsJSON()
   },
   methods: {
+    setPostalCode(pc) {
+      const postalCodeReg = /^[0-9]{4}(?:-[0-9]{3})?$/
+
+      if (postalCodeReg.test(pc)) {
+        this.postalCode = pc
+      }
+    },
     getLocation() {
       return new Promise((resolve, reject) => {
         if (!('geolocation' in navigator)) {

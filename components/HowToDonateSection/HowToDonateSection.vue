@@ -1,5 +1,5 @@
 <template>
-  <section class="container how-to-donate" tabindex="0">
+  <section id="como-doar" class="container how-to-donate" tabindex="0">
     <div class="how-to-donate__content">
       <h1 class="section__title how-to-donate__title">
         {{ localI18n['how-to-donate.headline'] }}

@@ -17,7 +17,6 @@
         class="navigation-bar__button"
         kind="primary"
         link="#pontos-recolha"
-        @click.native="animateScroll"
       >
         Quero doar
       </Button>
@@ -28,6 +27,7 @@
 <script>
 // TODO add alt from images to i18n
 import * as localI18n from '../../data/resources/i18n.json'
+import animateScroll from '../../utils/utils'
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'
 
@@ -39,7 +39,6 @@ export default {
   },
   data() {
     return {
-      openMobileMenu: false,
       linkList: [
         {
           name: localI18n['nav.about'],
@@ -57,41 +56,8 @@ export default {
           name: localI18n['nav.faq'],
           link: 'perguntas-frequentes'
         }
-      ]
-    }
-  },
-  methods: {
-    animateScroll(event) {
-      this.closeMobileMenu()
-
-      const clickedElement = event.target
-      const navElement =
-        event.target.tagName === 'A'
-          ? event.target
-          : clickedElement.closest('.navigation-bar__link')
-
-      if (!navElement) {
-        return
-      }
-      const scrollTarget = document.querySelector(navElement.hash)
-
-      if (scrollTarget) {
-        event.preventDefault()
-
-        scrollTarget.scrollIntoView({
-          behavior: 'smooth'
-        })
-      }
-    },
-    toggleMobileMenu() {
-      this.openMobileMenu = !this.openMobileMenu
-
-      document.querySelector('.main').classList.toggle('mobile-menu-open')
-      document.addEventListener('scroll', this.closeMobileMenu)
-    },
-    closeMobileMenu() {
-      this.openMobileMenu = false
-      document.removeEventListener('scroll', this.closeMobileMenu)
+      ],
+      animateScroll
     }
   }
 }

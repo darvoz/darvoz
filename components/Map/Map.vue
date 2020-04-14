@@ -9,7 +9,7 @@
       @click="enableZoomScroll"
       @mouseout="disableZoomScroll"
     >
-      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+      <l-tile-layer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
       <l-control v-if="!closedControl" position="bottomleft">
         <slot name="controller-bottom-left" />

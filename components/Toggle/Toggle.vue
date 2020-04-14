@@ -47,7 +47,7 @@ export default {
     transition: 0.4s;
     width: 50%;
     height: 100%;
-    top: 50%;
+    top: 47%;
     transform: translateY(-50%);
   }
   &--left {

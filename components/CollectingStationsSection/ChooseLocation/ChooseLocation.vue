@@ -11,7 +11,11 @@
       />
     </button>
     <div class="choose-location__form">
-      <Button kind="primary" class="choose-location__form__button">
+      <Button
+        kind="primary"
+        class="choose-location__form__button"
+        @click="getLocation"
+      >
         {{ localI18n['collecting-stations.map.menu.button'] }}
       </Button>
       <p class="choose-location__form__footnotes">

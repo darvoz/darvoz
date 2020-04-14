@@ -3,39 +3,20 @@
     <h1 class="choose-location__title">
       {{ localI18n['collecting-stations.map.menu.headline'] }}
     </h1>
-    <img
-      :key="'close'"
-      src="../../../assets/svg/cross-icon.svg"
-      alt="Fechar"
-      class="choose-location__close"
-      @click="$emit('closedControl')"
-    />
-    <label class="choose-location__label" for="zip-code">
-      {{ localI18n['collecting-stations.map.menu.input.label'] }}
-    </label>
+    <button class="choose-location__close" @click="$emit('closedControl')">
+      <img
+        :key="'close'"
+        src="../../../assets/svg/cross-icon.svg"
+        alt="Fechar"
+      />
+    </button>
     <div class="choose-location__form">
-      <div class="choose-location__form__input__container">
-        <input
-          id="zip-code"
-          v-model="postalCode"
-          class="choose-location__form__input"
-          type="text"
-          size="8"
-          :placeholder="
-            localI18n['collecting-stations.map.menu.input.placeholder']
-          "
-        />
-        <button @click="getLocation">
-          <img
-            src="../../../assets/svg/location.svg"
-            role="presentation"
-            alt=""
-          />
-        </button>
-      </div>
-      <Button kind="primary" @click.native="$emit('setPostalCode', postalCode)">
-        {{localI18n['collecting-stations.map.menu.button']}}
+      <Button kind="primary" class="choose-location__form__button">
+        {{ localI18n['collecting-stations.map.menu.button'] }}
       </Button>
+      <p class="choose-location__form__footnotes">
+        {{ localI18n['collecting-stations.map.menu.footnote'] }}
+      </p>
     </div>
   </div>
 </template>
@@ -56,7 +37,6 @@ export default {
   },
   data() {
     return {
-      postalCode: '',
       localI18n: localI18n.default
     }
   }
@@ -96,31 +76,16 @@ export default {
   }
 
   &__form {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 16px;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
 
-    &__input__container {
-      display: flex;
-      padding: 16px 20px;
-      opacity: 0.8;
-      border: 1px solid $gray;
-      border-radius: 58px;
-      font-family: Muli, sans-serif;
-      font-weight: 900;
-      font-size: 16px;
-      line-height: 22px;
-      background-color: $smoke-white;
+    &__button {
+      width: 85%;
     }
 
-    &__input {
-      outline: none;
-      background-color: transparent;
-      border: none;
-      font: inherit;
-      margin-right: 22px;
+    &__footnotes {
+      margin-top: 16px;
     }
   }
 }

@@ -4,35 +4,48 @@
       ref="map"
       :zoom="zoom"
       :center="location"
-      :options="{ scrollWheelZoom: false }"
+      :options="{ scrollWheelZoom: false, zoomControl: false }"
       @focus="enableZoomScroll"
       @click="enableZoomScroll"
       @mouseout="disableZoomScroll"
     >
       <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
-      <l-control v-if="!closedControl" position="topleft">
-        <slot name="controller-top-left" />
+      <l-control v-if="!closedControl" position="bottomleft">
+        <slot name="controller-bottom-left" />
       </l-control>
       <l-marker
-        v-for="markerLocation in markersLocation"
-        :key="JSON.stringify(markerLocation)"
-        :lat-lng="markerLocation"
+        v-for="marker in markers"
+        :key="JSON.stringify(marker)"
+        :lat-lng="marker.coords"
       >
-        <l-icon :icon-url="iconUrl" :icon-size="[60, 60]" />
+        <l-popup :options="{ closeButton: false }">
+          <LocationCard
+            :close-button="true"
+            :name="marker.name"
+            :location="marker.location"
+            :working-hours="marker.workingHours"
+            :url="marker.url"
+            @close="closePopup"
+        /></l-popup>
+        <l-icon :icon-url="iconUrl" :icon-size="[44, 44]" />
       </l-marker>
     </l-map>
   </client-only>
 </template>
 
 <script>
+import LocationCard from '~/components/LocationCard/LocationCard'
 const PORTUGAL_CENTER_COORDS = [39.55791, -7.8536599]
 export default {
   name: 'Map',
+  components: {
+    LocationCard
+  },
   props: {
     iconUrl: {
       type: String,
-      default: '/location-marker.png'
+      default: '/location-marker.svg'
     },
     location: {
       type: Array,
@@ -51,11 +64,23 @@ export default {
       type: Number,
       default: 7
     },
-    markersLocation: {
+    markers: {
       type: Array,
       default: () => [
-        [PORTUGAL_CENTER_COORDS[0] - 0.1, PORTUGAL_CENTER_COORDS[1]],
-        [PORTUGAL_CENTER_COORDS[0] + 0.1, PORTUGAL_CENTER_COORDS[1]]
+        {
+          coords: [PORTUGAL_CENTER_COORDS[0] - 0.1, PORTUGAL_CENTER_COORDS[1]],
+          name: 'Loja NOS Areeiro',
+          location: 'Avenida de Roma 13 - Lisboa',
+          workingHours: 'Horário: Seg-Sab 08:30 - 21:00',
+          url: 'https://goo.gl/maps/y654AiDHVwUXSUHh6'
+        },
+        {
+          coords: [PORTUGAL_CENTER_COORDS[0] + 0.1, PORTUGAL_CENTER_COORDS[1]],
+          name: 'Loja NOS Areeiro',
+          location: 'Avenida de Roma 13 - Lisboa',
+          workingHours: 'Horário: Seg-Sab 08:30 - 21:00',
+          url: 'https://goo.gl/maps/y654AiDHVwUXSUHh6'
+        }
       ]
     }
   },
@@ -65,7 +90,14 @@ export default {
     },
     disableZoomScroll() {
       this.$refs.map.mapObject.scrollWheelZoom.disable()
+    },
+    closePopup() {
+      this.$refs.map.mapObject.closePopup()
     }
   }
 }
 </script>
+
+<style lang="scss">
+@import '../../styles/_global';
+</style>

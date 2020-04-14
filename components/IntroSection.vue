@@ -57,7 +57,7 @@ export default {
 .intro-section {
   @include container-column;
 
-  min-height: 100vh;
+  min-height: $section-min-height;
 
   &__info {
     grid-column: 1 / 6;

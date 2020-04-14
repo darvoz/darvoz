@@ -92,12 +92,9 @@ export default {
   }
 
   &__link {
-    margin: 32px 0 32px 0;
-  }
-
-  &__linkBtn {
     display: flex;
     justify-content: center;
+    margin: 32px 0 32px 0;
   }
 
   .section__title {

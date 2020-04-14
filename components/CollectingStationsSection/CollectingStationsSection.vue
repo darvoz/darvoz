@@ -104,7 +104,7 @@ export default {
 @import '../../styles/_global.scss';
 
 .collecting-stations {
-  height: 100vh;
+  min-height: $section-min-height;
 
   &__info {
     grid-column: 1 / 13;

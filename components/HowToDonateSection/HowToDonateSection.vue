@@ -113,7 +113,7 @@ export default {
 @import '../../styles/_global.scss';
 
 .how-to-donate {
-  min-height: 100vh;
+  min-height: $section-min-height;
 
   &__title {
     text-align: center;

@@ -56,7 +56,6 @@ export default {
     display: flex;
     justify-content: center;
 
-
     @media screen and (min-width: $max-mobile-size) {
       grid-column: 1 / 7;
       height: auto;
@@ -76,16 +75,18 @@ export default {
   &__infoTitle {
     font-family: Muli, sans-serif;
     font-weight: 900;
-    font-size: 32px;
-    line-height: 40px;
-    color: $primary-color;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: left;
   }
 
   &__infoDescription {
-    font-size: 24px;
-    line-height: 38px;
     color: $black;
     margin-top: 24px;
+    font-size: 20px;
+    line-height: 160%;
+    text-align: left;
+    font-weight: normal;
   }
 
   &__infoNotes {
@@ -93,10 +94,27 @@ export default {
     line-height: 30px;
     color: $gray;
     margin-top: 24px;
+    text-align: left;
+    font-weight: normal;
   }
 
   &__infoLink {
     width: max-content;
+    font-weight: normal;
+  }
+
+  @media screen and (min-width: $max-mobile-size) {
+    &__infoTitle {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &__infoDescription {
+      color: $primary-color;
+      font-size: 24px;
+      line-height: 160%;
+      text-align: left;
+    }
   }
 }
 </style>

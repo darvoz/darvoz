@@ -69,3 +69,9 @@ a { text-decoration: none;}
 .mobile-menu-open {
   touch-action: none;
 }
+
+.leaflet-popup-content {
+  margin: 0;
+  line-height: 0;
+  border-radius: 8px;
+}

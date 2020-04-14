@@ -1,7 +1,7 @@
 <template>
   <button
     v-if="!link"
-    :class="['button', `button__${kind.toString()}`]"
+    :class="['button', `button__${kind.toString()}`, `button--${align}`]"
     @click="animateScroll"
   >
     <slot />
@@ -12,7 +12,8 @@
   <a
     v-else
     :href="link"
-    :class="['button', `button__${kind.toString()}`]"
+    :target="target"
+    :class="['button', `button__${kind.toString()}`, `button--${align}`]"
     @click="animateScroll"
   >
     <slot />
@@ -32,7 +33,15 @@ export default {
     TrendingNeutral
   },
   props: {
+    align: {
+      type: String,
+      default: 'center'
+    },
     link: {
+      type: String,
+      default: null
+    },
+    target: {
       type: String,
       default: null
     },
@@ -59,7 +68,6 @@ export default {
 .button {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   padding: 14px 24px;
   border-radius: 32px;
@@ -105,9 +113,7 @@ export default {
 
   &__tertiary {
     color: $primary-color;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    padding: 0 0 0 8px;
 
     &:focus,
     &:hover {
@@ -120,6 +126,17 @@ export default {
     margin-left: 8px;
   }
 
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: space-evenly;
+  }
+
+  &--right {
+    justify-content: flex-right;
+  }
   @media only screen and (max-width: $max-mobile-size) {
     width: 100%;
   }

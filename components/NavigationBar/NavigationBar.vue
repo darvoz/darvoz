@@ -13,52 +13,15 @@
           }}</a>
         </li>
       </ul>
-      <div class="navigation-bar__cta">
-        <Button
-          class="navigation-bar__button"
-          kind="primary"
-          link="#pontos-recolha"
-          @click.native="animateScroll"
-        >
-          Quero doar
-        </Button>
-        <button class="navigation-bar__mobileMenuIcon">
-          <transition name="flip">
-            <img
-              v-if="!openMobileMenu"
-              :key="'menu'"
-              src="../../assets/svg/HamburgerIcon.svg"
-              alt="Menu"
-              class="navigation-bar__mobileMenuIconImg"
-              @click="toggleMobileMenu"
-            />
-            <img
-              v-else
-              :key="'close'"
-              src="../../assets/svg/cross-icon.svg"
-              alt="Fechar"
-              class="navigation-bar__mobileMenuIconImg"
-              @click="toggleMobileMenu"
-            />
-          </transition>
-        </button>
-      </div>
+      <Button
+        class="navigation-bar__button"
+        kind="primary"
+        link="#pontos-recolha"
+        @click.native="animateScroll"
+      >
+        Quero doar
+      </Button>
     </div>
-    <transition name="slide-in">
-      <div v-if="openMobileMenu" class="navigation-bar__mobileMenu">
-        <ul class="navigation-bar__items" @click="animateScroll">
-          <li
-            v-for="item in linkList"
-            :key="item.name"
-            class="navigation-bar__item"
-          >
-            <a :href="`#${item.link}`" class="navigation-bar__link">{{
-              item.name
-            }}</a>
-          </li>
-        </ul>
-      </div>
-    </transition>
   </nav>
 </template>
 
@@ -78,10 +41,6 @@ export default {
     return {
       openMobileMenu: false,
       linkList: [
-        {
-          name: localI18n['nav.donate'],
-          link: 'pontos-recolha'
-        },
         {
           name: localI18n['nav.about'],
           link: 'o-que-e'
@@ -194,10 +153,6 @@ export default {
         border-bottom: 4px solid $primary-color;
       }
     }
-
-    &:first-child {
-      display: none;
-    }
   }
 
   &__link {
@@ -211,149 +166,20 @@ export default {
     }
   }
 
-  &__mobileMenu {
-    display: none;
-  }
-
-  &__mobileMenuIcon {
-    display: none;
-  }
-
   @media only screen and (max-width: $max-mobile-size) {
-    &__mobileMenu {
-      display: block;
-      position: absolute;
-      top: $nav-height;
-      right: 0;
-      width: 80vw;
-      max-width: 300px;
-      height: 120vh;
-      z-index: $nav-bar-index;
-      background-color: $white;
-      box-shadow: -8px 4px 9px -4px rgba($black, 0.4);
-      touch-action: auto;
-
-      #{$nav-element}__items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-
-        &:hover {
-          #{$nav-element}__link {
-            border-bottom: none;
-          }
-        }
-      }
-
-      #{$nav-element}__item {
-        text-align: center;
-        width: 100%;
-        padding: 1rem 1.5rem 1rem 1.5rem;
-        font-size: 14px;
-        margin: 0;
-
-        &:nth-child(even) {
-          background-color: $smoke-white;
-        }
-
-        &:first-child {
-          display: none;
-        }
-      }
-    }
-
-    &__mobileMenuIcon {
-      position: relative;
-      display: block;
-      margin-left: 24px;
-      height: 54px;
-      width: 28px;
-
-      // It's only disabled on mobile
-      &:focus {
-        outline: 0;
-      }
-    }
-
-    &__mobileMenuIconImg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    &__cta {
-      display: flex;
-      flex-direction: row;
-    }
-
     &__content {
       @include container-gap;
 
       justify-content: space-between;
     }
 
-    &__button {
-      justify-self: flex-end;
-    }
-
     &__items {
       display: none;
     }
-  }
-
-  @media only screen and (max-width: $small-screen-min) {
-    &__mobileMenu {
-      #{$nav-element}__item:first-child {
-        display: block;
-      }
-    }
 
     &__button {
-      display: none;
+      width: auto;
     }
   }
-}
-
-.slide-in-enter-active,
-.slide-in-leave-active {
-  transition: transform 1s ease-in-out;
-}
-
-.slide-in-enter,
-.slide-in-leave-to {
-  transform: translate3d(100%, 0, 0);
-}
-
-.slide-in-enter-to {
-  transform: translate3d(0, 0, 0);
-}
-
-.flip-enter-active,
-.flip-leave-active {
-  transition: all 0.5s ease-in-out;
-}
-.flip-enter {
-  perspective: 100px;
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-
-.flip-enter-to {
-  transform: rotateY(0);
-  opacity: 1;
-}
-
-.flip-leave {
-  transform: rotateY(0);
-  opacity: 1;
-}
-
-.flip-leave-to {
-  transform: rotateY(-180deg);
-  opacity: 0;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="container brands" tabindex="0">
+  <section class="container" tabindex="0">
     <div class="brands">
       <h1 class="section__title brands__title">
         {{ localI18n['brands.headline.top'] }}<br />{{
@@ -18,6 +18,18 @@
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
       </p>
+      <img
+        class="brands__separator"
+        src="../assets/svg/brands-line-out.svg"
+        alt=""
+        role="presentation"
+      />
+      <img
+        class="brands__separatorDesktop"
+        src="../assets/svg/brands-line-out-desktop.svg"
+        alt=""
+        role="presentation"
+      />
     </div>
   </section>
 </template>
@@ -36,7 +48,7 @@ export default {
 @import '../styles/_global.scss';
 
 .brands {
-  grid-column: 1 / 13;
+  grid-column: 1 / 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,9 +88,21 @@ export default {
     font-size: 12px;
     line-height: 170%;
     text-align: center;
+    color: $gray;
+  }
+
+  &__separator {
+    grid-column: 1 / 5;
+    margin-top: 60px;
+  }
+
+  &__separatorDesktop {
+    display: none;
   }
 
   @media screen and (min-width: $max-mobile-size) {
+    grid-column: 3 / 11;
+
     &__logos {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -86,6 +110,14 @@ export default {
     &__logo {
       margin-right: 24px;
       width: 140px;
+    }
+
+    &__separator {
+      display: none;
+    }
+
+    &__separatorDesktop {
+      display: block;
     }
   }
 }

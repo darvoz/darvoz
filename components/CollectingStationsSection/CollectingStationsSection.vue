@@ -18,7 +18,18 @@
       </p>
     </div>
     <div class="collecting-stations__map">
+      <div class="collecting-stations__map__toggle__container">
+        <Toggle @click="toggleMap()">
+          <span slot="left" class="collecting-stations__map__toggle__content">
+            <MapIcon />Mapa
+          </span>
+          <span slot="right" class="collecting-stations__map__toggle__content">
+            <FormatListBulletedIcon />Lista
+          </span>
+        </Toggle>
+      </div>
       <Map
+        v-if="showMap"
         :location="
           location
             ? [location.coords.latitude, location.coords.longitude]
@@ -30,28 +41,38 @@
         :postal-code="postalCode"
       >
         <ChooseLocation
-          slot="controller-top-left"
+          slot="controller-bottom-left"
           :get-location="locateMe"
           @setPostalCode="setPostalCode"
           @closedControl="closedControl = true"
         />
       </Map>
+      <List v-else :items="stations" />
     </div>
   </section>
 </template>
 
 <script>
+import MapIcon from 'vue-material-design-icons/Map.vue'
+import FormatListBulletedIcon from 'vue-material-design-icons/FormatListBulleted.vue'
 import * as localI18n from '../../data/resources/i18n.json'
 import ChooseLocation from './ChooseLocation/ChooseLocation'
+import List from './List/List'
 import Map from '~/components/Map/Map'
+import Toggle from '~/components/Toggle/Toggle'
 export default {
   name: 'CollectingStationsSection',
   components: {
     Map,
-    ChooseLocation
+    ChooseLocation,
+    List,
+    Toggle,
+    MapIcon,
+    FormatListBulletedIcon
   },
   data() {
     return {
+      showMap: true,
       localI18n: localI18n.default,
       stations: [],
       location: null,
@@ -76,6 +97,9 @@ export default {
       if (postalCodeReg.test(pc)) {
         this.postalCode = pc
       }
+    },
+    toggleMap() {
+      this.showMap = !this.showMap
     },
     getLocation() {
       return new Promise((resolve, reject) => {
@@ -148,6 +172,23 @@ export default {
     height: 63vh;
     width: 100vw;
     margin-left: -4%;
+    position: relative;
+
+    &__toggle__container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    &__toggle__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > :first-child {
+        margin-right: 8px;
+      }
+    }
   }
 
   @media screen and (min-width: $max-mobile-size) {

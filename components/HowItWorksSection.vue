@@ -1,5 +1,5 @@
 <template>
-  <section class="container intro-section" tabindex="0">
+  <section id="como-doar" class="container how-it-works" tabindex="0">
     <h1 class="section__title intro-section__title">Como funciona</h1>
     <p class="section__description">
       Basta levar consigo um telemóvel antigo a um ponto de recolha mais próximo

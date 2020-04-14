@@ -26,10 +26,18 @@
         {{ localI18n['intro.description'] }}
       </p>
       <div class="intro-section__infoBts">
-        <Button class="intro-section__primaryBtn" kind="primary">
+        <Button
+          class="intro-section__primaryBtn"
+          kind="primary"
+          link="#como-doar"
+        >
           {{ localI18n['intro.cta.primary'] }}
         </Button>
-        <Button class="intro-section__secondaryBtn" kind="secondary">
+        <Button
+          class="intro-section__secondaryBtn"
+          kind="secondary"
+          link="#pontos-recolha"
+        >
           {{ localI18n['intro.cta.secondary'] }}
         </Button>
       </div>

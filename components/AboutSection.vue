@@ -2,8 +2,7 @@
   <section class="container about" tabindex="0">
     <div class="about__info">
       <h1 class="section__title about__infoTitle">
-        {{ localI18n['about.headline'] }}
-        <span class="about__infoTitle__logo"><Logo /></span>
+        {{ localI18n['about.headline'] }} <Logo class="about__infoTitleIcon" />
       </h1>
       <p class="section__description about__infoDescription">
         {{ localI18n['about.description1'] }}
@@ -11,27 +10,25 @@
       <p class="section__description about__infoDescription">
         {{ localI18n['about.description2'] }}
       </p>
-      <Button class="about__link" kind="tertiary">
-        {{ localI18n['about.link'] }}
-      </Button>
     </div>
-    <img
-      class="about__background"
-      src="../assets/aboutBG.png"
-      alt="section_background"
-      role="presentation"
-    />
+    <div class="about__background">
+      <img
+        class="about__backgroundImg"
+        src="../assets/aboutBG.png"
+        alt="section_background"
+        role="presentation"
+      />
+    </div>
   </section>
 </template>
 
 <script>
 import * as localI18n from '../data/resources/i18n.json'
-import Button from '~/components/Button/Button'
-import Logo from '~/components/Logo/Logo'
+import Logo from './Logo/Logo.vue'
+
 export default {
   name: 'AboutSection',
   components: {
-    Button,
     Logo
   },
   data() {
@@ -50,16 +47,30 @@ export default {
 
   &__infoTitle {
     margin-bottom: 47px;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 48px;
 
-    &__logo {
-      display: block;
+    &--strong {
       font-size: 44px;
+      line-height: 84%;
+    }
+
+    &--blue {
+      color: $primary-color;
     }
   }
 
   &__infoDescription {
+    font-weight: normal;
     font-size: 16px;
-    margin-bottom: 32px;
+    line-height: 190%;
+    color: $black;
+    text-align: left;
+
+    &:first-of-type {
+      margin-bottom: 32px;
+    }
   }
 
   &__background {
@@ -70,18 +81,43 @@ export default {
     min-height: $section-min-height;
 
     &__info {
-      grid-column: 8 / 13;
+      grid-column: 7 / 13;
+    }
+
+    &__infoTitle {
+      display: flex;
+      align-items: end;
+
+      font-size: 52px;
+      line-height: 65px;
+    }
+
+    &__infoTitleIcon {
+      margin-left: 10px;
+      width: 220px;
+      height: 66px;
     }
 
     &__background {
-      display: block;
-      position: absolute;
-      left: -1%;
+      position: relative;
+      display: flex;
+      grid-column: 1 / 7;
+      align-items: center;
+
+      &:after {
+        content: '';
+        background: url('../assets/svg/about-line-out.svg') no-repeat;
+        width: 915px;
+        height: 228px;
+        position: absolute;
+        bottom: 13%;
+        left: 60%;
+        z-index: 1;
+      }
     }
 
-    &__link {
-      display: flex;
-      justify-content: flex-start;
+    &__backgroundImg {
+      width: 100%;
     }
   }
 }

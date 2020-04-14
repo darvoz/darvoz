@@ -99,7 +99,6 @@ export default {
     width: $circle-width;
     color: $white;
     font-family: Roboto, sans-serif;
-    font-style: normal;
     background: $primary-color;
   }
 
@@ -125,6 +124,7 @@ export default {
         position: absolute;
         bottom: -100%;
         left: -481px + ($circle-width / 2);
+        z-index: 10;
       }
     }
   }

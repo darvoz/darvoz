@@ -2,14 +2,19 @@
   <button
     v-if="!link"
     :class="['button', `button__${kind.toString()}`]"
-    @click="click"
+    @click="animateScroll"
   >
     <slot />
     <span v-if="kind === 'tertiary'" class="button__icon">
       <TrendingNeutral decorative :size="24" />
     </span>
   </button>
-  <a v-else :href="link" :class="['button', `button__${kind.toString()}`]">
+  <a
+    v-else
+    :href="link"
+    :class="['button', `button__${kind.toString()}`]"
+    @click="animateScroll"
+  >
     <slot />
     <span v-if="kind === 'tertiary'" class="button__icon">
       <TrendingNeutral decorative :size="24" />
@@ -19,6 +24,7 @@
 
 <script>
 import TrendingNeutral from 'vue-material-design-icons/TrendingNeutral.vue'
+import animateScroll from '../../utils/utils'
 
 export default {
   name: 'Button',
@@ -39,9 +45,9 @@ export default {
       default: false
     }
   },
-  methods: {
-    click() {
-      if (!this.disabled) this.$emit('click')
+  data() {
+    return {
+      animateScroll
     }
   }
 }

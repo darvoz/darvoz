@@ -26,10 +26,10 @@
         </swiper-slide>
         <div slot="pagination" class="swiper-pagination"></div>
         <div slot="button-prev" class="swiper-button-prev">
-          <ChevronLeftCircleOutline :size="iconSize" />
+          <img src="../../assets/svg/steps-next.svg" alt="Passo anterior"/>
         </div>
         <div slot="button-next" class="swiper-button-next">
-          <ChevronRightCircleOutline :size="iconSize" />
+          <img src="../../assets/svg/steps-next.svg" alt="Proximo passo"/>
         </div>
       </swiper>
     </div>
@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import ChevronLeftCircleOutline from 'vue-material-design-icons/ChevronLeftCircleOutline.vue'
-import ChevronRightCircleOutline from 'vue-material-design-icons/ChevronRightCircleOutline.vue'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import * as localI18n from '../../data/resources/i18n.json'
 import * as slides from '../../data/resources/howToDonate.json'
@@ -50,13 +48,11 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    Slide,
-    ChevronLeftCircleOutline,
-    ChevronRightCircleOutline
+    Slide
   },
   data() {
     return {
-      iconSize: 55,
+      iconSize: 38,
       slides: slides.default,
       localI18n: localI18n.default,
       swiperOption: {
@@ -108,15 +104,16 @@ export default {
 
   &-button-prev,
   &-button-next {
-    border-radius: 50%;
-    --swiper-theme-color: #5161d2;
-    text-align: center;
     &::after {
       content: '';
     }
     @media screen and (max-width: $max-mobile-size) {
       top: 15%;
     }
+  }
+
+  &-button-prev {
+    transform: rotate(180deg);
   }
 }
 </style>

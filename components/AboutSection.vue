@@ -103,6 +103,7 @@ export default {
       display: flex;
       grid-column: 1 / 7;
       align-items: center;
+      height: 100%;
 
       &:after {
         content: '';
@@ -110,9 +111,8 @@ export default {
         width: 915px;
         height: 228px;
         position: absolute;
-        bottom: 13%;
+        bottom: 5%;
         left: 60%;
-        z-index: 1;
       }
     }
 

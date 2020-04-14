@@ -82,7 +82,7 @@ export default {
     align-items: center;
     width: 100%;
     padding: 16px;
-    background: $smoke-white;
+    background: $orange;
     border-radius: 4px;
     font-weight: bold;
     line-height: 27px;
@@ -105,7 +105,8 @@ export default {
 
   &__buttonIcon {
     height: 24px;
-    margin-left: 5px;
+    margin-left: 30px;
+    color: $primary-color;
   }
 }
 </style>

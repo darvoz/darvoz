@@ -1,17 +1,10 @@
 <template>
-  <section v-if="faqList" class="container" tabindex="0">
+  <section v-if="faqList" class="container" tabindex="0" id="perguntas-frequentes">
     <div class="faq-section">
       <div class="faq-section__title">
-        <img
-          src="../assets/svg/hashtag.svg"
-          alt="title_hashtag"
-          role="presentation"
-          class="faq-section__titleImg"
-        />
         <div class="faq-section__titleText">
           <h1 class="section__title">
-            {{ localI18n['faq.headline.top'] }} <br />
-            {{ localI18n['faq.headline.bottom'] }}
+            {{ localI18n['faq.headline'] }}
           </h1>
         </div>
       </div>
@@ -23,11 +16,6 @@
       >
         {{ item.answer }}
       </accordion>
-      <div class="faq-section__link">
-        <Button class="faq-section__linkBtn" kind="tertiary">
-          {{ localI18n['faq.link'] }}
-        </Button>
-      </div>
     </div>
   </section>
 </template>
@@ -93,12 +81,6 @@ export default {
     }
   }
 
-  &__link {
-    display: flex;
-    justify-content: center;
-    margin: 32px 0 32px 0;
-  }
-
   .section__title {
     font-weight: 900;
     font-size: 52px;
@@ -114,10 +96,6 @@ export default {
     &__titleImg {
       margin-bottom: 0;
       margin-right: 15px;
-    }
-
-    &__link {
-      margin: 64px 0 64px 0;
     }
   }
 }

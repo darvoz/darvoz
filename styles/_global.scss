@@ -14,7 +14,7 @@ a { text-decoration: none;}
 
   display: grid;
   grid-column-gap: 1rem;
-  margin: 0 auto;
+  margin: $section-margin auto;
   align-items: flex-start;
   position: relative;
 
@@ -22,13 +22,8 @@ a { text-decoration: none;}
     outline: none;
   }
 
-  &:first-of-type {
-    margin-top: $nav-height;
-  }
-
   @media screen and (min-width: $max-mobile-size){
     align-items: center;
-    margin: $nav-height auto;
 
     &:focus {
       outline: $outline;

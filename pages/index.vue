@@ -39,5 +39,6 @@ export default {
 
 .main {
   background: linear-gradient(180deg, $smoke-white 0%, $white 100%);
+  padding-top: $nav-height;
 }
 </style>

@@ -64,8 +64,6 @@ export default {
 .intro-section {
   @include container-column;
 
-  padding-bottom: 40px;
-
   &__info {
     grid-column: 1 / 5;
     text-align: center;

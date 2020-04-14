@@ -76,9 +76,11 @@ export default {
 @import '../styles/_global.scss';
 
 .stats-section {
+  $circle-width: 250px;
+
   background: url('../assets/svg/statsBG.svg') no-repeat center;
   background-size: contain;
-  height: 50vh;
+  height: $section-min-height / 2;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -86,18 +88,19 @@ export default {
   align-items: center;
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: $stats-gradient;
     box-shadow: 0 24px 74px rgba(0, 0, 0, 0.15);
     border-radius: 150px;
     height: 250px;
-    width: 250px;
+    width: $circle-width;
     color: $white;
     font-family: Roboto, sans-serif;
     font-style: normal;
+    background: $primary-color;
   }
 
   &__contentNumber {
@@ -110,6 +113,20 @@ export default {
     font-weight: bold;
     font-size: 16px;
     line-height: 168%;
+  }
+
+  @media only screen and (min-width: $max-mobile-size) {
+    &__content {
+      &:after {
+        content: '';
+        background: url('../assets/svg/stats-line-out.svg') no-repeat;
+        width: 481px;
+        height: 265px;
+        position: absolute;
+        bottom: -100%;
+        left: -481px + ($circle-width / 2);
+      }
+    }
   }
 }
 </style>

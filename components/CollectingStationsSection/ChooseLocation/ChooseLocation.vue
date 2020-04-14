@@ -34,7 +34,7 @@
         </button>
       </div>
       <Button kind="primary" @click.native="$emit('setPostalCode', postalCode)">
-        localI18n['collecting-stations.map.menu.button']
+        {{localI18n['collecting-stations.map.menu.button']}}
       </Button>
     </div>
   </div>

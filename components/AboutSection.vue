@@ -45,8 +45,6 @@ export default {
 @import '../styles/_global.scss';
 
 .about {
-  height: 100vh;
-
   &__info {
     grid-column: 1 / 13;
   }
@@ -70,6 +68,8 @@ export default {
   }
 
   @media screen and (min-width: $max-mobile-size) {
+    min-height: $section-min-height;
+
     &__info {
       grid-column: 8 / 13;
     }

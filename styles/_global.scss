@@ -14,11 +14,15 @@ a { text-decoration: none;}
   display: grid;
   grid-column-gap: 1rem;
   margin: $nav-height auto;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (min-width: $max-mobile-size){
+    align-items: center;
   }
 }
 

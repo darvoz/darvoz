@@ -53,7 +53,7 @@ export default {
 
   &__logos {
     display: grid;
-    grid-gap: 32px;
+    grid-gap: $grid-gap;
     margin: 40px 0 40px 0;
   }
 

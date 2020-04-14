@@ -1,18 +1,21 @@
 <template>
-  <article class="list-item__container">
-    <h1 class="list-item__headline">{{ name }}</h1>
-    <span class="list-item__info">
-      <span class="list-item__info__icon"><MapMarker /></span>
+  <article class="location-card__container">
+    <button class="location-card__close" @click="$emit('close')">
+      <img :key="'close'" src="../../assets/svg/cross-icon.svg" alt="Fechar" />
+    </button>
+    <h1 class="location-card__headline">{{ name }}</h1>
+    <span class="location-card__info">
+      <span class="location-card__info__icon"><MapMarker /></span>
       {{ location }}
     </span>
-    <span class="list-item__info">
-      <span class="list-item__info__icon"><ClockOutline /></span>
+    <span class="location-card__info">
+      <span class="location-card__info__icon"><ClockOutline /></span>
       {{ workingHours }}
     </span>
     <Button
-      class="list-item__link"
+      class="location-card__link"
       kind="tertiary"
-      :href="url"
+      :link="url"
       target="__blank"
       align="left"
     >
@@ -33,6 +36,10 @@ export default {
     ClockOutline
   },
   props: {
+    closeButton: {
+      type: Boolean,
+      default: false
+    },
     name: {
       type: String,
       required: true
@@ -55,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/_global';
-.list-item {
+.location-card {
   &__container {
     display: grid;
     grid-gap: 8px;
@@ -63,6 +70,12 @@ export default {
     border: 2px solid $white;
     box-sizing: border-box;
     border-radius: 8px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 
   &__headline {

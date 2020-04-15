@@ -85,8 +85,14 @@ export default {
   }
 
   &__content {
-    grid-column: 1 / 13;
+    grid-column: 1 / 5;
     width: 100%;
+  }
+
+  @media screen and (min-width: $max-mobile-size) {
+    &__content {
+      grid-column: 1 / 13;
+    }
   }
 }
 
@@ -107,6 +113,7 @@ export default {
     &::after {
       content: '';
     }
+
     @media screen and (max-width: $max-mobile-size) {
       top: 15%;
     }

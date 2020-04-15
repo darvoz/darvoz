@@ -1,6 +1,10 @@
 <template>
   <article class="location-card__container">
-    <button class="location-card__close" @click="$emit('close')">
+    <button
+      v-if="closeButton"
+      class="location-card__close"
+      @click="$emit('close')"
+    >
       <img :key="'close'" src="../../assets/svg/cross-icon.svg" alt="Fechar" />
     </button>
     <h1 class="location-card__headline">{{ name }}</h1>
@@ -70,6 +74,7 @@ export default {
     border: 2px solid $white;
     box-sizing: border-box;
     border-radius: 8px;
+    background-color: $white;
   }
 
   &__close {

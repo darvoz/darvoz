@@ -74,4 +74,12 @@ a { text-decoration: none;}
   margin: 0;
   line-height: 0;
   border-radius: 8px;
+  width: max-content !important;
 }
+
+.leaflet-left .leaflet-control {
+  margin-left: 24px;
+  margin-bottom: 24px;
+}
+
+

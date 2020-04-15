@@ -18,18 +18,6 @@
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
       </p>
-      <img
-        class="brands__separator"
-        src="../assets/svg/brands-line-out.svg"
-        alt=""
-        role="presentation"
-      />
-      <img
-        class="brands__separatorDesktop"
-        src="../assets/svg/brands-line-out-desktop.svg"
-        alt=""
-        role="presentation"
-      />
     </div>
   </section>
 </template>

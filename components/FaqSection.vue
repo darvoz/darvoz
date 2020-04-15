@@ -1,5 +1,10 @@
 <template>
-  <section v-if="faqList" class="container" tabindex="0" id="perguntas-frequentes">
+  <section
+    v-if="faqList"
+    id="perguntas-frequentes"
+    class="container"
+    tabindex="0"
+  >
     <div class="faq-section">
       <div class="faq-section__title">
         <div class="faq-section__titleText">
@@ -23,13 +28,11 @@
 <script>
 import * as localI18n from '../data/resources/i18n.json'
 import Accordion from '~/components/Accordion/Accordion.vue'
-import Button from '~/components/Button/Button.vue'
 
 export default {
   name: 'FaqSection',
   components: {
-    Accordion,
-    Button
+    Accordion
   },
   data() {
     return {
@@ -55,7 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 80vh;
-  grid-column: 1 / 13;
+  grid-column: 1 / 5;
 
   &__title {
     display: flex;
@@ -88,6 +91,8 @@ export default {
   }
 
   @media only screen and (min-width: $max-mobile-size) {
+    grid-column: 3 / 11;
+
     &__title {
       flex-direction: row;
       margin-bottom: 64px;

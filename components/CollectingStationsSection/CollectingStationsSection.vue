@@ -138,7 +138,7 @@ export default {
   min-height: $section-min-height;
 
   &__info {
-    grid-column: 1 / 13;
+    grid-column: 3 / 11;
     justify-items: center;
     text-align: center;
   }

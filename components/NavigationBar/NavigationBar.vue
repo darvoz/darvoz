@@ -142,10 +142,6 @@ export default {
     &__items {
       display: none;
     }
-
-    &__button {
-      width: auto;
-    }
   }
 }
 </style>

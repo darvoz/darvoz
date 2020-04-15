@@ -38,7 +38,7 @@ export default {
 @import '../styles/_global.scss';
 
 .main {
-  background: linear-gradient(180deg, $smoke-white 0%, $white 100%);
+  background: $smoke-white;
   padding-top: $nav-height;
 }
 </style>

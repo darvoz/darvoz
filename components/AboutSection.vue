@@ -46,6 +46,9 @@ export default {
   }
 
   &__infoTitle {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 47px;
     font-weight: 900;
     font-size: 38px;
@@ -61,12 +64,19 @@ export default {
     }
   }
 
+  &__infoTitleIcon {
+    margin-left: 10px;
+  }
+
   &__infoDescription {
+    position: relative;
+    z-index: 10;
     font-weight: normal;
     font-size: 16px;
     line-height: 190%;
     color: $black;
     text-align: left;
+    background-color: $smoke-white;
 
     &:first-of-type {
       margin-bottom: 32px;
@@ -85,15 +95,11 @@ export default {
     }
 
     &__infoTitle {
-      display: flex;
-      align-items: end;
-
       font-size: 52px;
       line-height: 65px;
     }
 
     &__infoTitleIcon {
-      margin-left: 10px;
       width: 220px;
       height: 66px;
     }
@@ -104,11 +110,10 @@ export default {
       grid-column: 1 / 7;
       align-items: center;
       height: 100%;
-
       &:after {
         content: '';
         background: url('../assets/svg/about-line-out.svg') no-repeat;
-        width: 915px;
+        width: 200%;
         height: 228px;
         position: absolute;
         bottom: 5%;

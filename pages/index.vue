@@ -7,6 +7,7 @@
     <how-to-donate-section />
     <collecting-stations-section id="pontos-recolha" />
     <brands-section />
+    <section-separator />
     <faq-section></faq-section>
   </div>
 </template>
@@ -15,13 +16,16 @@
 import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
+import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
+
 export default {
   components: {
+    SectionSeparator,
     BrandsSection,
     StatsSection,
     FaqSection,

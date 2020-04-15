@@ -92,7 +92,7 @@ export default {
   }
 
   &__separator {
-    grid-column: 1 / 5;
+    width: 100vw;
     margin-top: 60px;
   }
 
@@ -118,6 +118,7 @@ export default {
 
     &__separatorDesktop {
       display: block;
+      width: 100vw;
     }
   }
 }

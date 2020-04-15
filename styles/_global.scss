@@ -78,8 +78,13 @@ a { text-decoration: none;}
 }
 
 .leaflet-left .leaflet-control {
-  margin-left: 24px;
-  margin-bottom: 24px;
+  transform: translateY(-50%);
+
+  @media screen and (min-width: $max-mobile-size) {
+      margin-left: 24px;
+      margin-bottom: 24px;
+      transform: translateY(0);
+  }
 }
 
 

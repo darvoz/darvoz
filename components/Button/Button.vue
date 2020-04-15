@@ -135,10 +135,11 @@ export default {
   }
 
   &--right {
-    justify-content: flex-right;
+    justify-content: flex-end;
   }
+
   @media only screen and (max-width: $max-mobile-size) {
-    width: 100%;
+    width: auto;
   }
 
   @media only screen and (max-width: $small-screen-min) {

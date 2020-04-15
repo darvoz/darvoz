@@ -1,5 +1,10 @@
 <template>
-  <section v-if="faqList" class="container" tabindex="0" id="perguntas-frequentes">
+  <section
+    v-if="faqList"
+    id="perguntas-frequentes"
+    class="container"
+    tabindex="0"
+  >
     <div class="faq-section">
       <div class="faq-section__title">
         <div class="faq-section__titleText">
@@ -23,13 +28,11 @@
 <script>
 import * as localI18n from '../data/resources/i18n.json'
 import Accordion from '~/components/Accordion/Accordion.vue'
-import Button from '~/components/Button/Button.vue'
 
 export default {
   name: 'FaqSection',
   components: {
-    Accordion,
-    Button
+    Accordion
   },
   data() {
     return {

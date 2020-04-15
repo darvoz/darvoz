@@ -18,18 +18,6 @@
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
       </p>
-      <img
-        class="brands__separator"
-        src="../assets/svg/brands-line-out.svg"
-        alt=""
-        role="presentation"
-      />
-      <img
-        class="brands__separatorDesktop"
-        src="../assets/svg/brands-line-out-desktop.svg"
-        alt=""
-        role="presentation"
-      />
     </div>
   </section>
 </template>
@@ -92,7 +80,7 @@ export default {
   }
 
   &__separator {
-    grid-column: 1 / 5;
+    width: 100vw;
     margin-top: 60px;
   }
 
@@ -118,6 +106,7 @@ export default {
 
     &__separatorDesktop {
       display: block;
+      width: 100vw;
     }
   }
 }

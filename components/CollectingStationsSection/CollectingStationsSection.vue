@@ -138,7 +138,7 @@ export default {
   min-height: $section-min-height;
 
   &__info {
-    grid-column: 3 / 11;
+    grid-column: 1 / 5;
     justify-items: center;
     text-align: center;
   }
@@ -168,7 +168,7 @@ export default {
   }
 
   &__map {
-    grid-column: 1 / 13;
+    grid-column: 1 / 5;
     height: 63vh;
     width: 100vw;
     margin-left: -4%;
@@ -192,7 +192,12 @@ export default {
   }
 
   @media screen and (min-width: $max-mobile-size) {
+    &__info {
+      grid-column: 3 / 11;
+    }
+
     &__map {
+      grid-column: 1 / 13;
       margin-left: 0;
       width: 100%;
     }

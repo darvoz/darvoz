@@ -58,8 +58,6 @@ export default {
   }
 
   &__logo {
-    height: 94px;
-    width: 200px;
     object-fit: contain;
     border: 1px solid $smoke-white;
     padding: 15px;
@@ -97,7 +95,6 @@ export default {
 
     &__logo {
       margin-right: 24px;
-      width: 140px;
     }
 
     &__separator {

@@ -2,7 +2,7 @@
   <button
     v-if="!link"
     :class="['button', `button__${kind.toString()}`, `button--${align}`]"
-    @click="animateScroll"
+    @click="$emit('click')"
   >
     <slot />
     <span v-if="kind === 'tertiary'" class="button__icon">

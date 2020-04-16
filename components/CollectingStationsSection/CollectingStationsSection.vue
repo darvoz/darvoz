@@ -55,7 +55,7 @@
 <script>
 import MapIcon from 'vue-material-design-icons/Map.vue'
 import FormatListBulletedIcon from 'vue-material-design-icons/FormatListBulleted.vue'
-import * as localI18n from '../../data/resources/i18n.json'
+import localI18n from '../../data/resources/i18n.json'
 import ChooseLocation from './ChooseLocation/ChooseLocation'
 import List from './List/List'
 import Map from '~/components/Map/Map'
@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       showMap: true,
-      localI18n: localI18n.default,
+      localI18n,
       stations: [],
       location: null,
       gettingLocation: false,

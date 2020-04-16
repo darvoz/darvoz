@@ -13,7 +13,6 @@
               slot="background"
               class="slide__background"
               :src="slide.img"
-              alt="section_background"
               role="presentation"
             />
             <p v-if="slide.description" slot="description">
@@ -38,8 +37,8 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import * as localI18n from '../../data/resources/i18n.json'
-import * as slides from '../../data/resources/howToDonate.json'
+import localI18n from '../../data/resources/i18n.json'
+import slides from '../../data/resources/howToDonate.json'
 import Slide from './Slides/Slide'
 import 'swiper/css/swiper.css'
 
@@ -53,8 +52,8 @@ export default {
   data() {
     return {
       iconSize: 38,
-      slides: slides.default,
-      localI18n: localI18n.default,
+      slides,
+      localI18n,
       swiperOption: {
         keyboard: {
           enabled: true

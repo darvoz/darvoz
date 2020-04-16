@@ -10,10 +10,18 @@
         <img
           class="brands__logo"
           src="../assets/Mercedes_Benz_io_logo.png"
-          alt="Mercedes-Benz.io"
+          :alt="localI18n['brands.alt.mercedes-benz']"
         />
-        <img class="brands__logo" src="../assets/BCG_logo.png" alt="BCG" />
-        <img class="brands__logo" src="../assets/NOS_logo.png" alt="NOS" />
+        <img
+          class="brands__logo"
+          src="../assets/BCG_logo.png"
+          :alt="localI18n['brands.alt.bcg']"
+        />
+        <img
+          class="brands__logo"
+          src="../assets/NOS_logo.png"
+          :alt="localI18n['brands.alt.nos']"
+        />
       </div>
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
@@ -23,11 +31,11 @@
 </template>
 
 <script>
-import * as localI18n from '../data/resources/i18n.json'
+import localI18n from '../data/resources/i18n.json'
 export default {
   name: 'BrandsSection',
   data() {
-    return { localI18n: localI18n.default }
+    return { localI18n }
   }
 }
 </script>

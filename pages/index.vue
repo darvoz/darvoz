@@ -44,5 +44,7 @@ export default {
 .main {
   background: $white;
   padding-top: $nav-height;
+
+  overflow-x: hidden; //Hide overflow created by the svg arrows
 }
 </style>

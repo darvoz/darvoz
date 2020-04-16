@@ -17,37 +17,46 @@
         ><span></span>{{ localI18n['collecting-stations.description.normal2'] }}
       </p>
     </div>
-    <div class="collecting-stations__map">
-      <div class="collecting-stations__map__toggle__container">
+    <div class="collecting-stations__locations">
+      <div class="collecting-stations__locations__toggle__container">
         <Toggle @click="toggleMap()">
-          <span slot="left" class="collecting-stations__map__toggle__content">
+          <span
+            slot="left"
+            class="collecting-stations__locations__toggle__content"
+          >
             <MapIcon />Mapa
           </span>
-          <span slot="right" class="collecting-stations__map__toggle__content">
+          <span
+            slot="right"
+            class="collecting-stations__locations__toggle__content"
+          >
             <FormatListBulletedIcon />Lista
           </span>
         </Toggle>
       </div>
-      <Map
-        v-if="showMap"
-        :location="
-          location
-            ? [location.coords.latitude, location.coords.longitude]
-            : undefined
-        "
-        :zoom="location ? 13 : undefined"
-        :markers-location="stations.map((station) => station.coords)"
-        :closed-control="closedControl"
-        :postal-code="postalCode"
-      >
-        <ChooseLocation
-          slot="controller-bottom-left"
-          @getLocation="locateMe"
-          @setPostalCode="setPostalCode"
-          @closedControl="closedControl = true"
-        />
-      </Map>
-      <List v-else :items="stations" />
+      <div v-if="showMap" class="collecting-stations__locations__map">
+        <Map
+          :location="
+            location
+              ? [location.coords.latitude, location.coords.longitude]
+              : undefined
+          "
+          :zoom="location ? 13 : undefined"
+          :markers-location="stations.map((station) => station.coords)"
+          :closed-control="closedControl"
+          :postal-code="postalCode"
+        >
+          <ChooseLocation
+            slot="controller-bottom-left"
+            @getLocation="locateMe"
+            @setPostalCode="setPostalCode"
+            @closedControl="closedControl = true"
+          />
+        </Map>
+      </div>
+      <div v-else class="collecting-stations__locations__list">
+        <List :items="stations" />
+      </div>
     </div>
   </section>
 </template>
@@ -138,7 +147,7 @@ export default {
   min-height: $section-min-height;
 
   &__info {
-    grid-column: 1 / 5;
+    grid-column: 2 / 6;
     justify-items: center;
     text-align: center;
   }
@@ -167,19 +176,28 @@ export default {
     }
   }
 
-  &__map {
+  &__locations {
     display: flex;
     flex-direction: column;
-    grid-column: 1 / 5;
-    height: 70vh;
-    width: 100vw;
-    margin-left: -4%;
+    grid-column: 1 / 7;
     position: relative;
+    background-color: $smoke-white;
+    margin-top: 40px;
+    height: 70vh;
+
+    &__map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: inherit;
+    }
 
     &__toggle__container {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      margin: 40px 0;
+      z-index: 1001;
     }
 
     &__toggle__content {
@@ -195,13 +213,13 @@ export default {
 
   @media screen and (min-width: $max-mobile-size) {
     &__info {
-      grid-column: 3 / 11;
+      grid-column: 2 / 14;
     }
 
-    &__map {
-      grid-column: 1 / 13;
-      margin-left: 0;
+    &__locations {
+      grid-column: 1 / 15;
       width: 100%;
+      margin-left: 0;
       height: 60vh;
     }
 

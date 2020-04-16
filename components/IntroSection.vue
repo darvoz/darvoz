@@ -70,10 +70,8 @@ export default {
 @import '../styles/_global.scss';
 
 .intro-section {
-  @include container-column;
-
   &__info {
-    grid-column: 1 / 5;
+    grid-column: 2 / 6;
     text-align: center;
   }
 
@@ -100,7 +98,7 @@ export default {
 
   &__background {
     position: relative;
-    grid-column: 1 / 5;
+    grid-column: 2 / 6;
     width: 100%;
     max-height: 500px;
     max-width: 500px;
@@ -116,7 +114,7 @@ export default {
     min-height: $section-min-height;
 
     &__info {
-      grid-column: 1 / 5;
+      grid-column: 2 / 6;
       width: calc(100% + 1rem);
     }
 
@@ -127,7 +125,7 @@ export default {
 
     &__background {
       position: absolute;
-      grid-column: 5 / 13;
+      grid-column: 6 / 14;
       padding-left: $grid-gap;
       width: 100%;
       max-width: unset;

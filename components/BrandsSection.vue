@@ -44,7 +44,7 @@ export default {
 @import '../styles/_global.scss';
 
 .brands {
-  grid-column: 1 / 5;
+  grid-column: 2 / 6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +95,7 @@ export default {
   }
 
   @media screen and (min-width: $max-mobile-size) {
-    grid-column: 3 / 11;
+    grid-column: 3 / 13;
 
     &__logos {
       grid-template-columns: 1fr 1fr 1fr;

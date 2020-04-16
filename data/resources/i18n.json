@@ -28,6 +28,8 @@
   "collecting-stations.map.menu.button": "Pesquisar perto de mim*",
   "collecting-stations.map.menu.footnote": "*Terá de aceitar a autorização de geolocalização",
   "collecting-stations.map.menu.reopen": "Pesquisar perto de mim",
+  "collecting-stations.list.see-all": "Ver mais",
+  "collecting-stations.list.see-less": "Ver menos",
   "brands.headline.top": "Empresas",
   "brands.headline.bottom": "participantes",
   "brands.description": "Duis nibh aliquet ullamcorper consequat nec risus pretium. Ut parturient faucibus nibh non libero arcu ac hac vel. Aliquet pretium ut ullamcorper sed feugiat dignissim nulla urna. Mauris pellentesque mauris rhoncus egestas felis. Ut parturient faucibus nibh non libero arcu ac hac vel ",

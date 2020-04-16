@@ -168,8 +168,10 @@ export default {
   }
 
   &__map {
+    display: flex;
+    flex-direction: column;
     grid-column: 1 / 5;
-    height: 63vh;
+    height: 70vh;
     width: 100vw;
     margin-left: -4%;
     position: relative;
@@ -200,6 +202,7 @@ export default {
       grid-column: 1 / 13;
       margin-left: 0;
       width: 100%;
+      height: 60vh;
     }
 
     &__infoDescription {

@@ -28,9 +28,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/_global';
+
 .list__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 32px;
+  background-color: $smoke-white;
 }
 </style>

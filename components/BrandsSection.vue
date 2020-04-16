@@ -66,10 +66,6 @@ export default {
   }
 
   &__logo {
-    object-fit: contain;
-    border: 1px solid $smoke-white;
-    padding: 15px;
-
     &:last-of-type {
       margin-right: 0;
     }

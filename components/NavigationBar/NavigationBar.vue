@@ -69,7 +69,7 @@ export default {
 .navigation-bar {
   $nav-element: &;
   $nav-max-width: 1124px;
-  $nav-bar-index: 1001; //Needs to be higher than 1000 because of the MAP component
+  $nav-bar-index: 1002; //Needs to be higher than 1001 because of the MAP component
 
   position: fixed;
   top: 0;

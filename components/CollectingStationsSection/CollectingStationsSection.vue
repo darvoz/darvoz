@@ -183,14 +183,14 @@ export default {
     position: relative;
     background-color: $smoke-white;
     margin-top: 40px;
-    height: 70vh;
+    min-height: 70vh;
 
     &__map {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: inherit;
+      height: 70vh;
     }
 
     &__toggle__container {
@@ -220,6 +220,10 @@ export default {
       grid-column: 1 / 15;
       width: 100%;
       margin-left: 0;
+      min-height: 60vh;
+    }
+
+    &__map {
       height: 60vh;
     }
 

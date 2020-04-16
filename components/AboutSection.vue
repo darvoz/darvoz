@@ -76,7 +76,7 @@ export default {
     line-height: 190%;
     color: $black;
     text-align: left;
-    background-color: $smoke-white;
+    background-color: $white;
 
     &:first-of-type {
       margin-bottom: 32px;

@@ -25,8 +25,7 @@
 </template>
 
 <script>
-// TODO add alt from images to i18n
-import * as localI18n from '../../data/resources/i18n.json'
+import localI18n from '../../data/resources/i18n.json'
 import animateScroll from '../../utils/utils'
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'

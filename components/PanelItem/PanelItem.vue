@@ -1,6 +1,11 @@
 <template>
   <article class="panel-item">
-    <img class="panel-item__img" :src="imageSrc" :alt="imageAlt" role="presentation" />
+    <img
+      class="panel-item__img"
+      :src="imageSrc"
+      :alt="imageAlt"
+      role="presentation"
+    />
     <h3 class="panel-item__title">
       <slot name="panel-title" />
     </h3>

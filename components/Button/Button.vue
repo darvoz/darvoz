@@ -72,6 +72,7 @@ export default {
   padding: 14px 24px;
   border-radius: 32px;
   line-height: 22px;
+  font-family: Muli, sans-serif;
   font-size: 16px;
   background-color: transparent;
 
@@ -112,6 +113,7 @@ export default {
   }
 
   &__tertiary {
+    font-family: Roboto, sans-serif;
     color: $primary-color;
     padding: 0 0 0 8px;
 

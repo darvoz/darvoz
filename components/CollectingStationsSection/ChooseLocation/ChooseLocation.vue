@@ -1,15 +1,17 @@
 <template>
   <div v-if="!closedControl" class="choose-location">
-    <h1 class="choose-location__title">
-      {{ localI18n['collecting-stations.map.menu.headline'] }}
-    </h1>
-    <button class="choose-location__close" @click="closedControl = true">
-      <img
-        :key="'close'"
-        src="../../../assets/svg/cross-icon.svg"
-        alt="Fechar"
-      />
-    </button>
+    <div class="choose-location__header">
+      <h1 class="choose-location__title">
+        {{ localI18n['collecting-stations.map.menu.headline'] }}
+      </h1>
+      <button class="choose-location__close" @click="closedControl = true">
+        <img
+          :key="'close'"
+          src="../../../assets/svg/cross-icon.svg"
+          alt="Fechar"
+        />
+      </button>
+    </div>
     <div class="choose-location__form">
       <Button
         kind="primary"
@@ -57,13 +59,17 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 32px 16px;
+  padding: 24px;
   background-color: $white;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.08);
   border-radius: 28px;
-  max-width: 350px;
+  max-width: 352px;
   text-align: left;
   font-family: Roboto, sans-serif;
+
+  &__header {
+    display: flex;
+  }
 
   &__title {
     font-size: 24px;
@@ -71,9 +77,7 @@ export default {
   }
 
   &__close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    align-self: flex-start;
   }
 
   &__label {

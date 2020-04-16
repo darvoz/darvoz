@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import * as localI18n from '../../../data/resources/i18n.json'
+import localI18n from '../../../data/resources/i18n.json'
 import Button from '~/components/Button/Button'
 export default {
   name: 'ChooseLocation',
@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      localI18n: localI18n.default
+      localI18n
     }
   }
 }

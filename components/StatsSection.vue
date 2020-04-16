@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import * as localI18n from '../data/resources/i18n.json'
+import localI18n from '../data/resources/i18n.json'
 export default {
   name: 'StatsSection',
   data() {
     return {
-      localI18n: localI18n.default,
+      localI18n,
       finalStatValue: 4500,
       currentStatValue: 0,
       animationDuration: 2500,

@@ -58,7 +58,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 80vh;
-  grid-column: 1 / 5;
+  grid-column: 2 / 6;
 
   &__title {
     display: flex;
@@ -91,7 +91,7 @@ export default {
   }
 
   @media only screen and (min-width: $max-mobile-size) {
-    grid-column: 3 / 11;
+    grid-column: 5 / 11;
 
     &__title {
       flex-direction: row;

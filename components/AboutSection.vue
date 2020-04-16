@@ -41,7 +41,7 @@ export default {
 
 .about {
   &__info {
-    grid-column: 1 / 13;
+    grid-column: 2 / 6;
   }
 
   &__infoTitle {

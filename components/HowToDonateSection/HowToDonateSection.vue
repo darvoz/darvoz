@@ -84,13 +84,13 @@ export default {
   }
 
   &__content {
-    grid-column: 1 / 5;
+    grid-column: 2 / 6;
     width: 100%;
   }
 
   @media screen and (min-width: $max-mobile-size) {
     &__content {
-      grid-column: 1 / 13;
+      grid-column: 2 / 14;
     }
   }
 }

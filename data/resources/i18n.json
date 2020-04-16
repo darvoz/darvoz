@@ -27,6 +27,7 @@
   "collecting-stations.map.menu.headline": "Encontra o ponto de recolha mais próximo de ti",
   "collecting-stations.map.menu.button": "Pesquisar perto de mim*",
   "collecting-stations.map.menu.footnote": "*Terá de aceitar a autorização de geolocalização",
+  "collecting-stations.map.menu.reopen": "Pesquisar perto de mim",
   "collecting-stations.list.see-all": "Ver mais",
   "collecting-stations.list.see-less": "Ver menos",
   "brands.headline.top": "Empresas",

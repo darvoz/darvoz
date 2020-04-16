@@ -43,14 +43,12 @@
           "
           :zoom="location ? 13 : undefined"
           :markers-location="stations.map((station) => station.coords)"
-          :closed-control="closedControl"
           :postal-code="postalCode"
         >
           <ChooseLocation
             slot="controller-bottom-left"
             @getLocation="locateMe"
             @setPostalCode="setPostalCode"
-            @closedControl="closedControl = true"
           />
         </Map>
       </div>
@@ -87,8 +85,7 @@ export default {
       location: null,
       gettingLocation: false,
       errorStr: null,
-      postalCode: '',
-      closedControl: false
+      postalCode: ''
     }
   },
   async created() {

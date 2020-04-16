@@ -5,7 +5,11 @@
       class="location-card__close"
       @click="$emit('close')"
     >
-      <img :key="'close'" src="../../assets/svg/cross-icon.svg" alt="Fechar" />
+      <img
+        :key="'close'"
+        src="../../assets/svg/cross-icon.svg"
+        :alt="localI18n['close.button.alt']"
+      />
     </button>
     <h1 class="location-card__headline">{{ name }}</h1>
     <span class="location-card__info">
@@ -23,7 +27,7 @@
       target="__blank"
       align="left"
     >
-      abrir no google maps
+      {{ localI18n['location-card.open-on-maps'] }}
     </Button>
   </article>
 </template>
@@ -31,6 +35,7 @@
 <script>
 import MapMarker from 'vue-material-design-icons/MapMarker.vue'
 import ClockOutline from 'vue-material-design-icons/ClockOutline.vue'
+import localI18n from '../../data/resources/i18n.json'
 import Button from '~/components/Button/Button'
 export default {
   name: 'CollectionStationsListItem',
@@ -59,6 +64,11 @@ export default {
     url: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      localI18n
     }
   }
 }

@@ -30,6 +30,11 @@
   "brands.headline.top": "Empresas",
   "brands.headline.bottom": "participantes",
   "brands.description": "Duis nibh aliquet ullamcorper consequat nec risus pretium. Ut parturient faucibus nibh non libero arcu ac hac vel. Aliquet pretium ut ullamcorper sed feugiat dignissim nulla urna. Mauris pellentesque mauris rhoncus egestas felis. Ut parturient faucibus nibh non libero arcu ac hac vel ",
+  "brands.logo.alt.mercedes-benz": "Mercedes-Benz.io logo",
+  "brands.logo.alt.nos": "NOS logo",
+  "brands.logo.alt.bcg": "Boston Consulting Group logo",
   "faq.headline": "Perguntas frequentes",
-  "faq.link": "Ler mais perguntas"
+  "faq.link": "Ler mais perguntas",
+  "close.button.alt": "Fechar",
+  "location-card.open-on-maps": "Abrir no Google Maps"
 }

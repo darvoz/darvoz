@@ -14,7 +14,7 @@
       <Button
         kind="primary"
         class="choose-location__form__button"
-        @click="getLocation"
+        @click="$emit('getLocation')"
       >
         {{ localI18n['collecting-stations.map.menu.button'] }}
       </Button>
@@ -32,12 +32,6 @@ export default {
   name: 'ChooseLocation',
   components: {
     Button
-  },
-  props: {
-    getLocation: {
-      type: Function,
-      required: true
-    }
   },
   data() {
     return {

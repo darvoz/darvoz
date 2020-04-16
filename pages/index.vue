@@ -42,7 +42,7 @@ export default {
 @import '../styles/_global.scss';
 
 .main {
-  background: $smoke-white;
+  background: $white;
   padding-top: $nav-height;
 }
 </style>

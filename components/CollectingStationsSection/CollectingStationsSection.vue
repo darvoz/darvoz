@@ -42,7 +42,7 @@
       >
         <ChooseLocation
           slot="controller-bottom-left"
-          :get-location="locateMe"
+          @getLocation="locateMe"
           @setPostalCode="setPostalCode"
           @closedControl="closedControl = true"
         />

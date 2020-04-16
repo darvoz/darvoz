@@ -11,7 +11,7 @@
     >
       <l-tile-layer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
-      <l-control v-if="!closedControl" position="bottomleft">
+      <l-control position="bottomleft">
         <slot name="controller-bottom-left" />
       </l-control>
       <l-marker
@@ -55,10 +55,6 @@ export default {
       type: String,
       default: '',
       required: false
-    },
-    closedControl: {
-      type: Boolean,
-      default: false
     },
     zoom: {
       type: Number,

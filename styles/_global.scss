@@ -78,7 +78,7 @@ a { text-decoration: none;}
 }
 
 .leaflet-left .leaflet-control {
-  transform: translateY(-50%);
+  //transform: translateY(-50%);
 
   @media screen and (min-width: $max-mobile-size) {
       margin-left: 24px;

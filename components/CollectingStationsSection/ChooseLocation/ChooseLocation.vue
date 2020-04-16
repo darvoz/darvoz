@@ -1,10 +1,10 @@
 <template>
-  <div class="choose-location">
+  <div v-if="!closedControl" class="choose-location">
     <div class="choose-location__header">
       <h1 class="choose-location__title">
         {{ localI18n['collecting-stations.map.menu.headline'] }}
       </h1>
-      <button class="choose-location__close" @click="$emit('closedControl')">
+      <button class="choose-location__close" @click="closedControl = true">
         <img
           :key="'close'"
           src="../../../assets/svg/cross-icon.svg"
@@ -25,6 +25,15 @@
       </p>
     </div>
   </div>
+  <Button v-else class="choose-location__reopen" @click="$emit('getLocation')">
+    <img
+      src="../../../assets/svg/toggleGPS.svg"
+      class="choose-location__reopenIcon"
+      role="presentation"
+      alt=""
+    />
+    {{ localI18n['collecting-stations.map.menu.reopen'] }}
+  </Button>
 </template>
 
 <script>
@@ -37,7 +46,8 @@ export default {
   },
   data() {
     return {
-      localI18n
+      localI18n,
+      closedControl: false
     }
   }
 }
@@ -89,6 +99,14 @@ export default {
     &__footnotes {
       margin-top: 16px;
     }
+  }
+
+  &__reopen {
+    background-color: $white;
+  }
+
+  &__reopenIcon {
+    margin-right: 16px;
   }
 }
 </style>

@@ -47,7 +47,7 @@ export default {
     },
     kind: {
       type: String,
-      default: 'primary'
+      default: 'none'
     },
     disabled: {
       type: Boolean,

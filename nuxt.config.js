@@ -12,9 +12,38 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'image',
+        property: 'og:image:secure_url',
+        content: 'https://darvoz.pt/seo/ogImage.jpg',
+        'data-hid': 'og:image:secure_url'
+      },
+      {
+        name: 'image',
+        property: 'og:image',
+        content: 'https://darvoz.pt/seo/ogImage.jpg',
+        'data-hid': 'og:image'
+      },
+      {
+        property: 'og:image:type',
+        content: 'image/jpeg'
+      },
+      {
+        itemprop: 'image',
+        content: 'https://darvoz.pt/seo/ogImage.jpg'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+  },
+  pwa: {
+    meta: {
+      name: 'darvoz',
+      description:
+        'Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que neste momento de isolamento, mais precisam de estar ligados.',
+      lang: 'pt',
+      ogHost: 'https://darvoz.pt'
+    }
   },
   /*
    ** Customize the progress-bar color

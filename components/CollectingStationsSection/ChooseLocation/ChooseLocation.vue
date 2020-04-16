@@ -1,27 +1,33 @@
 <template>
-  <div class="choose-location">
-    <h1 class="choose-location__title">
-      {{ localI18n['collecting-stations.map.menu.headline'] }}
-    </h1>
-    <button class="choose-location__close" @click="$emit('closedControl')">
-      <img
-        :key="'close'"
-        src="../../../assets/svg/cross-icon.svg"
-        alt="Fechar"
-      />
-    </button>
-    <div class="choose-location__form">
-      <Button
-        kind="primary"
-        class="choose-location__form__button"
-        @click="$emit('getLocation')"
-      >
-        {{ localI18n['collecting-stations.map.menu.button'] }}
-      </Button>
-      <p class="choose-location__form__footnotes">
-        {{ localI18n['collecting-stations.map.menu.footnote'] }}
-      </p>
+  <div>
+    <div v-if="!closedControl" class="choose-location">
+      <h1 class="choose-location__title">
+        {{ localI18n['collecting-stations.map.menu.headline'] }}
+      </h1>
+      <button class="choose-location__close" @click="closedControl = true">
+        <img
+          :key="'close'"
+          src="../../../assets/svg/cross-icon.svg"
+          alt="Fechar"
+        />
+      </button>
+      <div class="choose-location__form">
+        <Button
+          kind="primary"
+          class="choose-location__form__button"
+          @click="$emit('getLocation')"
+        >
+          {{ localI18n['collecting-stations.map.menu.button'] }}
+        </Button>
+        <p class="choose-location__form__footnotes">
+          {{ localI18n['collecting-stations.map.menu.footnote'] }}
+        </p>
+      </div>
     </div>
+    <Button v-else class="choose-location__reopen" kind="none"  @click="$emit('getLocation')">
+      <img src="../../../assets/svg/toggleGPS.svg" class="choose-location__reopenIcon" role="presentation" alt="">
+      {{ localI18n['collecting-stations.map.menu.reopen'] }}
+    </Button>
   </div>
 </template>
 
@@ -35,7 +41,8 @@ export default {
   },
   data() {
     return {
-      localI18n
+      localI18n,
+      closedControl: false
     }
   }
 }
@@ -85,6 +92,14 @@ export default {
     &__footnotes {
       margin-top: 16px;
     }
+  }
+
+  &__reopen {
+    background-color: $white;
+  }
+
+  &__reopenIcon {
+    margin-right: 16px;
   }
 }
 </style>

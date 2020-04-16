@@ -134,8 +134,6 @@ export default {
   @media only screen and (max-width: $max-mobile-size) {
     &__content {
       @include container-gap;
-
-      justify-content: space-between;
     }
 
     &__items {

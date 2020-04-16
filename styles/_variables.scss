@@ -23,7 +23,7 @@ $outline: $primary-color 2px solid;
 @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 @mixin container-gap() {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 5% repeat(4, 1fr) 5%;
   width: 100%;
 
   @media only screen and (min-width: $max-mobile-size) {

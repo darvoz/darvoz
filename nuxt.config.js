@@ -16,6 +16,16 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  pwa: {
+    meta: {
+      name: 'darvoz',
+      description:
+        'Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que neste momento de isolamento, mais precisam de estar ligados.',
+      lang: 'pt',
+      ogHost: 'darvoz.pt',
+      ogImage: 'darvoz.pt/ogImage.png'
+    }
+  },
   /*
    ** Customize the progress-bar color
    */

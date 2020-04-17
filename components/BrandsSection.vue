@@ -11,19 +11,19 @@
           :lazy="true"
           class="brands__logo"
           src="../assets/Mercedes_Benz_io_logo.png"
-          :alt="localI18n['brands.alt.mercedes-benz']"
+          :alt="localI18n['brands.logo.alt.mercedes-benz']"
         />
         <img
           :lazy="true"
           class="brands__logo"
           src="../assets/BCG_logo.png"
-          :alt="localI18n['brands.alt.bcg']"
+          :alt="localI18n['brands.logo.alt.bcg']"
         />
         <img
           :lazy="true"
           class="brands__logo"
           src="../assets/NOS_logo.png"
-          :alt="localI18n['brands.alt.nos']"
+          :alt="localI18n['brands.logo.alt.nos']"
         />
       </div>
       <p class="section__description brands__description">

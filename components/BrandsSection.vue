@@ -8,16 +8,19 @@
       </h1>
       <div class="brands__logos">
         <img
+          :lazy="true"
           class="brands__logo"
           src="../assets/Mercedes_Benz_io_logo.png"
           :alt="localI18n['brands.alt.mercedes-benz']"
         />
         <img
+          :lazy="true"
           class="brands__logo"
           src="../assets/BCG_logo.png"
           :alt="localI18n['brands.alt.bcg']"
         />
         <img
+          :lazy="true"
           class="brands__logo"
           src="../assets/NOS_logo.png"
           :alt="localI18n['brands.alt.nos']"

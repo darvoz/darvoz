@@ -11,6 +11,7 @@
             <img
               v-if="slide.img"
               slot="background"
+              :lazy="true"
               class="slide__background"
               :src="slide.img"
               role="presentation"
@@ -25,10 +26,18 @@
         </swiper-slide>
         <div slot="pagination" class="swiper-pagination"></div>
         <div slot="button-prev" class="swiper-button-prev">
-          <img src="../../assets/svg/steps-next.svg" alt="Passo anterior" />
+          <img
+            :lazy="true"
+            src="../../assets/svg/steps-next.svg"
+            alt="Passo anterior"
+          />
         </div>
         <div slot="button-next" class="swiper-button-next">
-          <img src="../../assets/svg/steps-next.svg" alt="Proximo passo" />
+          <img
+            :lazy="true"
+            src="../../assets/svg/steps-next.svg"
+            alt="Proximo passo"
+          />
         </div>
       </swiper>
     </div>

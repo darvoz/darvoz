@@ -11,7 +11,7 @@
       />
     </div>
     <Button
-      v-if="items.length > 6"
+      v-if="items && items.length > 6"
       class="list__seeMore"
       kind="secondary"
       @click="toggleSeeAll()"
@@ -49,9 +49,12 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.seeAll
-        ? this.items
-        : this.items.slice(0, DEFAULT__NUMBER_OF_ITEMS)
+      if (this.items) {
+        return this.seeAll
+          ? this.items
+          : this.items.slice(0, DEFAULT__NUMBER_OF_ITEMS)
+      }
+      return []
     }
   },
   methods: {

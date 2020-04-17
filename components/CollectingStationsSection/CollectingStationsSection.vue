@@ -42,7 +42,10 @@
         ]"
       >
         <keep-alive>
-          <component :is="currentTab.component" v-bind="showMap ? '' : { items: stations }" />
+          <component
+            :is="currentTab.component"
+            v-bind="showMap ? '' : { items: stations }"
+          />
         </keep-alive>
       </div>
     </div>

@@ -16,6 +16,7 @@
         class="about__backgroundImg"
         src="../assets/aboutBG.png"
         role="presentation"
+        alt=""
       />
     </div>
   </section>

@@ -43,7 +43,10 @@ export default {
       description:
         'Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que neste momento de isolamento, mais precisam de estar ligados.',
       lang: 'pt',
-      ogHost: 'https://darvoz.pt'
+      ogHost: 'https://darvoz.pt',
+      icon: {
+        iconSrc: '/icon.png'
+      }
     }
   },
   /*

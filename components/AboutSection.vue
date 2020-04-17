@@ -13,7 +13,7 @@
     </div>
     <div class="about__background">
       <img
-        :lazy="true"
+        loading="lazy"
         class="about__backgroundImg"
         src="../assets/aboutBG.png"
         role="presentation"

@@ -34,27 +34,40 @@
           </span>
         </Toggle>
       </div>
-      <div v-if="showMap" class="collecting-stations__locations__map">
-        <Map
-          :location="
-            location
-              ? [location.coords.latitude, location.coords.longitude]
-              : undefined
-          "
-          :zoom="location ? 13 : undefined"
-          :markers-location="stations.map((station) => station.coords)"
-          :postal-code="postalCode"
-        >
-          <ChooseLocation
-            slot="controller-bottom-left"
-            @getLocation="locateMe"
-            @setPostalCode="setPostalCode"
-          />
-        </Map>
+      <div
+        :class="[
+          showMap
+            ? 'collecting-stations__locations__map'
+            : 'collecting-stations__locations__list'
+        ]"
+      >
+        <keep-alive>
+          <component :is="currentTab.component" v-bind="{ items: stations }" />
+        </keep-alive>
       </div>
-      <div v-else class="collecting-stations__locations__list">
-        <List :items="stations" />
-      </div>
+      <!-- <keep-alive>
+        <div v-if="showMap" class="collecting-stations__locations__map">
+          <Map
+            :location="
+              location
+                ? [location.coords.latitude, location.coords.longitude]
+                : undefined
+            "
+            :zoom="location ? 13 : undefined"
+            :markers-location="stations.map((station) => station.coords)"
+            :postal-code="postalCode"
+          >
+            <ChooseLocation
+              slot="controller-bottom-left"
+              @getLocation="locateMe"
+              @setPostalCode="setPostalCode"
+            />
+          </Map>
+        </div>
+        <div v-else class="collecting-stations__locations__list">
+          <List :items="stations" />
+        </div>
+      </keep-alive>-->
     </div>
   </section>
 </template>
@@ -85,7 +98,20 @@ export default {
       location: null,
       gettingLocation: false,
       errorStr: null,
-      postalCode: ''
+      postalCode: '',
+      tabs: [
+        {
+          component: Map
+        },
+        {
+          component: List
+        }
+      ]
+    }
+  },
+  computed: {
+    currentTab() {
+      return this.showMap ? this.tabs[0] : this.tabs[1]
     }
   },
   async created() {
@@ -217,11 +243,10 @@ export default {
       grid-column: 1 / 15;
       width: 100%;
       margin-left: 0;
-      min-height: 60vh;
     }
 
     &__map {
-      height: 60vh;
+      height: 100%;
     }
 
     &__infoDescription {

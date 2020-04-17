@@ -85,7 +85,8 @@ export default {
             scrollMac: localI18n['collecting-stations.map.scrollMap']
           },
           duration: 2000
-        }
+        },
+        zoomControl: false
       }
     }
   },

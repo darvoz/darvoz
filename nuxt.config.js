@@ -32,7 +32,8 @@ export default {
       {
         itemprop: 'image',
         content: 'https://darvoz.pt/seo/ogImage.jpg'
-      }
+      },
+      { name: 'twitter:image', content: 'https://darvoz.pt/seo/ogImage.jpg' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },

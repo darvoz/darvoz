@@ -12,7 +12,7 @@
     </div>
     <Button
       v-if="items.length > 6"
-      class="list__see-more"
+      class="list__seeMore"
       kind="secondary"
       @click="toggleSeeAll()"
       >{{
@@ -73,16 +73,22 @@ export default {
 .list__content {
   display: grid;
   grid-column: 2 / 12;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: auto;
   grid-gap: 32px;
-
-  @media screen and (min-width: $max-mobile-size) {
-    grid-template-columns: repeat(minmax(auto-fit, 3), minmax(350px, 1fr));
-  }
 }
 
-.list__see-more {
-  grid-column: 6 / 8;
+.list__seeMore {
+  grid-column: 2 / 12;
   margin: 40px 0;
+}
+
+@media screen and (min-width: $max-mobile-size) {
+  .list__content {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .list__seeMore {
+    grid-column: 6 / 8;
+  }
 }
 </style>

@@ -1,14 +1,6 @@
 <template>
   <client-only>
-    <l-map
-      ref="map"
-      :zoom="zoom"
-      :center="location"
-      :options="{ scrollWheelZoom: false, zoomControl: false }"
-      @focus="enableZoomScroll"
-      @click="enableZoomScroll"
-      @mouseout="disableZoomScroll"
-    >
+    <l-map ref="map" :zoom="zoom" :center="location" :options="mapOptions">
       <l-tile-layer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       <l-control-zoom position="bottomright" />
       <l-control position="bottomleft">
@@ -35,7 +27,9 @@
 </template>
 
 <script>
+import localI18n from '../../data/resources/i18n.json'
 import LocationCard from '~/components/LocationCard/LocationCard'
+
 const PORTUGAL_CENTER_COORDS = [39.55791, -7.8536599]
 export default {
   name: 'Map',
@@ -80,13 +74,22 @@ export default {
       ]
     }
   },
+  data() {
+    return {
+      mapOptions: {
+        gestureHandling: true,
+        gestureHandlingOptions: {
+          text: {
+            touch: localI18n['collecting-stations.map.touch'],
+            scroll: localI18n['collecting-stations.map.scroll'],
+            scrollMac: localI18n['collecting-stations.map.scrollMap']
+          },
+          duration: 2000
+        }
+      }
+    }
+  },
   methods: {
-    enableZoomScroll() {
-      this.$refs.map.mapObject.scrollWheelZoom.enable()
-    },
-    disableZoomScroll() {
-      this.$refs.map.mapObject.scrollWheelZoom.disable()
-    },
     closePopup() {
       this.$refs.map.mapObject.closePopup()
     }

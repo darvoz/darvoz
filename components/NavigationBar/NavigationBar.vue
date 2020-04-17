@@ -69,7 +69,10 @@ export default {
   $nav-element: &;
   $nav-max-width: 1124px;
   $nav-bar-index: 1002; //Needs to be higher than 1001 because of the MAP component
-
+  @include container-gap();
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
   position: fixed;
   top: 0;
   left: 0;
@@ -81,21 +84,22 @@ export default {
   box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
 
   &__content {
+    grid-column: 2 / 6;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: $container-gap;
     margin: 0 auto;
     height: 100%;
+    width: 100%;
 
-    @media only screen and (max-width: $nav-max-width) {
-      width: 100%;
+    @media screen and (min-width: $max-mobile-size) {
+      grid-column: 2 / 14;
     }
   }
 
   &__items {
     display: flex;
-    align-content: center;
+    align-items: center;
     font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 16px;

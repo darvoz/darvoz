@@ -81,7 +81,7 @@ export default {
   height: $nav-height;
   font-family: Muli, sans-serif;
   z-index: $nav-bar-index;
-  box-shadow: 0 5px 10px 5px rgba($gray, 0.2);
+  box-shadow: 0 5px 10px 5px rgba($light-gray, 0.1);
 
   &__content {
     grid-column: 2 / 6;

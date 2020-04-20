@@ -1,5 +1,6 @@
 $primary-color: #192AEA;
 $gray: #747474;
+$light-gray: #a7a7a7;
 $white: #ffffff;
 $smoke-white: #f2f2f2;
 $black: #000000;
@@ -27,7 +28,7 @@ $outline: $primary-color 2px solid;
   width: 100%;
 
   @media only screen and (min-width: $max-mobile-size) {
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: 5% repeat(12, 1fr) 5%;
     width: 100%;
   }
 }

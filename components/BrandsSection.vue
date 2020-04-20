@@ -10,18 +10,27 @@
         <img
           loading="lazy"
           class="brands__logo"
+          srcset="
+            ../assets/Mercedes_Benz_io_logo.png 202w,
+            ../assets/Mercedes_logo_3x.png      606w
+          "
+          sizes="(max-width: 870px) 202px, 606px"
           src="../assets/Mercedes_Benz_io_logo.png"
           :alt="localI18n['brands.logo.alt.mercedes-benz']"
         />
         <img
           loading="lazy"
           class="brands__logo"
+          srcset="../assets/BCG_logo.png 202w, ../assets/BCG_3x.png 606w"
+          sizes="(max-width: 870px) 202px, 606px"
           src="../assets/BCG_logo.png"
           :alt="localI18n['brands.logo.alt.bcg']"
         />
         <img
           loading="lazy"
           class="brands__logo"
+          srcset="../assets/NOS_logo.png 202w, ../assets/NOS_logo_3x.png 606w"
+          sizes="(max-width: 870px) 202px, 606px"
           src="../assets/NOS_logo.png"
           :alt="localI18n['brands.logo.alt.nos']"
         />
@@ -65,7 +74,7 @@ export default {
   &__logos {
     display: grid;
     grid-gap: $grid-gap;
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
   }
 
   &__logo {
@@ -94,14 +103,17 @@ export default {
   }
 
   @media screen and (min-width: $max-mobile-size) {
-    grid-column: 3 / 13;
+    grid-column: 4 / 12;
 
     &__logos {
       grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 24px;
+      width: 100%;
+      padding: 0 40px; // Padding of 40px is semi magical since designs have contradictory specs
     }
 
     &__logo {
-      margin-right: 24px;
+      width: 100%;
     }
 
     &__separator {

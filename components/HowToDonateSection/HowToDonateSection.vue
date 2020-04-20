@@ -89,7 +89,7 @@ export default {
 
   &__title {
     text-align: center;
-    margin-bottom: 47px;
+    margin-bottom: 65px;
   }
 
   &__content {

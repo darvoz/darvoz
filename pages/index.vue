@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <navigation-bar></navigation-bar>
+    <navigation-bar />
+    <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" />
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import localI18n from '../data/resources/i18n'
 import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
@@ -22,9 +24,11 @@ import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
+import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 
 export default {
   components: {
+    TemporaryMessage,
     SectionSeparator,
     BrandsSection,
     StatsSection,
@@ -34,6 +38,11 @@ export default {
     NavigationBar,
     CollectingStationsSection,
     HowToDonateSection
+  },
+  data() {
+    return {
+      localI18n
+    }
   }
 }
 </script>

@@ -19,12 +19,12 @@ import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
+import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
-import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 
 export default {
   components: {

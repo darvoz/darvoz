@@ -17,6 +17,7 @@
     "firebase": "^7.14.2",
     "leaflet": "^1.6.0",
     "leaflet-gesture-handling": "^1.1.8",
+    "mic-recorder-to-mp3": "^2.2.1",
     "nuxt": "^2.0.0",
     "nuxt-leaflet": "0.0.21",
     "swiper": "^5.3.6",

@@ -69,10 +69,10 @@
 </template>
 
 <script>
+import MicRecorder from 'mic-recorder-to-mp3'
 import localI18n from '../../data/resources/i18n.json'
 import { uploadFile, saveData } from '../../services/firebase'
 import Button from '~/components/Button/Button.vue'
-
 export default {
   name: 'VoiceMessageSection',
   components: {
@@ -98,29 +98,16 @@ export default {
       localI18n
     }
   },
+  mounted() {
+    if (window)
+      window.AudioContext = window.AudioContext || window.webkitAudioContext
+  },
   methods: {
-    handleData(e) {
-      this.messageChunks.push(e.data)
-
-      if (this.rec.state === 'inactive' && this.messageChunks.length !== 0) {
-        const blob = new Blob(this.messageChunks, { type: 'audio/mp3' })
-        this.audioPlayback = URL.createObjectURL(blob)
-        this.messagePackage.audioMessage = blob
-        this.messageChunks = []
-      }
-    },
-    handleRecording(stream) {
-      this.rec = new MediaRecorder(stream)
-      this.rec.addEventListener('dataavailable', this.handleData.bind(this))
-    },
-    async startRecording() {
-      this.stream = null
+    startRecording() {
+      this.rec = new MicRecorder({ bitRate: 128 })
 
       try {
-        this.stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-
-        this.handleRecording(this.stream)
-        this.rec.start()
+        this.rec.start().catch(() => {})
 
         this.recordingTimer = setTimeout(
           this.stopRecording.bind(this),
@@ -138,9 +125,20 @@ export default {
       clearTimeout(this.recordingTimer)
 
       this.isRecording = false
-      this.rec.stop()
-
-      this.stream.getTracks().forEach((track) => track.stop())
+      this.rec
+        .stop()
+        .getMp3()
+        .then(([buffer, blob]) => {
+          // do what ever you want with buffer and blob
+          // Example: Create a mp3 file and play
+          const file = new File(buffer, 'voice.mp3', {
+            type: blob.type,
+            lastModified: Date.now()
+          })
+          this.messagePackage.audioMessage = file
+          this.audioPlayback = URL.createObjectURL(file)
+        })
+        .catch((e) => {})
     },
     async checkForm(e) {
       e.preventDefault()

@@ -10,13 +10,13 @@
       </p>
       <form class="voice-message__form" method="post" @submit="checkForm">
         <label>
-          {{ localI18n['voice-message.recipient'] }}
-          <input v-model="messagePackage.recipient" type="text" />
+          {{ localI18n['voice-message.parish'] }}
+          <input v-model="messagePackage.parish" type="text" />
           <span
-            v-if="triedToSend && !messagePackage.recipient"
+            v-if="triedToSend && !messagePackage.parish"
             class="voice-message__warning"
           >
-            {{ localI18n['voice-message.error.recipient'] }}
+            {{ localI18n['voice-message.error.parish'] }}
           </span>
         </label>
         <label>
@@ -40,7 +40,7 @@
           </Button>
           <Button
             v-else
-            class="navigation-bar__button"
+            class="voice-message__button"
             kind="secondary"
             @click="stopRecording"
           >
@@ -57,16 +57,20 @@
             {{ localI18n['voice-message.error.audioMessage'] }}
           </span>
         </div>
-        <Button class="navigation-bar__button" kind="primary" type="submit">
+        <Button class="voice-message__button" kind="primary" type="submit">
           {{ localI18n['voice-message.send-btn'] }}
         </Button>
       </form>
+      <div class="voice-message__notify">
+        {{ uploadStatus }}
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import localI18n from '../../data/resources/i18n.json'
+import { uploadFile, saveData } from '../../services/firebase'
 import Button from '~/components/Button/Button.vue'
 
 export default {
@@ -85,8 +89,9 @@ export default {
       triedToSend: false,
       stream: null,
       maxRecordTime: 30000,
+      uploadStatus: null,
       messagePackage: {
-        recipient: '',
+        parish: '',
         street: '',
         audioMessage: null
       },
@@ -137,16 +142,25 @@ export default {
 
       this.stream.getTracks().forEach((track) => track.stop())
     },
-    checkForm(e) {
+    async checkForm(e) {
+      e.preventDefault()
+
       this.triedToSend = true
       if (
-        this.messagePackage.recipient &&
+        this.messagePackage.parish &&
         this.messagePackage.street &&
         this.messagePackage.audioMessage !== 0
       ) {
-        console.log(this.messagePackage)
+        this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
+        this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
+
+        const key = await saveData(this.messagePackage)
+        const fileName = `${this.messagePackage.parish}__${this.messagePackage.street}__${key}`
+
+        uploadFile(this.messagePackage.audioMessage, fileName)
+          .then(() => (this.uploadStatus = localI18n['voice-message.success']))
+          .catch(() => (this.uploadStatus = localI18n['voice-message.error']))
       }
-      e.preventDefault()
     }
   }
 }

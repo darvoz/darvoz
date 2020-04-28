@@ -48,10 +48,12 @@
   "voice-message.record-btn.start" : "Gravar",
   "voice-message.record-btn.stop" : "Parar",
   "voice-message.send-btn" : "Enviar",
-  "voice-message.recipient" : "Destinatário",
+  "voice-message.parish" : "Fregusia",
   "voice-message.street" : "Rua",
   "voice-message.blockedWarning" : "Para gravar precisamos de acesso ao seu microfone (as permissões encontram-se à esquerda da barra de endereço)",
-  "voice-message.error.recipient" : "Introduza um destinatário",
+  "voice-message.error.parish" : "Introduza a freguesia",
   "voice-message.error.street" : "Diga-nos a rua onde passar a gravação",
-  "voice-message.error.audioMessage" : "Grave uma mensagem"
+  "voice-message.error.audioMessage" : "Grave uma mensagem",
+  "voice-message.success" : "A sua mensagem foi enviada",
+  "voice-message.error" : "Algo de errado aconteceu, tente mais tarde"
 }

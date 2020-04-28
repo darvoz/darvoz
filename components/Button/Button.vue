@@ -1,6 +1,7 @@
 <template>
   <button
     v-if="!link"
+    type="button"
     :class="['button', `button__${kind.toString()}`, `button--${align}`]"
     @click="$emit('click')"
   >

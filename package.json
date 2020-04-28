@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-0",
+    "audio-recorder-polyfill": "^0.3.6",
     "leaflet": "^1.6.0",
     "leaflet-gesture-handling": "^1.1.8",
     "nuxt": "^2.0.0",

@@ -1,16 +1,27 @@
 <template>
   <nav class="navigation-bar">
     <div class="navigation-bar__content">
-      <a class="navigation-bar__logo" href="#"><Logo /></a>
-      <ul class="navigation-bar__items" @click="animateScroll">
+      <nuxt-link class="navigation-bar__logo" to="/"><Logo /></nuxt-link>
+      <ul class="navigation-bar__items">
         <li
           v-for="item in linkList"
           :key="item.name"
           class="navigation-bar__item"
         >
-          <a :href="`#${item.link}`" class="navigation-bar__link">{{
-            item.name
-          }}</a>
+          <nuxt-link
+            v-if="item.newPage"
+            :to="`${item.link}`"
+            class="navigation-bar__link"
+          >
+            {{ item.name }}
+          </nuxt-link>
+          <a
+            v-else
+            :href="`${item.link}`"
+            class="navigation-bar__link"
+            @click="animateScroll"
+            >{{ item.name }}</a
+          >
         </li>
       </ul>
       <Button
@@ -25,7 +36,6 @@
 </template>
 
 <script>
-import localI18n from '../../data/resources/i18n.json'
 import animateScroll from '../../utils/utils'
 import Button from '~/components/Button/Button'
 import Logo from '~/components/Logo/Logo'
@@ -36,26 +46,14 @@ export default {
     Button,
     Logo
   },
+  props: {
+    linkList: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      linkList: [
-        {
-          name: localI18n['nav.about'],
-          link: 'o-que-e'
-        },
-        {
-          name: localI18n['nav.how-to-donate'],
-          link: 'como-doar'
-        },
-        {
-          name: localI18n['nav.collecting-stations'],
-          link: 'pontos-recolha'
-        },
-        {
-          name: localI18n['nav.faq'],
-          link: 'perguntas-frequentes'
-        }
-      ],
       animateScroll
     }
   }

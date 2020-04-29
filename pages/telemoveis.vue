@@ -4,7 +4,7 @@
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
     <stats-section />
-    <about-section id="o-que-e" />
+    <about-section id="o-que-e" :links="navLinks" />
     <how-to-donate-section />
     <collecting-stations-section id="pontos-recolha" />
     <brands-section />
@@ -52,14 +52,12 @@ export default {
           link: '#como-doar'
         },
         {
-          name: localI18n['nav.iniciativas.bus'],
-          link: '/autocarro',
-          newPage: true
+          name: localI18n['nav.collecting-stations'],
+          link: '#pontos-recolha'
         },
         {
-          name: localI18n['nav.iniciativas.cellphone'],
-          link: '/telemoveis',
-          newPage: true
+          name: localI18n['nav.faq'],
+          link: '#perguntas-frequentes'
         }
       ]
     }

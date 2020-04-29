@@ -44,22 +44,20 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.about'],
+          name: localI18n['nav.iniciativas.bus.about'],
           link: '#o-que-e'
         },
         {
-          name: localI18n['nav.how-to-donate'],
+          name: localI18n['nav.iniciativas.bus.how'],
           link: '#como-doar'
         },
         {
-          name: localI18n['nav.iniciativas.bus'],
-          link: '/autocarro',
-          newPage: true
+          name: localI18n['nav.iniciativas.bus.where'],
+          link: '#pontos-recolha'
         },
         {
-          name: localI18n['nav.iniciativas.cellphone'],
-          link: '/telemoveis',
-          newPage: true
+          name: localI18n['nav.faq'],
+          link: '#perguntas-frequentes'
         }
       ]
     }

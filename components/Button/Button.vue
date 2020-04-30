@@ -3,6 +3,7 @@
     v-if="!link"
     type="button"
     :class="['button', `button__${kind.toString()}`, `button--${align}`]"
+    :disabled="disabled"
     @click="$emit('click')"
   >
     <slot />
@@ -93,6 +94,10 @@ export default {
 
     &:hover {
       background-color: $button-focus;
+    }
+
+    &:disabled {
+      background-color: lighten($primary-color, 20%);
     }
   }
 

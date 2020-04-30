@@ -49,11 +49,13 @@
   "voice-message.record-btn.stop" : "Parar",
   "voice-message.send-btn" : "Enviar",
   "voice-message.parish" : "Fregusia",
-  "voice-message.street" : "Rua",
+  "voice-message.street" : "Morada",
+  "voice-message.date" : "Dia para quando passar a mensagem",
   "voice-message.blockedWarning" : "Para gravar precisamos de acesso ao seu microfone (as permissões encontram-se à esquerda da barra de endereço)",
   "voice-message.error.parish" : "Introduza a freguesia",
   "voice-message.error.street" : "Diga-nos a rua onde passar a gravação",
   "voice-message.error.audioMessage" : "Grave uma mensagem",
   "voice-message.success" : "A sua mensagem foi enviada",
+  "voice-message.error.date" : "Introduza uma data",
   "voice-message.error" : "Algo de errado aconteceu, tente mais tarde"
 }

@@ -8,7 +8,12 @@
         Grave um video com um maximo de 30 segundos e diminua a distancia
         através da voz
       </p>
-      <form class="voice-message__form" method="post" @submit="checkForm">
+      <form
+        class="voice-message__form"
+        method="post"
+        novalidate
+        @submit="checkForm"
+      >
         <label>
           {{ localI18n['voice-message.parish'] }}
           <input v-model="messagePackage.parish" type="text" />
@@ -29,6 +34,19 @@
             {{ localI18n['voice-message.error.street'] }}
           </span>
         </label>
+        <div>
+          <label>
+            {{ localI18n['voice-message.date'] }}
+            <input id="date" v-model="messagePackage.date" type="date" />
+            <span
+              v-if="triedToSend && !messagePackage.date"
+              class="voice-message__warning"
+            >
+              {{ localI18n['voice-message.error.date'] }}
+            </span>
+            <p v-else>Confirme o dia antes de enviar</p>
+          </label>
+        </div>
         <div class="voice-message__recording">
           <Button
             v-if="!isRecording"
@@ -57,7 +75,7 @@
             {{ localI18n['voice-message.error.audioMessage'] }}
           </span>
         </div>
-        <Button class="voice-message__button" kind="primary" type="submit">
+        <Button class="voice-message__button" kind="primary" type="submit" :disabled="isRecording || messageSent">
           {{ localI18n['voice-message.send-btn'] }}
         </Button>
       </form>
@@ -93,8 +111,10 @@ export default {
       messagePackage: {
         parish: '',
         street: '',
+        date: null,
         audioMessage: null
       },
+      messageSent: false,
       localI18n
     }
   },
@@ -138,25 +158,57 @@ export default {
           this.messagePackage.audioMessage = file
           this.audioPlayback = URL.createObjectURL(file)
         })
-        .catch((e) => {})
+        .catch(() => {})
     },
     async checkForm(e) {
       e.preventDefault()
 
       this.triedToSend = true
+
+      if (this.messagePackage.date) {
+        const matches = /^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/.exec(
+          this.messagePackage.date
+        )
+
+        if (matches == null) {
+          this.messagePackage.date = null
+          return false
+        }
+
+        const d = parseInt(matches[3])
+        const m = parseInt(matches[2]) - 1
+        const y = parseInt(matches[1])
+
+        const composedDate = new Date(y, m, d)
+
+        if (
+          composedDate.getDate() !== d ||
+          composedDate.getMonth() !== m ||
+          composedDate.getFullYear() !== y
+        ) {
+          this.messagePackage.date = null
+          return
+        }
+      }
+
       if (
         this.messagePackage.parish &&
         this.messagePackage.street &&
+        this.messagePackage.date &&
         this.messagePackage.audioMessage !== 0
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
         this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
 
         const key = await saveData(this.messagePackage)
-        const fileName = `${this.messagePackage.parish}__${this.messagePackage.street}__${key}`
+        const fileName = `${this.messagePackage.parish}__${this.messagePackage
+          .street + key}`
 
         uploadFile(this.messagePackage.audioMessage, fileName)
-          .then(() => (this.uploadStatus = localI18n['voice-message.success']))
+          .then(() => {
+            this.uploadStatus = localI18n['voice-message.success']
+            this.messageSent = true
+          })
           .catch(() => (this.uploadStatus = localI18n['voice-message.error']))
       }
     }
@@ -175,6 +227,7 @@ export default {
     flex-direction: row;
     margin: 20px 0;
   }
+
   &__warning {
     color: red;
     font-size: 10px;
@@ -184,6 +237,15 @@ export default {
     margin-top: 10px;
     font-size: 16px;
     color: $gray;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $max-mobile-size) {
+    grid-column: 2 / 14;
   }
 }
 </style>

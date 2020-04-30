@@ -4,7 +4,7 @@
       <source :src="src" />
     </video>
     <button v-if="!play" class="video__play-button" @click="onPlayPause">
-      <PlayIcon size="40" class="video__play-button__icon" />
+      <PlayIcon :size="40" class="video__play-button__icon" />
     </button>
   </div>
 </template>

@@ -5,8 +5,7 @@
         {{ localI18n['voice-message.title'] }}
       </h1>
       <p class="section__description voice-message__description">
-        Grave um video com um maximo de 30 segundos e diminua a distancia
-        através da voz
+        {{ localI18n['voice-message.description'] }}
       </p>
       <form
         class="voice-message__form"
@@ -16,7 +15,12 @@
       >
         <label class="voice-message__formLabel">
           {{ localI18n['voice-message.parish'] }}
-          <input v-model="messagePackage.parish" type="text" />
+          <select v-model="messagePackage.parish">
+            <option value="Anjos">Anjos</option>
+            <option value="Lumiar">Lumiar</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Graça">Graça</option>
+          </select>
           <span
             v-if="triedToSend && !messagePackage.parish"
             class="voice-message__warning"
@@ -115,12 +119,12 @@ export default {
     return {
       rec: null,
       isRecording: false,
-      messageChunks: [],
       audioPlayback: null,
       recordingTimer: null,
       blockedWarning: false,
       triedToSend: false,
       stream: null,
+      progress: 0,
       maxRecordTime: 30000,
       uploadStatus: null,
       messagePackage: {
@@ -133,10 +137,6 @@ export default {
       localI18n
     }
   },
-  mounted() {
-    if (window)
-      window.AudioContext = window.AudioContext || window.webkitAudioContext
-  },
   methods: {
     startRecording() {
       this.rec = new MicRecorder({ bitRate: 128 })
@@ -148,6 +148,19 @@ export default {
           this.stopRecording.bind(this),
           this.maxRecordTime
         )
+        let start = null
+        const visualTimer = (ts) => {
+          if (!start) {
+            start = ts
+          }
+          // get the time passed as a fraction of total duration
+          this.progress = (ts - start) / this.maxRecordTime
+
+          if (this.progress < 1) {
+            requestAnimationFrame(visualTimer)
+          }
+        }
+        requestAnimationFrame(visualTimer)
         this.blockedWarning = false
         this.isRecording = true
       } catch (error) {

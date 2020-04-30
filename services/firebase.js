@@ -27,5 +27,10 @@ const database = firebase.database()
 export const uploadFile = (file, filename) => storage.child(filename).put(file)
 export const saveData = (data, location = 'audio/') => {
   const newData = database.ref(location).push()
-  return newData.set(data)
+  return new Promise((resolve, reject) => {
+    newData
+      .set(data)
+      .then(() => resolve(newData.key))
+      .catch(reject)
+  })
 }

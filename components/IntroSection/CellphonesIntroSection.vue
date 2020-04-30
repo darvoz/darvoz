@@ -2,11 +2,11 @@
   <section class="container intro-section" tabindex="0">
     <picture class="intro-section__background">
       <source
-        srcset="../assets/introSectionBG__mobile.png"
+        srcset="../../assets/introSectionBG__mobile.png"
         :media="`(max-width: ${850}px)`"
       />
       <img
-        src="../assets/introSectionBG.png"
+        src="../../assets/introSectionBG.png"
         alt="section_background"
         class="intro-section__backgroundImg"
       />
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import localI18n from '../data/resources/i18n.json'
+import localI18n from '../../data/resources/i18n.json'
 import Button from '~/components/Button/Button.vue'
 
 export default {
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_global.scss';
+@import '../../styles/_global.scss';
 
 .intro-section {
   &__info {

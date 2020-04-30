@@ -50,6 +50,7 @@
   "close.button.alt": "Fechar",
   "location-card.open-on-maps": "Abrir no Google Maps",
   "voice-message.title": "Uma messangem sobre carris",
+  "voice-message.description": " Grave um video com um maximo de 30 segundos e diminua a distancia através da voz",
   "voice-message.record-btn.start" : "Gravar",
   "voice-message.record-btn.stop" : "Parar",
   "voice-message.send-btn" : "Enviar",

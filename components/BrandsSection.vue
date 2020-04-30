@@ -37,6 +37,9 @@
       </div>
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
+        <Video
+          src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm"
+        />
       </p>
     </div>
   </section>
@@ -44,8 +47,12 @@
 
 <script>
 import localI18n from '../data/resources/i18n.json'
+import Video from '~/components/Video/Video'
 export default {
   name: 'BrandsSection',
+  components: {
+    Video
+  },
   data() {
     return { localI18n }
   }

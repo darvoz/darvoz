@@ -34,6 +34,25 @@
           src="../assets/NOS_logo.png"
           :alt="localI18n['brands.logo.alt.nos']"
         />
+        <img
+          loading="lazy"
+          class="brands__logo"
+          srcset="
+            ../assets/Carris_logo.png    202w,
+            ../assets/Carris_logo_3x.png 606w
+          "
+          sizes="(max-width: 870px) 202px, 606px"
+          src="../assets/Carris_logo.png"
+          :alt="localI18n['brands.logo.alt.carris']"
+        />
+        <img
+          loading="lazy"
+          class="brands__logo"
+          srcset="../assets/CML_logo.png 202w, ../assets/CML_logo_3x.png 606w"
+          sizes="(max-width: 870px) 202px, 606px"
+          src="../assets/CML_logo.png"
+          :alt="localI18n['brands.logo.alt.cml']"
+        />
       </div>
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
@@ -106,7 +125,7 @@ export default {
     grid-column: 4 / 12;
 
     &__logos {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(5, 1fr);
       grid-gap: 24px;
       width: 100%;
       padding: 0 40px; // Padding of 40px is semi magical since designs have contradictory specs

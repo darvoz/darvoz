@@ -1,44 +1,31 @@
 <template>
   <section class="container intro-section" tabindex="0">
-    <picture class="intro-section__background">
-      <source
-        srcset="../assets/introSectionBG__mobile.png"
-        :media="`(max-width: ${850}px)`"
-      />
-      <img
-        src="../assets/introSectionBG.png"
-        alt="section_background"
-        class="intro-section__backgroundImg"
-      />
-    </picture>
+    <div class="intro-section__background">
+      <slot name="background" />
+    </div>
     <div class="intro-section__info">
       <h1 class="section__title intro-section__infoTitle">
-        {{ localI18n['intro.headline.normal1'] }}
-        <span class="intro-section__infoTitle--strong">
-          {{ localI18n['intro.headline.bold1'] }}
-        </span>
-        {{ localI18n['intro.headline.normal2'] }}
-        <span class="intro-section__infoTitle--strong">
-          {{ localI18n['intro.headline.bold2'] }}
-        </span>
+        <slot name="headline" />
       </h1>
       <p class="section__description">
-        {{ localI18n['intro.description'] }}
+        <slot name="description" />
       </p>
       <div class="intro-section__infoBts">
         <Button
+          v-if="primaryCta"
           class="intro-section__primaryBtn"
           kind="primary"
-          link="#como-doar"
+          link="primaryCta.link"
         >
-          {{ localI18n['intro.cta.primary'] }}
+          {{ primaryCta.label }}
         </Button>
         <Button
+          v-if="secondaryCta"
           class="intro-section__secondaryBtn"
           kind="secondary"
-          link="#pontos-recolha"
+          link="secondaryCta.link"
         >
-          {{ localI18n['intro.cta.secondary'] }}
+          {{ secondaryCta.label }}
         </Button>
       </div>
     </div>
@@ -46,9 +33,8 @@
 </template>
 
 <script>
-import localI18n from '../data/resources/i18n.json'
+import localI18n from '../../data/resources/i18n.json'
 import Button from '~/components/Button/Button.vue'
-
 export default {
   name: 'IntroSection',
   components: {
@@ -58,6 +44,14 @@ export default {
     isFirstSection: {
       type: Boolean,
       required: true
+    },
+    primaryCta: {
+      type: Object,
+      default: undefined
+    },
+    secondaryCta: {
+      type: Object,
+      default: undefined
     }
   },
   data() {
@@ -67,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_global.scss';
+@import '../../styles/_global.scss';
 
 .intro-section {
   &__info {
@@ -100,7 +94,7 @@ export default {
     position: relative;
     grid-column: 2 / 6;
     width: 100%;
-    max-height: 500px;
+    max-height: 100%;
     max-width: 500px;
     object-fit: contain;
     justify-self: center;
@@ -125,7 +119,7 @@ export default {
 
     &__background {
       position: absolute;
-      grid-column: 6 / 14;
+      grid-column: 7 / 14;
       padding-left: $grid-gap;
       width: 100%;
       max-width: unset;

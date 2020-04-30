@@ -14,7 +14,7 @@
         novalidate
         @submit="checkForm"
       >
-        <label>
+        <label class="voice-message__formLabel">
           {{ localI18n['voice-message.parish'] }}
           <input v-model="messagePackage.parish" type="text" />
           <span
@@ -24,7 +24,7 @@
             {{ localI18n['voice-message.error.parish'] }}
           </span>
         </label>
-        <label>
+        <label class="voice-message__formLabel">
           {{ localI18n['voice-message.street'] }}
           <input v-model="messagePackage.street" type="text" />
           <span
@@ -34,7 +34,17 @@
             {{ localI18n['voice-message.error.street'] }}
           </span>
         </label>
-        <div>
+        <label class="voice-message__formLabel">
+          {{ localI18n['voice-message.streetNumber'] }}
+          <input v-model="messagePackage.streetNumber" type="text" />
+          <span
+            v-if="triedToSend && !messagePackage.streetNumber"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.streetNumber'] }}
+          </span>
+        </label>
+        <!-- <div>
           <label>
             {{ localI18n['voice-message.date'] }}
             <input id="date" v-model="messagePackage.date" type="date" />
@@ -46,7 +56,7 @@
             </span>
             <p v-else>Confirme o dia antes de enviar</p>
           </label>
-        </div>
+        </div>-->
         <div class="voice-message__recording">
           <Button
             v-if="!isRecording"
@@ -75,7 +85,12 @@
             {{ localI18n['voice-message.error.audioMessage'] }}
           </span>
         </div>
-        <Button class="voice-message__button" kind="primary" type="submit" :disabled="isRecording || messageSent">
+        <Button
+          class="voice-message__button"
+          kind="primary"
+          type="submit"
+          :disabled="isRecording || messageSent"
+        >
           {{ localI18n['voice-message.send-btn'] }}
         </Button>
       </form>
@@ -111,7 +126,7 @@ export default {
       messagePackage: {
         parish: '',
         street: '',
-        date: null,
+        streetNumber: '',
         audioMessage: null
       },
       messageSent: false,
@@ -165,7 +180,7 @@ export default {
 
       this.triedToSend = true
 
-      if (this.messagePackage.date) {
+      /* if (this.messagePackage.date) {
         const matches = /^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/.exec(
           this.messagePackage.date
         )
@@ -189,20 +204,21 @@ export default {
           this.messagePackage.date = null
           return
         }
-      }
+      } */
 
       if (
         this.messagePackage.parish &&
         this.messagePackage.street &&
-        this.messagePackage.date &&
+        this.messagePackage.streetNumber &&
         this.messagePackage.audioMessage !== 0
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
         this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
 
         const key = await saveData(this.messagePackage)
-        const fileName = `${this.messagePackage.parish}__${this.messagePackage
-          .street + key}`
+        const fileName = `${this.messagePackage.parish}__${
+          this.messagePackage.street
+        }__${this.messagePackage.streetNumber + key}`
 
         uploadFile(this.messagePackage.audioMessage, fileName)
           .then(() => {
@@ -242,6 +258,15 @@ export default {
   &__form {
     display: flex;
     flex-direction: column;
+  }
+
+  &__formLabel {
+    font-family: Muli, sans-serif;
+    margin: 10px 10px 5px;
+  }
+
+  &__button {
+    max-width: 20%;
   }
 
   @media screen and (min-width: $max-mobile-size) {

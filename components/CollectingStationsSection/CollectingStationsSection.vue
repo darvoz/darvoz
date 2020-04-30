@@ -60,6 +60,7 @@ import ChooseLocation from './ChooseLocation/ChooseLocation'
 import List from './List/List'
 import Map from '~/components/Map/Map'
 import Toggle from '~/components/Toggle/Toggle'
+
 export default {
   name: 'CollectingStationsSection',
   components: {

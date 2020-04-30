@@ -1,6 +1,6 @@
 {
   "logo.black": "#dar",
-  "logo.color":"voz",
+  "logo.color": "voz",
   "nav.temporary": "Site em contrução",
   "nav.donate": "Quero doar",
   "nav.about": "O que é",
@@ -48,5 +48,21 @@
   "faq.headline": "Perguntas frequentes",
   "faq.link": "Ler mais perguntas",
   "close.button.alt": "Fechar",
-  "location-card.open-on-maps": "Abrir no Google Maps"
+  "location-card.open-on-maps": "Abrir no Google Maps",
+  "voice-message.title": "Uma messangem sobre carris",
+  "voice-message.record-btn.start" : "Gravar",
+  "voice-message.record-btn.stop" : "Parar",
+  "voice-message.send-btn" : "Enviar",
+  "voice-message.parish" : "Bairro",
+  "voice-message.street" : "Rua",
+  "voice-message.streetNumber" : "Numero da porta",
+  "voice-message.date" : "Dia para quando passar a mensagem",
+  "voice-message.blockedWarning" : "Para gravar precisamos de acesso ao seu microfone (as permissões encontram-se à esquerda da barra de endereço)",
+  "voice-message.error.parish" : "Introduza a freguesia",
+  "voice-message.error.street" : "Diga-nos a rua onde passar a gravação",
+  "voice-message.error.audioMessage" : "Grave uma mensagem",
+  "voice-message.success" : "A sua mensagem foi enviada",
+  "voice-message.error.date" : "Introduza uma data",
+  "voice-message.error.streetNumber" : "Introduza uma numero da porta",
+  "voice-message.error" : "Algo de errado aconteceu, tente mais tarde"
 }

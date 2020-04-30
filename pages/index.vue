@@ -3,6 +3,7 @@
     <navigation-bar :link-list="navLinks" />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
+    <voice-message-section />
     <stats-section />
     <about-section id="o-que-e" />
     <how-to-donate-section />
@@ -20,6 +21,7 @@ import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
+import VoiceMessageSection from '../components/VoiceMessageSection/VoiceMessageSection'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
@@ -28,6 +30,7 @@ import CollectingStationsSection from '~/components/CollectingStationsSection/Co
 
 export default {
   components: {
+    VoiceMessageSection,
     TemporaryMessage,
     SectionSeparator,
     BrandsSection,
@@ -62,6 +65,13 @@ export default {
           newPage: true
         }
       ]
+    }
+  },
+  mounted() {
+    if (!window.MediaRecorder) {
+      import('audio-recorder-polyfill').then(
+        (AudioRecorder) => (window.MediaRecorder = AudioRecorder.default)
+      )
     }
   }
 }

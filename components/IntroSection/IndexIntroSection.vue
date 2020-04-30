@@ -12,17 +12,15 @@
       </div>
     </div>
     <template slot="headline">
-      {{ localI18n['intro.headline.normal1'] }}
+      <span class="intro-section__infoTitle--extra-strong">{{
+        localI18n['index.intro.headline.normal1']
+      }}</span>
       <span class="intro-section__infoTitle--strong">
-        {{ localI18n['intro.headline.bold1'] }}
-      </span>
-      {{ localI18n['intro.headline.normal2'] }}
-      <span class="intro-section__infoTitle--strong">
-        {{ localI18n['intro.headline.bold2'] }}
+        {{ localI18n['index.intro.headline.bold1'] }}
       </span>
     </template>
     <template slot="description">
-      {{ localI18n['intro.description'] }}
+      {{ localI18n['index.intro.description'] }}
     </template>
   </GenericIntroSection>
 </template>
@@ -61,6 +59,12 @@ export default {
     }
   }
   &__infoTitle {
+    &--extra-strong {
+      display: block;
+      font-weight: 900;
+      font-size: 90px;
+      line-height: 126px;
+    }
     &--strong {
       color: $primary-color;
     }
@@ -74,7 +78,7 @@ export default {
     width: 100%;
 
     @media only screen and (min-width: $max-mobile-size) {
-      max-width: 80%;
+      max-width: 800px;
     }
   }
 }

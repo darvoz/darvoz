@@ -12,18 +12,20 @@
       </p>
       <div class="intro-section__infoBts">
         <Button
+          v-if="primaryCta"
           class="intro-section__primaryBtn"
           kind="primary"
-          link="#como-doar"
+          link="primaryCta.link"
         >
-          {{ localI18n['intro.cta.primary'] }}
+          {{ primaryCta.label }}
         </Button>
         <Button
+          v-if="secondaryCta"
           class="intro-section__secondaryBtn"
           kind="secondary"
-          link="#pontos-recolha"
+          link="secondaryCta.link"
         >
-          {{ localI18n['intro.cta.secondary'] }}
+          {{ secondaryCta.label }}
         </Button>
       </div>
     </div>
@@ -42,6 +44,14 @@ export default {
     isFirstSection: {
       type: Boolean,
       required: true
+    },
+    primaryCta: {
+      type: Object,
+      default: undefined
+    },
+    secondaryCta: {
+      type: Object,
+      default: undefined
     }
   },
   data() {
@@ -84,7 +94,7 @@ export default {
     position: relative;
     grid-column: 2 / 6;
     width: 100%;
-    max-height: 500px;
+    max-height: 100%;
     max-width: 500px;
     object-fit: contain;
     justify-self: center;

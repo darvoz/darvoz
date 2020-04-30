@@ -5,8 +5,7 @@
     <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" />
-    <how-to-donate-section />
-    <collecting-stations-section id="pontos-recolha" />
+    <iniatives-section />
     <brands-section />
     <section-separator />
     <faq-section></faq-section>
@@ -23,8 +22,7 @@ import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import IntroSection from '~/components/IntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
-import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
-import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
+import IniativesSection from '~/components/IniativesSection/IniativesSection'
 
 export default {
   components: {
@@ -36,8 +34,7 @@ export default {
     IntroSection,
     AboutSection,
     NavigationBar,
-    CollectingStationsSection,
-    HowToDonateSection
+    IniativesSection
   },
   data() {
     return {
@@ -52,12 +49,12 @@ export default {
           link: '#como-doar'
         },
         {
-          name: localI18n['nav.iniciativas.bus'],
+          name: localI18n['nav.initiatives.bus'],
           link: '/autocarro',
           newPage: true
         },
         {
-          name: localI18n['nav.iniciativas.cellphone'],
+          name: localI18n['nav.initiatives.cellphone'],
           link: '/telemoveis',
           newPage: true
         }

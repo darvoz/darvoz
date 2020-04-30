@@ -44,15 +44,15 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.iniciativas.bus.about'],
+          name: localI18n['nav.initiatives.bus.about'],
           link: '#o-que-e'
         },
         {
-          name: localI18n['nav.iniciativas.bus.how'],
+          name: localI18n['nav.initiatives.bus.how'],
           link: '#como-doar'
         },
         {
-          name: localI18n['nav.iniciativas.bus.where'],
+          name: localI18n['nav.initiatives.bus.where'],
           link: '#pontos-recolha'
         },
         {

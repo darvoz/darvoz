@@ -12,8 +12,8 @@ export default {
 
 <style lang="scss" scoped>
 .card-group__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 </style>

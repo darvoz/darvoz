@@ -1,12 +1,9 @@
 <template>
   <article class="card__container">
-    <img class="card__img" src="../../assets/introSectionBG.png" />
-    <h1 class="card__heading">Lorem ipsum dolore est sit amet</h1>
-    <p class="card__description">
-      Purus egestas amet a volutpat sem posuere. Molestie ut vestibulum urna,
-      euismod in cras duis mi vestibulum.
-    </p>
-    <Button kind="primary">Envia a tua mensagem</Button>
+    <img class="card__img" :src="img" />
+    <h1 class="card__heading">{{ headline }}</h1>
+    <p class="card__description">{{ description }}</p>
+    <Button kind="primary" :link="cta.link">{{ cta.label }}</Button>
   </article>
 </template>
 
@@ -16,6 +13,24 @@ export default {
   name: 'Card',
   components: {
     Button
+  },
+  props: {
+    img: {
+      type: String,
+      required: true
+    },
+    headline: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    cta: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
@@ -32,6 +47,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 544px;
+    margin-top: 56px;
   }
 
   &__img {

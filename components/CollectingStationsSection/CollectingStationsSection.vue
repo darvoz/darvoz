@@ -16,10 +16,6 @@
         }}</span
         ><span></span>{{ localI18n['collecting-stations.description.normal2'] }}
       </p>
-      <CardGroup>
-        <Card />
-        <Card />
-      </CardGroup>
     </div>
     <div class="collecting-stations__locations">
       <div class="collecting-stations__locations__toggle__container">
@@ -64,8 +60,7 @@ import ChooseLocation from './ChooseLocation/ChooseLocation'
 import List from './List/List'
 import Map from '~/components/Map/Map'
 import Toggle from '~/components/Toggle/Toggle'
-import Card from '~/components/Card/Card'
-import CardGroup from '~/components/CardGroup/CardGroup'
+
 export default {
   name: 'CollectingStationsSection',
   components: {
@@ -74,9 +69,7 @@ export default {
     List,
     Toggle,
     MapIcon,
-    FormatListBulletedIcon,
-    Card,
-    CardGroup
+    FormatListBulletedIcon
   },
   data() {
     return {

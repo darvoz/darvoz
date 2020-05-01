@@ -21,10 +21,11 @@
           class="voice-message__card voice-message__formCard"
           :alternate="true"
         >
-          <p class="voice-message__formSectionLabel">
+          <p v-if="!messageSent" class="voice-message__formSectionLabel">
             {{ localI18n['voice-message.form-label'] }}
           </p>
           <form
+            v-if="!messageSent"
             class="voice-message__form"
             method="post"
             novalidate
@@ -155,10 +156,10 @@
               {{ localI18n['voice-message.message.hint'] }}
             </p>
           </form>
+          <div class="voice-message__notify">
+            {{ uploadStatus }} {{ messageId }}
+          </div>
         </Card>
-        <div class="voice-message__notify">
-          {{ uploadStatus }}
-        </div>
       </div>
     </div>
   </section>
@@ -168,7 +169,7 @@
 import MicRecorder from 'mic-recorder-to-mp3'
 import MicNone from 'vue-material-design-icons/MicrophoneOutline.vue'
 import localI18n from '../../data/resources/i18n.json'
-import { uploadFile } from '../../services/API'
+import { uploadFile, blobToBase64 } from '../../services/API'
 import Button from '~/components/Button/Button.vue'
 import Card from '~/components/Card/Card'
 export default {
@@ -190,7 +191,10 @@ export default {
       progress: 0,
       maxRecordTime: 15000,
       uploadStatus: null,
+      messageId: '',
       messagePackage: {
+        from: '',
+        recipient: '',
         parish: '',
         street: '',
         streetNumber: '',
@@ -247,37 +251,10 @@ export default {
         })
         .catch(() => {})
     },
-    checkForm(e) {
+    async checkForm(e) {
       e.preventDefault()
 
       this.triedToSend = true
-
-      /* if (this.messagePackage.date) {
-        const matches = /^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})$/.exec(
-          this.messagePackage.date
-        )
-
-        if (matches == null) {
-          this.messagePackage.date = null
-          return false
-        }
-
-        const d = parseInt(matches[3])
-        const m = parseInt(matches[2]) - 1
-        const y = parseInt(matches[1])
-
-        const composedDate = new Date(y, m, d)
-
-        if (
-          composedDate.getDate() !== d ||
-          composedDate.getMonth() !== m ||
-          composedDate.getFullYear() !== y
-        ) {
-          this.messagePackage.date = null
-          return
-        }
-      } */
-
       if (
         this.messagePackage.parish &&
         this.messagePackage.street &&
@@ -286,9 +263,15 @@ export default {
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
         this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
-
-        uploadFile(this.messagePackage.audioMessage, this.messagePackage)
-          .then(() => {
+        const data = { ...this.messagePackage, timestampvenvi: Date.now() }
+        delete data.audioMessage
+        const base64 = await blobToBase64(this.messagePackage.audioMessage)
+        uploadFile(base64, data)
+          .then((data) => {
+            return data.text()
+          })
+          .then((data) => {
+            this.messageId = data
             this.uploadStatus = localI18n['voice-message.success']
             this.messageSent = true
           })
@@ -304,7 +287,7 @@ export default {
 
 .voice-message {
   $max-form-size: 1160px;
-
+  font-family: Roboto, sans-serif;
   margin-top: -$section-margin;
   grid-column: 1 / 7;
 
@@ -318,7 +301,6 @@ export default {
 
   &__formSectionLabel {
     color: $primary-color;
-    font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 30px;
@@ -359,7 +341,6 @@ export default {
   }
 
   &__formInput {
-    font-family: Roboto, sans-serif;
     border-radius: 6px;
     border-color: $primary-color;
     height: 48px;
@@ -395,7 +376,6 @@ export default {
   }
 
   &__cardDescription {
-    font-family: Roboto, sans-serif;
     font-size: 16px;
     color: $gray;
     text-align: center;
@@ -403,7 +383,6 @@ export default {
   }
 
   &__cardHeading {
-    font-family: Roboto, sans-serif;
     font-weight: 900;
     font-size: 32px;
   }
@@ -416,12 +395,17 @@ export default {
 
   &__hint {
     color: $light-gray;
-    font-family: Roboto, sans-serif;
     font-size: 12px;
     font-weight: bold;
     position: absolute;
     bottom: 10px;
     right: 10px;
+  }
+
+  &__notify {
+    text-align: center;
+    color: $primary-color;
+    font-size: 32px;
   }
 
   @media screen and (min-width: $max-mobile-size) {

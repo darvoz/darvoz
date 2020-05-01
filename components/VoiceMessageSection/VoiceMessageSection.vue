@@ -87,16 +87,16 @@
           <button
             v-if="!isRecording"
             class="voice-message__recordBtn"
-            @click="startRecording"
             type="button"
+            @click="startRecording"
           >
             <MicNone decorative :size="46" class="voice-message__buttonIcon" />
           </button>
           <button
             v-if="isRecording"
             class="voice-message__recordBtn"
-            @click="stopRecording"
             type="button"
+            @click="stopRecording"
           >
             <div class="voice-message__recordBtnSquare"></div>
           </button>

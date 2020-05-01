@@ -2,7 +2,7 @@
   <div class="main">
     <navigation-bar
       :link-list="navLinks"
-      :primary-cta="{ link: '#pontos-recolha', label: 'Quero Doar' }"
+      :primary-cta="{ link: '#pontos-recolha', label: localI18n['nav.cta'] }"
     />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />

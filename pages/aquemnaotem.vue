@@ -1,10 +1,6 @@
 <template>
   <div class="main">
     <navigation-bar :link-list="navLinks" :primary-cta="navCta" />
-    <temporary-message
-      :temporary-message="localI18n['nav.temporary']"
-      :primary-cta="{ link: '#pontos-recolha', label: 'Quero Doar' }"
-    />
     <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" :links="navLinks" />
@@ -28,7 +24,7 @@ import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
-import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
 import IntroSection from '~/components/IntroSection/CellphonesIntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
@@ -40,7 +36,6 @@ import Footer from '~/components/Footer/Footer'
 export default {
   components: {
     CookieLayer,
-    TemporaryMessage,
     SectionSeparator,
     BrandsSection,
     StatsSection,

@@ -184,10 +184,13 @@
                   : localI18n['voice-message.send-btn']
               }}
             </Button>
-            <Button kind="secondary" href="">
-              {{ localI18n['voice-message.schedule'] }}
+            <Button kind="secondary">
+              {{ localI18n['voice-message.schedule'] }}<sub>*</sub>
             </Button>
           </div>
+          <p class="voice-message__scheduleHint">
+            {{localI18n['voice-message.schedule-hint']}}
+          </p>
           <span v-if="hasError" class="voice-message__warning">
             {{ hasError }}
           </span>
@@ -367,6 +370,13 @@ export default {
     grid-column: 1 / 7;
   }
 
+  &__scheduleHint {
+    margin-bottom: 39px;
+    color: $light-gray;
+    font-size: 12px;
+    text-align: center;
+  }
+
   &__submitTitle {
     font-weight: 900;
     font-size: 48px;
@@ -507,9 +517,9 @@ export default {
   &__notify {
     text-align: center;
     word-break: break-all;
-    font-size: 24px;
+    font-size: 14px;
     background-color: $smoke-white;
-    padding: 24px 48px;
+    padding: 12px;
     border-radius: 32px;
   }
 
@@ -553,6 +563,11 @@ export default {
     &__normalCard {
       grid-column: 2 / 7;
       margin-bottom: 0;
+    }
+
+    &__notify {
+      font-size: 24px;
+      padding: 24px 48px;
     }
 
     &__schedule {

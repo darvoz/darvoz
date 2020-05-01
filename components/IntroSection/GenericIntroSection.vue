@@ -7,7 +7,7 @@
       <h1 class="section__title intro-section__infoTitle">
         <slot name="headline" />
       </h1>
-      <p class="section__description">
+      <p class="section__description" :style="{'font-size': smallText ? '16px' : ''}">
         <slot name="description" />
       </p>
       <div class="intro-section__infoBts">
@@ -52,6 +52,11 @@ export default {
     secondaryCta: {
       type: Object,
       default: undefined
+    },
+    smallText: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data() {

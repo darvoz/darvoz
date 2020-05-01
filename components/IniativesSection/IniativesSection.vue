@@ -1,5 +1,5 @@
 <template>
-  <section class="container" tabindex="0">
+  <section id="iniciativas" class="container" tabindex="0">
     <div class="initiatives">
       <h1 class="section__title initiatives__title">
         {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
@@ -9,6 +9,7 @@
       </p>
       <CardGroup>
         <Card
+          class="initiatives__card"
           v-for="initiative in initiatives"
           :key="initiative.img"
           :img="initiative.img"
@@ -49,8 +50,8 @@ export default {
         },
         {
           img: '/initiatives/darvozcarris.svg',
-          headline: localI18n['index.initiatives.initiatives1.headline'],
-          description: localI18n['index.initiatives.initiatives1.description'],
+          headline: localI18n['index.initiatives.initiatives2.headline'],
+          description: localI18n['index.initiatives.initiatives2.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
             link: '/darvozcarris#mensagem'
@@ -79,6 +80,12 @@ export default {
 @media screen and (min-width: $max-mobile-size) {
   .initiatives {
     grid-column: 2 / 14;
+
+    &__card {
+      &:first-child {
+        margin-right: 24px;
+      }
+    }
   }
 }
 </style>

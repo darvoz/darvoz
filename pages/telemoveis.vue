@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" />
+    <navigation-bar :link-list="navLinks" :primary-cta="navCta" />
     <temporary-message :temporary-message="localI18n['nav.temporary']" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
     <intro-section :is-first-section="true" />
     <stats-section />
@@ -44,23 +44,24 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.about'],
-          link: '#o-que-e'
+          name: localI18n['nav.home'],
+          link: '/',
+          newPage: true
         },
         {
-          name: localI18n['nav.how-to-donate'],
-          link: '#como-doar'
+          name: localI18n['index.nav.cellphones'],
+          link: '/telemoveis',
+          newPage: true,
+          active: true
         },
         {
-          name: localI18n['nav.collecting-stations'],
-          link: '#pontos-recolha'
-        },
-        {
-          name: localI18n['nav.faq'],
-          link: '#perguntas-frequentes'
+          name: localI18n['index.nav.bus'],
+          link: '/darvozcarris',
+          newPage: true
         }
       ],
       faqList: null,
+      navCta: { link: '#como-doar', label: localI18n['cellphone.nav.cta'] }
     }
   },
   async created() {

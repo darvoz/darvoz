@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .card-group__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 56px;
 }

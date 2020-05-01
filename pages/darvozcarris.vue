@@ -50,12 +50,20 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['darvoz-carris.nav.home'],
-          link: '#'
+          name: localI18n['nav.home'],
+          link: '/',
+          newPage: true
         },
         {
-          name: localI18n['darvoz-carris.nav.home'],
-          link: '#perguntas-frequentes'
+          name: localI18n['index.nav.cellphones'],
+          link: '/telemoveis',
+          newPage: true
+        },
+        {
+          name: localI18n['index.nav.bus'],
+          link: '/darvozcarris',
+          newPage: true,
+          active: true
         }
       ],
       faqList: null

@@ -92,7 +92,7 @@ export default {
   }
 
   @media only screen and (min-width: $max-mobile-size) {
-    grid-column: 3 / 14;
+    grid-column: 5 / 12;
 
     &__title {
       flex-direction: row;

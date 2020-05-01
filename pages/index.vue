@@ -41,21 +41,19 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.about'],
-          link: '#o-que-e'
-        },
-        {
-          name: localI18n['nav.how-to-donate'],
-          link: '#como-doar'
-        },
-        {
-          name: localI18n['nav.initiatives.bus'],
-          link: '/darvozcarris',
+          name: localI18n['nav.home'],
+          link: '/',
+          active: true,
           newPage: true
         },
         {
-          name: localI18n['nav.initiatives.cellphone'],
+          name: localI18n['index.nav.cellphones'],
           link: '/telemoveis',
+          newPage: true
+        },
+        {
+          name: localI18n['index.nav.bus'],
+          link: '/darvozcarris',
           newPage: true
         }
       ],

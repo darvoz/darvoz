@@ -131,9 +131,7 @@
           <p class="voice-message__submitDescription">
             {{ localI18n['voice-message.form-submitDescription'] }}
           </p>
-          <p class="voice-message__notify">
-            ID: {{ messageId }}
-          </p>
+          <p class="voice-message__notify">ID: {{ messageId }}</p>
         </Card>
         <div class="voice-message__formFooter">
           <p class="voice-message__hint">

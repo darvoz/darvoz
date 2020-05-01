@@ -60,7 +60,8 @@ export default {
       const element = this.accordionContent
       const sectionHeight = this.accordionContentHeight
 
-      element.style.height = sectionHeight + 'px'
+      element.style.height =
+        sectionHeight + this.accordionContentPadding * 2 + 'px'
       element.style.padding = this.accordionContentPadding + 'px'
 
       this.open = true

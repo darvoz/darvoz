@@ -20,6 +20,15 @@
         class="faq-section__item"
       >
         {{ item.answer }}
+        <Button
+          v-if="item.link"
+          :link="item.link.url"
+          target="_blank"
+          kind="tertiary"
+          class="faq-section__item__cta"
+        >
+          {{ item.link.label }}
+        </Button>
       </accordion>
     </div>
   </section>
@@ -28,11 +37,13 @@
 <script>
 import localI18n from '../data/resources/i18n.json'
 import Accordion from '~/components/Accordion/Accordion.vue'
+import Button from '~/components/Button/Button'
 
 export default {
   name: 'FaqSection',
   components: {
-    Accordion
+    Accordion,
+    Button
   },
   props: {
     title: {
@@ -80,6 +91,10 @@ export default {
     margin-bottom: 8px;
     width: 100%;
 
+    &__cta {
+      margin-top: 24px;
+    }
+
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -92,7 +107,7 @@ export default {
   }
 
   @media only screen and (min-width: $max-mobile-size) {
-    grid-column: 5 / 12;
+    grid-column: 4 / 12;
 
     &__title {
       flex-direction: row;

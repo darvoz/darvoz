@@ -77,6 +77,7 @@ export default {
   font-family: Muli, sans-serif;
   font-size: 16px;
   background-color: transparent;
+  width: max-content;
 
   &__primary {
     border: 2px solid transparent;

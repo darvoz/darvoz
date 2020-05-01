@@ -84,20 +84,20 @@
           <p class="voice-message__cardDescription">
             {{ localI18n['voice-message.message.hint'] }}
           </p>
-          <div
+          <button
             v-if="!isRecording"
             class="voice-message__recordBtn"
             @click="startRecording"
           >
             <MicNone decorative :size="46" class="voice-message__buttonIcon" />
-          </div>
-          <div
+          </button>
+          <button
             v-if="isRecording"
             class="voice-message__recordBtn"
             @click="stopRecording"
           >
             <div class="voice-message__recordBtnSquare"></div>
-          </div>
+          </button>
           <p class="voice-message__hint">
             {{
               isRecording
@@ -459,6 +459,7 @@ export default {
         position: absolute;
         width: 100vw;
         height: 100%;
+        user-select: none;
       }
     }
 

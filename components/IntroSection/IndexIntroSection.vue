@@ -1,23 +1,23 @@
 <template>
   <GenericIntroSection :is-first-section="isFirstSection" :small-text="true">
-    <div slot="background" class="intro-section__background">
+    <div slot="background" class="index-section__background">
       <img
         src="../../assets/index/IntroBackground.svg"
-        class="intro-section__background__image"
+        class="index-section__background__image"
       />
-      <div class="intro-section__video">
+      <div class="index-section__video">
         <Video
-          class="intro-section__videoElement"
+          class="index-section__videoElement"
           src="https://github.com/darvoz/darvoz/blob/gh-pages/intro-video.mp4?raw=true"
           :has-hd-version="true"
         />
       </div>
     </div>
     <template slot="headline">
-      <span class="intro-section__infoTitle--extra-strong">{{
+      <span class="index-section__infoTitle--extra-strong">{{
         localI18n['index.intro.headline.normal1']
       }}</span>
-      <span class="intro-section__infoTitle--strong">
+      <span class="index-section__infoTitle--strong">
         {{ localI18n['index.intro.headline.bold1'] }}
       </span>
     </template>
@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../styles/_global.scss';
 
-.intro-section {
+.index-section {
   &__background {
     position: relative;
     &__image {

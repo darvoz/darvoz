@@ -18,6 +18,7 @@
       :faq-list="faqList"
     ></faq-section>
     <Footer />
+    <CookieLayer />
   </div>
 </template>
 
@@ -31,9 +32,11 @@ import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import Footer from '~/components/Footer/Footer'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 
 export default {
   components: {
+    CookieLayer,
     SectionSeparator,
     FaqSection,
     TextElement,

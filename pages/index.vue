@@ -9,6 +9,7 @@
     <iniatives-section />
     <brands-section />
     <Footer />
+    <cookie-layer />
   </div>
 </template>
 
@@ -20,9 +21,11 @@ import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import IniativesSection from '~/components/IniativesSection/IniativesSection'
 import Footer from '~/components/Footer/Footer'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 
 export default {
   components: {
+    CookieLayer,
     TemporaryMessage,
     BrandsSection,
     IntroSection,

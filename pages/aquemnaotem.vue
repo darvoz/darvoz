@@ -18,6 +18,7 @@
       :faq-list="faqList"
     ></faq-section>
     <Footer />
+    <CookieLayer />
   </div>
 </template>
 
@@ -34,9 +35,11 @@ import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
 import Footer from '~/components/Footer/Footer'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 
 export default {
   components: {
+    CookieLayer,
     TemporaryMessage,
     SectionSeparator,
     BrandsSection,

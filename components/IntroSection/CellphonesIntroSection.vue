@@ -1,5 +1,6 @@
 <template>
   <GenericIntroSection
+    :is-first-section="true"
     :primary-cta="{ link: '#como-doar', label: localI18n['intro.cta.primary'] }"
     :secondary-cta="{
       link: '#pontos-recolha',

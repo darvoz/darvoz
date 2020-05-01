@@ -2,35 +2,36 @@
   <nav class="navigation-bar">
     <div class="navigation-bar__content">
       <nuxt-link class="navigation-bar__logo" to="/"><Logo /></nuxt-link>
-      <ul class="navigation-bar__items">
-        <li
-          v-for="item in linkList"
-          :key="item.name"
-          class="navigation-bar__item"
-        >
-          <nuxt-link
-            v-if="item.newPage"
-            :to="`${item.link}`"
-            class="navigation-bar__link"
+      <div class="navigation-bar__items__container">
+        <ul class="navigation-bar__items">
+          <li
+            v-for="item in linkList"
+            :key="item.name"
+            :class="[
+              'navigation-bar__item',
+              item.active ? 'navigation-bar__item--active' : ''
+            ]"
           >
-            {{ item.name }}
-          </nuxt-link>
-          <a
-            v-else
-            :href="`${item.link}`"
-            class="navigation-bar__link"
-            @click="animateScroll"
-            >{{ item.name }}</a
-          >
-        </li>
-      </ul>
-      <Button
-        class="navigation-bar__button"
-        kind="primary"
-        link="#pontos-recolha"
-      >
-        Quero doar
-      </Button>
+            <nuxt-link
+              v-if="item.newPage"
+              :to="`${item.link}`"
+              class="navigation-bar__link"
+            >
+              {{ item.name }}
+            </nuxt-link>
+            <a
+              v-else
+              :href="`${item.link}`"
+              class="navigation-bar__link"
+              @click="animateScroll"
+              >{{ item.name }}</a
+            >
+          </li>
+        </ul>
+        <Button class="navigation-bar__button" kind="primary" :link="cta.link">
+          {{ cta.label }}
+        </Button>
+      </div>
     </div>
   </nav>
 </template>
@@ -50,6 +51,10 @@ export default {
     linkList: {
       type: Array,
       required: true
+    },
+    cta: {
+      type: Object,
+      required: true
     }
   },
   data() {
@@ -68,6 +73,7 @@ export default {
   $nav-max-width: 1124px;
   $nav-bar-index: 1002; //Needs to be higher than 1001 because of the MAP component
   @include container-gap();
+  grid-template-columns: 2% repeat(4, 1fr) 2%;
   display: grid;
   align-items: center;
   grid-auto-flow: column;
@@ -95,6 +101,9 @@ export default {
     }
   }
 
+  &__items__container {
+    display: flex;
+  }
   &__items {
     display: flex;
     align-items: center;
@@ -108,7 +117,8 @@ export default {
   &__item {
     margin: 0 16px 0 16px;
 
-    &:hover {
+    &:hover,
+    &--active {
       #{$nav-element}__link {
         border-bottom: 4px solid $primary-color;
       }
@@ -133,7 +143,14 @@ export default {
     }
   }
 
+  &__button {
+    min-width: 200px;
+  }
+
   @media only screen and (max-width: $max-mobile-size) {
+    &__button {
+      min-width: unset;
+    }
     &__content {
       @include container-gap;
     }

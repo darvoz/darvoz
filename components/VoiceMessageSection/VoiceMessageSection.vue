@@ -117,6 +117,13 @@
               >
                 {{ localI18n['voice-message.error.audioMessage'] }}
               </span>
+              <div class="voice-message__terms">
+                {{ localI18n['voice-message.terms-conditions.label']
+                }}<a href="/termos-e-condicoes.pdf" target="_blank">{{
+                  localI18n['voice-message.terms-conditions.link']
+                }}</a>
+                <input v-model="termsConditionsAccepted" type="checkbox" />
+              </div>
               <div class="voice-message__btnGroup">
                 <Button
                   v-if="!isRecording"
@@ -146,7 +153,9 @@
                   class="voice-message__button"
                   kind="primary"
                   type="submit"
-                  :disabled="isRecording || messageSent"
+                  :disabled="
+                    isRecording || messageSent || !termsConditionsAccepted
+                  "
                 >
                   {{ localI18n['voice-message.send-btn'] }}
                 </Button>
@@ -181,6 +190,7 @@ export default {
   },
   data() {
     return {
+      termsConditionsAccepted: false,
       rec: null,
       isRecording: false,
       audioPlayback: null,
@@ -373,6 +383,7 @@ export default {
   &__btnGroup {
     display: flex;
     flex-direction: column;
+    margin-top: 24px;
   }
 
   &__cardDescription {

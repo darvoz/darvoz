@@ -86,6 +86,8 @@
   "voice-message.message.title" : "Como funciona",
   "voice-message.message.description" : "só precisamos da sua mensagem, de um autocarro da CARRIS, de um motorista e de um megafone.",
   "voice-message.message.hint": "A mensagem tem no máximo 15 segundos",
+  "voice-message.terms-conditions.label" : "Eu li e aceito os ",
+  "voice-message.terms-conditions.link": "termos e condições",
   "darvoz-carris.intro.cta": "Gravar mensagem",
   "darvoz-carris.intro.headline.normal": "Grave a sua mensagem,",
   "darvoz-carris.intro.headline.strong": "que nós entregamos",

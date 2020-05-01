@@ -1,8 +1,33 @@
 <template>
   <footer class="container footer__container">
     <div class="footer">
-      <div class="copyright__container">
-        Copyright 2020 - Mercedes-Benz.io & BCG
+      <div class="item__section__container item__section__container--special">
+        <div class="social__container">
+          <a
+            class="social-icon"
+            target="_blank"
+            href="https://www.facebook.com/Projecto-DarVoz-108603290813171/"
+          >
+            <img src="../../assets/svg/Youtube.svg" />
+          </a>
+          <a
+            class="social-icon"
+            target="_blank"
+            href="https://instagram.com/projectodarvoz"
+          >
+            <img src="../../assets/svg/Instagram.svg" />
+          </a>
+          <a
+            class="social-icon"
+            target="_blank"
+            href="https://www.youtube.com/channel/UCSRtBLRplG-k4pMaz5sXvmA"
+          >
+            <img src="../../assets/svg/Facebook.svg" />
+          </a>
+        </div>
+        <div class="copyright__container">
+          Copyright 2020 - Mercedes-Benz.io & BCG
+        </div>
       </div>
       <div class="item__section__container">
         <div class="item__section">
@@ -49,7 +74,7 @@ import localI18n from '../../data/resources/i18n.json'
 export default {
   name: 'Footer',
   data() {
-    return { localI18n }
+    return { localI18n, iconSize: 48 }
   }
 }
 </script>
@@ -57,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../styles/_global';
 .footer__container {
-  background-color: $smoke-white;
+  background-color: $primary-color;
   padding-top: 48px;
 }
 
@@ -68,23 +93,32 @@ export default {
   grid-column: 2 / 6;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  color: $white;
+}
+
+.social__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 
 .copyright__container {
-  grid-row: 2 / 3;
-  color: $gray;
   text-align: center;
 }
 
 .item {
   font-size: 16px;
   line-height: 190%;
-  color: $gray;
+  color: $white;
   &__section__container {
     font-family: Roboto;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr;
     grid-gap: 41px;
+
+    &--special {
+      grid-row: 2 / 2;
+    }
   }
 
   &__header {
@@ -94,7 +128,7 @@ export default {
     margin-bottom: 29px;
 
     &__link {
-      color: $black;
+      color: $white;
     }
   }
 }
@@ -104,10 +138,30 @@ export default {
     grid-column: 2 / 14;
     grid-template-rows: auto;
     grid-auto-flow: column;
+    padding-bottom: 100px;
   }
 
   .copyright__container {
-    grid-row: 1 / 2;
+    text-align: left;
+  }
+
+  .social__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    > *:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  .item__section__container {
+    grid-template-columns: auto auto auto;
+
+    &--special {
+      grid-template-columns: auto;
+      grid-row: 1 / 2;
+    }
   }
 }
 </style>

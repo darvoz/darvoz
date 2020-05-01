@@ -45,16 +45,16 @@ export default {
           description: localI18n['index.initiatives.initiatives1.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives1.cta'],
-            link: '/telemoveis#como-doar'
+            link: '/aquemnaotem #como-doar'
           }
         },
         {
-          img: '/initiatives/darvozcarris.svg',
+          img: '/initiatives/carris.svg',
           headline: localI18n['index.initiatives.initiatives2.headline'],
           description: localI18n['index.initiatives.initiatives2.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
-            link: '/darvozcarris#mensagem'
+            link: '/carris#mensagem'
           }
         }
       ]

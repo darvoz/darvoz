@@ -42,12 +42,12 @@ export default {
         },
         {
           name: localI18n['index.nav.cellphones'],
-          link: '/telemoveis',
+          link: '/aquemnaotem ',
           newPage: true
         },
         {
           name: localI18n['index.nav.bus'],
-          link: '/darvozcarris',
+          link: '/carris',
           newPage: true
         }
       ]

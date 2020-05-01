@@ -37,29 +37,29 @@
         </div>
         <div class="item__section">
           <h6 class="item__header">
-            <nuxt-link class="item__header__link" to="/telemoveis"
+            <nuxt-link class="item__header__link" to="/aquemnaotem "
               >Iniciativa #DarVozAQuemNaoTem</nuxt-link
             >
           </h6>
           <p>
-            <nuxt-link class="item" to="/telemoveis#como-doar"
+            <nuxt-link class="item" to="/aquemnaotem #como-doar"
               >Como doar</nuxt-link
             >
           </p>
           <p>
-            <nuxt-link class="item" to="/telemoveis#pontos-recolha"
+            <nuxt-link class="item" to="/aquemnaotem #pontos-recolha"
               >Pontos de recolha</nuxt-link
             >
           </p>
         </div>
         <div class="item__section">
           <h6 class="item__header">
-            <nuxt-link class="item__header__link" to="/darvozcarris"
+            <nuxt-link class="item__header__link" to="/carris"
               >Iniciativa #DarVozCarris</nuxt-link
             >
           </h6>
           <p>
-            <nuxt-link class="item" to="/darvozcarris#mensagem"
+            <nuxt-link class="item" to="/carris#mensagem"
               >Deixe uma mensagem</nuxt-link
             >
           </p>

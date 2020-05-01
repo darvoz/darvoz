@@ -6,7 +6,6 @@
     <about-section id="o-que-e" :links="navLinks" />
     <how-to-donate-section />
     <collecting-stations-section id="pontos-recolha" />
-    <brands-section />
     <section-separator />
     <faq-section
       v-if="faqList"
@@ -22,7 +21,6 @@
 import localI18n from '../data/resources/i18n'
 import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
-import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
 import IntroSection from '~/components/IntroSection/CellphonesIntroSection.vue'
@@ -36,7 +34,6 @@ export default {
   components: {
     CookieLayer,
     SectionSeparator,
-    BrandsSection,
     StatsSection,
     FaqSection,
     IntroSection,

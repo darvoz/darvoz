@@ -155,7 +155,7 @@
         </Card>
         <div class="voice-message__formFooter">
           <p class="voice-message__hint">
-            Os horários da iniciativa são disponibilizados diáriamente para o
+            Os horários da iniciativa são disponibilizados diariamente para o
             dia seguinte. Consulte os horários para mais informação.
           </p>
           <div v-if="!messageSent" class="voice-message__terms">
@@ -189,7 +189,7 @@
             </Button>
           </div>
           <p class="voice-message__scheduleHint">
-            {{localI18n['voice-message.schedule-hint']}}
+            {{ localI18n['voice-message.schedule-hint'] }}
           </p>
           <span v-if="hasError" class="voice-message__warning">
             {{ hasError }}

@@ -25,10 +25,22 @@
             type="text"
           />
           <span
-            v-if="triedToSend && !messagePackage.parish"
+            v-if="triedToSend && !messagePackage.from"
             class="voice-message__warning"
           >
-            {{ localI18n['voice-message.error.parish'] }}
+            {{ localI18n['voice-message.error.from'] }}
+          </span>
+          <input
+            v-model="messagePackage.recipient"
+            class="voice-message__formInput"
+            :placeholder="localI18n['voice-message.recipient']"
+            type="text"
+          />
+          <span
+            v-if="triedToSend && !messagePackage.recipient"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.recipient'] }}
           </span>
           <select
             v-model="messagePackage.parish"
@@ -43,15 +55,15 @@
             <option value="Graça">Graça</option>
           </select>
           <span
-            v-if="triedToSend && !messagePackage.from"
+            v-if="triedToSend && !messagePackage.parish"
             class="voice-message__warning"
           >
-            {{ localI18n['voice-message.error.from'] }}
+            {{ localI18n['voice-message.error.parish'] }}
           </span>
           <input
-            v-model="messagePackage.recipient"
+            v-model="messagePackage.street"
             class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.recipient']"
+            :placeholder="localI18n['voice-message.street']"
             type="text"
           />
           <span
@@ -61,16 +73,16 @@
             {{ localI18n['voice-message.error.street'] }}
           </span>
           <input
-            v-model="messagePackage.street"
+            v-model="messagePackage.streetNumber"
             class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.street']"
+            :placeholder="localI18n['voice-message.streetNumber']"
             type="text"
           />
           <span
-            v-if="triedToSend && !messagePackage.recipient"
+            v-if="triedToSend && !messagePackage.streetNumber"
             class="voice-message__warning"
           >
-            {{ localI18n['voice-message.error.recipient'] }}
+            {{ localI18n['voice-message.error.streetNumber'] }}
           </span>
         </Card>
         <Card
@@ -161,6 +173,9 @@
               {{ localI18n['voice-message.schedule'] }}
             </Button>
           </div>
+          <span v-if="hasError" class="voice-message__warning">
+            {{ hasError }}
+          </span>
         </div>
       </form>
     </div>
@@ -193,13 +208,14 @@ export default {
       stream: null,
       progress: 0,
       maxRecordTime: 15000,
-      uploadStatus: null,
+      hasError: null,
       messageId: '',
       messagePackage: {
         from: '',
         recipient: '',
         parish: '',
         street: '',
+        streetNumber: '',
         audioMessage: null
       },
       messageSent: false,
@@ -256,6 +272,7 @@ export default {
         this.messagePackage.recipient &&
         this.messagePackage.from &&
         this.messagePackage.street &&
+        this.messagePackage.streetNumber &&
         this.messagePackage.audioMessage !== 0
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
@@ -265,14 +282,16 @@ export default {
         const base64 = await blobToBase64(this.messagePackage.audioMessage)
         uploadFile(base64, data)
           .then((data) => {
+            if (!data.ok) {
+              throw new Error('error')
+            }
             return data.text()
           })
           .then((data) => {
             this.messageId = data
-            this.uploadStatus = localI18n['voice-message.success']
             this.messageSent = true
           })
-          .catch(() => (this.uploadStatus = localI18n['voice-message.error']))
+          .catch(() => (this.hasError = localI18n['voice-message.error']))
       }
     }
   }

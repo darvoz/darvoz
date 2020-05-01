@@ -49,8 +49,8 @@ export default {
         },
         {
           img: '/initiatives/autocarros.svg',
-          headline: localI18n['index.initiatives.initiatives1.headline'],
-          description: localI18n['index.initiatives.initiatives1.description'],
+          headline: localI18n['index.initiatives.initiatives2.headline'],
+          description: localI18n['index.initiatives.initiatives2.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
             link: '/autocarro#mensagem'

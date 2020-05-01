@@ -168,7 +168,7 @@
 import MicRecorder from 'mic-recorder-to-mp3'
 import MicNone from 'vue-material-design-icons/MicrophoneOutline.vue'
 import localI18n from '../../data/resources/i18n.json'
-import { uploadFile, saveData } from '../../services/firebase'
+import { uploadFile } from '../../services/API'
 import Button from '~/components/Button/Button.vue'
 import Card from '~/components/Card/Card'
 export default {
@@ -247,7 +247,7 @@ export default {
         })
         .catch(() => {})
     },
-    async checkForm(e) {
+    checkForm(e) {
       e.preventDefault()
 
       this.triedToSend = true
@@ -287,12 +287,7 @@ export default {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
         this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
 
-        const key = await saveData(this.messagePackage)
-        const fileName = `${this.messagePackage.parish}__${
-          this.messagePackage.street
-        }__${this.messagePackage.streetNumber + key}`
-
-        uploadFile(this.messagePackage.audioMessage, fileName)
+        uploadFile(this.messagePackage.audioMessage, this.messagePackage)
           .then(() => {
             this.uploadStatus = localI18n['voice-message.success']
             this.messageSent = true

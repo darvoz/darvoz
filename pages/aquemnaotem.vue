@@ -29,13 +29,13 @@ import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 import IntroSection from '~/components/IntroSection/CellphonesIntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
 import Footer from '~/components/Footer/Footer'
-import CookieLayer from '../components/CookieLayer/CookieLayer'
 
 export default {
   components: {

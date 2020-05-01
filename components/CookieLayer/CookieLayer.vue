@@ -58,6 +58,7 @@ export default {
   color: $white;
   background-color: $primary-color;
   padding: 30px;
+  z-index: 9999;
 
   &__header {
     margin-bottom: 20px;

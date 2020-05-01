@@ -11,6 +11,7 @@
       :description="localI18n['voice-message.description']"
     />
     <voice-message-section />
+    <schedule-section />
     <section-separator />
     <faq-section
       v-if="faqList"
@@ -30,9 +31,10 @@ import VoiceMessageSection from '../components/VoiceMessageSection/VoiceMessageS
 import TextElement from '../components/TextElement/TextElement'
 import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
+import CookieLayer from '../components/CookieLayer/CookieLayer'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import Footer from '~/components/Footer/Footer'
-import CookieLayer from '../components/CookieLayer/CookieLayer'
+import ScheduleSection from '~/components/ScheduleSection/ScheduleSection'
 
 export default {
   components: {
@@ -44,7 +46,8 @@ export default {
     VoiceMessageIntroSection,
     TemporaryMessage,
     NavigationBar,
-    Footer
+    Footer,
+    ScheduleSection
   },
   data() {
     return {

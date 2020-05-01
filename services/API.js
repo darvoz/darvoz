@@ -7,7 +7,7 @@ export const blobToBase64 = (file) => {
     }
   })
 }
-const API_ENDPOINT = 'https://limitless-journey-69923.herokuapp.com/api/darvoz/'
+const API_ENDPOINT = 'https://darvoz.herokuapp.com/api/darvoz/'
 export const getToken = () => {
   const token = localStorage.getItem('darvoz.pt-id')
   if (token) {

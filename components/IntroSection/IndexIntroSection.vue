@@ -6,7 +6,11 @@
         class="intro-section__background__image"
       />
       <div class="intro-section__video">
-        <Video class="intro-section__videoElement" src="/intro-video.mp4" :has-hd-version="true"/>
+        <Video
+          class="intro-section__videoElement"
+          src="https://github.com/darvoz/darvoz/blob/gh-pages/intro-video.mp4?raw=true"
+          :has-hd-version="true"
+        />
       </div>
     </div>
     <template slot="headline">

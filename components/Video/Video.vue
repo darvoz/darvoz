@@ -1,6 +1,12 @@
 <template>
   <div class="video__container">
-    <video ref="video" class="video" :controls="play" @pause="onPlayPause" :src="finalSrc" />
+    <video
+      ref="video"
+      class="video"
+      :controls="play"
+      :src="finalSrc"
+      @pause="onPlayPause"
+    />
     <button v-if="!play" class="video__play-button" @click="onPlayPause">
       <PlayIcon :size="buttonSize" class="video__play-button__icon" />
     </button>
@@ -34,9 +40,7 @@ export default {
   },
   mounted() {
     if (window.outerWidth > 1300 && this.hasHdVersion) {
-      const srcArray = this.src.split('.')
-      srcArray[0] += 'HD'
-      this.finalSrc = srcArray.join('.')
+      this.finalSrc = this.src.replace('-HD', '_HD')
     } else {
       this.finalSrc = this.src
     }

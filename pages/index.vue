@@ -10,6 +10,7 @@
     <about-section id="o-que-e" />
     <iniatives-section />
     <brands-section />
+    <Footer />
   </div>
 </template>
 
@@ -17,12 +18,12 @@
 import localI18n from '../data/resources/i18n'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
-import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import IniativesSection from '~/components/IniativesSection/IniativesSection'
+import Footer from '~/components/Footer/Footer'
 
 export default {
   components: {
@@ -32,7 +33,8 @@ export default {
     IntroSection,
     AboutSection,
     NavigationBar,
-    IniativesSection
+    IniativesSection,
+    Footer
   },
   data() {
     return {

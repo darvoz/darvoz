@@ -335,6 +335,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
   }
 
   &__normalCard {
@@ -447,9 +448,18 @@ export default {
     }
 
     &__formSection {
+      display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 24px;
       padding: 94px 160px 106px 160px;
+
+      &:before {
+        content: '';
+        background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+      }
     }
 
     &__formCard {

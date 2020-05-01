@@ -7,7 +7,10 @@
       <h1 class="section__title intro-section__infoTitle">
         <slot name="headline" />
       </h1>
-      <p class="section__description" :style="{'font-size': smallText ? '16px' : ''}">
+      <p
+        class="section__description"
+        :style="{ 'font-size': smallText ? '16px' : '' }"
+      >
         <slot name="description" />
       </p>
       <div class="intro-section__infoBts">

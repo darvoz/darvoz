@@ -6,7 +6,12 @@
     <p class="section__description text__description">
       {{ description }}
     </p>
-    <Button v-if="primaryCta" class="text__button" kind="primary" @click="$emit('click')">
+    <Button
+      v-if="primaryCta"
+      class="text__button"
+      kind="primary"
+      @click="$emit('click')"
+    >
       {{ primaryCta.label }}
     </Button>
   </section>

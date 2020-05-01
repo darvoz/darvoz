@@ -1,7 +1,10 @@
 <template>
   <div class="main">
     <navigation-bar :link-list="navLinks" :primary-cta="navCta" />
-    <temporary-message :temporary-message="localI18n['nav.temporary']" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
+    <temporary-message
+      :temporary-message="localI18n['nav.temporary']"
+      :primary-cta="{ link: '#pontos-recolha', label: 'Quero Doar' }"
+    />
     <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" :links="navLinks" />
@@ -9,7 +12,11 @@
     <collecting-stations-section id="pontos-recolha" />
     <brands-section />
     <section-separator />
-    <faq-section v-if="faqList" :title="localI18n['faq.headline']" :faq-list="faqList"></faq-section>
+    <faq-section
+      v-if="faqList"
+      :title="localI18n['faq.headline']"
+      :faq-list="faqList"
+    ></faq-section>
   </div>
 </template>
 
@@ -71,7 +78,7 @@ export default {
       })
 
     this.faqList = await faqListJSON()
-  },
+  }
 }
 </script>
 

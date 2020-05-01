@@ -9,9 +9,9 @@
       </p>
       <CardGroup>
         <Card
-          class="initiatives__card"
           v-for="initiative in initiatives"
           :key="initiative.img"
+          class="initiatives__card"
           :img="initiative.img"
           :headline="initiative.headline"
           :description="initiative.description"

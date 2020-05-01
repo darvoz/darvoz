@@ -75,6 +75,12 @@ export default {
     margin: 39px 0 0;
     text-align: center;
   }
+
+  &__card {
+    &:last-child {
+      margin-top: 56px;
+    }
+  }
 }
 
 @media screen and (min-width: $max-mobile-size) {
@@ -82,8 +88,8 @@ export default {
     grid-column: 2 / 14;
 
     &__card {
-      &:first-child {
-        margin-right: 24px;
+      &:last-child {
+        margin-top: 0;
       }
     }
   }

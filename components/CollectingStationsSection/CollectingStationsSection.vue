@@ -49,6 +49,7 @@
         </keep-alive>
       </div>
     </div>
+    <p class="collecting-stations__hint">{{ localI18n['collecting-stations.hint'] }}</p>
   </section>
 </template>
 
@@ -215,6 +216,15 @@ export default {
     }
   }
 
+  &__hint {
+    font-family: Roboto, sans-serif;
+    grid-column: 2 / 6;
+    text-align: center;
+    font-size: 12px;
+    color: $gray;
+    margin-top: 24px;
+  }
+
   @media screen and (min-width: $max-mobile-size) {
     &__info {
       grid-column: 2 / 14;
@@ -228,6 +238,10 @@ export default {
 
     &__map {
       height: 100%;
+    }
+
+    &__hint {
+      grid-column: 4 / 12;
     }
 
     &__infoDescription {

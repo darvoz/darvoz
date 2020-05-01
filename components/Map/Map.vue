@@ -29,8 +29,8 @@
 <script>
 import localI18n from '../../data/resources/i18n.json'
 import LocationCard from '~/components/LocationCard/LocationCard'
-
-const PORTUGAL_CENTER_COORDS = [39.55791, -7.8536599]
+const LISBON_CENTER_COORDS = [38.721377, -9.134972]
+// const PORTUGAL_CENTER_COORDS = [39.55791, -7.8536599]
 export default {
   name: 'Map',
   components: {
@@ -43,7 +43,7 @@ export default {
     },
     location: {
       type: Array,
-      default: () => PORTUGAL_CENTER_COORDS
+      default: () => LISBON_CENTER_COORDS
     },
     postalCode: {
       type: String,
@@ -52,20 +52,20 @@ export default {
     },
     zoom: {
       type: Number,
-      default: 7
+      default: 13
     },
     markers: {
       type: Array,
       default: () => [
         {
-          coords: [PORTUGAL_CENTER_COORDS[0] - 0.1, PORTUGAL_CENTER_COORDS[1]],
+          coords: [LISBON_CENTER_COORDS[0] - 0.1, LISBON_CENTER_COORDS[1]],
           name: 'Loja NOS Areeiro',
           location: 'Avenida de Roma 13 - Lisboa',
           workingHours: 'Horário: Seg-Sab 08:30 - 21:00',
           url: 'https://goo.gl/maps/y654AiDHVwUXSUHh6'
         },
         {
-          coords: [PORTUGAL_CENTER_COORDS[0] + 0.1, PORTUGAL_CENTER_COORDS[1]],
+          coords: [LISBON_CENTER_COORDS[0] + 0.1, LISBON_CENTER_COORDS[1]],
           name: 'Loja NOS Areeiro',
           location: 'Avenida de Roma 13 - Lisboa',
           workingHours: 'Horário: Seg-Sab 08:30 - 21:00',

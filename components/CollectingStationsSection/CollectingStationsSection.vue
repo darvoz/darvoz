@@ -44,12 +44,14 @@
         <keep-alive>
           <component
             :is="currentTab.component"
-            v-bind="showMap ? '' : { items: stations }"
+            v-bind="showMap ? { markers: stations } : { items: stations }"
           />
         </keep-alive>
       </div>
     </div>
-    <p class="collecting-stations__hint">{{ localI18n['collecting-stations.hint'] }}</p>
+    <p class="collecting-stations__hint">
+      {{ localI18n['collecting-stations.hint'] }}
+    </p>
   </section>
 </template>
 

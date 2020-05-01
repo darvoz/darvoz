@@ -98,6 +98,7 @@ export default {
     font-weight: 900;
     font-size: 20px;
     line-height: 25px;
+    max-width: 95%;
   }
 
   &__info {

@@ -372,6 +372,7 @@ export default {
     padding: 9px 16px;
     font-size: 16px;
     margin-bottom: 10px;
+    min-width: 0;
   }
 
   &__buttonIcon {
@@ -415,6 +416,7 @@ export default {
   &__cardImg {
     width: 278px;
     height: 268px;
+    max-width: 100%;
   }
 
   &__hint {

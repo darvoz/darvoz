@@ -7,11 +7,19 @@ export const blobToBase64 = (file) => {
     }
   })
 }
-const API_ENDPOINT =
-  'https://limitless-journey-69923.herokuapp.com/api/darvoz/upload'
+const API_ENDPOINT = 'https://limitless-journey-69923.herokuapp.com/api/darvoz/'
+export const getToken = () => {
+  const token = localStorage.getItem('darvoz.pt-id')
+  if (token) {
+    return Promise.resolve(token)
+  }
+  return fetch(API_ENDPOINT + 'token', {
+    method: 'GET'
+  }).then((response) => response.text())
+}
 
-export const uploadFile = (content, data) => {
-  return fetch(API_ENDPOINT, {
+export const uploadFile = (content, data, token) => {
+  return fetch(API_ENDPOINT + 'upload?token=' + token, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -74,6 +74,7 @@
   "voice-message.record-btn.stop" : "Parar",
   "voice-message.send-btn" : "Enviar mensagem",
   "voice-message.send-btn--loading" : "A enviar",
+  "voice-message.form-schedule": "Consulte os horários por freguesia",
   "voice-message.form-label": "Passo 1",
   "voice-message.form-label1": "Passo 2",
   "voice-message.form-label2": "Mensagem enviada",

@@ -6,11 +6,13 @@
         class="index-section__background__image"
       />
       <div class="index-section__video">
-        <Video
+        <iframe
           class="index-section__videoElement"
-          src="https://github.com/darvoz/darvoz/blob/gh-pages/intro-video.mp4?raw=true"
-          :has-hd-version="true"
-        />
+          src="https://player.vimeo.com/video/414109754"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
     <template slot="headline">
@@ -32,12 +34,12 @@
 <script>
 import localI18n from '../../data/resources/i18n.json'
 import GenericIntroSection from './GenericIntroSection'
-import Video from '~/components/Video/Video'
+// import Video from '~/components/Video/Video'
 export default {
   name: 'IntroSection',
   components: {
-    GenericIntroSection,
-    Video
+    GenericIntroSection
+    // Video
   },
   props: {
     isFirstSection: {
@@ -86,6 +88,13 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    height: 60%;
+  }
+
+  &__videoElement {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
   }
 
   @media only screen and (min-width: $max-mobile-size) {
@@ -95,6 +104,8 @@ export default {
       max-width: 800px;
       justify-content: flex-end;
       display: flex;
+      width: 100%;
+      height: 60%;
     }
 
     &__videoElement {

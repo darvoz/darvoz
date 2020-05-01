@@ -10,22 +10,14 @@
     <about-section id="o-que-e" />
     <iniatives-section />
     <brands-section />
-    <section-separator />
-    <faq-section
-      v-if="faqList"
-      :title="localI18n['faq.headline']"
-      :faq-list="faqList"
-    ></faq-section>
     <Footer />
   </div>
 </template>
 
 <script>
 import localI18n from '../data/resources/i18n'
-import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
-import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
@@ -36,10 +28,8 @@ import Footer from '~/components/Footer/Footer'
 export default {
   components: {
     TemporaryMessage,
-    SectionSeparator,
     BrandsSection,
     StatsSection,
-    FaqSection,
     IntroSection,
     AboutSection,
     NavigationBar,
@@ -66,17 +56,8 @@ export default {
           link: '/darvozcarris',
           newPage: true
         }
-      ],
-      faqList: null
+      ]
     }
-  },
-  async created() {
-    const faqListJSON = () =>
-      import('~/data/resources/faqList.json').then((m) => {
-        return m.default.faqList || m.faqList
-      })
-
-    this.faqList = await faqListJSON()
   },
   mounted() {
     if (!window.MediaRecorder) {

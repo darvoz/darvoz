@@ -2,23 +2,27 @@
   "faqList": [
     {
       "title": "Que tipo de equipamento posso doar? ",
-      "answer": "Pode doar telemóveis ou tablets com câmara e carregador que estejam a funcionar em boas condições."
+      "answer": "Pode doar telemóveis ou tablets com câmara e carregador que estejam a funcionar em boas condições, nomeadamente o ecrã, para assegurar que viabilizam chamadas e videochamadas com qualidade para as pessoas que os receberem."
     },
     {
       "title": "O que preciso fazer antes de levar o meu equipamento antigo a um ponto de colecta?",
-      "answer": " Tem que garantir que tem câmara, que está funcional e que tem carregador. Também deverá apagar todos os dados pessoais, idealmente formatando o equipamento para as definições de fábrica."
+      "answer": "Tem que garantir que tem câmara, que está funcional e que tem carregador. Também deverá apagar todos os dados pessoais, idealmente formatando o equipamento para as definições de fábrica."
     },
     {
-      "title": "O que acontece ao equipamento após eu levá-lo ao ponto de colecta?",
-      "answer": "O equipamento será limpo e desinfectado, recondicionado (caso ainda tenha alguns dados do utilizadores, estes serão apagados) e preparado para utilização tal como se fosse novo. Irá ser colocado um SIM card da NOS com, pelo menos, 3 meses de comunicações e dados incluídos. O equipamento e carregador será depois colocado numa caixa e entregue."
+      "title": "O que acontece ao equipamento após eu levá-lo ao ponto de colecta? ",
+      "answer": "O equipamento será limpo e desinfectado, recondicionado (caso ainda tenha alguns dados do utilizadores, estes serão apagados) e preparado - por um equipa da CML - para utilização tal como se fosse novo. Irá ser colocado um SIM card da NOS com, pelo menos, 3 meses de comunicações e dados incluídos. O equipamento e carregador será depois colocado numa caixa e entregue."
     },
     {
-      "title": "Todos os equipamentos serão entregues?",
-      "answer": "Todos os equipamentos que não estejam em condições ou que falte o carregador, por exempo, não serão entregues e seguiram para reciclagem."
+      "title": " Todos os equipamentos serão entregues?",
+      "answer": "Todos os equipamentos que não estejam em condições, por danos ou falta de carregador, por exemplo, não serão entregues e seguiram para reciclagem."
+    },
+    {
+      "title": "Como é feito a distribuição dos equipamentos? ",
+      "answer": "Os equipamentos serão, numa primeira fase entregues a algumas instituições e distribuídos pelas Juntas de Freguesia de Lisboa que estão a participar na iniciativa. As Juntas de Freguesia usarão os telefones para permitir que as pessoas isoladas possam falar com a família (no momento em que voluntários entregam comida) e, caso tenham capacidade de operar com o equipamento, está é entregue à pessoa para ficar sempre em contacto, permitindo uma maior proximidade e apoio a estas pessoas."
     },
     {
       "title": "Porque é que existem apenas Juntas de Freguesia em Lisboa?",
-      "answer": "Porque tínhamos de começar por algum lado. Mas queremos trabalhar com outras Câmaras Municipais e Juntas de Freguesia. Caso seja um representante de uma Câmara Municipal ou Junta de Freguesia e queira juntar-se à iniciativa, envie-nos um email para queroajudar@darvoz.pt . Obrigado "
+      "answer": "Porque tínhamos de começar por algum lado. A Câmara Municipal de Lisboa e algumas das suas Freguesias abraçaram desde logo a iniciativa e quisemos assegurar o maior impacto desde logo.\nMas estamos abertos a apoiar outras Câmaras Municipais e Juntas de Freguesia queiram participar. Caso seja um representante de uma Câmara Municipal, Junta de Freguesia ou outra instituição e se queira juntar-se à iniciativa, envie-nos um email para queroajudar@darvoz.pt. Obrigado"
     }
   ]
 }

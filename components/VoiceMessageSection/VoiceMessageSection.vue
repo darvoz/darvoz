@@ -1,175 +1,168 @@
 <template>
   <section id="mensagem" class="container" tabindex="0">
     <div class="voice-message">
-      <div class="voice-message__formSection">
+      <form
+        class="voice-message__formSection"
+        method="post"
+        novalidate
+        @submit="checkForm"
+      >
         <Card
+          v-if="!messageSent"
           class="voice-message__card voice-message__normalCard"
           :alternate="true"
         >
-          <h1 class="voice-message__cardHeading">{{ cardInfo.headline }}</h1>
-          <img
-            class="voice-message__cardImg"
-            :src="cardInfo.img"
-            role="presentation"
-            alt=""
-          />
-          <p class="voice-message__cardDescription">
-            {{ cardInfo.description }}
+          <p class="voice-message__formSectionLabel">
+            {{ localI18n['voice-message.form-label'] }}
           </p>
+          <p class="voice-message__cardDescription">
+            {{ localI18n['voice-message.message.description'] }}
+          </p>
+          <input
+            v-model="messagePackage.from"
+            class="voice-message__formInput"
+            :placeholder="localI18n['voice-message.from']"
+            type="text"
+          />
+          <span
+            v-if="triedToSend && !messagePackage.parish"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.parish'] }}
+          </span>
+          <select
+            v-model="messagePackage.parish"
+            class="voice-message__formInput voice-message__formSelect"
+          >
+            <option value="" disabled>{{
+              localI18n['voice-message.parish']
+            }}</option>
+            <option value="Anjos">Anjos</option>
+            <option value="Lumiar">Lumiar</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Graça">Graça</option>
+          </select>
+          <span
+            v-if="triedToSend && !messagePackage.from"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.from'] }}
+          </span>
+          <input
+            v-model="messagePackage.recipient"
+            class="voice-message__formInput"
+            :placeholder="localI18n['voice-message.recipient']"
+            type="text"
+          />
+          <span
+            v-if="triedToSend && !messagePackage.street"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.street'] }}
+          </span>
+          <input
+            v-model="messagePackage.street"
+            class="voice-message__formInput"
+            :placeholder="localI18n['voice-message.street']"
+            type="text"
+          />
+          <span
+            v-if="triedToSend && !messagePackage.recipient"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.recipient'] }}
+          </span>
         </Card>
         <Card
+          v-if="!messageSent"
           class="voice-message__card voice-message__formCard"
           :alternate="true"
         >
-          <p v-if="!messageSent" class="voice-message__formSectionLabel">
-            {{ localI18n['voice-message.form-label'] }}
+          <p class="voice-message__formSectionLabel">
+            {{ localI18n['voice-message.form-label1'] }}
           </p>
-          <form
-            v-if="!messageSent"
-            class="voice-message__form"
-            method="post"
-            novalidate
-            @submit="checkForm"
+          <p class="voice-message__cardDescription">
+            {{ localI18n['voice-message.message.hint'] }}
+          </p>
+          <div
+            v-if="!isRecording"
+            class="voice-message__recordBtn"
+            @click="startRecording"
           >
-            <div class="voice-message__inputGroup">
-              <input
-                v-model="messagePackage.from"
-                class="voice-message__formInput"
-                :placeholder="localI18n['voice-message.from']"
-                type="text"
-              />
-              <select
-                v-model="messagePackage.parish"
-                class="voice-message__formInput voice-message__formSelect"
-              >
-                <option value="" disabled>{{
-                  localI18n['voice-message.parish']
-                }}</option>
-                <option value="Anjos">Anjos</option>
-                <option value="Lumiar">Lumiar</option>
-                <option value="Baixa">Baixa</option>
-                <option value="Graça">Graça</option>
-              </select>
-            </div>
-            <span
-              v-if="triedToSend && !messagePackage.parish"
-              class="voice-message__warning"
-            >
-              {{ localI18n['voice-message.error.parish'] }}
-            </span>
-            <span
-              v-if="triedToSend && !messagePackage.from"
-              class="voice-message__warning"
-            >
-              {{ localI18n['voice-message.error.from'] }}
-            </span>
-            <div class="voice-message__inputGroup">
-              <input
-                v-model="messagePackage.recipient"
-                class="voice-message__formInput"
-                :placeholder="localI18n['voice-message.recipient']"
-                type="text"
-              />
-              <input
-                v-model="messagePackage.street"
-                class="voice-message__formInput"
-                :placeholder="localI18n['voice-message.street']"
-                type="text"
-              />
-            </div>
-            <span
-              v-if="triedToSend && !messagePackage.street"
-              class="voice-message__warning"
-            >
-              {{ localI18n['voice-message.error.street'] }}
-            </span>
-            <span
-              v-if="triedToSend && !messagePackage.recipient"
-              class="voice-message__warning"
-            >
-              {{ localI18n['voice-message.error.recipient'] }}
-            </span>
-            <input
-              v-model="messagePackage.streetNumber"
-              class="voice-message__formInput"
-              :placeholder="localI18n['voice-message.streetNumber']"
-              type="text"
-            />
-            <span
-              v-if="triedToSend && !messagePackage.streetNumber"
-              class="voice-message__warning"
-            >
-              {{ localI18n['voice-message.error.streetNumber'] }}
-            </span>
-            <div class="voice-message__recording">
-              <audio
-                v-if="messagePackage.audioMessage"
-                class="voice-message__audio"
-                :src="audioPlayback"
-                controls
-              ></audio>
-              <div v-if="blockedWarning" class="voice-message__warning">
-                {{ localI18n['voice-message.blockedWarning'] }}
-              </div>
-              <span
-                v-if="triedToSend && !messagePackage.audioMessage"
-                class="voice-message__warning"
-              >
-                {{ localI18n['voice-message.error.audioMessage'] }}
-              </span>
-              <div class="voice-message__terms">
-                {{ localI18n['voice-message.terms-conditions.label']
-                }}<a href="/termos-e-condicoes.pdf" target="_blank">{{
-                  localI18n['voice-message.terms-conditions.link']
-                }}</a>
-                <input v-model="termsConditionsAccepted" type="checkbox" />
-              </div>
-              <div class="voice-message__btnGroup">
-                <Button
-                  v-if="!isRecording"
-                  class="voice-message__button"
-                  kind="primary"
-                  @click="startRecording"
-                >
-                  <MicNone
-                    decorative
-                    :size="16"
-                    class="voice-message__buttonIcon"
-                  />{{ localI18n['voice-message.record-btn.start'] }}
-                </Button>
-                <Button
-                  v-else
-                  class="voice-message__button"
-                  kind="secondary"
-                  @click="stopRecording"
-                >
-                  <MicNone
-                    decorative
-                    :size="16"
-                    class="voice-message__buttonIcon"
-                  />{{ localI18n['voice-message.record-btn.stop'] }}
-                </Button>
-                <Button
-                  class="voice-message__button"
-                  kind="primary"
-                  type="submit"
-                  :disabled="
-                    isRecording || messageSent || !termsConditionsAccepted
-                  "
-                >
-                  {{ localI18n['voice-message.send-btn'] }}
-                </Button>
-              </div>
-            </div>
-            <p class="voice-message__hint">
-              {{ localI18n['voice-message.message.hint'] }}
-            </p>
-          </form>
-          <div class="voice-message__notify">
-            {{ uploadStatus }} {{ messageId }}
+            <MicNone decorative :size="46" class="voice-message__buttonIcon" />
           </div>
+          <div
+            v-if="isRecording"
+            class="voice-message__recordBtn"
+            @click="stopRecording"
+          >
+            <div class="voice-message__recordBtnSquare"></div>
+          </div>
+          <p class="voice-message__hint">
+            {{
+              isRecording
+                ? localI18n['voice-message.recordLabelStop']
+                : localI18n['voice-message.recordLabel']
+            }}
+          </p>
+          <audio
+            class="voice-message__audio"
+            :src="audioPlayback"
+            controls
+          ></audio>
+          <div v-if="blockedWarning" class="voice-message__warning">
+            {{ localI18n['voice-message.blockedWarning'] }}
+          </div>
+          <span
+            v-if="triedToSend && !messagePackage.audioMessage"
+            class="voice-message__warning"
+          >
+            {{ localI18n['voice-message.error.audioMessage'] }}
+          </span>
         </Card>
-      </div>
+        <Card
+          v-if="messageSent"
+          class="voice-message__card voice-message__notificationCard"
+          :alternate="true"
+        >
+          <h2 class="voice-message__submitTitle">
+            {{ localI18n['voice-message.form-label2'] }}
+          </h2>
+          <p class="voice-message__submitDescription">
+            {{ localI18n['voice-message.form-submitDescription'] }}
+          </p>
+          <p class="voice-message__notify">
+            ID: {{ messageId }}
+          </p>
+        </Card>
+        <div class="voice-message__formFooter">
+          <p class="voice-message__hint">
+            Os horários da iniciativa são disponibilizados diáriamente para o
+            dia seguinte. Consulte os horários para mais informação.
+          </p>
+          <div v-if="!messageSent" class="voice-message__terms">
+            {{ localI18n['voice-message.terms-conditions.label']
+            }}<a href="/termos-e-condicoes.pdf" target="_blank">{{
+              localI18n['voice-message.terms-conditions.link']
+            }}</a>
+            <input v-model="termsConditionsAccepted" type="checkbox" />
+          </div>
+          <div class="voice-message__btnGroup">
+            <Button
+              v-if="!messageSent"
+              class="voice-message__button"
+              kind="primary"
+              type="submit"
+              :disabled="isRecording || messageSent || !termsConditionsAccepted"
+            >
+              {{ localI18n['voice-message.send-btn'] }}
+            </Button>
+            <Button kind="secondary" href="">
+              {{ localI18n['voice-message.schedule'] }}
+            </Button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </template>
@@ -207,15 +200,9 @@ export default {
         recipient: '',
         parish: '',
         street: '',
-        streetNumber: '',
         audioMessage: null
       },
       messageSent: false,
-      cardInfo: {
-        img: '/initiatives/voice-message__card.svg',
-        headline: localI18n['voice-message.message.title'],
-        description: localI18n['voice-message.message.description']
-      },
       localI18n
     }
   },
@@ -263,12 +250,12 @@ export default {
     },
     async checkForm(e) {
       e.preventDefault()
-
       this.triedToSend = true
       if (
         this.messagePackage.parish &&
+        this.messagePackage.recipient &&
+        this.messagePackage.from &&
         this.messagePackage.street &&
-        this.messagePackage.streetNumber &&
         this.messagePackage.audioMessage !== 0
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
@@ -297,34 +284,82 @@ export default {
 
 .voice-message {
   $max-form-size: 1160px;
+
   font-family: Roboto, sans-serif;
   margin-top: -$section-margin;
-  grid-column: 1 / 7;
+  margin-bottom: -$section-margin;
+  grid-column: 2 / 6;
 
   &__formSection {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: $smoke-white;
+  }
+
+  &__formFooter {
+    grid-column: 1 / 7;
+  }
+
+  &__submitTitle {
+    font-weight: 900;
+    font-size: 48px;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  &__submitDescription {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 38px;
+    text-align: center;
+    margin-top: 34px;
+    margin-bottom: 66px;
+    width: 80%;
   }
 
   &__formSectionLabel {
     color: $primary-color;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 23px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
   }
 
   &__card {
     width: 100%;
-    justify-content: center;
+    height: 100%;
+    padding: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
   }
 
-  &__formCard {
-    position: relative;
-    align-items: flex-start;
-    margin-top: 32px;
+  &__normalCard {
+    margin-bottom: 24px;
+  }
+
+  &__recordBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 106px;
+    height: 106px;
+    left: 907px;
+    top: 1420px;
+    background-color: $salmon;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  &__recordBtnSquare {
+    background-color: $white;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
   }
 
   &__recording {
@@ -336,6 +371,7 @@ export default {
   &__warning {
     color: red;
     font-size: 10px;
+    margin-bottom: 12px;
   }
 
   &__audio {
@@ -343,54 +379,44 @@ export default {
     margin-bottom: 20px;
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    width: 100%;
-  }
-
   &__formInput {
     border-radius: 6px;
-    border-color: $primary-color;
     height: 48px;
     width: 100%;
     padding: 9px 16px;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     min-width: 0;
+    border: 1px solid $border-grey;
   }
 
   &__buttonIcon {
-    height: 16px;
-    margin-right: 8px;
+    height: 46px;
+    color: $white;
   }
 
   &__button {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   &__formSelect {
     appearance: none;
-    border: 2px solid $primary-color;
-  }
-
-  &__inputGroup {
-    display: flex;
-    flex-direction: column;
+    border: 1px solid $border-grey;
+    background-color: $white;
   }
 
   &__btnGroup {
     display: flex;
     flex-direction: column;
-    margin-top: 24px;
+    margin: 24px 0;
   }
 
   &__cardDescription {
     font-size: 16px;
-    color: $gray;
-    text-align: center;
     line-height: 190%;
+    text-align: center;
+    color: $black;
+    margin-bottom: 42px;
   }
 
   &__cardHeading {
@@ -398,25 +424,20 @@ export default {
     font-size: 32px;
   }
 
-  &__cardImg {
-    width: 278px;
-    height: 268px;
-    max-width: 100%;
-  }
-
   &__hint {
     color: $light-gray;
     font-size: 12px;
-    font-weight: bold;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    margin-top: 24px;
+    margin-bottom: 37px;
+    text-align: center;
   }
 
   &__notify {
     text-align: center;
-    color: $primary-color;
-    font-size: 32px;
+    font-size: 24px;
+    background-color: $smoke-white;
+    padding: 24px 48px;
+    border-radius: 32px;
   }
 
   @media screen and (min-width: $max-mobile-size) {
@@ -429,51 +450,58 @@ export default {
     &__formSection {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      grid-gap: 24px;
       padding: 94px 160px 106px 160px;
+
+      &:before {
+        content: '';
+        background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+      }
     }
 
     &__formCard {
-      grid-column: 6 / 13;
+      grid-column: 7 / 12;
       margin-top: 0;
     }
 
-    &__normalCard {
-      grid-column: 1 / 6;
+    &__formFooter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: 3 / 11;
     }
 
-    &__button {
+    &__normalCard {
+      grid-column: 2 / 7;
       margin-bottom: 0;
     }
 
-    &__formInput:first-child {
-      margin-right: 24px;
+    &__schedule {
+      grid-column: 5 / 9;
     }
 
-    &__inputGroup {
-      flex-direction: row;
-      margin-bottom: 16px;
-    }
-
-    &__card:last-of-type {
-      margin-left: 24px;
+    &__notificationCard {
+      grid-column: 2 / 12;
+      max-width: 100%;
+      height: 520px;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
     &__card {
-      height: 604px;
+      padding: 56px 82px;
     }
 
     &__btnGroup {
       flex-direction: row;
       justify-content: space-between;
     }
-  }
 
-  @media screen and (max-width: $max-form-size) {
-    &__formSection {
-      padding: 94px 20px 106px 20px;
+    &__button {
+      margin-right: 16px;
     }
   }
 }

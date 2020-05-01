@@ -11,11 +11,6 @@
       :description="localI18n['voice-message.description']"
     />
     <voice-message-section />
-    <text-element
-      :title="localI18n['voice-message.title1']"
-      :description="localI18n['voice-message.description1']"
-      :primary-cta="{ label: localI18n['voice-message.descriptionBtn'] }"
-    />
     <section-separator />
     <faq-section
       v-if="faqList"

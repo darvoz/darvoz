@@ -22,6 +22,7 @@
       :title="localI18n['faq.headline']"
       :faq-list="faqList"
     ></faq-section>
+    <Footer />
   </div>
 </template>
 
@@ -34,6 +35,7 @@ import TextElement from '../components/TextElement/TextElement'
 import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
+import Footer from '~/components/Footer/Footer'
 
 export default {
   components: {
@@ -43,7 +45,8 @@ export default {
     VoiceMessageSection,
     VoiceMessageIntroSection,
     TemporaryMessage,
-    NavigationBar
+    NavigationBar,
+    Footer
   },
   data() {
     return {

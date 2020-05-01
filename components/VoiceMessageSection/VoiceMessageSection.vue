@@ -49,10 +49,9 @@
             <option value="" disabled>{{
               localI18n['voice-message.parish']
             }}</option>
-            <option value="Anjos">Anjos</option>
-            <option value="Lumiar">Lumiar</option>
-            <option value="Baixa">Baixa</option>
-            <option value="Graça">Graça</option>
+            <option v-for="parish in parishes" :key="parish" :value="parish">
+              {{ parish }}</option
+            >
           </select>
           <span
             v-if="triedToSend && !messagePackage.parish"
@@ -207,6 +206,30 @@ export default {
   },
   data() {
     return {
+      parishes: [
+        'Ajuda',
+        'Alcântara',
+        'Alvalade',
+        'Areeiro',
+        'Arroios',
+        'Avenidas Novas',
+        'Beato e Marvila',
+        'Belém',
+        'Benfica',
+        'Campo de Ourique',
+        'Campolie',
+        'Carnide',
+        'Estrela',
+        'Lumiar',
+        'Misericórdia e Sto António',
+        'Olivais',
+        'Parque das Nações',
+        'Penha de França',
+        'Santa Clara',
+        'Sta Maria Maior',
+        'S. Domingos de Benfica',
+        'São Vicente'
+      ],
       termsConditionsAccepted: false,
       rec: null,
       isRecording: false,

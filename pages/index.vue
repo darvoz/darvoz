@@ -1,6 +1,9 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
+    <navigation-bar
+      :link-list="navLinks"
+      :primary-cta="{ link: '#pontos-recolha', label: 'Quero Doar' }"
+    />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
     <stats-section />
@@ -8,7 +11,11 @@
     <iniatives-section />
     <brands-section />
     <section-separator />
-    <faq-section v-if="faqList" :title="localI18n['faq.headline']" :faq-list="faqList"></faq-section>
+    <faq-section
+      v-if="faqList"
+      :title="localI18n['faq.headline']"
+      :faq-list="faqList"
+    ></faq-section>
   </div>
 </template>
 

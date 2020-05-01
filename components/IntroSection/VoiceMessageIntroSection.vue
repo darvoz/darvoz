@@ -7,7 +7,7 @@
     :is-first-section="isFirstSection"
     class="voice-message-intro__info"
   >
-    <div class="voice-message-intro__imageWrapper" slot="background">
+    <div slot="background" class="voice-message-intro__imageWrapper">
       <img
         src="../../assets/voice-message/voice-message__introBackground.jpg"
         alt="section_background"

@@ -5,7 +5,9 @@
       <img class="card__img" :src="img" />
       <h1 class="card__heading">{{ headline }}</h1>
       <p class="card__description">{{ description }}</p>
-      <Button v-if="cta" kind="primary" :link="cta.link">{{ cta.label }}</Button>
+      <Button v-if="cta" kind="primary" :link="cta.link">{{
+        cta.label
+      }}</Button>
     </div>
   </article>
 </template>

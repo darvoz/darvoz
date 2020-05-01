@@ -9,7 +9,7 @@
       <div class="faq-section__title">
         <div class="faq-section__titleText">
           <h1 class="section__title">
-            {{ title}}
+            {{ title }}
           </h1>
         </div>
       </div>

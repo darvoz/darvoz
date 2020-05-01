@@ -95,6 +95,8 @@ export default {
   font-family: Roboto, sans-serif;
   grid-column: 2 / 6;
   min-width: 100%;
+  padding: 20px 10px;
+
   &__title {
     text-align: center;
   }
@@ -102,23 +104,35 @@ export default {
     margin-top: 36px;
     width: 100%;
     border-collapse: collapse;
+
     td,
     th {
       border: 1px solid #c8c8c8;
       text-align: center;
-      padding: 27px 20px;
-      line-height: 27px;
+      padding: 10px 8px;
+      line-height: 20px;
     }
     td {
-      padding: 8px 20px;
-      line-height: 30px;
+      padding: 8px;
+      line-height: 27px;
     }
   }
   @media screen and (min-width: $max-mobile-size) {
     grid-column: 2 / 14;
+    padding: 48px;
+
     &__table {
       width: 75%;
+      td,
+      th {
+        border: 1px solid #c8c8c8;
+        text-align: center;
+        padding: 27px 20px;
+        line-height: 27px;
+      }
       td {
+        padding: 8px 20px;
+        line-height: 30px;
         min-width: 200px;
       }
     }

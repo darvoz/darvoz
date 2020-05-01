@@ -16,7 +16,6 @@
 import localI18n from '../data/resources/i18n'
 import BrandsSection from '../components/BrandsSection'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
-import CookieLayer from '../components/CookieLayer/CookieLayer'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import IniativesSection from '~/components/IniativesSection/IniativesSection'

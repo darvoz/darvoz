@@ -178,12 +178,12 @@
               }}
             </Button>
             <Button kind="secondary">
-              {{ localI18n['voice-message.schedule'] }}
+              {{ localI18n['voice-message.schedule'] }}<sub>*</sub>
             </Button>
           </div>
-          <span class="voice-message__hint">
+          <p class="voice-message__scheduleHint">
             {{localI18n['voice-message.schedule-hint']}}
-          </span>
+          </p>
           <span v-if="hasError" class="voice-message__warning">
             {{ hasError }}
           </span>
@@ -359,6 +359,13 @@ export default {
 
   &__formFooter {
     grid-column: 1 / 7;
+  }
+
+  &__scheduleHint {
+    margin-bottom: 39px;
+    color: $light-gray;
+    font-size: 12px;
+    text-align: center;
   }
 
   &__submitTitle {

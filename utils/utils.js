@@ -5,8 +5,8 @@ const animateScroll = (event) => {
       ? event.target
       : clickedElement.closest('.navigation-bar__link')
 
-  if (!navElement) {
-    return
+  if (!navElement || !navElement.hash) {
+    return true
   }
   const scrollTarget = document.querySelector(navElement.hash)
 

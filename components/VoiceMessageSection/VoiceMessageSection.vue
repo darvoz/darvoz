@@ -131,9 +131,7 @@
           <p class="voice-message__submitDescription">
             {{ localI18n['voice-message.form-submitDescription'] }}
           </p>
-          <p class="voice-message__notify">
-            ID: {{ messageId }}
-          </p>
+          <p class="voice-message__notify">ID: {{ messageId }}</p>
         </Card>
         <div class="voice-message__formFooter">
           <p class="voice-message__hint">
@@ -473,6 +471,7 @@ export default {
       flex-direction: column;
       align-items: center;
       grid-column: 3 / 11;
+      z-index: 1;
     }
 
     &__normalCard {
@@ -503,6 +502,7 @@ export default {
 
     &__button {
       margin-right: 16px;
+      margin-bottom: 0;
     }
   }
 }

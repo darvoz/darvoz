@@ -5,7 +5,7 @@
       <img class="card__img" :src="img" />
       <h1 class="card__heading">{{ headline }}</h1>
       <p class="card__description">{{ description }}</p>
-      <Button v-if="cta" kind="primary" :link="cta.link">{{
+      <Button class="card__btn" v-if="cta" kind="primary" :link="cta.link">{{
         cta.label
       }}</Button>
     </div>
@@ -86,6 +86,10 @@ export default {
     line-height: 38px;
     margin-top: 16px;
     margin-bottom: 49px;
+  }
+
+  &__btn {
+    width: 100%;
   }
 }
 </style>

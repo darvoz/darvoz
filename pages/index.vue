@@ -6,8 +6,6 @@
     />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
-    <stats-section />
-    <about-section id="o-que-e" />
     <iniatives-section />
     <brands-section />
     <Footer />
@@ -16,11 +14,9 @@
 
 <script>
 import localI18n from '../data/resources/i18n'
-import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
-import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import IniativesSection from '~/components/IniativesSection/IniativesSection'
 import Footer from '~/components/Footer/Footer'
@@ -29,9 +25,7 @@ export default {
   components: {
     TemporaryMessage,
     BrandsSection,
-    StatsSection,
     IntroSection,
-    AboutSection,
     NavigationBar,
     IniativesSection,
     Footer

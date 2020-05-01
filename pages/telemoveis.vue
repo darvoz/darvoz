@@ -76,7 +76,7 @@ export default {
   },
   async created() {
     const faqListJSON = () =>
-      import('~/data/resources/faqList.json').then((m) => {
+      import('~/data/resources/faqListDoar.json').then((m) => {
         return m.default.faqList || m.faqList
       })
 

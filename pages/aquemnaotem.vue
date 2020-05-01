@@ -60,7 +60,7 @@ export default {
         },
         {
           name: localI18n['index.nav.cellphones'],
-          link: '/aquemnaotem ',
+          link: '/aquemnaotem',
           newPage: true,
           active: true
         },

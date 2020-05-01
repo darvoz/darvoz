@@ -92,6 +92,7 @@ export default {
 
   .list__seeMore {
     grid-column: 6 / 8;
+    width: 100%;
   }
 }
 </style>

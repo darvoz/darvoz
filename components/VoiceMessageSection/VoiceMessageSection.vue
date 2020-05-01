@@ -165,9 +165,18 @@
               class="voice-message__button"
               kind="primary"
               type="submit"
-              :disabled="isRecording || messageSent || !termsConditionsAccepted"
+              :disabled="
+                isRecording ||
+                  messageSent ||
+                  !termsConditionsAccepted ||
+                  loadingRequest
+              "
             >
-              {{ localI18n['voice-message.send-btn'] }}
+              {{
+                loadingRequest
+                  ? localI18n['voice-message.send-btn--loading']
+                  : localI18n['voice-message.send-btn']
+              }}
             </Button>
             <Button kind="secondary" href="">
               {{ localI18n['voice-message.schedule'] }}
@@ -205,6 +214,7 @@ export default {
       recordingTimer: null,
       blockedWarning: false,
       triedToSend: false,
+      loadingRequest: false,
       stream: null,
       progress: 0,
       maxRecordTime: 15000,
@@ -280,6 +290,7 @@ export default {
         const data = { ...this.messagePackage, timestampvenvi: Date.now() }
         delete data.audioMessage
         const base64 = await blobToBase64(this.messagePackage.audioMessage)
+        this.loadingRequest = true
         uploadFile(base64, data)
           .then((data) => {
             if (!data.ok) {
@@ -290,8 +301,12 @@ export default {
           .then((data) => {
             this.messageId = data
             this.messageSent = true
+            this.loadingRequest = false
           })
-          .catch(() => (this.hasError = localI18n['voice-message.error']))
+          .catch(() => {
+            this.hasError = localI18n['voice-message.error']
+            this.loadingRequest = false
+          })
       }
     }
   }

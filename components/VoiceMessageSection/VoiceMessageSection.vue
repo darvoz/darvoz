@@ -88,6 +88,7 @@
             v-if="!isRecording"
             class="voice-message__recordBtn"
             @click="startRecording"
+            type="button"
           >
             <MicNone decorative :size="46" class="voice-message__buttonIcon" />
           </button>
@@ -95,6 +96,7 @@
             v-if="isRecording"
             class="voice-message__recordBtn"
             @click="stopRecording"
+            type="button"
           >
             <div class="voice-message__recordBtnSquare"></div>
           </button>

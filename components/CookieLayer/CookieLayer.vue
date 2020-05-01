@@ -3,7 +3,7 @@
     <h1 class="cookie__header">{{ localI18n['cookie.title'] }}</h1>
     <p>
       {{ localI18n['cookie.description'] }}
-      <a href="" class="cookie__link" target="_blank">
+      <a href="/politica-cookies.pdf" class="cookie__link" target="_blank">
         {{ localI18n['cookie.link'] }}
       </a>
     </p>

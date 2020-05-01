@@ -18,6 +18,13 @@
           <p class="voice-message__cardDescription">
             {{ localI18n['voice-message.message.description'] }}
           </p>
+          <a
+            href="/horario_carris.pdf"
+            class="voice-message__link"
+            target="_blank"
+          >
+            {{ localI18n['voice-message.form-schedule'] }}
+          </a>
           <input
             v-model="messagePackage.from"
             class="voice-message__formInput"
@@ -473,12 +480,18 @@ export default {
     line-height: 190%;
     text-align: center;
     color: $black;
-    margin-bottom: 42px;
+    margin-bottom: 12px;
   }
 
   &__cardHeading {
     font-weight: 900;
     font-size: 32px;
+  }
+
+  &__link {
+    text-decoration: underline;
+    margin-bottom: 42px;
+    text-align: center;
   }
 
   &__hint {

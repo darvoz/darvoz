@@ -1,40 +1,49 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
+    <navigation-bar
+      :link-list="navLinks"
+      :primary-cta="{ link: '#mensagem', label: 'Gravar mensagem' }"
+    />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
-    <intro-section :is-first-section="true" />
-    <stats-section />
-    <about-section id="o-que-e" />
-    <iniatives-section />
-    <brands-section />
+    <voice-message-intro-section :is-first-section="true" />
+    <text-element
+      :title="localI18n['voice-message.title']"
+      :description="localI18n['voice-message.description']"
+    />
+    <voice-message-section />
+    <text-element
+      :title="localI18n['voice-message.title1']"
+      :description="localI18n['voice-message.description1']"
+      :primary-cta="{ label: localI18n['voice-message.descriptionBtn'] }"
+    />
     <section-separator />
-    <faq-section v-if="faqList" :title="localI18n['faq.headline']" :faq-list="faqList"></faq-section>
+    <faq-section
+      v-if="faqList"
+      :title="localI18n['faq.headline']"
+      :faq-list="faqList"
+    ></faq-section>
   </div>
 </template>
 
 <script>
 import localI18n from '../data/resources/i18n'
-import FaqSection from '../components/FaqSection'
-import StatsSection from '../components/StatsSection'
-import BrandsSection from '../components/BrandsSection'
-import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
-import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
-import AboutSection from '~/components/AboutSection.vue'
+import VoiceMessageIntroSection from '../components/IntroSection/VoiceMessageIntroSection'
+import VoiceMessageSection from '../components/VoiceMessageSection/VoiceMessageSection'
+import TextElement from '../components/TextElement/TextElement'
+import FaqSection from '../components/FaqSection'
+import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
-import IniativesSection from '~/components/IniativesSection/IniativesSection'
 
 export default {
   components: {
-    TemporaryMessage,
     SectionSeparator,
-    BrandsSection,
-    StatsSection,
     FaqSection,
-    IntroSection,
-    AboutSection,
-    NavigationBar,
-    IniativesSection
+    TextElement,
+    VoiceMessageSection,
+    VoiceMessageIntroSection,
+    TemporaryMessage,
+    NavigationBar
   },
   data() {
     return {
@@ -43,7 +52,6 @@ export default {
         {
           name: localI18n['nav.home'],
           link: '/',
-          active: true,
           newPage: true
         },
         {
@@ -54,7 +62,8 @@ export default {
         {
           name: localI18n['index.nav.bus'],
           link: '/darvozcarris',
-          newPage: true
+          newPage: true,
+          active: true
         }
       ],
       faqList: null
@@ -62,18 +71,11 @@ export default {
   },
   async created() {
     const faqListJSON = () =>
-      import('~/data/resources/faqList.json').then((m) => {
+      import('~/data/resources/faqListCarris.json').then((m) => {
         return m.default.faqList || m.faqList
       })
 
     this.faqList = await faqListJSON()
-  },
-  mounted() {
-    if (!window.MediaRecorder) {
-      import('audio-recorder-polyfill').then(
-        (AudioRecorder) => (window.MediaRecorder = AudioRecorder.default)
-      )
-    }
   }
 }
 </script>

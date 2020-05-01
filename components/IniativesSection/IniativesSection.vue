@@ -9,6 +9,7 @@
       </p>
       <CardGroup>
         <Card
+          class="initiatives__card"
           v-for="initiative in initiatives"
           :key="initiative.img"
           :img="initiative.img"
@@ -48,12 +49,12 @@ export default {
           }
         },
         {
-          img: '/initiatives/autocarros.svg',
+          img: '/initiatives/darvozcarris.svg',
           headline: localI18n['index.initiatives.initiatives2.headline'],
           description: localI18n['index.initiatives.initiatives2.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
-            link: '/autocarro#mensagem'
+            link: '/darvozcarris#mensagem'
           }
         }
       ]
@@ -78,7 +79,13 @@ export default {
 
 @media screen and (min-width: $max-mobile-size) {
   .initiatives {
-    grid-column: 3 / 13;
+    grid-column: 2 / 14;
+
+    &__card {
+      &:first-child {
+        margin-right: 24px;
+      }
+    }
   }
 }
 </style>

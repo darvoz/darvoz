@@ -9,7 +9,7 @@
       <div class="faq-section__title">
         <div class="faq-section__titleText">
           <h1 class="section__title">
-            {{ localI18n['faq.headline'] }}
+            {{ title}}
           </h1>
         </div>
       </div>
@@ -34,19 +34,20 @@ export default {
   components: {
     Accordion
   },
-  data() {
-    return {
-      localI18n,
-      faqList: null
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    faqList: {
+      type: Array,
+      required: true
     }
   },
-  async created() {
-    const faqListJSON = () =>
-      import('~/data/resources/faqList.json').then((m) => {
-        return m.default.faqList || m.faqList
-      })
-
-    this.faqList = await faqListJSON()
+  data() {
+    return {
+      localI18n
+    }
   }
 }
 </script>
@@ -91,7 +92,7 @@ export default {
   }
 
   @media only screen and (min-width: $max-mobile-size) {
-    grid-column: 5 / 11;
+    grid-column: 5 / 12;
 
     &__title {
       flex-direction: row;

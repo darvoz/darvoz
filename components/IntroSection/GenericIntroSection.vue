@@ -7,7 +7,7 @@
       <h1 class="section__title intro-section__infoTitle">
         <slot name="headline" />
       </h1>
-      <p class="section__description">
+      <p class="section__description" :style="{'font-size': smallText ? '16px' : ''}">
         <slot name="description" />
       </p>
       <div class="intro-section__infoBts">
@@ -15,7 +15,7 @@
           v-if="primaryCta"
           class="intro-section__primaryBtn"
           kind="primary"
-          link="primaryCta.link"
+          :link="primaryCta.link"
         >
           {{ primaryCta.label }}
         </Button>
@@ -23,7 +23,7 @@
           v-if="secondaryCta"
           class="intro-section__secondaryBtn"
           kind="secondary"
-          link="secondaryCta.link"
+          :link="secondaryCta.link"
         >
           {{ secondaryCta.label }}
         </Button>
@@ -52,6 +52,11 @@ export default {
     secondaryCta: {
       type: Object,
       default: undefined
+    },
+    smallText: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data() {
@@ -108,12 +113,12 @@ export default {
     min-height: $section-min-height;
 
     &__info {
-      grid-column: 2 / 6;
+      grid-column: 2 / 7;
       width: calc(100% + 1rem);
     }
 
     &__infoTitle {
-      font-size: 58px;
+      font-size: 56px;
       text-align: left;
     }
 

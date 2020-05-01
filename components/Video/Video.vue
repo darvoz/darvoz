@@ -61,6 +61,10 @@ export default {
 .video__container {
   position: relative;
   width: 100%;
+
+  @media only screen and (min-width: $max-mobile-size) {
+    width: 80%;
+  }
 }
 
 .video {

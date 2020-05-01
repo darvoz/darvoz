@@ -40,9 +40,7 @@ export default {
   },
   mounted() {
     if (window.outerWidth > 1300 && this.hasHdVersion) {
-      const srcArray = this.src.split('.')
-      srcArray[0] += 'HD'
-      this.finalSrc = srcArray.join('.')
+      this.finalSrc = this.src.replace('-HD', '_HD')
     } else {
       this.finalSrc = this.src
     }

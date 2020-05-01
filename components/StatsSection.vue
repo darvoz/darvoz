@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       localI18n,
-      finalStatValue: 200,
+      finalStatValue: 239,
       currentStatValue: 0,
       animationDuration: 2500,
       throttleDuration: 200

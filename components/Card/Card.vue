@@ -5,7 +5,7 @@
       <img class="card__img" :src="img" />
       <h1 class="card__heading">{{ headline }}</h1>
       <p class="card__description">{{ description }}</p>
-      <Button class="card__btn" v-if="cta" kind="primary" :link="cta.link">{{
+      <Button v-if="cta" class="card__btn" kind="primary" :link="cta.link">{{
         cta.label
       }}</Button>
     </div>

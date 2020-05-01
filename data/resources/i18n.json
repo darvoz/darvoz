@@ -66,7 +66,7 @@
   "close.button.alt": "Fechar",
   "location-card.open-on-maps": "Abrir no Google Maps",
   "voice-message.title": "Gravar mensagem",
-  "voice-message.description": "A CARRIS levar-lhe-á facilmente, de uma forma única e original, as mensagens de força e saudade que o vão surpreender.  Para isso, só precisamos da sua mensagem, de um autocarro da CARRIS, de um motorista e de um megafone.\nGrave a sua mensagem que nós entregamos”",
+  "voice-message.description": "A CARRIS leva facilmente, de uma forma única e original, as mensagens de força e saudade que o vão surpreender.  Para isso, só precisamos da sua mensagem, de um autocarro da CARRIS, de um motorista e de um megafone.\nGrave a sua mensagem que nós entregamos",
   "voice-message.title1": "Horarios da iniciativa",
   "voice-message.description1": "Todos os dias o link abaixo será actualizado com os novos horários dos bairros onde as mensagems vao ser passadas.",
   "voice-message.descriptionBtn": "Ver horários",
@@ -107,6 +107,6 @@
   "darvoz-carris.intro.cta": "Gravar mensagem",
   "darvoz-carris.intro.headline.normal": "Grave a sua mensagem,",
   "darvoz-carris.intro.headline.strong": "que nós entregamos",
-  "darvoz-carris.intro.description": "Em tempo de confinamento e de luta silenciosa, contra aquela, que já é considerada a mais brutal das pandemias, surge um sorriso, um abraço, um gesto simples de solidariedade social.",
+  "darvoz-carris.intro.description": "Em tempo de confinamento e de luta silenciosa, contra aquela, que já é considerada a mais brutal das pandemias, surge um sorriso, um abraço, um gesto simples de aproximação social.",
   "darvoz-carris.nav.home": "Home"
 }

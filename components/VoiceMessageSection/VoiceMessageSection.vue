@@ -506,6 +506,7 @@ export default {
 
   &__notify {
     text-align: center;
+    word-break: break-all;
     font-size: 24px;
     background-color: $smoke-white;
     padding: 24px 48px;

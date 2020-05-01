@@ -107,6 +107,7 @@ export default {
   }
 
   &__logo {
+    max-width: 220px;
     &:last-of-type {
       margin-right: 0;
     }

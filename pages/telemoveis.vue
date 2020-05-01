@@ -17,6 +17,7 @@
       :title="localI18n['faq.headline']"
       :faq-list="faqList"
     ></faq-section>
+    <Footer />
   </div>
 </template>
 
@@ -32,6 +33,7 @@ import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import HowToDonateSection from '~/components/HowToDonateSection/HowToDonateSection'
 import CollectingStationsSection from '~/components/CollectingStationsSection/CollectingStationsSection'
+import Footer from '~/components/Footer/Footer'
 
 export default {
   components: {
@@ -44,7 +46,8 @@ export default {
     AboutSection,
     NavigationBar,
     CollectingStationsSection,
-    HowToDonateSection
+    HowToDonateSection,
+    Footer
   },
   data() {
     return {

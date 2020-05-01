@@ -501,9 +501,9 @@ export default {
 
   &__notify {
     text-align: center;
-    font-size: 24px;
+    font-size: 14px;
     background-color: $smoke-white;
-    padding: 24px 48px;
+    padding: 12px;
     border-radius: 32px;
   }
 
@@ -547,6 +547,11 @@ export default {
     &__normalCard {
       grid-column: 2 / 7;
       margin-bottom: 0;
+    }
+
+    &__notify {
+      font-size: 24px;
+      padding: 24px 48px;
     }
 
     &__schedule {

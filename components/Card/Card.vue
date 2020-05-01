@@ -50,11 +50,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/_global.scss';
+
 .card {
   &__container {
-    background: #ffffff;
+    background: $white;
     border: 1px solid #f2f2f2;
-    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
     padding: 48px;
     display: flex;
@@ -73,7 +75,7 @@ export default {
     font-weight: 900;
     font-size: 40px;
     line-height: 47px;
-    color: #000000;
+    color: $black;
     margin-top: 27px;
   }
 

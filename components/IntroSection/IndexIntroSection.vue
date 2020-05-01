@@ -6,9 +6,7 @@
         class="intro-section__background__image"
       />
       <div class="intro-section__video">
-        <Video
-          src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm"
-        />
+        <Video class="intro-section__videoElement" src="/intro__video.mp4" />
       </div>
     </div>
     <template slot="headline">
@@ -21,6 +19,8 @@
     </template>
     <template slot="description">
       {{ localI18n['index.intro.description'] }}
+      <br />
+      {{ localI18n['index.intro.description2'] }}
     </template>
   </GenericIntroSection>
 </template>
@@ -58,6 +58,7 @@ export default {
       width: 100%;
     }
   }
+
   &__infoTitle {
     &--extra-strong {
       display: block;
@@ -67,10 +68,10 @@ export default {
 
       @media only screen and (min-width: $max-mobile-size) {
         font-size: 90px;
-        line-height: 126px;
       }
     }
     &--strong {
+      font-size: 42px;
       color: $primary-color;
     }
   }
@@ -81,9 +82,19 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+  }
 
-    @media only screen and (min-width: $max-mobile-size) {
+  @media only screen and (min-width: $max-mobile-size) {
+    &__video {
+      top: 45%;
+      left: 40%;
       max-width: 800px;
+      justify-content: flex-end;
+      display: flex;
+    }
+
+    &__videoElement {
+      width: 80%;
     }
   }
 }

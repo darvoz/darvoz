@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       play: false,
-      buttonSize: 40
+      buttonSize: 30
     }
   },
   methods: {

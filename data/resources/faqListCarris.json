@@ -1,24 +1,28 @@
 {
   "faqList": [
     {
-      "title": "Quais são as empresas participantes deste projecto ?",
-      "answer": "Bacon ipsum dolor amet drumstick kevin prosciutto t-bone pancetta pork rump kielbasa alcatra. Swine flank picanha kielbasa. Landjaeger tongue spare ribs ham corned beef hamburger.Ribeye pork belly frankfurter beef ribs. Short loin turkey leberkas, rump tail sirloin kevin filet mignon."
+      "title": "Como é lida a mensagem?",
+      "answer": "A mensagem gravada irá ser transmitida tal como gravada."
     },
     {
-      "title": "Que tipo de equipamento eu posso doar?",
-      "answer": "Spare ribs pig andouille bresaola meatloaf shankle. Shoulder sausage buffalo tri-tip rump drumstick burgdoggen kevin pork chop salami ham hock. Filet mignon tongue flank, meatball biltong short loin pork chop pork pig bresaola strip steak turducken. Pork pastrami pork loin, boudin flank chuck jowl landjaeger pork belly ham hock buffalo sirloin."
+      "title": "Todas as mensagens irão ser entregues?",
+      "answer": "Gostávamos de dizer que sim, mas se o volume de mensagens recebidas for demasiado elevado, não o conseguiremos fazer. Obviamente que mensagens ordinárias, xenófobas ou não adequadas não irão ser entregues."
     },
     {
-      "title": "O que preciso fazer antes de levar o meu telemóvel ao ponto de colecta",
-      "answer": "Sausage capicola filet mignon bresaola beef buffalo shoulder ribeye ball tip. Ribeye bacon kielbasa alcatra pork loin. Pork belly picanha kielbasa rump, buffalo sirloin capicola spare ribs biltong drumstick beef brisket chislic shoulder. Cow pig buffalo beef ribs swine, rump salami pork belly pork frankfurter t-bone burgdoggen. Jerky beef ribs brisket swine fatback corned beef, turducken pig andouille tri-tip biltong pastrami rump. Chuck spare ribs pastrami prosciutto biltong burgdoggen meatball, meatloaf corned beef andouille picanha tri-tip alcatra cupim doner. Kevin buffalo prosciutto, pork belly short loin porchetta biltong spare ribs boudin frankfurter tenderloin."
+      "title": "Em que locais irá o autocarro passar?",
+      "answer": " Em cima na página pode encontrar os dias e os bairros em que o autocarro irá passar nos próximos 2 dias. A rota exacta de cada dia, com o horário de passagem, será disponibilizada na noite anterior. A rota irá ser baseada nas mensagens recebidas para essa zona de Lisboa. Mas não deixe de enviar a sua mensagem no caso do bairro para onde quer enviar a sua mensagem não estiver ainda no horário. Iremos decidir por onde passar com base no volume de mensagens recebidas. "
     },
     {
-      "title": "O que acontece com o meu telemóvel após eu leva-lo ao ponto de coleta",
-      "answer": "Leberkas kevin chicken sirloin ground round pig, ham ham hock fatback bresaola pork belly. Andouille boudin landjaeger jerky chislic porchetta pancetta. Brisket short loin hamburger leberkas. Pancetta prosciutto cupim capicola tenderloin pastrami venison jerky rump picanha jowl burgdoggen ball tip. Capicola flank cow tail."
+      "title": "Posso enviar mais do que uma mensagem?",
+      "answer": "Nesta altura não estamos a limitar o número de mensagens enviadas por pessoas. Mas pedimos para enviar no máximo duas para que o máximo número de pessoas possa enviar."
     },
     {
-      "title": "Como é feita a distribuição dos equipamentos ?",
-      "answer": "Drumstick beef tongue, bresaola salami ground round buffalo bacon pork capicola burgdoggen. Doner sirloin hamburger capicola fatback. Prosciutto pancetta alcatra, cow leberkas tri-tip jowl kevin rump chislic beef ribeye swine strip steak. Spare ribs shank tri-tip, pork chop ground round tail strip steak salami doner tongue boudin hamburger kevin jowl. Turducken sirloin cow, andouille pork belly corned beef shank kevin flank brisket pork chop ham hock. Tri-tip buffalo pork chop ribeye spare ribs pancetta. Kevin pastrami fatback, rump strip steak drumstick filet mignon buffalo pork short ribs brisket cupim prosciutto flank."
+      "title": "Qual o tamanho máximo da mensagem que posso enviar?",
+      "answer": " A mensagem terá no máximo 15 segundos de duração."
+    },
+    {
+      "title": "O que acontece às mensagens enviadas?",
+      "answer": "No final do dia, todas as gravações de mensagens passadas nesse dia serão apagadas. No final da acção, todas as mensagens são apagadas. "
     }
   ]
 }

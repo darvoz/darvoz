@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" />
+    <navigation-bar :link-list="navLinks" :cta="navCta" />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
     <stats-section />
@@ -44,22 +44,23 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.initiatives.bus.about'],
-          link: '#o-que-e'
+          name: localI18n['nav.home'],
+          link: '/',
+          newPage: true
         },
         {
-          name: localI18n['nav.initiatives.bus.how'],
-          link: '#como-doar'
+          name: localI18n['index.nav.cellphones'],
+          link: '/telemoveis',
+          newPage: true
         },
         {
-          name: localI18n['nav.initiatives.bus.where'],
-          link: '#pontos-recolha'
-        },
-        {
-          name: localI18n['nav.faq'],
-          link: '#perguntas-frequentes'
+          name: localI18n['index.nav.bus'],
+          link: '/autocarro',
+          newPage: true,
+          active: true
         }
-      ]
+      ],
+      navCta: { link: '#gravar-mensagem', label: localI18n['bus.nav.cta'] }
     }
   }
 }

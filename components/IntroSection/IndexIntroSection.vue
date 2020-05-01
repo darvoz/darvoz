@@ -62,8 +62,13 @@ export default {
     &--extra-strong {
       display: block;
       font-weight: 900;
-      font-size: 90px;
-      line-height: 126px;
+      font-size: 64px;
+      line-height: 80px;
+
+      @media only screen and (min-width: $max-mobile-size) {
+        font-size: 90px;
+        line-height: 126px;
+      }
     }
     &--strong {
       color: $primary-color;

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" />
+    <navigation-bar :link-list="navLinks" :cta="navCta" />
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
     <voice-message-section />
@@ -44,24 +44,23 @@ export default {
       localI18n,
       navLinks: [
         {
-          name: localI18n['nav.about'],
-          link: '#o-que-e'
-        },
-        {
-          name: localI18n['nav.how-to-donate'],
-          link: '#como-doar'
-        },
-        {
-          name: localI18n['nav.initiatives.bus'],
-          link: '/autocarro',
+          name: localI18n['nav.home'],
+          link: '/',
+          active: true,
           newPage: true
         },
         {
-          name: localI18n['nav.initiatives.cellphone'],
+          name: localI18n['index.nav.cellphones'],
           link: '/telemoveis',
           newPage: true
+        },
+        {
+          name: localI18n['index.nav.bus'],
+          link: '/autocarro',
+          newPage: true
         }
-      ]
+      ],
+      navCta: { link: '#iniciativas', label: localI18n['index.nav.cta'] }
     }
   },
   mounted() {

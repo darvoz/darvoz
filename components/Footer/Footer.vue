@@ -6,7 +6,7 @@
           <a
             class="social-icon"
             target="_blank"
-            href="https://www.facebook.com/Projecto-DarVoz-108603290813171/"
+            href="https://www.youtube.com/channel/UCSRtBLRplG-k4pMaz5sXvmA"
           >
             <img src="../../assets/svg/Youtube.svg" />
           </a>
@@ -20,7 +20,7 @@
           <a
             class="social-icon"
             target="_blank"
-            href="https://www.youtube.com/channel/UCSRtBLRplG-k4pMaz5sXvmA"
+            href="https://www.facebook.com/Projecto-DarVoz-108603290813171/"
           >
             <img src="../../assets/svg/Facebook.svg" />
           </a>

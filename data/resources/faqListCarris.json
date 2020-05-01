@@ -1,28 +1,52 @@
 {
   "faqList": [
     {
-      "title": "Como é lida a mensagem?",
-      "answer": "A mensagem gravada irá ser transmitida tal como gravada."
+      "title": "Como é que se processa esta ação?",
+      "answer": "Grave a mensagem que gostaria de enviar à sua avó, mãe, pai, filho, amigo,irmã,   namorado,   noiva   ou   apenas   conhecido.   Basta   indicar   o   nome   dodestinatário, qual a Freguesia de residência e a morada completa, gravar nestaplataforma a mensagem que lhe pretende fazer chegar e nós tratamos do resto!Na véspera da data agendada poderá consultar aqui quais serão os pedidos quevamos concretizar e a estimativa de qual o intervalo horário em que iremosestar à porta do destinatário. Basta depois avisá-lo para estar atento que vaireceber uma surpresa carinhosa e divertida. Nós vamos dar voz aos lisboetas e ajudar a ligar todos os que têm saudades e que por agora não podem estarjuntos!"
     },
     {
-      "title": "Todas as mensagens irão ser entregues?",
-      "answer": "Gostávamos de dizer que sim, mas se o volume de mensagens recebidas for demasiado elevado, não o conseguiremos fazer. Obviamente que mensagens ordinárias, xenófobas ou não adequadas não irão ser entregues."
+      "title": "Qual a duração desta ação?",
+      "answer": "Esta ação tem início no dia 3 de maio, um dia especialmente dedicado às mães,durante o qual todas as mães, em qualquer zona da cidade, podem sersurpreendidas com uma mensagem de carinho. Entre os dias 4 e 14 de maio aação decorre diariamente e vai visitar todas as Freguesias da cidade de Lisboa."
+    },
+    {
+      "title": "Porque estão a fazer esta ação?",
+      "answer": "Esta ação nasce da vontade de dar voz aos Lisboetas. Da vontade de ajudar a ligar todos os que em período de confinamento não podem e não devem sair decasa para visitar a família e amigos. Em tempo de confinamento e de luta silenciosa, contra aquela, que já é considerada a mais brutal das pandemias da nossa era, surge um sorriso, um abraço, um gesto simples de “aproximação” social. A CARRIS, em parceria com o #darvoz leva, de uma forma única e original, as mensagens de força e saudade que vão surpreender e animar os Lisboetas. Para isso, só precisamos da sua mensagem, de um autocarro da CARRIS, de um motorista e de um “megafone”."
+    },
+    {
+      "title": "Para quem se destina esta iniciativa?",
+      "answer": "A todos os que querem fazer alguém feliz!"
     },
     {
       "title": "Em que locais irá o autocarro passar?",
-      "answer": " Em cima na página pode encontrar os dias e os bairros em que o autocarro irá passar nos próximos 2 dias. A rota exacta de cada dia, com o horário de passagem, será disponibilizada na noite anterior. A rota irá ser baseada nas mensagens recebidas para essa zona de Lisboa. Mas não deixe de enviar a sua mensagem no caso do bairro para onde quer enviar a sua mensagem não estiver ainda no horário. Iremos decidir por onde passar com base no volume de mensagens recebidas. "
+      "answer": "No topo da página encontra as Freguesias e os dias correspondentes em que o autocarro da CARRIS irá passar em cada uma delas, no decorrer desta ação. A rota exata de cada dia, com o intervalo horário de passagem, será disponibilizada na noite anterior. A rota irá ser construída em função nas mensagens e moradas recebidas para essa zona de Lisboa."
+    },
+    {
+      "title": "O autocarro chega a todos os pontos da cidade?",
+      "answer": "Todas as Freguesias da cidade de Lisboa estão cobertas por esta iniciativa, contudo dada a exiguidade e condicionamento de alguns acessos, poderão existir casos em que não será possível aceder com o autocarro da CARRIS e nesse caso não nos será possível entregar a sua mensagem."
+    },
+    {
+      "title": "Como é lida/transmitida a mensagem?",
+      "answer": "As mensagens serão levadas ao destino indicado e serão replicadas através do sistema de som exterior do autocarro da CARRIS. A mensagem gravada nesta plataforma será transmitida tal como é gravada, com a sua voz."
+    },
+    {
+      "title": "Como é que o destinatário sabe que mensagem lhe é dirigida?",
+      "answer": "Antes de mais sugerimos que na véspera ou no próprio dia avise o destinatário que irá receber uma surpresa num formato original! Quando o autocarro da CARRIS chega à morada do destinatário a sua mensagem será previamente anunciada, com indicação do nome do destinatário. Cada mensagem será repetida uma vez, para garantir que o destinatário a consegue ouvir."
+    },
+    {
+      "title": "Todas as mensagens irão ser entregues?",
+      "answer": "Gostávamos de dizer que sim, mas se o volume de mensagens recebidas for demasiado elevado, não podemos garantir que conseguiremos entregar todas. Caso tal aconteça, as mensagens serão selecionadas por ordem de chegada. Obviamente que mensagens com conteúdos considerados não adequados, xenófobos ou insultuosos, não irão ser entregues, independentemente da sua ordem de chegada."
+    },
+    {
+      "title": "Como sei se a minha mensagem irá ser lida?",
+      "answer": "Quando gravar a sua mensagem, irá receber um código único. Guarde esse código. Quando publicarmos a rota do dia seguinte, iremos também colocar os códigos das mensagens que irão ser lidas. Assim mais facilmente pode identificar quando a sua mensagem será entregue."
     },
     {
       "title": "Posso enviar mais do que uma mensagem?",
-      "answer": "Nesta altura não estamos a limitar o número de mensagens enviadas por pessoas. Mas pedimos para enviar no máximo duas para que o máximo número de pessoas possa enviar."
+      "answer": "De modo a que o maior número de pessoas possa enviar a sua mensagem, estamos a limitar a uma mensagem por pessoa."
     },
     {
-      "title": "Qual o tamanho máximo da mensagem que posso enviar?",
-      "answer": " A mensagem terá no máximo 15 segundos de duração."
-    },
-    {
-      "title": "O que acontece às mensagens enviadas?",
-      "answer": "No final do dia, todas as gravações de mensagens passadas nesse dia serão apagadas. No final da acção, todas as mensagens são apagadas. "
+      "title": "O que acontece no final às mensagens enviadas?",
+      "answer": "No final da ação, todas as mensagens são apagadas. As mensagens gravadas serão apenas utilizadas para esta finalidade."
     }
   ]
 }

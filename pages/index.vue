@@ -10,18 +10,11 @@
     <about-section id="o-que-e" />
     <iniatives-section />
     <brands-section />
-    <section-separator />
-    <faq-section
-      v-if="faqList"
-      :title="localI18n['faq.headline']"
-      :faq-list="faqList"
-    ></faq-section>
   </div>
 </template>
 
 <script>
 import localI18n from '../data/resources/i18n'
-import FaqSection from '../components/FaqSection'
 import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
@@ -34,10 +27,8 @@ import IniativesSection from '~/components/IniativesSection/IniativesSection'
 export default {
   components: {
     TemporaryMessage,
-    SectionSeparator,
     BrandsSection,
     StatsSection,
-    FaqSection,
     IntroSection,
     AboutSection,
     NavigationBar,
@@ -63,17 +54,8 @@ export default {
           link: '/darvozcarris',
           newPage: true
         }
-      ],
-      faqList: null
+      ]
     }
-  },
-  async created() {
-    const faqListJSON = () =>
-      import('~/data/resources/faqList.json').then((m) => {
-        return m.default.faqList || m.faqList
-      })
-
-    this.faqList = await faqListJSON()
   },
   mounted() {
     if (!window.MediaRecorder) {

@@ -69,7 +69,7 @@ export default {
 
   @media only screen and (min-width: $max-mobile-size) {
     &__info {
-      padding: 100px 200px;
+      padding: 100px 200px 0;
     }
   }
 }

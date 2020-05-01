@@ -8,11 +8,17 @@
     class="voice-message-intro__info"
   >
     <div slot="background" class="voice-message-intro__imageWrapper">
-      <img
-        src="../../assets/voice-message/voice-message__introBackground.jpg"
-        alt="section_background"
-        class="intro-section__backgroundImg voice-message-intro__backgroundImg"
-      />
+      <picture slot="background">
+        <source
+          srcset="../../assets/voice-message/voice-message__introBackground2x.png"
+          :media="`(max-width: ${850}px)`"
+        />
+        <img
+          src="../../assets/voice-message/voice-message__introBackground.png"
+          alt="section_background"
+          class="intro-section__backgroundImg voice-message-intro__backgroundImg"
+        />
+      </picture>
     </div>
     <template slot="headline">
       {{ localI18n['darvoz-carris.intro.headline.normal'] }}

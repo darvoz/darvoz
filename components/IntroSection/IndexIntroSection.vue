@@ -1,5 +1,5 @@
 <template>
-  <GenericIntroSection>
+  <GenericIntroSection :is-first-section="isFirstSection">
     <div slot="background" class="intro-section__background">
       <img
         src="../../assets/index/IntroBackground.svg"

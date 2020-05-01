@@ -2,7 +2,7 @@
   <section class="container" tabindex="0">
     <div class="initiatives">
       <h1 class="section__title initiatives__title">
-        {{ localI18n['index.initiatives.headline'] }} <Logo height="61" />
+        {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
       </h1>
       <p class="section__description initiatives__description">
         {{ localI18n['index.initiatives.description'] }}
@@ -48,12 +48,12 @@ export default {
           }
         },
         {
-          img: '/initiatives/autocarros.svg',
+          img: '/initiatives/darvozcarris.svg',
           headline: localI18n['index.initiatives.initiatives1.headline'],
           description: localI18n['index.initiatives.initiatives1.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
-            link: '/autocarro#mensagem'
+            link: '/darvozcarris#mensagem'
           }
         }
       ]
@@ -78,7 +78,7 @@ export default {
 
 @media screen and (min-width: $max-mobile-size) {
   .initiatives {
-    grid-column: 3 / 13;
+    grid-column: 2 / 14;
   }
 }
 </style>

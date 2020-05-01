@@ -27,9 +27,9 @@
       <Button
         class="navigation-bar__button"
         kind="primary"
-        link="#pontos-recolha"
+        :link="primaryCta.link"
       >
-        Quero doar
+        {{ primaryCta.label }}
       </Button>
     </div>
   </nav>
@@ -49,6 +49,10 @@ export default {
   props: {
     linkList: {
       type: Array,
+      required: true
+    },
+    primaryCta: {
+      type: Object,
       required: true
     }
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <navigation-bar :link-list="navLinks" />
-    <temporary-message :temporary-message="localI18n['nav.temporary']" />
+    <temporary-message :temporary-message="localI18n['nav.temporary']" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
     <intro-section :is-first-section="true" />
     <stats-section />
     <about-section id="o-que-e" :links="navLinks" />
@@ -9,7 +9,7 @@
     <collecting-stations-section id="pontos-recolha" />
     <brands-section />
     <section-separator />
-    <faq-section></faq-section>
+    <faq-section v-if="faqList" :title="localI18n['faq.headline']" :faq-list="faqList"></faq-section>
   </div>
 </template>
 
@@ -59,9 +59,18 @@ export default {
           name: localI18n['nav.faq'],
           link: '#perguntas-frequentes'
         }
-      ]
+      ],
+      faqList: null,
     }
-  }
+  },
+  async created() {
+    const faqListJSON = () =>
+      import('~/data/resources/faqList.json').then((m) => {
+        return m.default.faqList || m.faqList
+      })
+
+    this.faqList = await faqListJSON()
+  },
 }
 </script>
 

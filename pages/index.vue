@@ -1,15 +1,14 @@
 <template>
   <div class="main">
-    <navigation-bar :link-list="navLinks" />
+    <navigation-bar :link-list="navLinks" :primary-cta="{link: '#pontos-recolha', label: 'Quero Doar'}"/>
     <temporary-message :temporary-message="localI18n['nav.temporary']" />
     <intro-section :is-first-section="true" />
-    <voice-message-section />
     <stats-section />
     <about-section id="o-que-e" />
     <iniatives-section />
     <brands-section />
     <section-separator />
-    <faq-section></faq-section>
+    <faq-section v-if="faqList" :title="localI18n['faq.headline']" :faq-list="faqList"></faq-section>
   </div>
 </template>
 
@@ -20,7 +19,6 @@ import StatsSection from '../components/StatsSection'
 import BrandsSection from '../components/BrandsSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
-import VoiceMessageSection from '../components/VoiceMessageSection/VoiceMessageSection'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import AboutSection from '~/components/AboutSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
@@ -28,7 +26,6 @@ import IniativesSection from '~/components/IniativesSection/IniativesSection'
 
 export default {
   components: {
-    VoiceMessageSection,
     TemporaryMessage,
     SectionSeparator,
     BrandsSection,
@@ -53,7 +50,7 @@ export default {
         },
         {
           name: localI18n['nav.initiatives.bus'],
-          link: '/autocarro',
+          link: '/darvozcarris',
           newPage: true
         },
         {
@@ -61,8 +58,17 @@ export default {
           link: '/telemoveis',
           newPage: true
         }
-      ]
+      ],
+      faqList: null
     }
+  },
+  async created() {
+    const faqListJSON = () =>
+      import('~/data/resources/faqList.json').then((m) => {
+        return m.default.faqList || m.faqList
+      })
+
+    this.faqList = await faqListJSON()
   },
   mounted() {
     if (!window.MediaRecorder) {

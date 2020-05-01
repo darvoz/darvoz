@@ -201,7 +201,7 @@
 import MicRecorder from 'mic-recorder-to-mp3'
 import MicNone from 'vue-material-design-icons/MicrophoneOutline.vue'
 import localI18n from '../../data/resources/i18n.json'
-import { uploadFile, blobToBase64 } from '../../services/API'
+import { uploadFile, blobToBase64, getToken } from '../../services/API'
 import Button from '~/components/Button/Button.vue'
 import Card from '~/components/Card/Card'
 export default {
@@ -317,11 +317,12 @@ export default {
       ) {
         this.messagePackage.parish.replace(/_/g, ' ').replace(/\//g, '-')
         this.messagePackage.street.replace(/_/g, ' ').replace(/\//g, '-')
-        const data = { ...this.messagePackage, timestampvenvi: Date.now() }
+        const data = { ...this.messagePackage, timestamp: Date.now() }
         delete data.audioMessage
         const base64 = await blobToBase64(this.messagePackage.audioMessage)
         this.loadingRequest = true
-        uploadFile(base64, data)
+        const token = await getToken()
+        uploadFile(base64, data, token)
           .then((data) => {
             if (!data.ok) {
               throw new Error('error')
@@ -329,6 +330,7 @@ export default {
             return data.text()
           })
           .then((data) => {
+            localStorage.setItem('darvoz.pt-id', token)
             this.messageId = data
             this.messageSent = true
             this.loadingRequest = false

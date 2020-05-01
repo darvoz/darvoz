@@ -1,9 +1,12 @@
 <template>
   <article class="card__container">
-    <img class="card__img" :src="img" />
-    <h1 class="card__heading">{{ headline }}</h1>
-    <p class="card__description">{{ description }}</p>
-    <Button kind="primary" :link="cta.link">{{ cta.label }}</Button>
+    <slot v-if="alternate" />
+    <div v-else>
+      <img class="card__img" :src="img" />
+      <h1 class="card__heading">{{ headline }}</h1>
+      <p class="card__description">{{ description }}</p>
+      <Button v-if="cta" kind="primary" :link="cta.link">{{ cta.label }}</Button>
+    </div>
   </article>
 </template>
 
@@ -17,19 +20,28 @@ export default {
   props: {
     img: {
       type: String,
-      required: true
+      required: false,
+      default: null
     },
     headline: {
       type: String,
-      required: true
+      required: false,
+      default: null
     },
     description: {
       type: String,
-      required: true
+      required: false,
+      default: null
     },
     cta: {
       type: Object,
-      required: true
+      required: false,
+      default: null
+    },
+    alternate: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 }
@@ -45,10 +57,9 @@ export default {
     padding: 48px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     max-width: 544px;
-    margin-top: 56px;
   }
 
   &__img {

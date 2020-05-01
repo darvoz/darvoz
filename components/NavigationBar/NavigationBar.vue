@@ -28,8 +28,12 @@
             >
           </li>
         </ul>
-        <Button class="navigation-bar__button" kind="primary" :link="cta.link">
-          {{ cta.label }}
+        <Button
+          class="navigation-bar__button"
+          kind="primary"
+          :link="primaryCta.link"
+        >
+          {{ primaryCta.label }}
         </Button>
       </div>
     </div>
@@ -52,7 +56,7 @@ export default {
       type: Array,
       required: true
     },
-    cta: {
+    primaryCta: {
       type: Object,
       required: true
     }

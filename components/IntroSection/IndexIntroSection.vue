@@ -6,7 +6,7 @@
         class="intro-section__background__image"
       />
       <div class="intro-section__video">
-        <Video class="intro-section__videoElement" src="/intro__video.mp4" />
+        <Video class="intro-section__videoElement" src="/intro-video.mp4" :has-hd-version="true"/>
       </div>
     </div>
     <template slot="headline">

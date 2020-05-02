@@ -140,7 +140,7 @@ export default {
   }
 
   &--center {
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   &--right {

@@ -24,9 +24,11 @@
       </span>
     </template>
     <template slot="description">
-      {{ localI18n['index.intro.description'] }}
+      {{ localI18n['index.intro.description1'] }}
       <br />
       {{ localI18n['index.intro.description2'] }}
+      <br />
+      {{ localI18n['index.intro.description3'] }}
     </template>
   </GenericIntroSection>
 </template>

@@ -258,21 +258,27 @@ export default {
       localI18n
     }
   },
+  mounted() {
+    // polyfil and audio context to safari
+    window.AudioContext = window.AudioContext || window.webkitAudioContext
+    if (!window.MediaRecorder) {
+      import('audio-recorder-polyfill').then(
+        (AudioRecorder) => (window.MediaRecorder = AudioRecorder.default)
+      )
+    }
+  },
   methods: {
     startRecording() {
       this.rec = new MicRecorder({ bitRate: 128 })
 
       try {
-        this.rec
-          .start()
-          .then(() => {
-            this.recordingTimer = setTimeout(
-              this.stopRecording.bind(this),
-              this.maxRecordTime
-            )
-            this.isRecording = true
-          })
-          .catch(() => {})
+        this.rec.start().then(() => {
+          this.recordingTimer = setTimeout(
+            this.stopRecording.bind(this),
+            this.maxRecordTime
+          )
+          this.isRecording = true
+        })
 
         this.blockedWarning = false
       } catch (error) {

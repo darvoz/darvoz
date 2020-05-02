@@ -52,13 +52,6 @@ export default {
         }
       ]
     }
-  },
-  mounted() {
-    if (!window.MediaRecorder) {
-      import('audio-recorder-polyfill').then(
-        (AudioRecorder) => (window.MediaRecorder = AudioRecorder.default)
-      )
-    }
   }
 }
 </script>

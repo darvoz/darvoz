@@ -397,7 +397,7 @@ export default {
     text-align: center;
   }
 
-  &__card {
+  &__card.voice-message__card {
     width: 100%;
     height: 100%;
     padding: 46px;

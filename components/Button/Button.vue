@@ -71,11 +71,11 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 14px 24px;
+  padding: 14px 16px;
   border-radius: 32px;
   line-height: 22px;
   font-family: Muli, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   background-color: transparent;
   width: max-content;
 
@@ -149,6 +149,11 @@ export default {
 
   @media only screen and (max-width: $max-mobile-size) {
     width: auto;
+  }
+
+  @media only screen and (min-width: $max-mobile-size) {
+    padding: 14px 24px;
+    font-size: 16px;
   }
 
   @media only screen and (max-width: $small-screen-min) {

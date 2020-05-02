@@ -82,10 +82,15 @@ export default {
   &__description {
     font-family: Roboto, sans-serif;
     font-weight: 300;
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 34px;
     margin-top: 16px;
     margin-bottom: 49px;
+
+    @media screen and (min-width: $max-mobile-size) {
+      line-height: 38px;
+      font-size: 24px;
+    }
   }
 
   &__btn {

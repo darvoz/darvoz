@@ -41,7 +41,7 @@ export default {
     meta: {
       name: 'darvoz',
       description:
-        'Doa telemóveis ou tablets e dê o teu toque humano a todos aqueles que neste momento de isolamento, mais precisam de estar ligados.',
+        'O #darvoz tem como missão permitir que todos possam comunicar com os seus familiares e amigos. Independentemente de onde estiverem e da sua situação financeira.\nMais do que uma iniciativa, o #darvoz é um movimento que agrega um conjunto de iniciativas que, esperamos, vá crescer com o tempo e que no final possa ligar as pessoas.',
       lang: 'pt',
       ogHost: 'https://darvoz.pt',
       icon: {

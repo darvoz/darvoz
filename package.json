@@ -1,7 +1,7 @@
 {
   "name": "darvoz",
   "version": "1.0.0",
-  "description": "DarVoz Impact Time",
+  "description": "O #darvoz tem como missão permitir que todos possam comunicar com os seus familiares e amigos. Independentemente de onde estiverem e da sua situação financeira.\nMais do que uma iniciativa, o #darvoz é um movimento que agrega um conjunto de iniciativas que, esperamos, vá crescer com o tempo e que no final possa ligar as pessoas.",
   "author": "MB.io",
   "private": true,
   "scripts": {

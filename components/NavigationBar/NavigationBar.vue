@@ -149,11 +149,13 @@ export default {
 
   &__button {
     min-width: 200px;
+    margin-left: 16px;
   }
 
   @media only screen and (max-width: $max-mobile-size) {
     &__button {
       min-width: unset;
+      margin-left: 0;
     }
     &__content {
       @include container-gap;

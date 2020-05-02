@@ -12,7 +12,7 @@
       "store": "JF",
       "coords": [38.705656, -9.179295],
       "name": "JF Alcântara",
-      "location": "Avenida dos Lusídas - Lisboa",
+      "location": "Rua dos Lusídas - Lisboa",
       "workingHours": "Horário: Seg-Sex 10:00 - 17:00",
       "url": "https://goo.gl/maps/Ls6PUdMbbWpSyWtd8"
     },
@@ -29,7 +29,7 @@
       "coords": [38.741277, -9.147151],
       "name": "JF Avenidas Novas",
       "location": "Avenida de Berna 1 - Lisboa",
-      "workingHours": "Horário: Seg-Sab 10:00 - 17:30",
+      "workingHours": "Horário: Seg-Sex 09:30 - 12:30",
       "url": "https://goo.gl/maps/a1dBvsM6YuFcNJzD6"
     },
     {
@@ -69,7 +69,7 @@
       "coords": [38.746339, -9.187857],
       "name": "JF São Domingos de Benfica",
       "location": "R. António Saúde 11 - Lisboa",
-      "workingHours": "Horário: Seg-Sex 10:00 - 17:30",
+      "workingHours": "Horário: Seg-Sex 13:00 - 16:00",
       "url": "https://goo.gl/maps/drsAiB6hphS3caZM9"
     }
   ]

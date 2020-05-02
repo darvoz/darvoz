@@ -38,7 +38,7 @@
         <div class="item__section">
           <h6 class="item__header">
             <nuxt-link class="item__header__link" to="/aquemnaotem"
-              >Iniciativa #DarVozAQuemNaoTem</nuxt-link
+              >Iniciativa #darvozAQuemNaoTem</nuxt-link
             >
           </h6>
           <p>
@@ -55,7 +55,7 @@
         <div class="item__section">
           <h6 class="item__header">
             <nuxt-link class="item__header__link" to="/carris"
-              >Iniciativa #DarVozCarris</nuxt-link
+              >Iniciativa #darvozCarris</nuxt-link
             >
           </h6>
           <p>

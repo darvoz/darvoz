@@ -63,6 +63,23 @@
             :alt="localI18n['brands.logo.alt.cml']"
           />
         </a>
+        <a
+          href="https://www.indigomusica.pt"
+          target="_blank"
+          class="brands__logo--special"
+        >
+          <img
+            loading="lazy"
+            class="brands__logo"
+            srcset="
+              ../assets/Indigo_logo.png    202w,
+              ../assets/Indigo_logo_3x.png 606w
+            "
+            sizes="(max-width: 870px) 202px, 606px"
+            src="../assets/Indigo_logo.png"
+            :alt="localI18n['brands.logo.alt.indigo']"
+          />
+        </a>
       </div>
       <p class="section__description brands__description">
         {{ localI18n['brands.description'] }}
@@ -108,6 +125,17 @@ export default {
 
   &__logo {
     max-width: 220px;
+    width: 220px;
+    &--special {
+      border: 1px solid #f2f2f2;
+      height: 95%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 8px;
+      max-width: 220px;
+      width: 220px;
+    }
     &:last-of-type {
       margin-right: 0;
     }
@@ -136,7 +164,7 @@ export default {
     grid-column: 4 / 12;
 
     &__logos {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 24px;
       width: 100%;
       padding: 0 40px; // Padding of 40px is semi magical since designs have contradictory specs

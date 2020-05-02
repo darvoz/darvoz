@@ -475,9 +475,11 @@ export default {
   }
 
   &__formSelect {
+    position: relative;
     appearance: none;
     border: 1px solid $border-grey;
-    background-color: $white;
+    background: $white url(../../assets/svg/arrow-down.svg) no-repeat 95%;
+    color: $gray;
   }
 
   &__btnGroup {

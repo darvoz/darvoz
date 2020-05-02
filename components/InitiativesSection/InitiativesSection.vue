@@ -29,7 +29,7 @@ import Card from '~/components/Card/Card'
 import Logo from '~/components/Logo/Logo'
 
 export default {
-  name: 'IniativesSection',
+  name: 'InitiativesSection',
   components: {
     Card,
     CardGroup,

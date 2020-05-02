@@ -5,7 +5,7 @@
       :primary-cta="{ link: '#iniciativas', label: localI18n['nav.cta'] }"
     />
     <intro-section :is-first-section="true" />
-    <iniatives-section />
+    <initiatives-section />
     <brands-section />
     <Footer />
     <cookie-layer />
@@ -18,7 +18,7 @@ import BrandsSection from '../components/BrandsSection'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
 import IntroSection from '~/components/IntroSection/IndexIntroSection.vue'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
-import IniativesSection from '~/components/IniativesSection/IniativesSection'
+import InitiativesSection from '~/components/InitiativesSection/InitiativesSection'
 import Footer from '~/components/Footer/Footer'
 
 export default {
@@ -27,7 +27,7 @@ export default {
     BrandsSection,
     IntroSection,
     NavigationBar,
-    IniativesSection,
+    InitiativesSection,
     Footer
   },
   data() {

@@ -63,11 +63,7 @@
             :alt="localI18n['brands.logo.alt.cml']"
           />
         </a>
-        <a
-          href="https://www.indigomusica.pt"
-          target="_blank"
-          class="brands__logo--special"
-        >
+        <a href="https://www.indigomusica.pt" target="_blank">
           <img
             loading="lazy"
             class="brands__logo"
@@ -125,17 +121,7 @@ export default {
 
   &__logo {
     max-width: 220px;
-    width: 220px;
-    &--special {
-      border: 1px solid #f2f2f2;
-      height: 95%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0px 8px;
-      max-width: 220px;
-      width: 220px;
-    }
+    width: 100%;
     &:last-of-type {
       margin-right: 0;
     }

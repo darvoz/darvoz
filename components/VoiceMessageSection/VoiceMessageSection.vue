@@ -177,7 +177,7 @@
                   : localI18n['voice-message.send-btn']
               }}
             </Button>
-            <Button kind="secondary">
+            <Button kind="secondary" link="/Rota.pdf" target="_blank">
               {{ localI18n['voice-message.schedule'] }}<sub>*</sub>
             </Button>
           </div>
@@ -220,7 +220,7 @@ export default {
         'Belém',
         'Benfica',
         'Campo de Ourique',
-        'Campolie',
+        'Campolide',
         'Carnide',
         'Estrela',
         'Lumiar',

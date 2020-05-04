@@ -42,13 +42,27 @@ export default {
         },
         {
           name: localI18n['index.nav.cellphones'],
-          link: '/aquemnaotem',
+          link: '/doar-telemoveis-tablets',
           newPage: true
         },
         {
           name: localI18n['index.nav.bus'],
-          link: '/carris',
+          link: '/carris-mensagens-gratis',
           newPage: true
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      title:
+        '#darvoz - Doe telemóveis e tablets que não necessita e dê voz a quem precisa',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'A missão do "darvoz é permitir que todos possam comunicar com os seus familiares e amigos. O #darvoz é um movimento que ajudará as família e amigos estarem ligados.'
         }
       ]
     }

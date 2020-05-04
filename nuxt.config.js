@@ -9,11 +9,6 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      },
-      {
         name: 'image',
         property: 'og:image:secure_url',
         content: 'https://darvoz.pt/seo/ogImage.jpg',
@@ -39,9 +34,9 @@ export default {
   },
   pwa: {
     meta: {
-      name: 'darvoz',
+      name: '#darvoz',
       description:
-        'O #darvoz tem como missão permitir que todos possam comunicar com os seus familiares e amigos. Independentemente de onde estiverem e da sua situação financeira.\nMais do que uma iniciativa, o #darvoz é um movimento que agrega um conjunto de iniciativas que, esperamos, vá crescer com o tempo e que no final possa ligar as pessoas.',
+        'A missão do "darvoz é permitir que todos possam comunicar com os seus familiares e amigos. O #darvoz é um movimento que ajudará as família e amigos estarem ligados.',
       lang: 'pt',
       ogHost: 'https://darvoz.pt',
       icon: {

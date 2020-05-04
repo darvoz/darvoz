@@ -45,7 +45,7 @@ export default {
           description: localI18n['index.initiatives.initiatives1.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives1.cta'],
-            link: '/aquemnaotem'
+            link: '/doar-telemoveis-tablets'
           }
         },
         {
@@ -54,7 +54,7 @@ export default {
           description: localI18n['index.initiatives.initiatives2.description'],
           cta: {
             label: localI18n['index.initiatives.initiatives2.cta'],
-            link: '/carris'
+            link: '/carris-mensagens-gratis'
           }
         }
       ]

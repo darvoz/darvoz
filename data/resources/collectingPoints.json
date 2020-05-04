@@ -19,6 +19,14 @@
     {
       "store": "JF",
       "coords": [38.721377, -9.134972],
+      "name": "JF Areeiro",
+      "location": "Rua Abade Faria, 37 - Lisboa",
+      "workingHours": "Horário: Seg-Sex 10:00 - 17:00",
+      "url": "https://goo.gl/maps/nKXuFH8Jx4NR4qcMA"
+    },
+    {
+      "store": "JF",
+      "coords": [38.739988, -9.131214],
       "name": "JF Arroios",
       "location": "Largo do Intendente, 42 - Lisboa",
       "workingHours": "Horário: Seg-Sex 08:00 - 22:00",
@@ -45,8 +53,16 @@
       "coords": [38.736899, -9.124486],
       "name": "JF Beato - 2",
       "location": "Mercado Alfacinha, Rua Eng. Maciel Chaves - Lisboa",
-      "workingHours": "Horário: Seg-Sex 08:30 - 16:30",
+      "workingHours": "Horário: Ter-Sab 08:30 - 16:30",
       "url": "https://goo.gl/maps/trkKrV797KVDNBop7"
+    },
+    {
+      "store": "JF",
+      "coords": [38.698370, -9.204552],
+      "name": "JF Belém",
+      "location": "Largo Jerónimos, 3, R/C - Lisboa",
+      "workingHours": "Horário: Ter-Sab 09:30 - 13:00",
+      "url": "https://goo.gl/maps/RYWE1682N7ewFNyx5"
     },
     {
       "store": "JF",
@@ -55,6 +71,14 @@
       "location": "Largo das Pimenteiras, 6 - Lisboa",
       "workingHours": "Horário: Seg-Sex 10:00 - 12:00",
       "url": "https://goo.gl/maps/1BCC4axTY5dAvhcQ7"
+    },
+    {
+      "store": "JF",
+      "coords": [38.768105, -9.158064],
+      "name": "JF Lumiar",
+      "location": "Alameda das Linhas de Torres, 156 - Lisboa",
+      "workingHours": "Horário: Seg-Sex 10:00 - 16:00",
+      "url": "https://goo.gl/maps/dD1Q8CafkCqj4z8i7"
     },
     {
       "store": "JF",
@@ -69,7 +93,7 @@
       "coords": [38.746339, -9.187857],
       "name": "JF São Domingos de Benfica",
       "location": "R. António Saúde 11 - Lisboa",
-      "workingHours": "Horário: Seg-Sex 13:00 - 16:00",
+      "workingHours": "Horário: Seg-Sex 10:00 - 16:00",
       "url": "https://goo.gl/maps/drsAiB6hphS3caZM9"
     }
   ]

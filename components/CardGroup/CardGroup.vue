@@ -11,10 +11,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/_global.scss';
 .card-group__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 56px;
+  margin-top: 42px;
+
+  @media screen and (min-width: $max-mobile-size) {
+    > * {
+      margin: 14px;
+    }
+  }
 }
 </style>

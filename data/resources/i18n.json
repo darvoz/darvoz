@@ -103,6 +103,7 @@
   "voice-message.message.title" : "Como funciona",
   "voice-message.message.description" : "Insira os seus dados",
   "voice-message.message.hint": "A mensagem tem no máximo 15 segundos",
+  "voice-message.message.hint2": "Problemas com a gravação? Veja como resolver nas “Perguntas frequentes” em baixo.",
   "voice-message.terms-conditions.label" : "Eu li e aceito os ",
   "voice-message.terms-conditions.link": "termos e condições",
   "darvoz-carris.intro.cta": "Gravar mensagem",

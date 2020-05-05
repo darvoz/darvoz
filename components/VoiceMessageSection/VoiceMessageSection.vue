@@ -132,6 +132,7 @@
           >
             {{ localI18n['voice-message.error.audioMessage'] }}
           </span>
+          <p class="voice-message__cardDescriptionHint">{{localI18n['voice-message.message.hint2']}}</p>
         </Card>
         <Card
           v-if="messageSent"
@@ -494,6 +495,13 @@ export default {
     text-align: center;
     color: $black;
     margin-bottom: 42px;
+  }
+
+  &__cardDescriptionHint {
+    text-align: center;
+    font-size: 12px;
+    color: $light-gray;
+    margin-top: 24px;
   }
 
   &__cardHeading {

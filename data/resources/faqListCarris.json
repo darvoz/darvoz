@@ -2,7 +2,7 @@
   "faqList": [
     {
       "title": "Como é que se processa esta ação?",
-      "answer": "Grave a mensagem que gostaria de enviar à sua avó, mãe, pai, filho, amigo, irmã, namorado, noiva ou apenas conhecido. Basta indicar o nome dodestinatário, qual a Freguesia de residência e a morada completa, gravar nesta plataforma a mensagem que lhe pretende fazer chegar e nós tratamos do resto! Na véspera da data agendada poderá consultar aqui quais serão os pedidos que vamos concretizar e a estimativa de qual o intervalo horário em que iremos estar à porta do destinatário. Basta depois avisá-lo para estar atento que vai receber uma surpresa carinhosa e divertida. Nós vamos dar voz aos lisboetas e ajudar a ligar todos os que têm saudades e que por agora não podem estar juntos!"
+      "answer": "Grave a mensagem que gostaria de enviar à sua avó, mãe, pai, filho, amigo, irmã, namorado, noiva ou apenas conhecido. Basta indicar o nome do destinatário, qual a Freguesia de residência e a morada completa, gravar nesta plataforma a mensagem que lhe pretende fazer chegar e nós tratamos do resto! Todos os dias ao final da tarde poderá consultar aqui quais serão os pedidos que vamos concretizar e a estimativa de intervalo horário em que iremos estar à porta do destinatário. Basta depois avisá-lo para estar atento que vai receber uma surpresa carinhosa e divertida. Nós vamos dar voz aos lisboetas e ajudar a ligar todos os que têm saudades e que por agora não podem estar juntos!"
     },
     {
       "title": "Qual a duração desta ação?",
@@ -18,7 +18,7 @@
     },
     {
       "title": "Em que locais irá o autocarro passar?",
-      "answer": "No topo da página encontra as Freguesias e os dias correspondentes em que o autocarro da CARRIS irá passar em cada uma delas, no decorrer desta ação. A rota exata de cada dia, com o intervalo horário de passagem, será disponibilizada na noite anterior. A rota irá ser construída em função nas mensagens e moradas recebidas para essa zona de Lisboa."
+      "answer": "O autocarro do #darvozcarris passa em todas as Freguesias da cidade de Lisboa. A rota exata de cada dia, com o intervalo horário de passagem, será disponibilizada no dia anterior. A rota irá ser construída em função nas mensagens e moradas recebidas para essa zona de Lisboa. Tentaremos chegar a todas as moradas, desde que o autocarro lá consiga entrar ou passar."
     },
     {
       "title": "O autocarro chega a todos os pontos da cidade?",
@@ -47,6 +47,10 @@
     {
       "title": "O que acontece no final às mensagens enviadas?",
       "answer": "No final da ação, todas as mensagens são apagadas. As mensagens gravadas serão apenas utilizadas para esta finalidade."
+    },
+    {
+      "title": "O que fazer caso não esteja a conseguir gravar a mensagem?",
+      "answer": "Caso continue com problemas, sugerimos usar outro equipamento (telefone, computador) ou outro browser (navegador) para gravar a sua mensagem. Obrigado!"
     }
   ]
 }

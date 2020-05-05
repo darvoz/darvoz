@@ -1,23 +1,25 @@
 <template>
   <section id="iniciativas" class="container" tabindex="0">
-    <div class="initiatives">
-      <h1 class="section__title initiatives__title">
-        {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
-      </h1>
-      <p class="section__description initiatives__description">
-        {{ localI18n['index.initiatives.description'] }}
-      </p>
-      <CardGroup>
-        <Card
-          v-for="initiative in initiatives"
-          :key="initiative.img"
-          class="initiatives__card"
-          :img="initiative.img"
-          :headline="initiative.headline"
-          :description="initiative.description"
-          :cta="initiative.cta"
-        />
-      </CardGroup>
+    <div class="content">
+      <div class="initiatives">
+        <h1 class="section__title initiatives__title">
+          {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
+        </h1>
+        <p class="section__description initiatives__description">
+          {{ localI18n['index.initiatives.description'] }}
+        </p>
+        <CardGroup>
+          <Card
+            v-for="initiative in initiatives"
+            :key="initiative.img"
+            class="initiatives__card"
+            :img="initiative.img"
+            :headline="initiative.headline"
+            :description="initiative.description"
+            :cta="initiative.cta"
+          />
+        </CardGroup>
+      </div>
     </div>
   </section>
 </template>

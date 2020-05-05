@@ -1,68 +1,76 @@
 <template>
   <footer class="container footer__container">
-    <div class="footer">
-      <div class="item__section__container item__section__container--special">
-        <div class="social__container">
-          <a
-            class="social-icon"
-            target="_blank"
-            href="https://www.youtube.com/channel/UCSRtBLRplG-k4pMaz5sXvmA"
-          >
-            <img src="../../assets/svg/Youtube.svg" />
-          </a>
-          <a
-            class="social-icon"
-            target="_blank"
-            href="https://instagram.com/projectodarvoz"
-          >
-            <img src="../../assets/svg/Instagram.svg" />
-          </a>
-          <a
-            class="social-icon"
-            target="_blank"
-            href="https://www.facebook.com/Projecto-DarVoz-108603290813171/"
-          >
-            <img src="../../assets/svg/Facebook.svg" />
-          </a>
+    <div class="content footer__container">
+      <div class="footer">
+        <div class="item__section__container item__section__container--special">
+          <div class="social__container">
+            <a
+              class="social-icon"
+              target="_blank"
+              href="https://www.youtube.com/channel/UCSRtBLRplG-k4pMaz5sXvmA"
+            >
+              <img src="../../assets/svg/Youtube.svg" />
+            </a>
+            <a
+              class="social-icon"
+              target="_blank"
+              href="https://instagram.com/projectodarvoz"
+            >
+              <img src="../../assets/svg/Instagram.svg" />
+            </a>
+            <a
+              class="social-icon"
+              target="_blank"
+              href="https://www.facebook.com/Projecto-DarVoz-108603290813171/"
+            >
+              <img src="../../assets/svg/Facebook.svg" />
+            </a>
+          </div>
+          <div class="copyright__container">
+            Copyright 2020 - Mercedes-Benz.io & BCG
+          </div>
         </div>
-        <div class="copyright__container">
-          Copyright 2020 - Mercedes-Benz.io & BCG
-        </div>
-      </div>
-      <div class="item__section__container">
-        <div class="item__section">
-          <h6 class="item__header">
-            <nuxt-link class="item__header__link" to="/">Home</nuxt-link>
-          </h6>
-        </div>
-        <div class="item__section">
-          <h6 class="item__header">
-            <nuxt-link class="item__header__link" to="/doar-telemoveis-tablets"
-              >Iniciativa #darvozAQuemNaoTem</nuxt-link
-            >
-          </h6>
-          <p>
-            <nuxt-link class="item" to="/doar-telemoveis-tablets#como-doar"
-              >Como doar</nuxt-link
-            >
-          </p>
-          <p>
-            <nuxt-link class="item" to="/doar-telemoveis-tablets#pontos-recolha"
-              >Pontos de recolha</nuxt-link
-            >
-          </p>
-        </div>
-        <div class="item__section">
-          <h6 class="item__header">
-            <nuxt-link class="item__header__link" to="/carris-mensagens-gratis"
-              >Iniciativa #darvozCarris</nuxt-link
-            >
-          </h6>
-          <p>
-            <nuxt-link class="item" to="/carris-mensagens-gratis#mensagem"
-              >Deixe uma mensagem</nuxt-link
-            >
-          </p>
+        <div class="item__section__container">
+          <div class="item__section">
+            <h6 class="item__header">
+              <nuxt-link class="item__header__link" to="/">Home</nuxt-link>
+            </h6>
+          </div>
+          <div class="item__section">
+            <h6 class="item__header">
+              <nuxt-link
+                class="item__header__link"
+                to="/doar-telemoveis-tablets"
+                >Iniciativa #darvozAQuemNaoTem</nuxt-link
+              >
+            </h6>
+            <p>
+              <nuxt-link class="item" to="/doar-telemoveis-tablets#como-doar"
+                >Como doar</nuxt-link
+              >
+            </p>
+            <p>
+              <nuxt-link
+                class="item"
+                to="/doar-telemoveis-tablets#pontos-recolha"
+                >Pontos de recolha</nuxt-link
+              >
+            </p>
+          </div>
+          <div class="item__section">
+            <h6 class="item__header">
+              <nuxt-link
+                class="item__header__link"
+                to="/carris-mensagens-gratis"
+                >Iniciativa #darvozCarris</nuxt-link
+              >
+            </h6>
+            <p>
+              <nuxt-link class="item" to="/carris-mensagens-gratis#mensagem"
+                >Deixe uma mensagem</nuxt-link
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>

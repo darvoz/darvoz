@@ -78,7 +78,7 @@ export default {
 .stats-section {
   $circle-width: 250px;
 
-  background: url('../assets/svg/statsBG.svg') no-repeat center;
+  background: url('../assets/svg/statsBG.svg') repeat-x center;
   background-size: contain;
   height: $section-min-height / 2;
   width: 100vw;

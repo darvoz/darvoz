@@ -1,85 +1,93 @@
 <template>
   <section class="container" tabindex="0">
-    <div class="brands">
-      <h1 class="section__title brands__title">
-        {{ localI18n['brands.headline.top'] }}<br />{{
-          localI18n['brands.headline.bottom']
-        }}
-      </h1>
-      <div class="brands__logos">
-        <a href="https://www.mercedes-benz.io" target="_black">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="
-              ../assets/Mercedes_Benz_io_logo.png 202w,
-              ../assets/Mercedes_logo_3x.png      606w
-            "
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/Mercedes_Benz_io_logo.png"
-            :alt="localI18n['brands.logo.alt.mercedes-benz']"
-          />
-        </a>
-        <a href="https://www.bcg.com/en-pt/default.aspx" target="_blank">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="../assets/BCG_logo.png 202w, ../assets/BCG_3x.png 606w"
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/BCG_logo.png"
-            :alt="localI18n['brands.logo.alt.bcg']"
-          />
-        </a>
-        <a href="https://www.nos.pt/" target="_blank">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="../assets/NOS_logo.png 202w, ../assets/NOS_logo_3x.png 606w"
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/NOS_logo.png"
-            :alt="localI18n['brands.logo.alt.nos']"
-          />
-        </a>
-        <a href="http://www.carris.pt/" target="_blank">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="
-              ../assets/Carris_logo.png    202w,
-              ../assets/Carris_logo_3x.png 606w
-            "
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/Carris_logo.png"
-            :alt="localI18n['brands.logo.alt.carris']"
-          />
-        </a>
-        <a href="https://www.lisboa.pt/" target="_blank">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="../assets/CML_logo.png 202w, ../assets/CML_logo_3x.png 606w"
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/CML_logo.png"
-            :alt="localI18n['brands.logo.alt.cml']"
-          />
-        </a>
-        <a href="https://www.indigomusica.pt" target="_blank">
-          <img
-            loading="lazy"
-            class="brands__logo"
-            srcset="
-              ../assets/Indigo_logo.png    202w,
-              ../assets/Indigo_logo_3x.png 606w
-            "
-            sizes="(max-width: 870px) 202px, 606px"
-            src="../assets/Indigo_logo.png"
-            :alt="localI18n['brands.logo.alt.indigo']"
-          />
-        </a>
+    <div class="content">
+      <div class="brands">
+        <h1 class="section__title brands__title">
+          {{ localI18n['brands.headline.top'] }}<br />{{
+            localI18n['brands.headline.bottom']
+          }}
+        </h1>
+        <div class="brands__logos">
+          <a href="https://www.mercedes-benz.io" target="_black">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="
+                ../assets/Mercedes_Benz_io_logo.png 202w,
+                ../assets/Mercedes_logo_3x.png      606w
+              "
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/Mercedes_Benz_io_logo.png"
+              :alt="localI18n['brands.logo.alt.mercedes-benz']"
+            />
+          </a>
+          <a href="https://www.bcg.com/en-pt/default.aspx" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="../assets/BCG_logo.png 202w, ../assets/BCG_3x.png 606w"
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/BCG_logo.png"
+              :alt="localI18n['brands.logo.alt.bcg']"
+            />
+          </a>
+          <a href="https://www.nos.pt/" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="
+                ../assets/NOS_logo.png    202w,
+                ../assets/NOS_logo_3x.png 606w
+              "
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/NOS_logo.png"
+              :alt="localI18n['brands.logo.alt.nos']"
+            />
+          </a>
+          <a href="http://www.carris.pt/" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="
+                ../assets/Carris_logo.png    202w,
+                ../assets/Carris_logo_3x.png 606w
+              "
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/Carris_logo.png"
+              :alt="localI18n['brands.logo.alt.carris']"
+            />
+          </a>
+          <a href="https://www.lisboa.pt/" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="
+                ../assets/CML_logo.png    202w,
+                ../assets/CML_logo_3x.png 606w
+              "
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/CML_logo.png"
+              :alt="localI18n['brands.logo.alt.cml']"
+            />
+          </a>
+          <a href="https://www.indigomusica.pt" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              srcset="
+                ../assets/Indigo_logo.png    202w,
+                ../assets/Indigo_logo_3x.png 606w
+              "
+              sizes="(max-width: 870px) 202px, 606px"
+              src="../assets/Indigo_logo.png"
+              :alt="localI18n['brands.logo.alt.indigo']"
+            />
+          </a>
+        </div>
+        <p class="section__description brands__description">
+          {{ localI18n['brands.description'] }}
+        </p>
       </div>
-      <p class="section__description brands__description">
-        {{ localI18n['brands.description'] }}
-      </p>
     </div>
   </section>
 </template>

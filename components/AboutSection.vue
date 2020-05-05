@@ -1,24 +1,27 @@
 <template>
-  <section class="container about" tabindex="0">
-    <div class="about__info">
-      <h1 class="section__title about__infoTitle">
-        {{ localI18n['about.headline'] }} <Logo class="about__infoTitleIcon" />
-      </h1>
-      <p class="section__description about__infoDescription">
-        {{ localI18n['about.description1'] }}
-      </p>
-      <p class="section__description about__infoDescription">
-        {{ localI18n['about.description2'] }}
-      </p>
-    </div>
-    <div class="about__background">
-      <img
-        loading="lazy"
-        class="about__backgroundImg"
-        src="../assets/aboutBG.png"
-        role="presentation"
-        alt=""
-      />
+  <section class="container" tabindex="0">
+    <div class="content about">
+      <div class="about__info">
+        <h1 class="section__title about__infoTitle">
+          {{ localI18n['about.headline'] }}
+          <Logo class="about__infoTitleIcon" />
+        </h1>
+        <p class="section__description about__infoDescription">
+          {{ localI18n['about.description1'] }}
+        </p>
+        <p class="section__description about__infoDescription">
+          {{ localI18n['about.description2'] }}
+        </p>
+      </div>
+      <div class="about__background">
+        <img
+          loading="lazy"
+          class="about__backgroundImg"
+          src="../assets/aboutBG.png"
+          role="presentation"
+          alt=""
+        />
+      </div>
     </div>
   </section>
 </template>

@@ -1,45 +1,47 @@
 <template>
   <section id="como-doar" class="container how-to-donate" tabindex="0">
-    <div class="how-to-donate__content">
-      <h1 class="section__title how-to-donate__title">
-        {{ localI18n['how-to-donate.headline'] }}
-      </h1>
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="slide in slides" :key="slide.id">
-          <Slide :link="slide.link">
-            <h1 slot="title">{{ slide.headline }}</h1>
+    <div class="content how-to-donate">
+      <div class="how-to-donate__content">
+        <h1 class="section__title how-to-donate__title">
+          {{ localI18n['how-to-donate.headline'] }}
+        </h1>
+        <swiper class="swiper" :options="swiperOption">
+          <swiper-slide v-for="slide in slides" :key="slide.id">
+            <Slide :link="slide.link">
+              <h1 slot="title">{{ slide.headline }}</h1>
+              <img
+                v-if="slide.img"
+                slot="background"
+                loading="lazy"
+                class="slide__background"
+                :src="slide.img"
+                role="presentation"
+              />
+              <p v-if="slide.description" slot="description">
+                {{ slide.description }}
+              </p>
+              <p v-if="slide.notes" slot="notes">
+                {{ slide.notes }}
+              </p>
+            </Slide>
+          </swiper-slide>
+          <div slot="pagination" class="swiper-pagination"></div>
+          <div slot="button-prev" class="swiper-button-prev">
             <img
-              v-if="slide.img"
-              slot="background"
               loading="lazy"
-              class="slide__background"
-              :src="slide.img"
-              role="presentation"
+              src="../../assets/svg/steps-next.svg"
+              alt="Passo anterior"
             />
-            <p v-if="slide.description" slot="description">
-              {{ slide.description }}
-            </p>
-            <p v-if="slide.notes" slot="notes">
-              {{ slide.notes }}
-            </p>
-          </Slide>
-        </swiper-slide>
-        <div slot="pagination" class="swiper-pagination"></div>
-        <div slot="button-prev" class="swiper-button-prev">
-          <img
-            loading="lazy"
-            src="../../assets/svg/steps-next.svg"
-            alt="Passo anterior"
-          />
-        </div>
-        <div slot="button-next" class="swiper-button-next">
-          <img
-            loading="lazy"
-            src="../../assets/svg/steps-next.svg"
-            alt="Proximo passo"
-          />
-        </div>
-      </swiper>
+          </div>
+          <div slot="button-next" class="swiper-button-next">
+            <img
+              loading="lazy"
+              src="../../assets/svg/steps-next.svg"
+              alt="Proximo passo"
+            />
+          </div>
+        </swiper>
+      </div>
     </div>
   </section>
 </template>

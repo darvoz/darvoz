@@ -1,195 +1,207 @@
 <template>
-  <section id="mensagem" class="container" tabindex="0">
-    <div class="voice-message">
-      <form
-        class="voice-message__formSection"
-        method="post"
-        novalidate
-        @submit="checkForm"
-      >
-        <Card
-          v-if="!messageSent"
-          class="voice-message__card voice-message__normalCard"
-          :alternate="true"
+  <section
+    id="mensagem"
+    class="container voice-message__container"
+    tabindex="0"
+  >
+    <div class="content">
+      <div class="voice-message">
+        <form
+          class="voice-message__formSection"
+          method="post"
+          novalidate
+          @submit="checkForm"
         >
-          <p class="voice-message__formSectionLabel">
-            {{ localI18n['voice-message.form-label'] }}
-          </p>
-          <p class="voice-message__cardDescription">
-            {{ localI18n['voice-message.message.description'] }}
-          </p>
-          <input
-            v-model="messagePackage.from"
-            class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.from']"
-            type="text"
-          />
-          <span
-            v-if="triedToSend && !messagePackage.from"
-            class="voice-message__warning"
+          <Card
+            v-if="!messageSent"
+            class="voice-message__card voice-message__normalCard"
+            :alternate="true"
           >
-            {{ localI18n['voice-message.error.from'] }}
-          </span>
-          <input
-            v-model="messagePackage.recipient"
-            class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.recipient']"
-            type="text"
-          />
-          <span
-            v-if="triedToSend && !messagePackage.recipient"
-            class="voice-message__warning"
-          >
-            {{ localI18n['voice-message.error.recipient'] }}
-          </span>
-          <select
-            v-model="messagePackage.parish"
-            class="voice-message__formInput voice-message__formSelect"
-          >
-            <option value="" disabled>{{
-              localI18n['voice-message.parish']
-            }}</option>
-            <option v-for="parish in parishes" :key="parish" :value="parish">
-              {{ parish }}</option
+            <p class="voice-message__formSectionLabel">
+              {{ localI18n['voice-message.form-label'] }}
+            </p>
+            <p class="voice-message__cardDescription">
+              {{ localI18n['voice-message.message.description'] }}
+            </p>
+            <input
+              v-model="messagePackage.from"
+              class="voice-message__formInput"
+              :placeholder="localI18n['voice-message.from']"
+              type="text"
+            />
+            <span
+              v-if="triedToSend && !messagePackage.from"
+              class="voice-message__warning"
             >
-          </select>
-          <span
-            v-if="triedToSend && !messagePackage.parish"
-            class="voice-message__warning"
-          >
-            {{ localI18n['voice-message.error.parish'] }}
-          </span>
-          <input
-            v-model="messagePackage.street"
-            class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.street']"
-            type="text"
-          />
-          <span
-            v-if="triedToSend && !messagePackage.street"
-            class="voice-message__warning"
-          >
-            {{ localI18n['voice-message.error.street'] }}
-          </span>
-          <input
-            v-model="messagePackage.streetNumber"
-            class="voice-message__formInput"
-            :placeholder="localI18n['voice-message.streetNumber']"
-            type="text"
-          />
-          <span
-            v-if="triedToSend && !messagePackage.streetNumber"
-            class="voice-message__warning"
-          >
-            {{ localI18n['voice-message.error.streetNumber'] }}
-          </span>
-        </Card>
-        <Card
-          v-if="!messageSent"
-          class="voice-message__card voice-message__formCard"
-          :alternate="true"
-        >
-          <p class="voice-message__formSectionLabel">
-            {{ localI18n['voice-message.form-label1'] }}
-          </p>
-          <p class="voice-message__cardDescription">
-            {{ localI18n['voice-message.message.hint'] }}
-          </p>
-          <button
-            v-if="!isRecording"
-            class="voice-message__recordBtn"
-            type="button"
-            @click="startRecording"
-          >
-            <MicNone decorative :size="46" class="voice-message__buttonIcon" />
-          </button>
-          <button
-            v-if="isRecording"
-            class="voice-message__recordBtn"
-            type="button"
-            @click="stopRecording"
-          >
-            <div class="voice-message__recordBtnSquare"></div>
-          </button>
-          <p class="voice-message__hint">
-            {{
-              isRecording
-                ? localI18n['voice-message.recordLabelStop']
-                : localI18n['voice-message.recordLabel']
-            }}
-          </p>
-          <audio
-            class="voice-message__audio"
-            :src="audioPlayback"
-            controls
-          ></audio>
-          <div v-if="blockedWarning" class="voice-message__warning">
-            {{ localI18n['voice-message.blockedWarning'] }}
-          </div>
-          <span
-            v-if="triedToSend && !messagePackage.audioMessage"
-            class="voice-message__warning"
-          >
-            {{ localI18n['voice-message.error.audioMessage'] }}
-          </span>
-          <p class="voice-message__cardDescriptionHint">{{localI18n['voice-message.message.hint2']}}</p>
-        </Card>
-        <Card
-          v-if="messageSent"
-          class="voice-message__card voice-message__notificationCard"
-          :alternate="true"
-        >
-          <h2 class="voice-message__submitTitle">
-            {{ localI18n['voice-message.form-label2'] }}
-          </h2>
-          <p class="voice-message__submitDescription">
-            {{ localI18n['voice-message.form-submitDescription'] }}
-          </p>
-          <p class="voice-message__notify">ID: {{ messageId }}</p>
-        </Card>
-        <div class="voice-message__formFooter">
-          <p class="voice-message__hint">
-            Os horários da iniciativa são disponibilizados diariamente para o
-            dia seguinte. Consulte os horários para mais informação.
-          </p>
-          <div v-if="!messageSent" class="voice-message__terms">
-            {{ localI18n['voice-message.terms-conditions.label']
-            }}<a href="/termos-e-condicoes.pdf" target="_blank">{{
-              localI18n['voice-message.terms-conditions.link']
-            }}</a>
-            <input v-model="termsConditionsAccepted" type="checkbox" />
-          </div>
-          <div class="voice-message__btnGroup">
-            <Button
-              v-if="!messageSent"
-              class="voice-message__button"
-              kind="primary"
-              type="submit"
-              :disabled="
-                isRecording ||
-                  messageSent ||
-                  !termsConditionsAccepted ||
-                  loadingRequest
-              "
+              {{ localI18n['voice-message.error.from'] }}
+            </span>
+            <input
+              v-model="messagePackage.recipient"
+              class="voice-message__formInput"
+              :placeholder="localI18n['voice-message.recipient']"
+              type="text"
+            />
+            <span
+              v-if="triedToSend && !messagePackage.recipient"
+              class="voice-message__warning"
             >
+              {{ localI18n['voice-message.error.recipient'] }}
+            </span>
+            <select
+              v-model="messagePackage.parish"
+              class="voice-message__formInput voice-message__formSelect"
+            >
+              <option value="" disabled>{{
+                localI18n['voice-message.parish']
+              }}</option>
+              <option v-for="parish in parishes" :key="parish" :value="parish">
+                {{ parish }}</option
+              >
+            </select>
+            <span
+              v-if="triedToSend && !messagePackage.parish"
+              class="voice-message__warning"
+            >
+              {{ localI18n['voice-message.error.parish'] }}
+            </span>
+            <input
+              v-model="messagePackage.street"
+              class="voice-message__formInput"
+              :placeholder="localI18n['voice-message.street']"
+              type="text"
+            />
+            <span
+              v-if="triedToSend && !messagePackage.street"
+              class="voice-message__warning"
+            >
+              {{ localI18n['voice-message.error.street'] }}
+            </span>
+            <input
+              v-model="messagePackage.streetNumber"
+              class="voice-message__formInput"
+              :placeholder="localI18n['voice-message.streetNumber']"
+              type="text"
+            />
+            <span
+              v-if="triedToSend && !messagePackage.streetNumber"
+              class="voice-message__warning"
+            >
+              {{ localI18n['voice-message.error.streetNumber'] }}
+            </span>
+          </Card>
+          <Card
+            v-if="!messageSent"
+            class="voice-message__card voice-message__formCard"
+            :alternate="true"
+          >
+            <p class="voice-message__formSectionLabel">
+              {{ localI18n['voice-message.form-label1'] }}
+            </p>
+            <p class="voice-message__cardDescription">
+              {{ localI18n['voice-message.message.hint'] }}
+            </p>
+            <button
+              v-if="!isRecording"
+              class="voice-message__recordBtn"
+              type="button"
+              @click="startRecording"
+            >
+              <MicNone
+                decorative
+                :size="46"
+                class="voice-message__buttonIcon"
+              />
+            </button>
+            <button
+              v-if="isRecording"
+              class="voice-message__recordBtn"
+              type="button"
+              @click="stopRecording"
+            >
+              <div class="voice-message__recordBtnSquare"></div>
+            </button>
+            <p class="voice-message__hint">
               {{
-                loadingRequest
-                  ? localI18n['voice-message.send-btn--loading']
-                  : localI18n['voice-message.send-btn']
+                isRecording
+                  ? localI18n['voice-message.recordLabelStop']
+                  : localI18n['voice-message.recordLabel']
               }}
-            </Button>
-            <Button kind="secondary" link="/Rota.pdf" target="_blank">
-              {{ localI18n['voice-message.schedule'] }}<sub>*</sub>
-            </Button>
+            </p>
+            <audio
+              class="voice-message__audio"
+              :src="audioPlayback"
+              controls
+            ></audio>
+            <div v-if="blockedWarning" class="voice-message__warning">
+              {{ localI18n['voice-message.blockedWarning'] }}
+            </div>
+            <span
+              v-if="triedToSend && !messagePackage.audioMessage"
+              class="voice-message__warning"
+            >
+              {{ localI18n['voice-message.error.audioMessage'] }}
+            </span>
+            <p class="voice-message__cardDescriptionHint">
+              {{ localI18n['voice-message.message.hint2'] }}
+            </p>
+          </Card>
+          <Card
+            v-if="messageSent"
+            class="voice-message__card voice-message__notificationCard"
+            :alternate="true"
+          >
+            <h2 class="voice-message__submitTitle">
+              {{ localI18n['voice-message.form-label2'] }}
+            </h2>
+            <p class="voice-message__submitDescription">
+              {{ localI18n['voice-message.form-submitDescription'] }}
+            </p>
+            <p class="voice-message__notify">ID: {{ messageId }}</p>
+          </Card>
+          <div class="voice-message__formFooter">
+            <p class="voice-message__hint">
+              Os horários da iniciativa são disponibilizados diariamente para o
+              dia seguinte. Consulte os horários para mais informação.
+            </p>
+            <div v-if="!messageSent" class="voice-message__terms">
+              {{ localI18n['voice-message.terms-conditions.label']
+              }}<a href="/termos-e-condicoes.pdf" target="_blank">{{
+                localI18n['voice-message.terms-conditions.link']
+              }}</a>
+              <input v-model="termsConditionsAccepted" type="checkbox" />
+            </div>
+            <div class="voice-message__btnGroup">
+              <Button
+                v-if="!messageSent"
+                class="voice-message__button"
+                kind="primary"
+                type="submit"
+                :disabled="
+                  isRecording ||
+                    messageSent ||
+                    !termsConditionsAccepted ||
+                    loadingRequest
+                "
+              >
+                {{
+                  loadingRequest
+                    ? localI18n['voice-message.send-btn--loading']
+                    : localI18n['voice-message.send-btn']
+                }}
+              </Button>
+              <Button kind="secondary" link="/Rota.pdf" target="_blank">
+                {{ localI18n['voice-message.schedule'] }}<sub>*</sub>
+              </Button>
+            </div>
+            <p class="voice-message__scheduleHint">
+              {{ localI18n['voice-message.schedule-hint'] }}
+            </p>
+            <span v-if="hasError" class="voice-message__warning">
+              {{ hasError }}
+            </span>
           </div>
-          <p class="voice-message__scheduleHint">
-            {{ localI18n['voice-message.schedule-hint'] }}
-          </p>
-          <span v-if="hasError" class="voice-message__warning">
-            {{ hasError }}
-          </span>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </section>
 </template>
@@ -351,6 +363,17 @@ export default {
 <style scoped lang="scss">
 @import '../../styles/_global.scss';
 
+.voice-message__container {
+  &:before {
+    content: '';
+    background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    user-select: none;
+  }
+}
 .voice-message {
   $max-form-size: 1160px;
 
@@ -538,16 +561,6 @@ export default {
       grid-template-columns: repeat(12, 1fr);
       grid-gap: 24px;
       padding: 94px 160px 106px 160px;
-
-      &:before {
-        content: '';
-        background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
-        background-size: contain;
-        position: absolute;
-        width: 100vw;
-        height: 100%;
-        user-select: none;
-      }
     }
 
     &__formCard {

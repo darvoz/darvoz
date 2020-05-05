@@ -20,7 +20,7 @@
         </p>
       </div>
     </div>
-    <div :class="[showMap ? '' : 'content']">
+    <div :class="[showMap ? '' : 'content ']">
       <div class="collecting-stations__locations">
         <div class="collecting-stations__locations__toggle__container">
           <Toggle @click="toggleMap()">
@@ -247,7 +247,7 @@ export default {
       }
 
       &--normal {
-        grid-column: 3 / 12;
+        grid-column: 3 / 13;
       }
     }
 

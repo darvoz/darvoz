@@ -367,7 +367,7 @@ export default {
   &:before {
     content: '';
     background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     width: 100%;
     height: 100%;

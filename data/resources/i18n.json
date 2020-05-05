@@ -99,7 +99,7 @@
   "voice-message.error.streetNumber" : "Introduza uma numero da porta",
   "voice-message.error.recipient" : "Introduza a quem se destina a mensagem",
   "voice-message.error.from" : "Introduza o seu nome",
-  "voice-message.error" : "Algo de errado aconteceu, tente outra vez",
+  "voice-message.error" : "Algo de errado aconteceu, tente outra vez, ou utilize outro dispositivo ou browser",
   "voice-message.message.title" : "Como funciona",
   "voice-message.message.description" : "Insira os seus dados",
   "voice-message.message.hint": "A mensagem tem no máximo 15 segundos",

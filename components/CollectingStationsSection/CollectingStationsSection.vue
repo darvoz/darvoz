@@ -1,57 +1,64 @@
 <template>
   <section class="container collecting-stations" tabindex="0">
-    <div class="collecting-stations__info">
-      <h1 class="section__title collecting-stations__infoTitle">
-        {{ localI18n['collecting-stations.headline'] }}
-      </h1>
-      <p class="section__description collecting-stations__infoDescription">
-        <span class="collecting-stations__infoDescription--bold">{{
-          localI18n['collecting-stations.description.bold1']
-        }}</span
-        ><span class="collecting-stations__infoDescription--bold">{{
-          localI18n['collecting-stations.description.normal1']
-        }}</span
-        ><span class="collecting-stations__infoDescription--bold">{{
-          localI18n['collecting-stations.description.bold2']
-        }}</span
-        ><span></span>{{ localI18n['collecting-stations.description.normal2'] }}
+    <div class="content">
+      <div class="collecting-stations__info">
+        <h1 class="section__title collecting-stations__infoTitle">
+          {{ localI18n['collecting-stations.headline'] }}
+        </h1>
+        <p class="section__description collecting-stations__infoDescription">
+          <span class="collecting-stations__infoDescription--bold">{{
+            localI18n['collecting-stations.description.bold1']
+          }}</span
+          ><span class="collecting-stations__infoDescription--bold">{{
+            localI18n['collecting-stations.description.normal1']
+          }}</span
+          ><span class="collecting-stations__infoDescription--bold">{{
+            localI18n['collecting-stations.description.bold2']
+          }}</span
+          ><span></span
+          >{{ localI18n['collecting-stations.description.normal2'] }}
+        </p>
+      </div>
+    </div>
+    <div :class="[showMap ? '' : 'content']">
+      <div class="collecting-stations__locations">
+        <div class="collecting-stations__locations__toggle__container">
+          <Toggle @click="toggleMap()">
+            <span
+              slot="left"
+              class="collecting-stations__locations__toggle__content"
+            >
+              <MapIcon />Mapa
+            </span>
+            <span
+              slot="right"
+              class="collecting-stations__locations__toggle__content"
+            >
+              <FormatListBulletedIcon />Lista
+            </span>
+          </Toggle>
+        </div>
+        <div
+          :class="[
+            showMap
+              ? 'collecting-stations__locations__map'
+              : 'collecting-stations__locations__list'
+          ]"
+        >
+          <keep-alive>
+            <component
+              :is="currentTab.component"
+              v-bind="showMap ? { markers: stations } : { items: stations }"
+            />
+          </keep-alive>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <p class="collecting-stations__hint">
+        {{ localI18n['collecting-stations.hint'] }}
       </p>
     </div>
-    <div class="collecting-stations__locations">
-      <div class="collecting-stations__locations__toggle__container">
-        <Toggle @click="toggleMap()">
-          <span
-            slot="left"
-            class="collecting-stations__locations__toggle__content"
-          >
-            <MapIcon />Mapa
-          </span>
-          <span
-            slot="right"
-            class="collecting-stations__locations__toggle__content"
-          >
-            <FormatListBulletedIcon />Lista
-          </span>
-        </Toggle>
-      </div>
-      <div
-        :class="[
-          showMap
-            ? 'collecting-stations__locations__map'
-            : 'collecting-stations__locations__list'
-        ]"
-      >
-        <keep-alive>
-          <component
-            :is="currentTab.component"
-            v-bind="showMap ? { markers: stations } : { items: stations }"
-          />
-        </keep-alive>
-      </div>
-    </div>
-    <p class="collecting-stations__hint">
-      {{ localI18n['collecting-stations.hint'] }}
-    </p>
   </section>
 </template>
 
@@ -152,7 +159,6 @@ export default {
 
 .collecting-stations {
   min-height: $section-min-height;
-
   &__info {
     grid-column: 2 / 6;
     justify-items: center;
@@ -186,7 +192,7 @@ export default {
   &__locations {
     display: flex;
     flex-direction: column;
-    grid-column: 1 / 7;
+    grid-column: 1 / 15;
     position: relative;
     background-color: $smoke-white;
     margin-top: 40px;
@@ -233,9 +239,16 @@ export default {
     }
 
     &__locations {
-      grid-column: 1 / 15;
       width: 100%;
       margin-left: 0;
+
+      &--full {
+        grid-column: 1 / 15;
+      }
+
+      &--normal {
+        grid-column: 3 / 12;
+      }
     }
 
     &__map {

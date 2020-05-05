@@ -5,31 +5,33 @@
     class="container"
     tabindex="0"
   >
-    <div class="faq-section">
-      <div class="faq-section__title">
-        <div class="faq-section__titleText">
-          <h1 class="section__title">
-            {{ title }}
-          </h1>
+    <div class="content">
+      <div class="faq-section">
+        <div class="faq-section__title">
+          <div class="faq-section__titleText">
+            <h1 class="section__title">
+              {{ title }}
+            </h1>
+          </div>
         </div>
-      </div>
-      <accordion
-        v-for="item in faqList"
-        :key="item.title"
-        :title="item.title"
-        class="faq-section__item"
-      >
-        {{ item.answer }}
-        <Button
-          v-if="item.link"
-          :link="item.link.url"
-          target="_blank"
-          kind="tertiary"
-          class="faq-section__item__cta"
+        <accordion
+          v-for="item in faqList"
+          :key="item.title"
+          :title="item.title"
+          class="faq-section__item"
         >
-          {{ item.link.label }}
-        </Button>
-      </accordion>
+          {{ item.answer }}
+          <Button
+            v-if="item.link"
+            :link="item.link.url"
+            target="_blank"
+            kind="tertiary"
+            class="faq-section__item__cta"
+          >
+            {{ item.link.label }}
+          </Button>
+        </accordion>
+      </div>
     </div>
   </section>
 </template>

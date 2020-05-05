@@ -1,35 +1,37 @@
 <template>
-  <section class="container intro-section" tabindex="0">
-    <div class="intro-section__background">
-      <slot name="background" />
-    </div>
-    <div class="intro-section__info">
-      <h1 class="section__title intro-section__infoTitle">
-        <slot name="headline" />
-      </h1>
-      <p
-        class="section__description"
-        :style="{ 'font-size': smallText ? '16px' : '' }"
-      >
-        <slot name="description" />
-      </p>
-      <div class="intro-section__infoBts">
-        <Button
-          v-if="primaryCta"
-          class="intro-section__primaryBtn"
-          kind="primary"
-          :link="primaryCta.link"
+  <section class="container" tabindex="0">
+    <div class="content intro-section">
+      <div class="intro-section__background">
+        <slot name="background" />
+      </div>
+      <div class="intro-section__info">
+        <h1 class="section__title intro-section__infoTitle">
+          <slot name="headline" />
+        </h1>
+        <p
+          class="section__description"
+          :style="{ 'font-size': smallText ? '16px' : '' }"
         >
-          {{ primaryCta.label }}
-        </Button>
-        <Button
-          v-if="secondaryCta"
-          class="intro-section__secondaryBtn"
-          kind="secondary"
-          :link="secondaryCta.link"
-        >
-          {{ secondaryCta.label }}
-        </Button>
+          <slot name="description" />
+        </p>
+        <div class="intro-section__infoBts">
+          <Button
+            v-if="primaryCta"
+            class="intro-section__primaryBtn"
+            kind="primary"
+            :link="primaryCta.link"
+          >
+            {{ primaryCta.label }}
+          </Button>
+          <Button
+            v-if="secondaryCta"
+            class="intro-section__secondaryBtn"
+            kind="secondary"
+            :link="secondaryCta.link"
+          >
+            {{ secondaryCta.label }}
+          </Button>
+        </div>
       </div>
     </div>
   </section>

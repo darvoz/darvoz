@@ -69,7 +69,7 @@ export default {
       ],
       faqList: null,
       tempMessage:
-        'Informamos que por motivos técnicos, a CARRIS terá de adiar para amanhã, (7 de maio), a entrega de parte das mensagens que estavam programadas para hoje.\n' +
+        'Informamos que por motivos técnicos, a CARRIS terá de adiar para amanhã (7 de maio), a entrega de parte das mensagens que estavam programadas para hoje.\n' +
         'Agradecemos a compreensão e fica aqui o nosso compromisso que tudo faremos para garantir a entrega amanhã, nos mesmos horários que estavam previstos para hoje.'
     }
   },

@@ -4,6 +4,7 @@
       :link-list="navLinks"
       :primary-cta="{ link: '#mensagem', label: 'Gravar mensagem' }"
     />
+    <temporary-message :temporary-message="tempMessage" />
     <voice-message-intro-section :is-first-section="true" />
     <text-element
       :title="localI18n['voice-message.title']"
@@ -29,11 +30,13 @@ import TextElement from '../components/TextElement/TextElement'
 import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
+import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import Footer from '~/components/Footer/Footer'
 
 export default {
   components: {
+    TemporaryMessage,
     CookieLayer,
     SectionSeparator,
     FaqSection,
@@ -64,7 +67,10 @@ export default {
           active: true
         }
       ],
-      faqList: null
+      faqList: null,
+      tempMessage:
+        'Informamos que por motivos técnicos, a CARRIS terá de adiar para amanhã, (7 de maio), a entrega de parte das mensagens que estavam programadas para hoje.\n' +
+        'Agradecemos a compreensão e fica aqui o nosso compromisso que tudo faremos para garantir a entrega amanhã, nos mesmos horários que estavam previstos para hoje.'
     }
   },
   async created() {

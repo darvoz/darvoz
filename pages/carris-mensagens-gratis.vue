@@ -4,7 +4,6 @@
       :link-list="navLinks"
       :primary-cta="{ link: '#mensagem', label: 'Gravar mensagem' }"
     />
-    <temporary-message :temporary-message="tempMessage" />
     <voice-message-intro-section :is-first-section="true" />
     <text-element
       :title="localI18n['voice-message.title']"
@@ -30,13 +29,11 @@ import TextElement from '../components/TextElement/TextElement'
 import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
-import TemporaryMessage from '../components/TemporaryMessage/TemporaryMessage'
 import NavigationBar from '~/components/NavigationBar/NavigationBar'
 import Footer from '~/components/Footer/Footer'
 
 export default {
   components: {
-    TemporaryMessage,
     CookieLayer,
     SectionSeparator,
     FaqSection,

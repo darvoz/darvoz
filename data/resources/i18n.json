@@ -106,6 +106,8 @@
   "voice-message.message.hint2": "Problemas com a gravação? Veja como resolver nas “Perguntas frequentes” em baixo.",
   "voice-message.terms-conditions.label" : "Eu li e aceito os ",
   "voice-message.terms-conditions.link": "termos e condições",
+  "voice-message.initiativeOverDescription": "Como estava planeado a ação #darvozcarris termina amanhã. Juntos, durante quase duas semanas, levámos aos quatros cantos da cidade muitas mensagens que emocionaram, encurtaram tempo e distâncias e que vão ficar na memória para sempre.\nA CARRIS e o #darvoz agradecem a todos os que participaram nesta iniciativa que deu voz aos Lisboetas neste período de confinamento.\nA rota e horários para amanhã serão publicados hoje no final do dia, como sempre. Lamentamos não ser possível entregar todas as mensagens que nos fizeram chegar, mas quem sabe não voltamos em breve.\nObrigado a todos e mantenham-se sempre em segurança!",
+  "voice-message.initiativeOverTitle": "Obrigado!",
   "darvoz-carris.intro.cta": "Gravar mensagem",
   "darvoz-carris.intro.headline.normal": "Grave a sua mensagem,",
   "darvoz-carris.intro.headline.strong": "que nós entregamos",

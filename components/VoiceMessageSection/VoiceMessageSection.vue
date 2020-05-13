@@ -146,7 +146,7 @@
             </p>
           </Card>
           <Card
-            v-if="messageSent"
+            v-if="!messageSent"
             class="voice-message__card voice-message__notificationCard"
             :alternate="true"
           >
@@ -158,7 +158,24 @@
             </p>
             <p class="voice-message__notify">ID: {{ messageId }}</p>
           </Card>
-          <div class="voice-message__formFooter">
+          <Card
+            v-if="messageSent"
+            class="voice-message__card voice-message__notificationCard"
+            :alternate="true"
+          >
+            <h2 class="voice-message__submitTitle">
+              {{ localI18n['voice-message.initiativeOverTitle'] }}
+            </h2>
+            <p class="voice-message__submitDescription">
+              {{ localI18n['voice-message.initiativeOverDescription'] }}
+            </p>
+            <div class="voice-message__btnGroup">
+              <Button kind="secondary" link="/Rota.pdf" target="_blank">
+                {{ localI18n['voice-message.schedule'] }}
+              </Button>
+            </div>
+          </Card>
+          <!--<div class="voice-message__formFooter">
             <p class="voice-message__hint">
               Os horários da iniciativa são disponibilizados diariamente para o
               dia seguinte. Consulte os horários para mais informação.
@@ -185,7 +202,7 @@
               >
                 {{
                   loadingRequest
-                    ? localI18n['voice-message.send-btn--loading']
+                    ? localI18n['voice-message.send-btn&#45;&#45;loading']
                     : localI18n['voice-message.send-btn']
                 }}
               </Button>
@@ -199,7 +216,7 @@
             <span v-if="hasError" class="voice-message__warning">
               {{ hasError }}
             </span>
-          </div>
+          </div>-->
         </form>
       </div>
     </div>
@@ -267,7 +284,7 @@ export default {
         streetNumber: '',
         audioMessage: null
       },
-      messageSent: false,
+      messageSent: true,
       localI18n
     }
   },
@@ -364,6 +381,9 @@ export default {
 @import '../../styles/_global.scss';
 
 .voice-message__container {
+  margin-top: $section-margin;
+  margin-bottom: $section-margin;
+
   &:before {
     content: '';
     background: url('../../assets/svg/voice-message-bg.svg') no-repeat;
@@ -409,12 +429,11 @@ export default {
 
   &__submitDescription {
     font-weight: 300;
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 14px;
+    line-height: 22px;
     text-align: center;
     margin-top: 34px;
-    margin-bottom: 66px;
-    width: 80%;
+    width: 100%;
   }
 
   &__formSectionLabel {
@@ -610,6 +629,12 @@ export default {
     &__button {
       margin-right: 16px;
       margin-bottom: 0;
+    }
+
+    &__submitDescription {
+      font-size: 24px;
+      line-height: 38px;
+      margin-top: 34px;
     }
   }
 }

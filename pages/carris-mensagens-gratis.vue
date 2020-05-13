@@ -5,10 +5,10 @@
       :primary-cta="{ link: '#mensagem', label: 'Gravar mensagem' }"
     />
     <voice-message-intro-section :is-first-section="true" />
-    <text-element
+    <!--<text-element
       :title="localI18n['voice-message.title']"
       :description="localI18n['voice-message.description']"
-    />
+    /> -->
     <voice-message-section />
     <section-separator />
     <faq-section

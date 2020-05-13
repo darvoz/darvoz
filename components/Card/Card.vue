@@ -1,5 +1,5 @@
 <template>
-  <article class="card__container">
+  <article :class="['card__container', full ? 'card__container--full' : '']">
     <slot v-if="alternate" />
     <div v-else>
       <img class="card__img" :src="img" />
@@ -20,6 +20,10 @@ export default {
     Button
   },
   props: {
+    full: {
+      type: Boolean,
+      default: false
+    },
     img: {
       type: String,
       required: false,
@@ -64,6 +68,10 @@ export default {
     justify-content: flex-end;
     align-items: center;
     max-width: 544px;
+  }
+
+  &--full {
+    max-width: 100%;
   }
 
   &__img {

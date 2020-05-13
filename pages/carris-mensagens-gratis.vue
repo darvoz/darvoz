@@ -25,7 +25,6 @@
 import localI18n from '../data/resources/i18n'
 import VoiceMessageIntroSection from '../components/IntroSection/VoiceMessageIntroSection'
 import VoiceMessageSection from '../components/VoiceMessageSection/VoiceMessageSection'
-import TextElement from '../components/TextElement/TextElement'
 import FaqSection from '../components/FaqSection'
 import SectionSeparator from '../components/SectionSeparator/SectionSeparator'
 import CookieLayer from '../components/CookieLayer/CookieLayer'
@@ -37,7 +36,6 @@ export default {
     CookieLayer,
     SectionSeparator,
     FaqSection,
-    TextElement,
     VoiceMessageSection,
     VoiceMessageIntroSection,
     NavigationBar,

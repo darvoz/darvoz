@@ -14,6 +14,7 @@
         >
           <Card
             v-if="!messageSent"
+            :full="true"
             class="voice-message__card voice-message__normalCard"
             :alternate="true"
           >

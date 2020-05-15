@@ -1,9 +1,5 @@
 <template>
   <GenericIntroSection
-    :primary-cta="{
-      link: '#mensagem',
-      label: localI18n['darvoz-carris.intro.cta']
-    }"
     :is-first-section="isFirstSection"
     class="voice-message-intro__info"
   >

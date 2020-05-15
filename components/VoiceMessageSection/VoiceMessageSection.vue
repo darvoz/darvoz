@@ -170,11 +170,11 @@
             <p class="voice-message__submitDescription">
               {{ localI18n['voice-message.initiativeOverDescription'] }}
             </p>
-            <div class="voice-message__btnGroup">
+            <!-- <div class="voice-message__btnGroup">
               <Button kind="secondary" link="/Rota.pdf" target="_blank">
                 {{ localI18n['voice-message.schedule'] }}
               </Button>
-            </div>
+            </div> -->
           </Card>
           <!--<div class="voice-message__formFooter">
             <p class="voice-message__hint">
@@ -229,12 +229,10 @@ import MicRecorder from 'mic-recorder-to-mp3'
 import MicNone from 'vue-material-design-icons/MicrophoneOutline.vue'
 import localI18n from '../../data/resources/i18n.json'
 import { uploadFile, blobToBase64, getToken } from '../../services/API'
-import Button from '~/components/Button/Button.vue'
 import Card from '~/components/Card/Card'
 export default {
   name: 'VoiceMessageSection',
   components: {
-    Button,
     Card,
     MicNone
   },

@@ -70,10 +70,10 @@ export default {
       initiatives: [
         {
           img: '/initiatives/telemoveis.svg',
-          headline: localI18n['index.initiatives.telemoveis.headline'],
-          description: localI18n['index.initiatives.telemoveis.description'],
+          headline: localI18n['index.initiatives.donate.headline'],
+          description: localI18n['index.initiatives.donate.description'],
           cta: {
-            label: localI18n['index.initiatives.telemoveis.cta'],
+            label: localI18n['index.initiatives.donate.cta'],
             link: '/doar-telemoveis-tablets'
           }
         },

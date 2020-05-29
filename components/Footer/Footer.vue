@@ -27,13 +27,15 @@
             </a>
           </div>
           <div class="copyright__container">
-            Copyright 2020 - Mercedes-Benz.io & BCG
+            {{ localI18n['footer.copyright'] }}
           </div>
         </div>
         <div class="item__section__container">
           <div class="item__section">
             <h6 class="item__header">
-              <nuxt-link class="item__header__link" to="/">Home</nuxt-link>
+              <nuxt-link class="item__header__link" to="/">
+                {{ localI18n['footer.home'] }}
+              </nuxt-link>
             </h6>
           </div>
           <div class="item__section">
@@ -41,20 +43,22 @@
               <nuxt-link
                 class="item__header__link"
                 to="/doar-telemoveis-tablets"
-                >Iniciativa #darvozAQuemNaoTem</nuxt-link
               >
+                {{ localI18n['footer.donateInitiative'] }}
+              </nuxt-link>
             </h6>
             <p>
-              <nuxt-link class="item" to="/doar-telemoveis-tablets#como-doar"
-                >Como doar</nuxt-link
-              >
+              <nuxt-link class="item" to="/doar-telemoveis-tablets#como-doar">
+                {{ localI18n['footer.donateInitiative.link1'] }}
+              </nuxt-link>
             </p>
             <p>
               <nuxt-link
                 class="item"
                 to="/doar-telemoveis-tablets#pontos-recolha"
-                >Pontos de recolha</nuxt-link
               >
+                {{ localI18n['footer.donateInitiative.link2'] }}
+              </nuxt-link>
             </p>
           </div>
           <div class="item__section">
@@ -62,13 +66,14 @@
               <nuxt-link
                 class="item__header__link"
                 to="/carris-mensagens-gratis"
-                >Iniciativa #darvozCarris</nuxt-link
               >
+                {{ localI18n['footer.quadraInitiative'] }}
+              </nuxt-link>
             </h6>
             <p>
-              <nuxt-link class="item" to="/carris-mensagens-gratis#mensagem"
-                >Deixe uma mensagem</nuxt-link
-              >
+              <nuxt-link class="item" to="/santos-populares-enviar-quadra">
+                {{ localI18n['footer.quadraInitiative.link'] }}
+              </nuxt-link>
             </p>
           </div>
         </div>
@@ -79,6 +84,7 @@
 
 <script>
 import localI18n from '../../data/resources/i18n.json'
+
 export default {
   name: 'Footer',
   data() {
@@ -89,6 +95,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/_global';
+
 .footer__container {
   background-color: $primary-color;
   padding-top: 48px;
@@ -118,6 +125,7 @@ export default {
   font-size: 16px;
   line-height: 190%;
   color: $white;
+
   &__section__container {
     font-family: Roboto;
     display: grid;

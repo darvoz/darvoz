@@ -38,9 +38,14 @@
               v-model="data.text"
               class="santos__formInput"
               rows="4"
+              :maxlength="charactersLimit"
               :placeholder="localI18n['darvoz-santos.form.text']"
               required
             />
+            <span class="santos__hint"
+              >Caracteres restantes:
+              {{ charactersLimit - data.text.length }}</span
+            >
             <span v-if="triedToSend && !data.message" class="santos__warning">
               {{ localI18n['darvoz-santos.form.error.text'] }}
             </span>
@@ -60,7 +65,10 @@
                   kind="primary"
                   type="submit"
                   :disabled="
-                    !termsConditionsAccepted || !data.text || !data.from
+                    !termsConditionsAccepted ||
+                      !data.text ||
+                      !data.from ||
+                      data.text.length > charactersLimit
                   "
                 >
                   {{ localI18n['darvoz-santos.form.send-btn'] }}
@@ -90,7 +98,7 @@
 
 <script>
 import localI18n from '../../data/resources/i18n.json'
-// import { uploadFile } from '../../services/API'
+import { sendMessage } from '../../services/API'
 import Card from '~/components/Card/Card'
 import Button from '~/components/Button/Button'
 export default {
@@ -101,6 +109,7 @@ export default {
   },
   data() {
     return {
+      charactersLimit: 500,
       termsConditionsAccepted: false,
       triedToSend: false,
       hasError: null,
@@ -117,21 +126,23 @@ export default {
     checkForm(e) {
       e.preventDefault()
       this.triedToSend = true
-      if (this.data.from && this.data.text) {
-        // this.hasError = true
-        this.messageSent = true
-        // uploadFile(this.data)
-        //   .then((response) => {
-        //     if (!response.ok) {
-        //       throw new Error('error')
-        //     }
-        //   })
-        //   .then((response) => {
-        //     this.messageSent = true
-        //   })
-        //   .catch(() => {
-        //     this.hasError = localI18n['darvoz-santos.form.error']
-        //   })
+      if (
+        this.data.from &&
+        this.data.text.length &&
+        this.data.text.length < this.charactersLimit
+      ) {
+        sendMessage({ content: this.data.text, name: this.data.from })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('error')
+            }
+          })
+          .then((response) => {
+            this.messageSent = true
+          })
+          .catch(() => {
+            this.hasError = true
+          })
       }
     }
   }
@@ -203,6 +214,15 @@ export default {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+  }
+
+  &__hint {
+    display: block;
+    width: 100%;
+    color: $light-gray;
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-align: right;
   }
 
   &__warning {

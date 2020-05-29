@@ -80,7 +80,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'É simples! Grave a sua mensagem e a CARRIS vai levar a sua mensagem de força e saudade! É simples, gratuito e rápido. Grave agora a sua mensagem!' // TODO
+            'Nesta altura de Santos Populares, a CARRIS vai dar voz ás melhores quadras e animar Lisboa. Basta enviar-nos as suas melhores quadras e elas serão divulgadas na frota da CARRIS e nas redes sociais. Dê voz à sua imaginação e partilhe as suas quadras com todos.'
         }
       ]
     }

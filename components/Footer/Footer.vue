@@ -65,13 +65,13 @@
             <h6 class="item__header">
               <nuxt-link
                 class="item__header__link"
-                to="/carris-mensagens-gratis"
+                to="/quadras-santos-populares"
               >
                 {{ localI18n['footer.quadraInitiative'] }}
               </nuxt-link>
             </h6>
             <p>
-              <nuxt-link class="item" to="/santos-populares-enviar-quadra">
+              <nuxt-link class="item" to="/quadras-santos-populares">
                 {{ localI18n['footer.quadraInitiative.link'] }}
               </nuxt-link>
             </p>

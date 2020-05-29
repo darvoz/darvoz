@@ -2,55 +2,39 @@
   "faqList": [
     {
       "title": "Como é que se processa esta ação?",
-      "answer": "Grave a mensagem que gostaria de enviar à sua avó, mãe, pai, filho, amigo, irmã, namorado, noiva ou apenas conhecido. Basta indicar o nome do destinatário, qual a Freguesia de residência e a morada completa, gravar nesta plataforma a mensagem que lhe pretende fazer chegar e nós tratamos do resto! Todos os dias ao final da tarde poderá consultar aqui quais serão os pedidos que vamos concretizar e a estimativa de intervalo horário em que iremos estar à porta do destinatário. Basta depois avisá-lo para estar atento que vai receber uma surpresa carinhosa e divertida. Nós vamos dar voz aos lisboetas e ajudar a ligar todos os que têm saudades e que por agora não podem estar juntos!"
+      "answer": "Crie e envie, através da plataforma #darvoz, a sua quadra alusiva às Festas Populares de Lisboa e a CARRIS dará voz suas às quadras. Para tal basta criar e submeter uma quadra que inclua as seguintes palavras: Lisboa, CARRIS, Festas e ainda o nome de um bairro alfacinha. As quadras serão divulgadas nas plataformas digitais da CARRIS, na frota da CARRIS e em meios contratados para o efeito."
     },
     {
       "title": "Qual a duração desta ação?",
-      "answer": "Esta ação tem início no dia 3 de maio, um dia especialmente dedicado às mães, durante o qual todas as mães, em qualquer zona da cidade, podem ser surpreendidas com uma mensagem de carinho. Entre os dias 4 e 14 de maio a ação decorre diariamente e vai visitar todas as Freguesias da cidade de Lisboa."
+      "answer": "Esta ação decorre entre os dias 2 a 12 de junho 2020. A CARRIS irá divulgar as quadras nos diferentes meios, durante o mês de junho de 2020."
     },
     {
       "title": "Porque estão a fazer esta ação?",
-      "answer": "Esta ação nasce da vontade de dar voz aos Lisboetas. Da vontade de ajudar a ligar todos os que em período de confinamento não podem e não devem sair de casa para visitar a família e amigos. Em tempo de confinamento e de luta silenciosa, contra aquela que já é considerada a mais brutal das pandemias da nossa era, surge um sorriso, um abraço, um gesto simples de “aproximação” social. A CARRIS, em parceria com o #darvoz leva, de uma forma única e original, as mensagens de força e saudade que vão surpreender e animar os Lisboetas. Para isso, só precisamos da sua mensagem, de um autocarro da CARRIS, de um motorista e de um “megafone”."
+      "answer": "Esta ação nasce da vontade de dar voz aos Lisboetas e assinalar o espírito das festas da cidade, mesmo durante um período em que por questões de segurança e prevenção de saúde pública estão suspensos os habituais formatos de arraiais e marchas populares tão característicos em todos os bairros lisboetas. A CARRIS, vai transportar, de uma forma única e original, as quadras populares que vão animar os Lisboetas, preservando o espírito festivo da cidade e dos seus habitantes."
     },
     {
       "title": "Para quem se destina esta iniciativa?",
-      "answer": "A todos os que querem fazer alguém feliz!"
+      "answer": "A todos os que pretendam dar largas à sua veia de poeta popular e que queiram espalhar pela cidade o espírito das festas populares."
     },
     {
-      "title": "Em que locais irá o autocarro passar?",
-      "answer": "O autocarro do #darvozcarris passa em todas as Freguesias da cidade de Lisboa. A rota exata de cada dia, com o intervalo horário de passagem, será disponibilizada no dia anterior. A rota irá ser construída em função nas mensagens e moradas recebidas para essa zona de Lisboa. Tentaremos chegar a todas as moradas, desde que o autocarro lá consiga entrar ou passar."
+      "title": "Como serão divulgadas as quadras?",
+      "answer": "As quadras serão transportadas pela CARRIS em toda a cidade na frota, nas plataformas digitais e em meios contratados para o efeito. Siga as redes sociais da CARRIS e deixe-se contagiar pelo espírito criativo e das festas populares."
     },
     {
-      "title": "O autocarro chega a todos os pontos da cidade?",
-      "answer": "Todas as Freguesias da cidade de Lisboa estão cobertas por esta iniciativa, contudo dada a exiguidade e condicionamento de alguns acessos, poderão existir casos em que não será possível aceder com o autocarro da CARRIS e nesse caso não nos será possível entregar a sua mensagem."
+      "title": "Todas as quadras irão ser divulgadas?",
+      "answer": "Gostávamos de dizer que sim, mas se o volume de quadras recebidas for demasiado elevado, não podemos garantir que conseguiremos divulgar todas. Caso tal aconteça, as quadras serão selecionadas por ordem de chegada. Obviamente que as quadras com conteúdos considerados não adequados, xenófobos ou insultuosos, ou que não cumpram as regras de inclusão das palavras requeridas, ou que sejam consideradas plágio, não irão ser divulgadas, independentemente da sua ordem de chegada."
     },
     {
-      "title": "Como é lida/transmitida a mensagem?",
-      "answer": "As mensagens serão levadas ao destino indicado e serão replicadas através do sistema de som exterior do autocarro da CARRIS. A mensagem gravada nesta plataforma será transmitida tal como é gravada, com a sua voz."
+      "title": "Posso enviar mais do que uma quadra?",
+      "answer": "Por cada submissão apenas será possível incluir uma quadra. Mas dê liberdade à sua veia de poeta popular faça-nos chegar as suas quadras em várias submissões."
     },
     {
-      "title": "Como é que o destinatário sabe que mensagem lhe é dirigida?",
-      "answer": "Antes de mais sugerimos que na véspera ou no próprio dia avise o destinatário que irá receber uma surpresa num formato original! Quando o autocarro da CARRIS chega à morada do destinatário a sua mensagem será previamente anunciada, com indicação do nome do destinatário. Cada mensagem será repetida uma vez, para garantir que o destinatário a consegue ouvir."
+      "title": "Que dados necessito de submeter?",
+      "answer": "Para além de uma quadra integralmente criada por si, apenas necessitamos que identifique o seu primeiro e último nome, que concorde com os termos e condições desta iniciativa e que garanta que a quadra é da sua autoria."
     },
     {
-      "title": "Todas as mensagens irão ser entregues?",
-      "answer": "Gostávamos de dizer que sim, mas se o volume de mensagens recebidas for demasiado elevado, não podemos garantir que conseguiremos entregar todas. Caso tal aconteça, as mensagens serão selecionadas por ordem de chegada. Obviamente que mensagens com conteúdos considerados não adequados, xenófobos ou insultuosos, não irão ser entregues, independentemente da sua ordem de chegada."
-    },
-    {
-      "title": "Como sei se a minha mensagem irá ser lida?",
-      "answer": "Quando gravar a sua mensagem, irá receber um código único. Guarde esse código. Quando publicarmos a rota do dia seguinte, iremos também colocar os códigos das mensagens que irão ser lidas. Assim mais facilmente pode identificar quando a sua mensagem será entregue."
-    },
-    {
-      "title": "Posso enviar mais do que uma mensagem?",
-      "answer": "De modo a que o maior número de pessoas possa enviar a sua mensagem, estamos a limitar a uma mensagem por pessoa."
-    },
-    {
-      "title": "O que acontece no final às mensagens enviadas?",
-      "answer": "No final da ação, todas as mensagens são apagadas. As mensagens gravadas serão apenas utilizadas para esta finalidade."
-    },
-    {
-      "title": "O que fazer caso não esteja a conseguir gravar a mensagem?",
-      "answer": "Caso continue com problemas, sugerimos usar outro equipamento (telefone, computador) ou outro browser (navegador) para gravar a sua mensagem. Obrigado!"
+      "title": "O que acontece no final às quadras enviadas?",
+      "answer": "No final da ação, após um período de três meses, todas as quadras e dados associados são apagados desta plataforma. As quadras serão apenas utilizadas para esta finalidade."
     }
   ]
 }

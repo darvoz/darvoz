@@ -59,8 +59,8 @@ export default {
           active: true
         },
         {
-          name: localI18n['index.nav.bus'],
-          link: '/carris-mensagens-gratis',
+          name: localI18n['index.nav.santos'],
+          link: '/quadras-santos-populares',
           newPage: true
         }
       ],

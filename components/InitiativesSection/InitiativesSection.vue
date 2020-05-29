@@ -83,7 +83,7 @@ export default {
           description: localI18n['index.initiatives.santos.description'],
           cta: {
             label: localI18n['index.initiatives.santos.cta'],
-            link: '/santos-populares-enviar-quadra'
+            link: '/quadras-santos-populares'
           }
         }
       ],

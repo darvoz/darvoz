@@ -1,27 +1,54 @@
 <template>
-  <section id="iniciativas" class="container" tabindex="0">
-    <div class="content">
-      <div class="initiatives">
-        <h1 class="section__title initiatives__title">
-          {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
-        </h1>
-        <p class="section__description initiatives__description">
-          {{ localI18n['index.initiatives.description'] }}
-        </p>
-        <CardGroup>
-          <Card
-            v-for="initiative in initiatives"
-            :key="initiative.img"
-            class="initiatives__card"
-            :img="initiative.img"
-            :headline="initiative.headline"
-            :description="initiative.description"
-            :cta="initiative.cta"
-          />
-        </CardGroup>
+  <div>
+    <section id="iniciativas" class="container" tabindex="0">
+      <div class="content">
+        <div class="initiatives">
+          <h1 class="section__title initiatives__title">
+            {{ localI18n['index.initiatives.headline'] }} <Logo :height="61" />
+          </h1>
+          <p class="section__description initiatives__description">
+            {{ localI18n['index.initiatives.description'] }}
+          </p>
+          <CardGroup>
+            <Card
+              v-for="initiative in initiatives"
+              :key="initiative.img"
+              class="initiatives__card"
+              :img="initiative.img"
+              :headline="initiative.headline"
+              :description="initiative.description"
+              :cta="initiative.cta"
+            />
+          </CardGroup>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section
+      v-if="endedInitiatives.length"
+      id="ended-iniciativas"
+      class="container"
+      tabindex="0"
+    >
+      <div class="content">
+        <div class="initiatives">
+          <h1 class="section__title initiatives__title">
+            {{ localI18n['index.initiatives-ended.headline'] }}
+          </h1>
+          <CardGroup>
+            <Card
+              v-for="initiative in endedInitiatives"
+              :key="initiative.img"
+              class="initiatives__card"
+              :img="initiative.img"
+              :headline="initiative.headline"
+              :description="initiative.description"
+              :cta="initiative.cta"
+            />
+          </CardGroup>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -43,19 +70,30 @@ export default {
       initiatives: [
         {
           img: '/initiatives/telemoveis.svg',
-          headline: localI18n['index.initiatives.initiatives1.headline'],
-          description: localI18n['index.initiatives.initiatives1.description'],
+          headline: localI18n['index.initiatives.telemoveis.headline'],
+          description: localI18n['index.initiatives.telemoveis.description'],
           cta: {
-            label: localI18n['index.initiatives.initiatives1.cta'],
+            label: localI18n['index.initiatives.telemoveis.cta'],
             link: '/doar-telemoveis-tablets'
           }
         },
         {
-          img: '/initiatives/carris.svg',
-          headline: localI18n['index.initiatives.initiatives2.headline'],
-          description: localI18n['index.initiatives.initiatives2.description'],
+          img: '/initiatives/santos.svg',
+          headline: localI18n['index.initiatives.santos.headline'],
+          description: localI18n['index.initiatives.santos.description'],
           cta: {
-            label: localI18n['index.initiatives.initiatives2.cta'],
+            label: localI18n['index.initiatives.santos.cta'],
+            link: '/santos-populares-enviar-quadra'
+          }
+        }
+      ],
+      endedInitiatives: [
+        {
+          img: '/initiatives/carris.svg',
+          headline: localI18n['index.initiatives.carris.headline'],
+          description: localI18n['index.initiatives.carris.description'],
+          cta: {
+            label: localI18n['index.initiatives.carris.cta'],
             link: '/carris-mensagens-gratis'
           }
         }

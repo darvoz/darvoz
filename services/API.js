@@ -1,29 +1,11 @@
-export const blobToBase64 = (file) => {
-  const reader = new FileReader()
-  reader.readAsDataURL(file)
-  return new Promise((resolve) => {
-    reader.onloadend = () => {
-      resolve(reader.result.replace(/^data:.+;base64,/, ''))
-    }
-  })
-}
 const API_ENDPOINT = 'https://darvoz.herokuapp.com/api/darvoz/'
-export const getToken = () => {
-  const token = localStorage.getItem('darvoz.pt-id')
-  if (token) {
-    return Promise.resolve(token)
-  }
-  return fetch(API_ENDPOINT + 'token', {
-    method: 'GET'
-  }).then((response) => response.text())
-}
 
-export const uploadFile = (content, data, token) => {
-  return fetch(API_ENDPOINT + 'upload?token=' + token, {
+export const sendMessage = (data) => {
+  return fetch(API_ENDPOINT + 'quadra', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ content, ...data })
+    body: JSON.stringify({ ...data, timestamp: Date.now() })
   })
 }

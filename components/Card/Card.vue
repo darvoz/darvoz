@@ -62,16 +62,20 @@ export default {
     border: 1px solid #f2f2f2;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
     border-radius: 16px;
-    padding: 48px;
+    padding: 46px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     max-width: 544px;
-  }
 
-  &--full {
-    max-width: 100%;
+    &--full {
+      width: 100%;
+      max-width: 100%;
+      @media screen and (min-width: 1400px) {
+        padding: 56px 192px;
+      }
+    }
   }
 
   &__img {

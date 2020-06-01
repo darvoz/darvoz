@@ -279,7 +279,6 @@ export default {
     &__notificationCard {
       grid-column: 2 / 12;
       max-width: 100%;
-      height: 520px;
       padding-top: 80px;
       padding-bottom: 80px;
     }

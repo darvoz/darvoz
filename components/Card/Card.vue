@@ -1,14 +1,14 @@
 <template>
   <article :class="['card__container', full ? 'card__container--full' : '']">
     <slot v-if="alternate" />
-    <div v-else>
+    <template v-else>
       <img class="card__img" :src="img" />
       <h1 class="card__heading">{{ headline }}</h1>
       <p class="card__description">{{ description }}</p>
       <Button v-if="cta" class="card__btn" kind="primary" :link="cta.link">{{
         cta.label
       }}</Button>
-    </div>
+    </template>
   </article>
 </template>
 
@@ -65,7 +65,7 @@ export default {
     padding: 46px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     max-width: 544px;
 

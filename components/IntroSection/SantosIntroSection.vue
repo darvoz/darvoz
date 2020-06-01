@@ -9,6 +9,10 @@
   >
     <div slot="background" class="santos-intro__imageWrapper">
       <picture slot="background">
+        <source
+          srcset="../../assets/santos/santos__introBackground_2x.png"
+          :media="`(min-width: ${850}px)`"
+        />
         <img
           src="../../assets/santos/santos__introBackground.png"
           alt="section_background"

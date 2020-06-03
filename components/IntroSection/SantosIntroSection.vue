@@ -27,7 +27,7 @@
       </span>
     </template>
     <template slot="description">
-      {{ localI18n['darvoz-carris.intro.description'] }}
+      {{ localI18n['darvoz-santos.intro.description'] }}
     </template>
   </GenericIntroSection>
 </template>

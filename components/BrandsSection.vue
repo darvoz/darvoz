@@ -83,6 +83,14 @@
               :alt="localI18n['brands.logo.alt.indigo']"
             />
           </a>
+          <a href="http://www.scml.pt" target="_blank">
+            <img
+              loading="lazy"
+              class="brands__logo"
+              src="../assets/santa-casa.png"
+              :alt="localI18n['brands.logo.alt.santa-casa']"
+            />
+          </a>
         </div>
         <p class="section__description brands__description">
           {{ localI18n['brands.description'] }}

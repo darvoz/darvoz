@@ -53,12 +53,6 @@ export default {
           name: localI18n['index.nav.cellphones'],
           link: '/doar-telemoveis-tablets',
           newPage: true
-        },
-        {
-          name: localI18n['index.nav.santos'],
-          link: '/quadras-santos-populares',
-          newPage: true,
-          active: true
         }
       ],
       faqList: null

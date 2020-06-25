@@ -61,21 +61,6 @@
               </nuxt-link>
             </p>
           </div>
-          <div class="item__section">
-            <h6 class="item__header">
-              <nuxt-link
-                class="item__header__link"
-                to="/quadras-santos-populares"
-              >
-                {{ localI18n['footer.quadraInitiative'] }}
-              </nuxt-link>
-            </h6>
-            <p>
-              <nuxt-link class="item" to="/quadras-santos-populares#quadra">
-                {{ localI18n['footer.quadraInitiative.link'] }}
-              </nuxt-link>
-            </p>
-          </div>
         </div>
       </div>
     </div>

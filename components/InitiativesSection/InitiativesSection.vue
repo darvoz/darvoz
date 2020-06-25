@@ -76,15 +76,6 @@ export default {
             label: localI18n['index.initiatives.donate.cta'],
             link: '/doar-telemoveis-tablets'
           }
-        },
-        {
-          img: '/initiatives/santos.svg',
-          headline: localI18n['index.initiatives.santos.headline'],
-          description: localI18n['index.initiatives.santos.description'],
-          cta: {
-            label: localI18n['index.initiatives.santos.cta'],
-            link: '/quadras-santos-populares'
-          }
         }
       ],
       endedInitiatives: [
@@ -95,6 +86,15 @@ export default {
           cta: {
             label: localI18n['index.initiatives.carris.cta'],
             link: '/carris-mensagens-gratis'
+          }
+        },
+        {
+          img: '/initiatives/santos.svg',
+          headline: localI18n['index.initiatives.santos.headline'],
+          description: localI18n['index.initiatives.santos.description'],
+          cta: {
+            label: localI18n['index.initiatives.santos.cta'],
+            link: '/quadras-santos-populares'
           }
         }
       ]

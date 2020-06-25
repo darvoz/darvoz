@@ -57,11 +57,6 @@ export default {
           link: '/doar-telemoveis-tablets',
           newPage: true,
           active: true
-        },
-        {
-          name: localI18n['index.nav.santos'],
-          link: '/quadras-santos-populares',
-          newPage: true
         }
       ],
       faqList: null,
